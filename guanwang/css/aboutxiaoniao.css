@@ -1,0 +1,484 @@
+@charset "utf-8";
+/* 苏天天  2016-01-29 start*/
+
+
+/*头部*/
+.header_wrap{
+	background:#221236 url(../images/aboutxiaoniao/beader_bg.jpg) top center;
+	min-width:1100px;
+}
+.header{
+	height:50px;
+	width:1100px;
+	margin:0 auto;
+}
+.logo{
+	float:left;
+}
+/*导航*/
+.nav_wrap{
+	width:930px;
+	margin:0px auto;
+	height:25px;
+	line-height:25px;
+	float:right;
+	padding-top:11px;
+	text-align:right;
+}
+.nav_piece{
+	float:left;
+	position:relative;
+}
+.nav_piece h1{
+	font-size:16px;
+	text-align:center;
+	padding:0 15px;
+	position:relative;
+	cursor:pointer;
+	height:30px;
+	color:#aeabb4;
+}
+.nav_piece h1:hover{
+	background:url(../images/nav_now_bg.png) no-repeat bottom center;
+	color:#fff;
+	transition: all 0.5s ease 0s;
+}
+.now h1{
+	background:url(../images/nav_now_bg.png) no-repeat bottom center;
+	color:#fff;
+}
+
+/*启动动画*/
+.wrap_block{
+	overflow:hidden;
+	width:100%;
+	min-width:1100px;
+	position:relative;
+}
+.welcome_wrap{
+	width:100%;
+	min-width:1100px;
+	position:fixed;
+	top:0;
+	left:0;
+	/*height:700px;*/
+	background-color:#299ad6;
+	z-index:999;
+	padding-top:50px;
+	color:#fff;
+}
+.welcome2_wrap{
+	width:100%;
+	min-width:1100px;
+	background-color:#221236;
+	color:#fff;
+}
+.welcome_content, .welcome2_content{
+	height:560px;
+	position:absolute;
+	top:40%;
+	margin-top:-280px;
+	width:100%;
+	text-align:center;
+}
+.welcome_content{
+	top:58%;
+	-moz-user-select:none;
+}
+.welcome_content .title, .welcome2_content .title{
+	font-size:44px;
+	line-height:48px;
+}
+.welcome_content .en_title, .welcome2_content .en_title{
+	font-size:16px;
+	font-family:Arial, Helvetica, sans-serif;
+	letter-spacing:4px;
+}
+.welcome_content .ems, .welcome2_content .ems{
+	padding-top:15px;
+}
+.welcome_content .ems span, .welcome2_content .ems span{
+	font-size:48px;
+}
+.welcome_content .ems .yinhao1_zuo, .welcome2_content .ems .yinhao1_zuo{
+	position:relative;
+	left:-8px;
+	top:-30px;
+}
+.welcome_content .ems .yinhao1_you, .welcome2_content .ems .yinhao1_you{
+	position:relative;
+	right:-8px;
+	top:17px;
+}
+.welcome_content, .welcome2_content{
+	font-size:20px;
+}
+.welcome_content .welcome_animate{
+	display:none;
+}
+
+/*中间主要滚动部分*/
+.main_wrap{
+	width:100%;
+	min-width:1100px;
+	background:#fff;
+	overflow:hidden;
+	position:relative;
+}
+.main_slide{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+}
+.donext{
+	height:58px;
+	width:58px;
+	background:url(../images/aboutxiaoniao/donext.png) 0 -58px no-repeat;
+	margin:-20px auto 0;
+	cursor:pointer;
+}
+.donext:hover{
+	background-position:0 0;
+	transition:all 0.5s ease 0s;
+}
+
+
+/*概述*/
+
+.gaishu_slider{
+	width:6000px;
+	position:absolute;
+	left:0;
+	top:0;
+}
+
+.gaishu_block{
+	background:#fff;
+	float:left;
+	width:1100px;
+	height:560px;
+	margin-bottom:500px;
+	position:relative;
+}
+
+
+.gaishu_block_content{
+	height:560px;
+	position:absolute;
+	top:45%;
+	margin-top:-280px;
+	width:100%;
+	text-align:center;
+}
+.gaishu_block_content .title{
+	font-size:54px;
+	color:#311759;
+	font-weight:bold;
+}
+.gaishu_block_content .ems{
+	font-size:18px;
+	color:#6b6a6f;
+	width:630px;
+	line-height:30px;
+	margin:0 auto;
+	position:relative;
+	margin-top:20px;
+}
+.gaishu_block_content .ems .yinhao_zuo{
+	position:absolute;
+	left:-34px;
+	top:-3px;
+}
+.gaishu_block_content .ems .yinhao_you{
+	position:absolute;
+	right:-30px;
+	top:64px;
+}
+.gaishu_block_content .app_images img{
+	margin-top:20px;
+	margin-right:30px;
+}
+.gaishu_goleft, .gaishu_goright{
+	width:58px;
+	height:58px;
+	background:url(../images/aboutxiaoniao/goleft.png) no-repeat;
+	position:absolute;
+	top:50%;
+	margin-top:-29px;
+	cursor:pointer;
+}
+.gaishu_goleft{
+	left:60px;
+}
+.gaishu_goleft:hover{
+	background-position:-58px 0;
+	transition:all 0.5s ease 0s;
+}
+.gaishu_goright{
+	background:url(../images/aboutxiaoniao/goright.png)-58px 0 no-repeat;
+	right:60px;
+}
+.gaishu_goright:hover{
+	background-position:0 0;
+	transition:all 0.5s ease 0s;
+}
+
+.gs2_block .gaishu_block_content{
+	width:700px;
+	left:50%;
+	margin-left:-350px;
+	top:50%;
+}
+
+.gs2_block .block > *{
+	float:left;
+}
+.gs2_block .block{
+	margin-top:50px;
+	overflow:hidden;
+	color:#6b6a6f;
+	text-align:left;
+}
+
+.gs2_block .block div{
+	width:520px;
+	margin-left:55px;
+}
+.gs2_block .block h1{
+	font-size:24px;
+	font-weight:normal;
+	margin-top:20px;
+}
+.gs2_block .block h2{
+	font-size:18px;
+	font-weight:normal;
+}
+.gaishu_block_content .ems .yinhao3_zuo{
+	position:relative;
+	left:-8px;
+	top:-30px;
+}
+.gaishu_block_content .ems .yinhao3_you{
+	position:relative;
+	right:-10px;
+	top:18px;
+}
+.gs3_block .gaishu_block_content .ems{
+	color:#221236;
+	font-size:36px;
+}
+.gs3_block p{
+	width:730px;
+	margin:55px auto 0;
+	line-height:30px;
+	font-size:18px;
+	color:#6b6a6f;
+	text-align:left;
+	text-indent:2em;
+}
+
+/*动画*/
+.gaishu_goright.nohover{
+	animation:1s linear 0s normal none infinite running su-pudding;
+}
+
+/*小鸟对企业的价值*/
+.jiazhi_block{
+	color:#fff;
+	background:#221236;
+}
+.jiazhi_content{
+	width:970px;
+	height:560px;
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin:-280px 0 0 -485px;
+}
+.jiazhi_content h1{
+	font-size:48px;
+	text-align:center;
+	margin-bottom:100px;
+}
+.jiazhi_top_corners, .jiazhi_bottom_corners{
+	overflow:hidden;
+	margin:10px 0;
+}
+.jiazhi_top_corners > div, .jiazhi_bottom_corners > div{
+	float:left;
+	height:20px;
+	width:20px;
+	position:relative;
+}
+.jiazhi_top_corners img, .jiazhi_bottom_corners img{
+	position:absolute;
+	left:0;
+	top:0;
+}
+
+.jiazhi_shineimg{
+	display:none;
+}
+
+.jiazhi_content .contents{
+	height:317px;
+	width:850px;
+	margin:0 auto;
+	overflow:hidden;
+}
+
+.jiazhi_content .contents_one{
+	float:left;
+	width:390px;
+	margin-right:30px;
+	margin-bottom:46px;
+}
+.jiazhi_content .contents_one .nomber{
+	width:74px;
+	height:74px;
+	background:url(../images/aboutxiaoniao/jiazhi_quanquan.png) no-repeat;
+	line-height:74px;
+	text-align:center;
+	margin-right:27px;
+	float:left;
+	font-family:Arial, Helvetica, sans-serif;
+}
+.jiazhi_content .contents_one p{
+	float:left;
+	width:280px;
+	font-size:18px;
+	margin-top:13px;
+}
+
+
+/*小鸟云*/
+.xiaoniaoyun{
+	background:#f1f2f6;
+}
+.yun_content{
+	width:910px;
+	height:560px;
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin:-280px 0 0 -455px;
+}
+.yun_content > h1{
+	font-size:54px;
+	margin-bottom:20px;
+	text-align:center;
+	color:#311759;
+}
+.yun_slidebox{
+	height:420px;
+	width:910px;
+	overflow:hidden;
+	position:relative;
+}
+.yun_slider{
+	width:1820px;
+	height:420px;
+	position:absolute;
+	top:0;
+	left:0;
+}
+.yun_slider > div{
+	width:910px;
+	float:left;
+	line-height:36px;
+	background:url(../images/aboutxiaoniao/xuxian_bg.png);
+	font-size:16px;
+	font-family:KaiTi_GB2312;
+	color:#535355;
+}
+.yun_slider p{
+	text-indent:2em;
+}
+.xiaoniaoyun .btn_box{
+	width:204px;
+	height:8px;
+	margin:0 auto;
+}
+.xiaoniaoyun .btn_box > div{
+	float:left;
+	margin:0 12px;
+	width:78px;
+	height:8px;
+	border-radius:4px;
+	background:url(../images/aboutxiaoniao/xiaoniaoyun_btn.png) no-repeat 0 -8px;
+	overflow:hidden;
+	cursor:pointer;
+	position:relative;
+}
+.xiaoniaoyun .btn_box .yunmove_btn{
+	position:absolute;
+	top:0;
+	left:-78px;
+	width:78px;
+	height:8px;
+	background:url(../images/aboutxiaoniao/xiaoniaoyun_btn.png) no-repeat 0 0px;
+	transition: all 0.5s ease 0s;
+}
+.xiaoniaoyun .btn_box .yunmove_btn.now{
+	cursor:default;
+	transition: all 0.5s ease 0s;
+}
+
+
+/*下载app和联系我们*/
+.app_and_contacts{
+	background:url(../images/aboutxiaoniao/app&contacts_bg.gif) center center no-repeat;
+} 
+.app_and_contacts_content{
+	width:910px;
+	height:540px;
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin:-280px 0 0 -576px;
+}
+.app_content{
+	position:relative;
+}
+.app_content p,.app_content h1{
+	color:#fff;
+	position:absolute;
+}
+.app_content p{
+	left:213px;
+	top:0px;
+}
+.app_content h1{
+	left:550px;
+	top:113px;
+}
+.app_content img{
+	margin-left:145px;
+}
+.contacts_content{
+	float:right;
+}
+.contacts_content h1{
+	line-height:60px;
+	height:60px;
+	width:380px;
+	background:url(../images/aboutxiaoniao/contacts_line.png) no-repeat bottom left;
+	color:#191919;
+	margin-bottom:14px;
+}
+.contacts_content p{
+	line-height:32px;
+	color:#191919;
+}
+
+
+
+
+
+
+
+
+
+
+

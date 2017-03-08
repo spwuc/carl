@@ -1,0 +1,110 @@
+*{
+  padding:0;
+  margin:0;
+  font-family: "华文黑体";
+  list-style:none;
+}
+body{
+  background:#f4f4f4;
+}
+.det_cent{
+	background: #fff;
+}
+.det_cent img{
+	width: 100%;
+}
+.det_js{
+  width: 96%;
+  overflow: hidden;
+  padding: 10px 0;
+  margin-left:4%;
+  border-bottom: 1px #ccc solid;
+  position: relative;
+}
+.det_js p{
+	float: left;
+	color:#e54637;
+	font-size: 23px;
+  padding-top: 7px;
+}
+.det_js p span{
+   font-size: 14px;
+  color: #a8a8a8;
+  padding-left: 3px;
+}
+.det_js p span b{
+  text-decoration: line-through;
+  font-size: 13px;
+  padding-left: 3px;
+  font-weight: 100;
+}
+.det_js div{
+  float: right;
+  width: 100px;
+  text-align: center;
+  font-size: 13px;
+  margin-right:4px;
+  color: #656767;
+}
+.det_js button{
+  width: 95px;
+  height: 40px;
+  color: #fff;
+  background: #498ee9;
+  border: none;
+  -webkit-border-radius: 5px;
+  float: right;
+  font-size: 17px;
+  margin-right: 10px;
+  position: absolute;
+  right: 5px;
+}
+.det_js div span{
+  display: block;
+  font-size: 24px;
+  font-family: "fang";
+  color:#4d90e5;
+}
+@font-face{
+  font-family: "fang";
+  src:url(../font/DS-DIGI.TTF);
+}
+.det_zb{
+   padding: 13px 0;
+   border-bottom: 1px #ccc solid;
+}
+.det_zb p{
+  margin-bottom: 10px;
+  padding-left: 15px;
+  color: #3e3f3f;
+}
+.det_zb span{
+	background: #4d90e5;
+	font-size:12px;
+	color:#fff;
+	padding:2px;
+	margin-left: 15px;
+}
+.det_zw{
+	width: 100%;
+	height:15px;
+	background: #f4f4f4;
+}
+.det_jss h1{
+  background: #e5e5e5;
+  font-size: 15px;
+  font-weight: 100;
+  padding:10px 15px;
+}
+.det_jxx{
+	background:#fff;
+}
+.det_jxx p{
+  padding: 10px;
+  color: #3e3f3f;
+  font-size: 16px;
+}
+.det_jxx img{
+	width:90%;
+	padding:15px;
+}

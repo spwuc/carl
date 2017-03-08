@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>有线电视</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" /> 
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" /> 
+    <meta content="telephone=no" name="format-detection" /> 
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <style>
+        html{-webkit-text-size-adjust:none;}
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="hea_div">
+            <a href="javascript:history.go(-1);"><img class="head_left" src="images/right_sj_hea.png"></a>
+            有线电视
+            <a href="TVBindingControl.html"><span class="rightText">绑定管理</span></a>
+        </div>
+    </header>
+    <section id="watch01">
+        <div class="watchShow">
+            <ul class="watch01_ul">
+                <li>
+                    <label>智能卡号</label>
+                    <input type="text" value="" placeholder="请输入卡号后9位" />
+                </li>
+                <li>
+                    <label>身份证号</label>
+                    <input type="text" value="" placeholder="请输入您的身份证号码" />
+                </li>
+
+            </ul>
+            <a href="TVexpense.html" /><button class="powerButton">查询</button></a>
+            <p class="watchnum" style="margin-top:30px;">提示</p>
+            <p class="watchnum">遥控器F4键可查看只能卡号后9位</p>
+            <p class="power01_tel">咨询热线   0512-57334040</p>
+            <p class="power01_message">信息来源于江苏有线昆山分公司</p>
+
+        </div>
+
+         <div class="watchHide" style="display:none;">
+              <div class="watchTishiBg">
+
+              </div>
+             <div class="watchTishi">
+                   <p>提示</p>
+                 <p>您已欠费，请及时缴费</p>
+                 <p>确定</p>
+             </div>
+         </div>
+
+
+    </section >
+</body>
+     <script src="../public/js/jquery-2.0.3.min.js"></script>
+    <script>
+        $(function(){
+            var height=$(window).height();
+            $(".watchHide").height(height);
+
+        })
+    </script>
+</html>

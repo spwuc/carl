@@ -1,0 +1,101 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "华文黑体";
+    list-style: none;
+}
+
+body {
+    background: #f4f4f4;
+}
+
+.sur_head {
+    background: #fff;
+    border-bottom: 1px solid #e1e1e1;
+    padding-top: 15px;
+    color: #3e3f3f;
+}
+
+.sur_head h2 {
+    font-size: 15px;
+    font-weight: 100;
+    padding-left: 10px;
+}
+
+.sur_head img {
+    width: 100%;
+}
+
+.sur_head p {
+    padding: 10px;
+    text-indent: 34px;
+    line-height: 23px;
+    font-size: 14px;
+}
+
+.sur_tion {
+    background: #fff;
+    border-top: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+    margin-top: 15px;
+    padding-bottom: 15px;
+}
+
+.sur_ul {
+    padding-left: 15px;
+}
+
+.sur_ul li {
+    clear: both;
+    line-height: 24px;
+    padding: 5px 0;
+}
+
+.sur_ul li div {
+    width: 24px;
+    height: 24px;
+    border: 1px #e1e1e1 solid;
+    -webkit-border-radius: 24px;
+    margin-right: 15px;
+    float: left;
+}
+
+.sur_ul li div div {
+    width: 12px;
+    height: 12px;
+    background: #4d90e5;
+    -webkit-border-radius: 13px;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.sur_ul li input {
+    width: 75%;
+    height: 24px;
+    outline: none;
+}
+
+.sur_bon {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+}
+
+.sur_bon button {
+    width: 45%;
+    height: 40px;
+    border: none;
+    background: #4d90e6;
+    color: #fff;
+    -webkit-border-radius: 5px;
+    float: left;
+    font-size: 15px;
+    margin-left: 3%;
+}
+
+#sur_hui {
+    border: 1px solid #e1e1e1;
+    background: #fafafa;
+    color: #a8a8a8;
+}

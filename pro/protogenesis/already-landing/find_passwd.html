@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>找回支付密码</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="Cache-Control" content="max-age=0">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/find_passwd.css"/>
+    <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('.reg_btn').click(function(){
+                $('.reg_div').show();
+                $('.reg_tn').show();
+            });
+            $('.reg_tn button').click(function(){
+                $('.reg_div').hide();
+                $('.reg_tn').hide();
+            });
+        })
+    </script>
+</head>
+<body>
+<header>
+    <div class="hea_div">
+        <a href="javascript:history.go(-1)"><img class="head_left" src="img/right_sj_hea.png"></a>
+        找回支付密码
+    </div>
+</header>
+<section class="reg_sec">
+    <div class="reg_m">
+        <ul class="reg_ul">
+            <li><span>手机号</span><input type="text" placeholder="请输入手机号"></li>
+            <li><span>验证码</span><input type="text" placeholder="请输入验证码"><button class="pas_btn">获取验证码</button></li>
+        </ul>
+    </div>
+    <button class="reg_btn"><a style="color: #fff" href="sz_register.html">提交</a></button>
+</section>
+</body>
+</html>

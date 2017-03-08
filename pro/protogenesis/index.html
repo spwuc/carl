@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>智慧昆山</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="Cache-Control" content="max-age=0">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="page/css/reset.css"/>
+    <link rel="stylesheet" href="page/css/index.css"/>
+    <script type="text/javascript" src="page/js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('.ind_ul li:last-child').click(function(){
+                $('.ind_hui').show();
+                $('.ind_div').show();
+            })
+            $('.ind_hui h1 span').click(function(){
+                $('.ind_hui').hide();
+                $('.ind_div').hide();
+            });
+            $('.ind_uls li p img').click(function(){
+                if($(this).attr('src') == 'page/img/laert_put1.png'){
+                    $(this).attr('src','page/img/laert_put.png');
+                }else{
+                    $(this).attr('src','page/img/laert_put1.png');
+                }
+            });
+        })
+    </script>
+</head>
+<body>
+    <header>
+        <div class="ind_head">
+            <p class="ind_left"><a href="../H5/weather/weather.html"><img src="page/img/ind_tq.png">0°~5°</a></p>
+            智慧昆山
+            <a href="not-landing/my_center.html"><img class="ind_right" src="page/img/yxx.png"/></a>
+        </div>
+    </header>
+    <section>
+        <div class="fig">
+            <a href="../H5/subject.html"><img src="page/img/ind_lun.png"/></a>
+        </div>
+        <div class="ind_cent">
+            <p class="ind_g"><img src="page/img/ind_b.png">福彩投注站配备即开彩扫描枪</p>
+            <ul class="ind_ul">
+                <li><a href=""><img class="ind_img" src="page/img/ind_xy.png"><p>资讯</p></a></li>
+                <li><a href=""><img class="ind_img" src="page/img/ind_xy1.png"><p>民声</p></a></li>
+                <li><a href=""><img class="ind_img" src="page/img/ind_xy2.png"><p>汽车票</p></a></li>
+                <li><a href="../H5/movie/beams.html"><img class="ind_img" src="page/img/ind_xy3.png"><p>电影</p></a></li>
+                <li><a href="self-driving/driving.html"><img class="ind_img" src="page/img/ind_xy4.png"><p>自驾</p></a></li>
+                <li><a href="../H5/bicycle/Concern_about.html"><img class="ind_img" src="page/img/ind_xy5.png"><p>自行车</p></a></li>
+                <li><a href="../H5/BUS/BUS.html"><img class="ind_img" src="page/img/ind_xy6.png"><p>公交车</p></a></li>
+                <li><a href=""><img class="ind_img" src="page/img/ind_xy7.png"><p>打车</p></a></li>
+                <li><a href=""><img class="ind_img" src="page/img/ind_xy8.png"><p>违章查询</p></a></li>
+                <li><a href="../H5/convenienceList.html"><img class="ind_img" src="page/img/ind_xy9.png"><p>便民查询</p></a></li>
+                <li><span><img class="ind_pos" src="page/img/dian.png"/><img class="ind_img" src="page/img/ind_xy01.png"></span><p>添加</p></li>
+            </ul>
+        </div>
+        <div class="ind_hui">
+            <h1>添加<span>关闭</span></h1>
+            <ul class="ind_uls">
+                <li><img class="ind_pic" src="page/img/laert_t.png"><p>资讯<img src="page/img/laert_put1.png"></p></li>
+                <li><img class="ind_pic" src="page/img/laert_t1.png"><p>民声<img src="page/img/laert_put.png"></p></li>
+                <li><img class="ind_pic" src="page/img/laert_t2.png"><p>汽车票<img src="page/img/laert_put.png"></p></li>
+                <li><img class="ind_pic" src="page/img/laert_t3.png"><p>电影<img src="page/img/laert_put.png"></p></li>
+                <li><img class="ind_pic" src="page/img/laert_t4.png"><p>自驾<img src="page/img/laert_put.png"></p></li>
+                <li><img class="ind_pic" src="page/img/laert_t5.png"><p>自行车<img src="page/img/laert_put.png"></p></li>
+                <li><img class="ind_pic" src="page/img/laert_t6.png"><p>公交车<img src="page/img/laert_put.png"></p></li>
+                <li><img class="ind_pic" src="page/img/laert_t7.png"><p>打车<img src="page/img/laert_put.png"></p></li>
+            </ul>
+            <p class="ind_footr">保存</p>
+        </div>
+        <div class="ind_div"></div>
+    </section>
+</body>
+</html>

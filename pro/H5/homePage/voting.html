@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>投票</title>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+    <meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0" name="viewport"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="../public/js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="../public/js/public.js"></script>
+    <script type="text/javascript" src="../cordova.js"></script>
+    <style>
+        html {
+            -webkit-text-size-adjust: none;
+        }
+        .unshow{
+            display: none;
+        }
+        .votingColor div:last-child{
+            padding-bottom:15px;
+        }
+    </style>
+    <script type="text/javascript">
+        $(function () {
+            $(document).addHeader('<img class="right_h" src="img/zy_x.png" width="22">', function () {
+
+            });
+            //获取轮播图详情
+            var data;
+            var tag=0;
+            var voteItemId=[];
+            var voteId=[];
+            var param = {};
+            param.sid = '1003';
+            iss.details(function (data) {
+                data = JSON.parse(data);
+                param.id = data.id;
+                param.type = data.type;
+                iss.request(function (data) {
+                    data = JSON.parse(data);
+                    if (data.errcode == 0) {
+                        var param = data.data;
+                        $('#votingPic1').attr('src', param.imgPath);
+                        $('#votingSynopsis p').html(param.imgTxt);
+                        var conArr = [];
+                        for (var i = 0; i < param.votes.length; i++) {
+                            var div_list = '',
+                                titCon = param.votes[i].voteTitle,
+                                div_pic='',
+                                div_vot='',
+                                div_img='';
+                                if (param.votes[i].voteType==1) {
+                                  for (var n = 0; n < param.votes[i].items.length; n++) {
+                                        div_list += '<div class="votingUl" id="votingId" voteId="'+param.votes[i].voteId+'">' +
+                                        '<div class="votingPer">' +
+                                        '<p><span>' + param.votes[i].items[n].voteItemContent + '</span><span class="votingRight">' + (Number(param.votes[i].items[n].voteItemCount) / Number(param.votes[i].voteCount)) + '%</span></p>' +
+                                        '<p class="votingGray"></p>' +
+                                        '<p class="votingBlue"></p>' +
+                                        '</div>' +
+                                        '<button class="votingColorButton" voteItemId="'+param.votes[i].items[n].voteItemId+'">投票</button>' +
+                                        '</div>';
+                                    }
+                                }else{
+                                    if(param.votes[i].voteImgs.length>1){
+                                        for(var m=0; m<param.votes[i].voteImgs.length; m++){
+                                            div_pic+='<img src="'+param.votes[i].voteImgs[m]+'"/>';
+                                        }
+                                    }else{
+                                        div_pic+='<img src="'+param.votes[i].voteImgs+'" id="voting_pic"/>';
+                                    }
+                                    for(var n = 0; n < param.votes[i].items.length; n++){
+                                       var tent= param.votes[i].items[n].voteItemContent;
+                                         div_vot+='<dl class="photographerDl" id="votingId" voteId="'+param.votes[i].voteId+'">'+
+                                             '<dt>'+
+                                             '<div class="voting_img"></div>'+
+                                             '<p>'+
+                                             '<img src="img/picture3.png"/>'+
+                                             '<span>'+ (Number(param.votes[i].items[n].voteItemCount) / Number(param.votes[i].voteCount))+'</span>'+
+                                             '</p>'+
+                                             '</dt>'+
+                                             '<dd>'+
+                                             '<p class="photoPeople">'+ param.votes[i].items[n].voteItemContent+'</p>'+
+                                             '<p class="votingButton" voteItemId="'+param.votes[i].items[n].voteItemId+'" ><button>投票</button></p>'+
+                                             '</dd>'+
+                                             '</dl>'; 
+                                    }
+                                };
+                            conArr[i] = {
+                                con:div_list,
+                                tit:titCon
+                            },{
+                                pic:div_pic,
+                                vot:div_vot
+                            };
+                        }
+                        var con = '<p class="votingP">'+conArr[tag].tit+'</p>';
+                        con+=conArr[tag].con;
+                        $('.votingColor').html(con);
+                        // if(conArr.length>1){
+                        //     $('footer').removeClass('unshow');
+                        // }
+                        $('#foot_btn').click(function(){
+                            tag++;
+                             voteItemId[tag] =$('.unClick').attr('voteItemId');
+                             voteId[tag]=$('#votingId').attr('voteId');
+                            var con = '<p class="votingP">'+conArr[tag].tit+'</p>';
+                            con+=conArr[tag].con;
+                            $('.votingColor').html(con);
+                            var vot='';
+                            vot += $('.voting_img').html(conArr[tag].pic);
+                            vot+=conArr[tag].vot;
+                            $('.photographer').html(vot);
+                            if(tag == conArr.length){
+                                $('footer').addClass('unshow');
+                            }
+                        })
+                        $('.votingColorButton').on('click',function(){
+                            if(!$(this).hasClass('unClick')){
+                                var param={};
+                                iss.request(function(){
+                                    $(this).parents('votingColor').find('.votingColorButton').addClass('unClick');
+                                    if(conArr.length>1){
+                                        $('footer').removeClass('unshow');
+                                    }
+                                },failCallBack,param);
+                            };
+                        });
+                        $('.votingButton').no('click',function () {
+                            if($(this).hasClass('unClick')){
+                               var param={};
+                                iss.request(function(){
+                                    $(this).parents('photographerDl').find('.votingButton').addClass('unClick');
+                                    if(conArr.length>1){
+                                        $('footer').removeClass('unshow');
+                                    }
+                                },failCallBack,param);     
+                            }
+                        })
+                        $('.voting_img').click(function(){
+                            var param={};
+                            param.html='VoteShowMap.html';
+                            iss.changeNextPage(function(){
+                                $.cookie('votes',param.votes);
+                            },failCallBack,param)
+                        });
+
+                    }else{
+                        alert(data.errmsg);
+                    };
+                }, failCallBack, param);
+                var param={};
+                var arr = param.votes;
+                param.sid='1004';
+                iss.getUserInfo(function(data){
+                    data = JSON.parse(data);
+                    param.userId=data.userId;
+                    param.activityId=data.activityId;
+                    param.votes=[];
+                    for(var i = 0; i < arr.length; i++){
+                        param.votes[i].voteId=voteId[i];
+                        param.votes[i].voteType
+                        param.votes[i].voteItemId=voteItemId[i];
+                    }
+                },failCallBack,param);
+            }, failCallBack);
+        });
+    </script>
+</head>
+
+<body>
+<section id="votingImg">
+    <img src="img/picture1.png" class="votingPic1" id="votingPic1"/>
+
+    <div class="votingSynopsis" id="votingSynopsis">
+        <p>昆山美食网是立足昆山美食饭店餐厅、提供昆山美食餐饮团购服务、昆山美食网为消费者推荐最优惠的昆山美食网团购打折资讯,找好吃又不贵的美食就上昆山美食网!</p>
+    </div>
+    <div class="votingColor">
+        <p class="votingP" id="votingP">昆山美食网是立足昆山美食饭店餐厅、提供昆山美 食餐饮团购服务、昆山美食...</p>
+        <div class="votingUl">
+            <div class="votingPer">
+                <p><span>投票1</span><span class="votingRight">30%</span></p>
+                <p class="votingGray"></p>
+                <p class="votingBlue"></p>
+            </div>
+            <button class="votingColorButton">投票</button>
+        </div>
+        <div class="votingUl">
+            <div class="votingPer">
+                <p><span>投票1</span><span class="votingRight">30%</span></p>
+
+                <p class="votingGray"></p>
+
+                <p class="votingOrange"></p>
+            </div>
+            <button class="votingColorButton">投票</button>
+        </div>
+        <div class="votingUl">
+            <div class="votingPer">
+                <p><span>投票1</span><span class="votingRight">30%</span></p>
+
+                <p class="votingGray"></p>
+
+                <p class="votingGreen"></p>
+            </div>
+            <button class="votingColorButton">投票</button>
+        </div>
+
+    </div>
+
+</section>
+<footer class="unshow">
+<span id="foot_btn">下一题</span>
+</footer>
+</body>
+
+</html>

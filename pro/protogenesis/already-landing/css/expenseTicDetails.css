@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #f4f4f4;
+}
+header{
+
+}
+.nav{
+    background-color: #e5e5e5;
+    height: 31px;
+    line-height: 31px;
+    font-size: 11px;
+    padding-left: 14px;
+}
+.con_1{
+    padding-bottom: 15px;
+    border-bottom: 1px #cecece solid;
+    background-color: #fff;
+}
+.con{
+    margin-left: 4%;
+    font-size: 12px;
+    width: 96%;
+    border-collapse: collapse;
+    position: relative;
+}
+.con .dw{position: absolute;
+         right: -18px;
+         top:4px;
+         width: 130px;
+         float: right;}
+.con .dw img{width: 100%;}
+.th_show{
+    letter-spacing:24px
+}
+.con tr{
+    width: 100%;
+    display: block;
+    margin-top: 11px;
+    height: 12px;
+}
+.con tr:nth-child(1){
+    margin-top: 15px;
+}
+.con tr th{
+    text-align: left;
+    width: 24%;
+    height: 12px;
+    float: left;
+    color: #020202;
+}
+.con tr td{
+    width: 76%;
+    float: left;
+    color: #666;
+}
+.con .msg td{
+    color: #498ee8;
+}
+.con .num{
+    height: 16px;
+}
+.con .num th,.con .num td{
+    height: 16px;
+    vertical-align: bottom;
+}
+.con .z_num{
+    height: 16px;
+    font-size: 16px;
+    color: #418aef;
+}
+.con .num>th{
+    line-height: 20px;
+}
+.con .money th{
+    line-height: 15px;
+}
+.con .money td{
+    font-size: 15px;
+    color: #e14843;
+}
+.nav{
+    margin-top: 13px;
+}
+.th_show_w{
+    letter-spacing: 6px;
+}
+.th_show_ws{
+    letter-spacing: 12px;
+}
+.qrcode{
+    padding-left: 50%;
+    margin-left: -67px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+.con tr .blue_d{
+    color: #498ee8;
+}
+.shows{
+    letter-spacing: 4px;
+}
+.th_sh{
+    letter-spacing: 36px
+}
+.th_showsx{
+    letter-spacing: 12px;
+}
+.red_d{
+    color: #ff0000 !important;
+}
+.btn{
+    width: 90%;
+    border-radius: 5px;
+    background: #fff;
+    border: 1px solid #498ee8;
+    color: #498ee8;
+    margin-left: 5%;
+    height: 44px;
+    margin-top: 30px;
+    font-size: 16px;
+}

@@ -1,0 +1,102 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "华文黑体";
+    list-style: none;
+}
+
+body {
+    background: #f4f4f4;
+}
+
+.enr_head {
+    background: #fff;
+    border-bottom: 1px solid #e1e1e1;
+    color: #3e3f3f;
+}
+
+.enr_head h2 {
+    font-size: 15px;
+    font-weight: 100;
+    padding-left: 10px;
+}
+
+.enr_head img {
+    width: 100%;
+}
+
+.enr_head p {
+    padding: 10px;
+    text-indent: 34px;
+    line-height: 23px;
+    font-size: 14px;
+}
+
+.enr_head img {
+    width: 100%;
+}
+
+.enr_sec {
+    margin-top: 15px;
+    background: #fff;
+    margin-bottom: 55px;
+}
+
+.enr_sec ul {
+    width: 100%;
+}
+
+.enr_sec ul li {
+    height: 40px;
+    line-height: 40px;
+    color: #2b2b2b;
+    font-size: 14px;
+    padding: 5px 0;
+    border-bottom: 1px solid #e1e1e1;
+    margin-left: 15px;
+}
+
+.enr_sec ul li input {
+    width: 75%;
+    height: 40px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+.enr_sec ul li:last-child span {
+    float: left;
+}
+
+.enr_imgs {
+    float: left;
+}
+
+.enr_sec ul li:last-child img {
+    width: 40px;
+    float: left;
+    padding: 0 5px;
+}
+
+.enr_ton {
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    bottom: 5px;
+    float: left;
+    background: #fff;
+    border-top: 1px solid #e1e1e1;
+}
+
+.enr_ton button {
+    border: none;
+    color: #fff;
+    -webkit-border-radius: 5px;
+    background: #4d90e6;
+    width: 90%;
+    height: 40px;
+    margin-top: 8px;
+    margin-left: 5%;
+    font-size: 17px;
+    font-weight: bold;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>摄影师</title>
+<meta charset="utf-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+<meta http-equiv="Cache-Control" content="max-age=0">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="css/VoteShowMap.css"/>
+<script type="text/javascript" src="../public/js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            var votes = $.cookie('votes');
+            var list='';
+            for(var i=0; i>votes.length; i++){
+                list+='<li>'+
+                      '<img src="'+votes[i].voteImgs+'"/>' +
+                      '</li>';
+                for(ver n=0; n>votes[i].items.length; n++){
+                  list_p='<p>'+votes[i].items[n].voteItemContent+'</p>';
+                }
+            };
+             list = $('.vote_sec ul li').html(list_p);
+            $('.vote_sec ul').html(list);
+        })
+    </script>
+</head>
+<body>
+<section class="vote_sec">
+	<ul>
+		<li>
+			<img src="img/vote_one.png"/>
+			<p>图片</p>
+		</li>
+		<li>
+			<img src="img/vote_one.png"/>
+			<p>图片</p>
+		</li>
+		<li>
+			<img src="img/vote_one.png"/>
+			<p>图片</p>
+		</li>
+		<li>
+			<img src="img/vote_two.png"/>
+			<p>图片</p>
+		</li>
+		<li>
+			<img src="img/vote_two.png"/>
+			<p>图片</p>
+		</li>
+		<li>
+			<img src="img/vote_two.png"/>
+			<p>图片</p>
+		</li>
+	</ul>
+</section>
+</body>
+</html>

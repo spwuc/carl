@@ -1,0 +1,23 @@
+/*
+ * 2014-08-03
+ * xuyayun
+ * QQ:877166308 
+ * */
+@charset "utf-8";
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,input,table,tbody,p,th,td{ -webkit-text-size-adjust:none; margin: 0; padding: 0; border: none; font-size: 1em; font-family:'Microsoft Yahei',helvetica,arial;}
+html,body{width:100%;overflow: auto;z-index:1;}
+*{margin: 0;padding:0;}
+img,input,button,a,select,textarea{ margin: 0; padding: 0; resize:none; border:none; outline:none; } 
+ol,ul { list-style:none; } 
+h1,h2,h3,h4,h5,h6,p,em{ font-size:100%; word-wrap:break-word; font-weight: normal; font-style: normal; }
+a:active, a:focus,a:visited,{ outline:none; }
+button::-moz-focus-inner,input::-moz-focus-inner{ padding:0; border:0; }
+table{ border-collapse:collapse; border-spacing:0; }
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; font-size:0; }
+.clearfix{ zoom:1; }
+.clear{clear:both; overflow: hidden;}
+a{ text-decoration: none;cursor: pointer; }
+var,em{ font-style:normal;}
+.l{float:left;}
+.r{float:right;}
+.hide{display: none;}

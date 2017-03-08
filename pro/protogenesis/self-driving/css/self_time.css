@@ -1,0 +1,52 @@
+*{padding:0;margin: 0;font-style:none; }
+body{
+    background: #f4f4f4;
+}
+.hea_div{
+    height: 45px;
+    line-height: 45px;
+    font-size: 17px;
+    text-align: center;
+    color: rgb(69, 140, 236);
+    position: relative;
+    border-bottom: 1px solid #D8D8D8;
+    background: #fff;
+}
+.head_left{
+    width: 11px;
+    position: absolute;
+    top: 14px;
+    left: 14px;
+}
+.head_right{
+    position: absolute;
+    right: 14px;
+    top: 0;
+    font-size: 14px;
+}
+.tion_time{
+    margin-top: 15px;
+}
+.time_tis{
+    background: #fff;
+    margin-top: 15px;
+}
+.time_ul li{
+    border-bottom:1px solid #e1e1e1;
+    margin-left: 15px;
+    clear: both;
+    overflow: hidden;
+    line-height: 43px;
+    font-size: 14px;
+}
+.time_ul li:last-child{
+    border-bottom: none;
+}
+.tion_pic{
+    float: right;
+    width: 20px;
+    margin: 10px 10px 0 0;
+}
+.ind_tim{
+    width: 100%;
+}

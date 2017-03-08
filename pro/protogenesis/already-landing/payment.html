@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>支付方式</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="Cache-Control" content="max-age=0">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/payment.css"/>
+    <script type="text/javascript" src="../public/js/jquery-2.0.3.min.js"></script>
+</head>
+<body>
+<header>
+    <div class="hea_div">
+        <a href="javascript:history.go(-1)"><img class="head_left" src="img/right_sj_hea.png"></a>
+        支付方式
+    </div>
+</header>
+<section class="zhi_two">
+    <p class="zhi_f">请在20分钟内完成支付，否则订单失效</p>
+    <p class="font">00:00:00</p>
+    <h1>支付方式</h1>
+    <ul class="zhi_ul">
+        <li><img src="img/zi_y.png"><span>余额支付<b>（9.5折）</b></span><div class="zhi_yuan"><div class="cur"></div></div></li>
+        <li><img src="img/zi_n.png"><span>银联支付<b>（9.5折）</b></span><div class="zhi_yuan"><div></div></div></li>
+        <li><img src="img/zi_z.png"><span>支付宝支付<b>（9.5折）</b></span><div class="zhi_yuan"><div></div></div></li>
+        <li><img src="img/zi_c.png"><span>财付通支付<b>（9.5折）</b></span><div class="zhi_yuan"><div></div></div></li>
+        <li><img src="img/zi_j.png"><span>建设银行<b>（赠送20积分）</b></span><div class="zhi_yuan"><div></div></div></li>
+        <li><img src="img/zi_g.png"><span>中国银行<b>（10元返现）</b></span><div class="zhi_yuan"><div></div></div></li>
+        <li><img src="img/zi_h.png"><span>工商银行<b>（5折）</b></span><div class="zhi_yuan"><div></div></div></li>
+        <li><img src="img/zi_s.png"><span>招商银行<b>（赠送20积分、5返现）</b></span><div class="zhi_yuan"><div></div></div></li>
+    </ul>
+    <h1>其他优惠</h1>
+    <div class="zhi_k">
+        <p>可用积分<span>500</span>积分抵现<b>¥ 5.00</b></p>
+
+        <div id="switch">
+            <label class="toggle">
+                <input type="checkbox" checked>
+
+                <div class="track">
+                    <div class="handle"></div>
+                </div>
+            </label>
+        </div>
+    </div>
+
+</section>
+<div class="zhi_foot">
+    <p>总计：<b>￥92.00</b></p>
+    <button><a style="color: #fff" href="terminate.html">支付</a></button>
+</div>
+</body>
+</html>

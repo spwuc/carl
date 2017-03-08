@@ -1,0 +1,901 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>apply</title>
+    <link rel="shortcut icon" href="../images/ke.ico" type="image/x-icon">
+    <script src="js/iscroll.js"></script>
+    <script src="js/jquery.1.9.0.min.js"></script>
+    <script src="js/progressbar.js"></script>
+    <script src="js/load.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/pageslider.js"></script>
+    <script src="js/Promise.js"></script>
+
+    <link href="css/v4_common.css" rel="stylesheet" />
+    <script type="text/javascript">
+
+
+        var myScroll, myScroll1;
+        function loaded() {
+            myScroll1 = new iScroll('ul1');
+            myScroll = new iScroll('uls');
+        }
+        document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+        document.addEventListener('DOMContentLoaded', function () { setTimeout(loaded, 200); }, false);
+    </script>
+
+    <style type="text/css" media="all">
+        @-webkit-keyframes bounceIn {
+             0% {
+                 opacity:0;
+                 -webkit-transform:scale(0)
+            }
+             50% {
+                 opacity:1;
+                 -webkit-transform:scale(1.02)
+             }
+             70% {
+                 opacity:1;
+                 -webkit-transform:scale(.95)
+             }
+             100% {
+                 -webkit-transform:scale(1)
+             }
+
+        }
+        @-webkit-keyframes bounceOut {
+             0% {
+                 -webkit-transform:scale(1)
+            }
+        
+             100% {
+                 -webkit-transform:scale(0)
+             }
+
+        }
+        @-webkit-keyframes show {
+             0% {
+                 opacity:0;
+            }
+             50% {
+                 opacity:0.5;
+             }
+             70% {
+                 opacity:0.7;
+             }
+             100% {
+                 opacity:1;
+             }
+
+        }
+        @-webkit-keyframes hide {
+             0% {
+                 opacity:1;
+            }
+             50% {
+                 opacity:0.7;
+             }
+             70% {
+                 opacity:0.5;
+             }
+             100% {
+                 opacity:0;
+             }
+
+        }
+        body, ul, li {
+            padding: 0;
+            margin: 0;
+            border: 0;
+        }
+
+        body {
+            font-size: 12px;
+            -webkit-user-select: none;
+            -webkit-text-size-adjust: none;
+            font-family: helvetica;
+        }
+
+        .header {
+            position: absolute;
+            z-index: 2;
+            top: 0;
+            left: 0;
+            min-width: 320px;
+            width: 100%;
+            height: 45px;
+            line-height: 45px;
+            background: url(img/bottopbg.png) top left repeat-x;
+            padding: 0;
+            color: #eee;
+            font-size: 20px;
+            text-align: center;
+        }
+
+            .header a {
+                color: #f3f3f3;
+                text-decoration: none;
+                font-weight: bold;
+                text-shadow: 0 -1px 0 rgba(0,0,0,0.5);
+            }
+
+        .footer {
+            position: absolute;
+            z-index: 5;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 48px;
+            background: url(img/bottopbg.png) bottom left repeat-x;
+            padding: 0;
+            line-height: 48px;
+            text-align: center;
+        }
+
+        #wrapper {
+            position: absolute;
+            z-index: 1;
+            top: 45px;
+            bottom: 48px;
+            left: 0;
+            width: 100%;
+            background: #aaa;
+            overflow: auto;
+        }
+
+        #ul1 {
+            position: absolute;
+            z-index: 1;
+            top: 45px;
+            bottom: 48px;
+            left: 0;
+            width: 100%;
+            background: #aaa;
+            overflow: auto;
+        }
+
+        #ul2 {
+            position: absolute;
+            z-index: 1;
+            top: 45px;
+            bottom: 48px;
+            left: 0;
+            width: 100%;
+            background: #aaa;
+        }
+
+            #ul2 ul {
+                width: 320px;
+                overflow: hidden;
+            }
+
+            #ul2 li {
+                float: left;
+            }
+
+        #ull li {
+            width: 320px;
+            height: 148px;
+            position: relative;
+        }
+
+            #ull li p {
+                width: 320px;
+                height: 20px;
+                text-align: center;
+                background: rgba(0,0,0,0.8);
+            }
+
+        #ull1 li {
+            width: 320px;
+            height: 148px;
+            position: relative;
+        }
+
+            #ull1 li p {
+                width: 320px;
+                height: 20px;
+                text-align: center;
+                background: rgba(0,0,0,0.8);
+            }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        img, p {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            color: #fff;
+            height: 100%;
+            position: relative;
+            background: -webkit-gradient(linear,0 0,0 100%,from(#282c33),to(#161a1d));
+        }
+
+        #app {
+            width: 200px;
+            height: 242px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -100px;
+            margin-top: -121px;
+            text-align: center;
+        }
+
+        .css2 {
+            position: absolute;
+            width: 100%;
+            left: -100%;
+            top: 0px;
+            height: 420px;
+            background-color: red;
+            -webkit-transition: -webkit-transform 400ms ease;
+            -webkit-transform: translate3d(0px, 0px, 0px);
+        }
+
+        .css3 {
+            position: absolute;
+            width: 100%;
+            left: 100%;
+            top: 0px;
+            height: 420px;
+            background-color: red;
+            -webkit-transition: -webkit-transform 400ms ease;
+            -webkit-transform: translate3d(0px, 0px, 0px);
+        }
+
+        .myul {
+            width: 100%;
+            position: absolute;
+        }
+
+            .myul li {
+                width: 88%;
+                height: 40px;
+                line-height: 40px;
+                margin-left: 5%;
+                margin-top: 25px;
+                margin-bottom: 30px;
+                font-size: 16px;
+                color: #9b0000;
+                background: -webkit-gradient(linear,0 0,0 20%,from(#c5c5c5),to(#e7e7e7));
+                border: 2px solid #b7b7b7;
+                cursor: pointer;
+            }
+
+                .myul li img {
+                    float: right;
+                    margin-top: 12px;
+                    margin-right: 10px;
+                    width: 8px;
+                    height: 16px;
+                }
+
+                .myul li span {
+                    color: #484848;
+                    margin-left: 10px;
+                }
+    </style>
+</head>
+<body>
+
+    <div class="container" style="position: absolute; width: 100%; height: 100%; background: #1f1f1f; color: #c6c6c6;">
+        <div id="box">
+            <div id="app">
+                <img src="img/icho.png" style="width: 100px; height: 100px" />
+                <p>正在拼命为您加载...</p>
+                <span id="ap" style="width: 120px; height: 12px; margin-left: 6px;"></span>
+            </div>
+
+        </div>
+
+        <div id="index0" style="position: absolute; width: 100%; height: 100%; -webkit-transition: -webkit-transform 400ms ease; -webkit-transform: translate3d(0px, 0px, 0px)">
+
+            <div class="header">
+                <a href="#">个人中心</a>
+            </div>
+            <div id="ul2">
+                <div id="ull" style="margin: 0 auto; width: 320px; height: 148px; position: relative; margin-top: 50px; overflow: hidden;">
+                    <ul style="cursor: pointer; -webkit-transition: -webkit-transform 800ms ease; -webkit-transform: translate3d(0px, 0px, 0px); width: 1600px; position: absolute; top: 0; left: 0; list-style: none; margin: 0; padding: 0;">
+                        <li>
+                            <p style="position: absolute; left: 0; bottom: 0;">1,让Coron的太阳把自己晒黑—小天</p>
+                            <img src="img/image1.png" />
+                        </li>
+                        <li>
+                            <p style="position: absolute; left: 0; bottom: 0;">2,让Coron的太阳把自己晒黑—小天</p>
+                            <img src="img/image2.png" />
+                        </li>
+                        <li>
+                            <p style="position: absolute; left: 0; bottom: 0;">3,让Coron的太阳把自己晒黑—小天</p>
+                            <img src="img/image3.png" />
+                        </li>
+                        <li>
+                            <p style="position: absolute; left: 0; bottom: 0;">4,让Coron的太阳把自己晒黑—小天</p>
+                            <img src="img/image4.png" />
+                        </li>
+                    </ul>
+
+                </div>
+                <div id="ull1" style="margin: 0 auto; width: 320px; height: 148px; position: relative; overflow: hidden;">
+                    <ul style="cursor: pointer; -webkit-transition: -webkit-transform 800ms ease; -webkit-transform: translate3d(0px, 0px, 0px); width: 1600px; position: absolute; top: 0; left: 0; list-style: none; margin: 0; padding: 0;">
+                        <li>
+                            <p style="position: absolute; left: 0; bottom: 0;">1,让Coron的太阳把自己晒黑—小天</p>
+                            <img src="img/image1.png" />
+                        </li>
+                        <li>
+                            <p style="position: absolute; left: 0; bottom: 0;">2,让Coron的太阳把自己晒黑—小天</p>
+                            <img src="img/image2.png" />
+                        </li>
+                        <li>
+                            <p style="position: absolute; left: 0; bottom: 0;">3,让Coron的太阳把自己晒黑—小天</p>
+                            <img src="img/image3.png" />
+                        </li>
+                        <li>
+                            <p style="position: absolute; left: 0; bottom: 0;">4,让Coron的太阳把自己晒黑—小天</p>
+                            <img src="img/image4.png" />
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <div class="footer">
+                <div style="margin: 0 auto; width: 100%; min-width: 300px; height: 30px; margin-top: 10px;">
+                    <div class="ckzp" style="width: 18%; height: 30px; border: #5c575b 2px solid; border-radius: 5px; text-align: center; line-height: 30px; background: -webkit-gradient(linear,0 0,0 100%,from(#591112),to(#6c0204)); float: left; margin-left: 4%; margin-right: 5%; cursor: pointer;">作品欣赏</div>
+                    <div style="width: 18%; height: 30px; border: #5c575b 2px solid; border-radius: 5px; text-align: center; line-height: 30px; background: -webkit-gradient(linear,0 0,0 100%,from(#591112),to(#6c0204)); float: left; margin-right: 5%; cursor: pointer;">经验分享</div>
+                    <div class="fbzp" style="width: 18%; height: 30px; border: #5c575b 2px solid; border-radius: 5px; text-align: center; line-height: 30px; background: -webkit-gradient(linear,0 0,0 100%,from(#591112),to(#6c0204)); float: left; margin-right: 5%; cursor: pointer;">发布作品</div>
+                    <div class="more" style="width: 18%; height: 30px; border: #5c575b 2px solid; border-radius: 5px; text-align: center; line-height: 30px; background: -webkit-gradient(linear,0 0,0 100%,from(#331016),to(#1c0402)); float: left; cursor: pointer;">更多</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="index1" style="position: absolute; width: 100%; height: 100%; -webkit-transition: -webkit-transform 400ms ease; -webkit-transform: translate3d(0px, 0px, 0px)">
+
+            <div class="header">
+                <a href="#">查看作品</a>
+            </div>
+            <div id="ul1">
+
+                <ul style="width: 100%; text-align: center">
+                    <li style="height: 90px; border-bottom: 1px solid #610919; border-top: 1px solid #610919; background-color: #1f1f1f;">
+                        <div style="width: 300px; background: #f00; margin: 0 auto">
+                            <div style="float: left">
+                                <img id="show" src="img/p1.gif" style="cursor: pointer; width: 70px; height: 70px; margin-top: 10px; float: left" />
+                                <div style="float: left; margin-left: 5px;">
+                                    <p style="float: left; margin-top: 20px; margin-bottom: 10px;">热度（10）</p>
+                                    <p>评论（18）</p>
+                                </div>
+                            </div>
+                            <div style="float: left">
+                                <img id="show1" src="img/p2.gif" style="cursor: pointer; width: 70px; height: 70px; margin-top: 10px; float: left" />
+                                <div style="float: left; margin-left: 5px;">
+                                    <p style="float: left; margin-top: 20px; margin-bottom: 10px;">热度（10）</p>
+                                    <p>评论（18）</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </li>
+                    <li style="height: 90px; border-bottom: 1px solid #610919; border-top: 1px solid #610919; background-color: #1f1f1f;">
+                        <div style="width: 300px; background: #f00; margin: 0 auto">
+                            <div style="float: left">
+                                <img src="img/p3.gif" style="cursor: pointer; width: 70px; height: 70px; margin-top: 10px; float: left" />
+                                <div style="float: left; margin-left: 5px;">
+                                    <p style="float: left; margin-top: 20px; margin-bottom: 10px;">热度（10）</p>
+                                    <p>评论（18）</p>
+                                </div>
+                            </div>
+                            <div style="float: left">
+                                <img src="img/p4.gif" style="cursor: pointer; width: 70px; height: 70px; margin-top: 10px; float: left" />
+                                <div style="float: left; margin-left: 5px;">
+                                    <p style="float: left; margin-top: 20px; margin-bottom: 10px;">热度（10）</p>
+                                    <p>评论（18）</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </li>
+                    <li style="height: 90px; border-bottom: 1px solid #610919; border-top: 1px solid #610919; background-color: #1f1f1f;">
+                        <div style="width: 300px; background: #f00; margin: 0 auto">
+                            <div style="float: left">
+                                <img src="img/p5.gif" style="cursor: pointer; width: 70px; height: 70px; margin-top: 10px; float: left" />
+                                <div style="float: left; margin-left: 5px;">
+                                    <p style="float: left; margin-top: 20px; margin-bottom: 10px;">热度（10）</p>
+                                    <p>评论（18）</p>
+                                </div>
+                            </div>
+                            <div style="float: left">
+                                <img src="img/p6.gif" style="cursor: pointer; width: 70px; height: 70px; margin-top: 10px; float: left" />
+                                <div style="float: left; margin-left: 5px;">
+                                    <p style="float: left; margin-top: 20px; margin-bottom: 10px;">热度（10）</p>
+                                    <p>评论（18）</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </li>
+                    <li style="height: 90px; border-bottom: 1px solid #610919; border-top: 1px solid #610919; background-color: #1f1f1f;">
+                        <div style="width: 300px; background: #f00; margin: 0 auto">
+                            <div style="float: left">
+                                <img src="img/p1.gif" style="cursor: pointer; width: 70px; height: 70px; margin-top: 10px; float: left" />
+                                <div style="float: left; margin-left: 5px;">
+                                    <p style="float: left; margin-top: 20px; margin-bottom: 10px;">热度（10）</p>
+                                    <p>评论（18）</p>
+                                </div>
+                            </div>
+                            <div style="float: left">
+                                <img src="img/p2.gif" style="cursor: pointer; width: 70px; height: 70px; margin-top: 10px; float: left" />
+                                <div style="float: left; margin-left: 5px;">
+                                    <p style="float: left; margin-top: 20px; margin-bottom: 10px;">热度（10）</p>
+                                    <p>评论（18）</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </li>
+                    <li style="height: 90px; border-bottom: 1px solid #610919; border-top: 1px solid #610919; background-color: #1f1f1f;">
+                        <div style="width: 300px; background: #f00; margin: 0 auto">
+                            <div style="float: left">
+                                <img src="img/p3.gif" style="cursor: pointer; width: 70px; height: 70px; margin-top: 10px; float: left" />
+                                <div style="float: left; margin-left: 5px;">
+                                    <p style="float: left; margin-top: 20px; margin-bottom: 10px;">热度（10）</p>
+                                    <p>评论（18）</p>
+                                </div>
+                            </div>
+                            <div style="float: left">
+                                <img src="img/p4.gif" style="cursor: pointer; width: 70px; height: 70px; margin-top: 10px; float: left" />
+                                <div style="float: left; margin-left: 5px;">
+                                    <p style="float: left; margin-top: 20px; margin-bottom: 10px;">热度（10）</p>
+                                    <p>评论（18）</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </li>
+                    <li style="height: 90px; border-bottom: 1px solid #610919; border-top: 1px solid #610919; background-color: #1f1f1f;">
+                        <div style="width: 300px; background: #f00; margin: 0 auto">
+                            <div style="float: left">
+                                <img src="img/p5.gif" style="cursor: pointer; width: 70px; height: 70px; margin-top: 10px; float: left" />
+                                <div style="float: left; margin-left: 5px;">
+                                    <p style="float: left; margin-top: 20px; margin-bottom: 10px;">热度（10）</p>
+                                    <p>评论（18）</p>
+                                </div>
+                            </div>
+                            <div style="float: left">
+                                <img src="img/p6.gif" style="cursor: pointer; width: 70px; height: 70px; margin-top: 10px; float: left" />
+                                <div style="float: left; margin-left: 5px;">
+                                    <p style="float: left; margin-top: 20px; margin-bottom: 10px;">热度（10）</p>
+                                    <p>评论（18）</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </li>
+                    <li style="height: 90px; border-bottom: 1px solid #610919; border-top: 1px solid #610919; background-color: #1f1f1f;">
+                        <div style="width: 300px; background: #f00; margin: 0 auto">
+                            <div style="float: left">
+                                <img src="img/p1.gif" style="cursor: pointer; width: 70px; height: 70px; margin-top: 10px; float: left" />
+                                <div style="float: left; margin-left: 5px;">
+                                    <p style="float: left; margin-top: 20px; margin-bottom: 10px;">热度（10）</p>
+                                    <p>评论（18）</p>
+                                </div>
+                            </div>
+                            <div style="float: left">
+                                <img src="img/p2.gif" style="cursor: pointer; width: 70px; height: 70px; margin-top: 10px; float: left" />
+                                <div style="float: left; margin-left: 5px;">
+                                    <p style="float: left; margin-top: 20px; margin-bottom: 10px;">热度（10）</p>
+                                    <p>评论（18）</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer">
+                <div style="margin: 0 auto; width: 300px; height: 30px; margin-top: 10px;">
+                    <div class="back1" style="width: 40%; height: 30px; border: #5c575b 2px solid; border-radius: 5px; text-align: center; line-height: 30px; background: -webkit-gradient(linear,0 0,0 100%,from(#591112),to(#6c0204)); float: left; margin-right: 10%; cursor: pointer;">个人中心</div>
+                    <div id="show11" style="width: 40%; height: 30px; border: #5c575b 2px solid; border-radius: 5px; text-align: center; line-height: 30px; background: -webkit-gradient(linear,0 0,0 100%,from(#591112),to(#6c0204)); float: left; cursor: pointer;">评论</div>
+                </div>
+            </div>
+
+            
+            
+    </div>
+
+        <div id="index2" style="position: absolute; width: 100%; height: 100%; -webkit-transition: -webkit-transform 400ms ease; -webkit-transform: translate3d(0px, 0px, 0px)">
+            <div class="header">
+                <img class="back2" src="img/back.png" style="cursor: pointer; width: 80px; height: 40px; margin-top: 3px; float: left; margin-left: 10px;" />
+                <a href="#">我的信息</a>
+                <img  id="Img2" src="img/注销.png" style="cursor: pointer; width: 80px; height: 40px; margin-top: 3px; float: right; margin-right: 10px;" />
+            </div>
+            <div id="uls" style="position: absolute; top: 45px; bottom: 48px; left: 0; width: 100%; background: #1f1f1f;">
+                <ul class="myul">
+                    <li>Sunshine <span>回复了你</span>
+                        <img src="img/wjiantou.gif" />
+                    </li>
+                    <li>Sunshine <span>回复了你</span>
+                        <img src="img/wjiantou.gif" />
+                    </li>
+                    <li>Sunshine <span>回复了你</span>
+                        <img src="img/wjiantou.gif" />
+                    </li>
+                    <li>Sunshine <span>回复了你</span>
+                        <img src="img/wjiantou.gif" />
+                    </li>
+                    <li>Sunshine <span>回复了你</span>
+                        <img src="img/wjiantou.gif" />
+                    </li>
+                    <li>Sunshine <span>回复了你</span>
+                        <img src="img/wjiantou.gif" />
+                    </li>
+                    <li>Sunshine <span>回复了你</span>
+                        <img src="img/wjiantou.gif" />
+                    </li>
+                    <li>Sunshine <span>回复了你</span>
+                        <img src="img/wjiantou.gif" />
+                    </li>
+                    <li>Sunshine <span>回复了你</span>
+                        <img src="img/wjiantou.gif" />
+                    </li>
+                </ul>
+            </div>
+            <div class="footer">
+                <div style="margin: 0 auto; width: 100%; min-width: 300px; height: 30px; margin-top: 10px;">
+                    <div class="ckzp2" style="width: 18%; height: 30px; border: #5c575b 2px solid; border-radius: 5px; text-align: center; line-height: 30px; background: -webkit-gradient(linear,0 0,0 100%,from(#591112),to(#6c0204)); float: left; margin-left: 4%; margin-right: 5%; cursor: pointer;">作品欣赏</div>
+                    <div style="width: 18%; height: 30px; border: #5c575b 2px solid; border-radius: 5px; text-align: center; line-height: 30px; background: -webkit-gradient(linear,0 0,0 100%,from(#591112),to(#6c0204)); float: left; margin-right: 5%; cursor: pointer;">经验分享</div>
+                    <div class="fbzp2" style="width: 18%; height: 30px; border: #5c575b 2px solid; border-radius: 5px; text-align: center; line-height: 30px; background: -webkit-gradient(linear,0 0,0 100%,from(#591112),to(#6c0204)); float: left; margin-right: 5%; cursor: pointer;">发布作品</div>
+                    <div class="more2" style="width: 18%; height: 30px; border: #5c575b 2px solid; border-radius: 5px; text-align: center; line-height: 30px; background: -webkit-gradient(linear,0 0,0 100%,from(#331016),to(#1c0402)); float: left; cursor: pointer;">更多</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="index3" style="position: absolute; width: 100%; height: 100%; -webkit-transition: -webkit-transform 400ms ease; -webkit-transform: translate3d(0px, 0px, 0px)">
+            <div class="header">
+                <img class="back3" src="img/back.png" style="width: 80px; height: 40px; margin-top: 3px; float: left; margin-left: 10px; cursor: pointer;" />
+                <a href="#">发布作品</a>
+                <img src="img/注销.png" style="width: 80px; height: 40px; margin-top: 3px; float: right; margin-right: 10px; cursor: pointer;" />
+            </div>
+            <div style="position: absolute; z-index: 1; top: 45px; bottom: 48px; left: 0; width: 100%; background: #1f1f1f;">
+                <div style="min-width: 320px;">
+                    <img src="img/appale.gif" style="width: 146px; height: 146px; margin-left: 10%; margin-top: 5%;" />
+                    <div style="width: 85px; height: 150px; float: right; margin-right: 10%; margin-top: 5%;">
+                        <img src="img/someappale.gif" style="width: 85px; height: 85px;" />
+                        <img src="img/yulan.gif" style="width: 72px; height: 25px; margin-left: 5px; cursor: pointer;" />
+                        <img src="img/shangchuan.gif" style="width: 72px; height: 25px; margin-left: 5px; cursor: pointer;" />
+                    </div>
+                </div>
+                <p style="font-size: 16px; color: #f4f2f3; font-weight: bold; margin-left: 10%;">
+                    作品简介
+                </p>
+                <textarea type="text" placeholder="这里是各种图标的发布，各种颜色的图标，都代表着不一样的含义。。。" style="width: 80%; color: #f4f2f3; height: 40%; max-height: 40%; max-width: 80%; background: #2c2c2c; border: 2px solid #4c4c4c; margin-left: 10%;"></textarea>
+                <div id="tijiao" style="background: #ccc; width: 40%; margin-left: 30%; height: 39px; text-align: center; color: #000; line-height: 40px; font-size: 16px; cursor: pointer;">
+                    提交
+                </div>
+            </div>
+            <div class="footer">
+                <div style="margin: 0 auto; width: 100%; min-width: 300px; height: 30px; margin-top: 10px;">
+                    <div class="ckzp3" style="width: 18%; height: 30px; border: #5c575b 2px solid; border-radius: 5px; text-align: center; line-height: 30px; background: -webkit-gradient(linear,0 0,0 100%,from(#591112),to(#6c0204)); float: left; margin-left: 4%; margin-right: 5%; cursor: pointer;">作品欣赏</div>
+                    <div style="width: 18%; height: 30px; border: #5c575b 2px solid; border-radius: 5px; text-align: center; line-height: 30px; background: -webkit-gradient(linear,0 0,0 100%,from(#591112),to(#6c0204)); float: left; margin-right: 5%; cursor: pointer;">经验分享</div>
+                    <div style="width: 18%; height: 30px; border: #5c575b 2px solid; border-radius: 5px; text-align: center; line-height: 30px; background: -webkit-gradient(linear,0 0,0 100%,from(#331016),to(#1c0402)); float: left; margin-right: 5%; cursor: pointer;">发布作品</div>
+                    <div class="more3" style="width: 18%; height: 30px; border: #5c575b 2px solid; border-radius: 5px; text-align: center; line-height: 30px; background: -webkit-gradient(linear,0 0,0 100%,from(#591112),to(#6c0204)); float: left; cursor: pointer;">更多</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="index4" style="position: absolute; width: 100%; height: 100%; -webkit-transition: -webkit-transform 400ms ease; -webkit-transform: translate3d(0px, 0px, 0px)">
+            <div class="header">
+                <img class="back4" src="img/back.png" style="width: 80px; height: 40px; margin-top: 3px; float: left; margin-left: 10px;" />
+                <a href="#">查看作品</a>
+                <img id="Img6" src="img/注销.png" style="width: 80px; height: 40px; margin-top: 3px; float: right; margin-right: 10px;" />
+            </div>
+            <div style="position: absolute; z-index: 1; top: 45px; bottom: 48px; left: 0; width: 100%; background: #1f1f1f;">
+                <div style="width: 300px; height: 350px; position: absolute; top: 50%; left: 50%; margin-left: -150px; margin-top: -175px;">
+                    <img src="img/appaleimg.gif" style="width: 295px; height: 146px;" />
+                    <p>热度(86)<span style="float: right">我要评价</span></p>
+                    <p style="font-size: 16px; color: #f4f2f3; font-weight: bold; margin: 10px 0;">
+                        作品简介
+                    </p>
+                    <div style="width: 295px; height: 116px; background: #2c2c2c; border: 2px solid #4c4c4c;">
+                        <p style="text-indent: 50px; font-size: 14px;">这里是各种图标的发布，各种颜色的图标，都代表着不一样的含义。。。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <div style="margin: 0 auto; width: 300px; height: 30px; margin-top: 10px;">
+                    <div style="width: 40%; height: 30px; border: #5c575b 2px solid; border-radius: 5px; text-align: center; line-height: 30px; background: -webkit-gradient(linear,0 0,0 100%,from(#591112),to(#6c0204)); float: left; margin-right: 10%; cursor: pointer;">收藏</div>
+                    <div id="show12" style="width: 40%; height: 30px; border: #5c575b 2px solid; border-radius: 5px; text-align: center; line-height: 30px; background: -webkit-gradient(linear,0 0,0 100%,from(#591112),to(#6c0204)); float: left; cursor: pointer;">评论</div>
+                </div>
+            </div>
+            
+        </div>
+
+        <div id="index5" style="position: absolute; width: 100%; height: 100%; -webkit-transition: -webkit-transform 400ms ease; -webkit-transform: translate3d(0px, 0px, 0px)">
+            <div class="header">
+                <img class="back5" src="img/back.png" style="width: 80px; height: 40px; margin-top: 3px; float: left; margin-left: 10px;" />
+                <a href="#">意见反馈</a>
+                <img id="Img8" src="img/注销.png" style="width: 80px; height: 40px; margin-top: 3px; float: right; margin-right: 10px;" />
+            </div>
+            <div style="position: absolute; z-index: 1; top: 45px; bottom: 48px; left: 0; width: 100%; background: #1f1f1f;">
+                <textarea placeholder="说说你的意见，我们虚心改进。" style="width: 90%; height: 50%; max-width: 90%; max-height: 50%; color: #fff; background: #2c2c2c; border: 2px solid #4c4c4c; margin-left: 5%; margin-top: 3%"></textarea>
+                <img src="img/tijiao2.gif" style="cursor:pointer;width: 105px; height: 36px; margin-top: 5px; margin-left: 5%;" />
+            </div>
+            <div class="footer">
+                <div style="margin: 0 auto; width: 100%; min-width: 300px; height: 30px; margin-top: 10px;">
+                    <div class="ckzp5" style="width: 18%; height: 30px; border: #5c575b 2px solid; border-radius: 5px; text-align: center; line-height: 30px; background: -webkit-gradient(linear,0 0,0 100%,from(#591112),to(#6c0204)); float: left; margin-left: 4%; margin-right: 5%; cursor: pointer;">作品欣赏</div>
+                    <div style="width: 18%; height: 30px; border: #5c575b 2px solid; border-radius: 5px; text-align: center; line-height: 30px; background: -webkit-gradient(linear,0 0,0 100%,from(#591112),to(#6c0204)); float: left; margin-right: 5%; cursor: pointer;">经验分享</div>
+                    <div class="fbzp5" style="width: 18%; height: 30px; border: #5c575b 2px solid; border-radius: 5px; text-align: center; line-height: 30px; background: -webkit-gradient(linear,0 0,0 100%,from(#591112),to(#6c0204)); float: left; margin-right: 5%; cursor: pointer;">发布作品</div>
+                    <div class="more5" style="width: 18%; height: 30px; border: #5c575b 2px solid; border-radius: 5px; text-align: center; line-height: 30px; background: -webkit-gradient(linear,0 0,0 100%,from(#331016),to(#1c0402)); float: left; cursor: pointer;">更多</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="index6" style="position: absolute; width: 100%; height: 100%; -webkit-transition: -webkit-transform 400ms ease; -webkit-transform: translate3d(0px, 0px, 0px)">
+            <div class="header">
+                <img class="back6" src="img/back.png" style="width: 80px; height: 40px; margin-top: 3px; float: left; margin-left: 10px;" />
+                <a href="#">更多</a>
+                <img id="Img10" src="img/注销.png" style="width: 80px; height: 40px; margin-top: 3px; float: right; margin-right: 10px;" />
+            </div>
+            <div style="position: absolute; z-index: 1; top: 45px; bottom: 48px; left: 0; width: 100%; background: #1f1f1f; color: #bdbec0;">
+                <p style="margin-top: 2%; margin-left: 5%; font-size: 16px;">个人账号</p>
+                <div id="wdxx" style="cursor:pointer;width: 88%; height: 40px; line-height: 40px; margin-left: 5%; font-size: 16px; color: #9b0000; background: -webkit-gradient(linear,0 0,0 20%,from(#c5c5c5),to(#e7e7e7)); border: 2px solid #b7b7b7;">
+                    <img src="img/wjiantou.gif" style="float: right; margin-top: 12px; margin-right: 10px; width: 8px; height: 16px; margin-left: 10px;" />
+                    <p style="float: left; color: #2f2f2f">已登录</p>
+
+                </div>
+                <p style="margin-top: 2%; margin-left: 5%; font-size: 16px;">软件信息</p>
+                <div style="width: 88%; height: 90px; margin-left: 5%; font-size: 16px; color: #9b0000; background: #f00; border: 2px solid #b7b7b7; color: #2f2f2f">
+                    <div style="cursor:pointer;width: 100%; height: 45px; background: -webkit-gradient(linear,0 0,0 20%,from(#c5c5c5),to(#e7e7e7)); border-bottom: 1px solid #bfbfbf; line-height: 45px;">
+                        <img src="img/wjiantou.gif" style="float: right; margin-top: 15px; margin-right: 10px; width: 8px; height: 16px;" />
+                        <span style="float: left">版本</span>
+                    </div>
+                    <div style="cursor:pointer;width: 100%; height: 45px; background: -webkit-gradient(linear,0 0,0 20%,from(#dedede),to(#e7e7e7)); line-height: 45px;">
+                        <img src="img/wjiantou.gif" style="float: right; margin-top: 15px; margin-right: 10px; width: 8px; height: 16px;" />
+                        <p style="float: left;">检测更新</p>
+                    </div>
+                </div>
+                <p style="margin-left: 5%; font-size: 16px;">意见反馈</p>
+                <div style="width: 88%; height: 90px; margin-left: 5%; margin-bottom: 30px; font-size: 16px; color: #9b0000; background: #f00; border: 2px solid #b7b7b7; color: #2f2f2f">
+                    <div style="cursor:pointer;width: 100%; height: 45px; background: -webkit-gradient(linear,0 0,0 20%,from(#c5c5c5),to(#e7e7e7)); border-bottom: 1px solid #bfbfbf; line-height: 45px;">
+                        <img src="img/wjiantou.gif" style="float: right; margin-top: 15px; margin-right: 10px; width: 8px; height: 16px;" />
+                        <p style="float: left">投诉</p>
+                    </div>
+                    <div id="fankui" style=" cursor:pointer;width: 100%; height: 45px; background: -webkit-gradient(linear,0 0,0 20%,from(#dedede),to(#e7e7e7)); line-height: 45px;">
+                        <img src="img/wjiantou.gif" style="float: right; margin-top: 15px; margin-right: 10px; width: 8px; height: 16px;" />
+                        <p style="float: left;">意见反馈</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <div style="margin: 0 auto; width: 100%; min-width: 300px; height: 30px; margin-top: 10px;">
+                    <div class="ckzp6" style="width: 18%; height: 30px; border: #5c575b 2px solid; border-radius: 5px; text-align: center; line-height: 30px; background: -webkit-gradient(linear,0 0,0 100%,from(#591112),to(#6c0204)); float: left; margin-left: 4%; margin-right: 5%; cursor: pointer;">作品欣赏</div>
+                    <div style="width: 18%; height: 30px; border: #5c575b 2px solid; border-radius: 5px; text-align: center; line-height: 30px; background: -webkit-gradient(linear,0 0,0 100%,from(#591112),to(#6c0204)); float: left; margin-right: 5%; cursor: pointer;">经验分享</div>
+                    <div class="fbzp6" style="width: 18%; height: 30px; border: #5c575b 2px solid; border-radius: 5px; text-align: center; line-height: 30px; background: -webkit-gradient(linear,0 0,0 100%,from(#591112),to(#6c0204)); float: left; margin-right: 5%; cursor: pointer;">发布作品</div>
+                    <div style="width: 18%; height: 30px; border: #5c575b 2px solid; border-radius: 5px; text-align: center; line-height: 30px; background: -webkit-gradient(linear,0 0,0 100%,from(#331016),to(#1c0402)); float: left; cursor: pointer;">更多</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="index7" style="position: absolute; width: 100%; height: 100%; min-height: 400px; -webkit-transition: -webkit-transform 400ms ease; -webkit-transform: translate3d(0px, 0px, 0px)">
+            <div class="header">
+                <img class="back7" src="img/back.png" style="width: 80px; height: 40px; margin-top: 3px; float: left; margin-left: 10px;" />
+                <a href="#">查看作品</a>
+                <img id="Img11" src="img/注销.png" style="width: 80px; height: 40px; margin-top: 3px; float: right; margin-right: 10px;" />
+            </div>
+
+            <div style="position: absolute; z-index: 1; top: 45px; bottom: 48px; left: 0; width: 100%; height:100%;background: #1f1f1f; min-height:480px;">
+                <div style="width:200px; height:200px; position:absolute;left:50%;top:5%;margin-left:-100px;">
+                    <div id="three" style="position: relative;width:200px; height:200px;">
+                        <div style="-webkit-transition: -webkit-transform 0.5s ease; -webkit-backface-visibility: hidden; -webkit-transform: rotate3d(0,1,0,180deg); width: 200px; height: 200px; position: absolute; top: 0; left: 0">
+                            <a href="#">
+                                <img src="img/icho.png" style="width: 200px; height: 200px;" />
+                            </a>
+                        </div>
+                        <div style="-webkit-transition: -webkit-transform 0.5s ease; -webkit-backface-visibility: hidden; -webkit-transform: rotate3d(0,1,0,0deg); width: 200px; height: 200px; position: absolute; top: 0; left: 0">
+                            <a href="#">
+                                <img src="img/appale.gif" style="width: 200px; height: 200px;" />
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+                <div style="width:80%; height:50%; position: absolute; top: 50%; left: 10%;">
+                    
+
+                    <p style="font-size: 16px; color: #f4f2f3; font-weight: bold; ">
+                        作品简介
+                    </p>
+                    <textarea placeholder="这里是各种图标的发布，各种颜色的图标，都代表着不一样的含义。。。" style="width: 100%; color: #f4f2f3; height: 30%; background: #2c2c2c; border: 2px solid #4c4c4c;"></textarea>
+
+                </div>
+            </div>
+            
+            <div class="footer">
+                <div style="margin: 0 auto; width: 300px; height: 30px; margin-top: 10px;">
+                    <div style="width: 40%; height: 30px; border: #5c575b 2px solid; border-radius: 5px; text-align: center; line-height: 30px; background: -webkit-gradient(linear,0 0,0 100%,from(#591112),to(#6c0204)); float: left; margin-right: 10%; cursor: pointer;">收藏</div>
+                    <div id="show13" style="width: 40%; height: 30px; border: #5c575b 2px solid; border-radius: 5px; text-align: center; line-height: 30px; background: -webkit-gradient(linear,0 0,0 100%,from(#591112),to(#6c0204)); float: left; cursor: pointer;">评论</div>
+                </div>
+            </div>
+            
+        </div>
+        <div>
+            <div id="somebox" style="width:100%;height:100%;background:rgba(0,0,0,0.5); position:absolute;z-index:10000; display:none"></div>
+        <div id="somebox1" style="display:none;position: absolute; z-index: 10001; left: 50%; top: 50%; margin-left:-29%;margin-top:-10%; width: 50%; height: 25%;min-height:135px;min-width:191px; background: #fff; border: 1px #fff solid; border-radius: 5px;">
+                <div style="height:100%; margin-left:5%">
+                    <p style="width:40%;margin-top: 5px; margin-bottom: 5px; font-size: 16px;">我要评论</p>
+                    <textarea style="font-size: 13px; width: 90%; height:30%; max-width: 99%; max-height:30%;min-height:60px;" placeholder="这里可以评论作品，您对作品有什么看法都可以发表意见"></textarea>
+                    <div style="font-size: 14px; margin-top:2%">
+                        <div class="none1" style="text-align: center; line-height: 22px; width: 30%; float: left; background: -webkit-gradient(linear,0 0,0 100%,from(#909090),to(#3c3b40)); border: 1px #fff solid; border-radius: 3px; margin-left: 13%; cursor: pointer;">确定</div>
+                        <div class="none1" style="text-align: center; line-height: 22px; width: 30%; height: 22px; float: left; background: -webkit-gradient(linear,0 0,0 100%,from(#909090),to(#3c3b40)); border: 1px #fff solid; border-radius: 3px; margin-left: 12%; cursor: pointer;">取消</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            $("#index0").css("transform", ' translate3d(' + window.innerWidth + 'px, 0px, 0px)')
+            $("#index2").css("transform", ' translate3d(' + window.innerWidth + 'px, 0px, 0px)')
+            $("#index3").css("transform", ' translate3d(' + window.innerWidth + 'px, 0px, 0px)')
+            $("#index4").css("transform", ' translate3d(' + window.innerWidth + 'px, 0px, 0px)')
+            $("#index5").css("transform", ' translate3d(' + window.innerWidth + 'px, 0px, 0px)')
+            $("#index6").css("transform", ' translate3d(' + window.innerWidth + 'px, 0px, 0px)')
+            $("#index7").css("transform", ' translate3d(' + window.innerWidth + 'px, 0px, 0px)')
+        </script>
+
+        <script>
+            $('.back1').Slider({ other: '#index1', self: '#index0', translate: -window.innerWidth, });
+            $('.back2').Slider({ other: '#index2', self: "#index6", translate: window.innerWidth, });
+            $('.back3').Slider({ other: '#index3', self: curindex, translate: window.innerWidth, });
+            $('.back4').Slider({ other: '#index4', self: curindex, translate: window.innerWidth, });
+            $('.back5').Slider({ other: '#index5', self: "#index6", translate: window.innerWidth, });
+            $('.back6').Slider({ other: '#index6', self: curindex, translate: window.innerWidth, });
+            $('.back7').Slider({ other: '#index7', self: curindex, translate: window.innerWidth, });
+            $('#wdxx').Slider({ other: '#index6', self: '#index2', translate: -window.innerWidth, });
+            $('#fankui').Slider({ other: '#index6', self: '#index5', translate: -window.innerWidth, });
+            $('#show').Slider({ other: '#index1', self: '#index7', translate: -window.innerWidth, });
+            $('#show1').Slider({ other: '#index1', self: '#index4', translate: -window.innerWidth, });
+            $('.ckzp').Slider({ other: '#index0', self: '#index1', translate: window.innerWidth, });
+            $('.ckzp2').Slider({ other: '#index2', self: '#index1', translate: window.innerWidth, });
+            $('.ckzp2').Slider({ other: '#index2', self: '#index1', translate: window.innerWidth, });
+            $('.ckzp3').Slider({ other: '#index3', self: '#index1', translate: window.innerWidth, });
+            $('.ckzp5').Slider({ other: '#index5', self: '#index1', translate: window.innerWidth, });
+            $('.ckzp6').Slider({ other: '#index6', self: '#index1', translate: window.innerWidth, });
+            $('.fbzp').Slider({ other: '#index0', self: '#index3', translate: -window.innerWidth, });
+            $('.fbzp2').Slider({ other: '#index2', self: '#index3', translate: -window.innerWidth, });
+            $('.fbzp5').Slider({ other: '#index5', self: '#index3', translate: -window.innerWidth, });
+            $('.fbzp6').Slider({ other: '#index6', self: '#index3', translate: window.innerWidth, });
+            $('.more').Slider({ other: '#index0', self: '#index6', translate: -window.innerWidth, });
+            $('.more2').Slider({ other: '#index2', self: '#index6', translate: -window.innerWidth, });
+            $('.more3').Slider({ other: '#index3', self: '#index6', translate: -window.innerWidth, });
+            $('.more5').Slider({ other: '#index5', self: '#index6', translate: -window.innerWidth, });
+            var curindex = '';
+            var repeat = setInterval(function () {
+                if (curindex == '#index0') {
+                    clearInterval(repeat)
+                    $('#ull').slider({ Direction: 'top' });
+                    $('#ull1').slider({ Direction: 'left' });
+                }
+            }, 50)
+            $('#show11').click(function () {
+                $('#somebox').css('display', 'block')
+                doKeyframes($('#somebox')[0], 'show', '0.5s')
+                $('#somebox1').css('display', 'block')
+                doKeyframes($('#somebox1')[0], 'bounceIn', '0.5s')
+            })
+            $('#show12').click(function () {
+                $('#somebox').css('display', 'block')
+                doKeyframes($('#somebox')[0], 'show', '0.5s')
+                $('#somebox1').css('display', 'block')
+                doKeyframes($('#somebox1')[0], 'bounceIn', '0.5s')
+            })
+            $('#show13').click(function () {
+                $('#somebox').css('display', 'block')
+                doKeyframes($('#somebox')[0], 'show', '0.5s')
+                $('#somebox1').css('display', 'block')
+                doKeyframes($('#somebox1')[0], 'bounceIn', '0.5s')
+            })
+
+            $('.none1').click(function () {
+                doKeyframes($('#somebox')[0], 'hide', '0.5s').then(function () {
+                    $('#somebox').css('display','none')
+                })
+                doKeyframes($('#somebox1')[0], 'bounceOut', '0.5s').then(function () {
+                    $('#somebox1').css('display','none')
+                })
+            })
+            $('.none2').click(function () {
+                doKeyframes($('#somebox')[0], 'hide', '0.5s').then(function () {
+                    $('#somebox').css('display','none')
+                })
+                doKeyframes($('#somebox1')[0], 'bounceOut', '0.5s').then(function () {
+                    $('#somebox1').css('display','none')
+                })
+            })
+            $('.none3').click(function () {
+                doKeyframes($('#somebox')[0], 'hide', '0.5s').then(function () {
+                    $('#somebox').css('display','none')
+                })
+                doKeyframes($('#somebox1')[0], 'bounceOut', '0.5s').then(function () {
+                    $('#somebox1').css('display','none')
+                })
+            })
+            var div1 = $('#three div').eq(0),
+                        div2 = $('#three div').eq(1),
+                        tag = 0;
+            setInterval(function () {
+                if (tag % 2 != 0) {
+                    div1.css('transform', 'rotate3d(0,1,0,0deg)')
+                    div2.css('transform', 'rotate3d(0,1,0,180deg)')
+                } else {
+                    div1.css('transform', 'rotate3d(0,1,0,180deg)')
+                    div2.css('transform', 'rotate3d(0,1,0,0deg)')
+                }
+
+                tag++;
+            }, 2000)
+            
+        </script>
+        <script>
+            var xx = $('#ap').progressbar({ percent: 0, color: 'red' });
+            var ld = new Loader();
+            ld.lodImages([
+                { id: "appale", src: "img/appale.gif" },
+                { id: "appaleimg", src: "img/appaleimg.gif" },
+                { id: "bg", src: "img/bg.gif" },
+                { id: "bg2", src: "img/bg2.gif" },
+                { id: "bot", src: "img/bot.gif" },
+                { id: "bot2", src: "img/bot2.gif" },
+                { id: "cat", src: "img/cat.gif" },
+                { id: "jiantou", src: "img/jiantou.gif" },
+                { id: "mit", src: "img/mit.gif" },
+                { id: "progressbar", src: "img/progressbar.gif" },
+                { id: "progressbgGreen", src: "img/progressbg_green.gif" },
+                { id: "progressbgOrange", src: "img/progressbg_orange.gif" },
+                { id: "progressbgRed", src: "img/progressbg_red.gif" },
+                { id: "progressbgYellow", src: "img/progressbg_yellow.gif" },
+                { id: "shangchuan", src: "img/shangchuan.gif" },
+                { id: "someappale", src: "img/someappale.gif" },
+                { id: "somecat", src: "img/somecat.gif" },
+                { id: "tijiao", src: "img/tijiao.gif" },
+                { id: "top", src: "img/top.gif" },
+                { id: "yulan", src: "img/yulan.gif" },
+                { id: "icho", src: "img/icho.png" },
+                { id: "bottopbg", src: "img/bottopbg.png" },
+                { id: "p1", src: "img/p1.gif" },
+                { id: "p2", src: "img/p2.gif" },
+                { id: "p3", src: "img/p3.gif" },
+                { id: "p4", src: "img/p4.gif" },
+                { id: "p5", src: "img/p5.gif" },
+                { id: "p6", src: "img/p6.gif" },
+                { id: "wjiantou", src: "img/wjiantou.gif" },
+                { id: "tijiao2", src: "img/tijiao2.gif" },
+                { id: "back", src: "img/back.png" },
+                { id: "away", src: "img/退出.png" },
+                { id: "away1", src: "img/注销.png" },
+                { id: "image1", src: "img/image1.png" },
+                { id: "image2", src: "img/image2.png" },
+                { id: "image3", src: "img/image3.png" },
+                { id: "image4", src: "img/image4.png" },
+            ])
+            ld.addProgressListener(function (loadCont, Cont) {
+                xx.setpercent(Cont / loadCont)
+            })
+            ld.complete(function () {
+                setTimeout(function () {
+                    $('#box').css('display', 'none')
+                }, 1000)
+            })
+        </script>
+</body>
+</html>

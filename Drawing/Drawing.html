@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .Big_Dv {
+            width: 320px;
+        }
+
+        .Big_Dv div {
+            width: 100px;
+            height: 100px;
+            background: #f07c11;
+            text-align: center;
+            line-height: 100px;
+            float: left;
+            margin: 2px;
+        }
+
+        .Big_Dv .cur {
+            background: #f00;
+        }
+
+        .Big_Dv div:nth-child(5) {
+            background: #f05f87;
+            cursor: pointer;
+        }
+    </style>
+    <script type="text/javascript" src="../jquery-1.8.0.js"></script>
+    <script type="text/javascript">
+        var time = 30,
+                can_Click = true;
+        $(function () {
+            var len = $('.Big_Dv div').length - 1, cur = 0, cur1 = 0,LV = 0;
+            function setI(time1, num) {
+                var Max_num = 201+(Number(num)*3);
+                var interval = setInterval(function () {
+                    time = time + 3;
+                    if (time >= Max_num) {
+                        clearInterval(interval);
+                        $('.Big_Dv div').each(function(){
+                        		if($(this).hasClass('cur')){
+                        			LV = $(this).html();
+                        		}	
+                        })
+                        alert('您抽中了'+LV+'等奖!');
+                        can_Click = true;
+                    }else{
+	                    	if (cur == len) {
+	                        cur = 0;
+	                        clearInterval(interval)
+	                        setI(time,num)
+	                    	}
+                    		cur1 = cur;
+		                    if (cur == 3) {
+		                        cur1 = 5;
+		                    } else if (cur == 4) {
+		                        cur1 = 8;
+		                    } else if (cur == 5) {
+		                        cur1 = 7;
+		                    } else if (cur == 6) {
+		                        cur1 = 6;
+		                    } else if (cur == 7) {
+		                        cur1 = 3;
+		                    }
+		                    $('.Big_Dv div').removeClass('cur')
+		                    $('.Big_Dv div').eq(cur1).addClass('cur')
+		                    cur++;		
+                    }
+                    
+                }, time1)
+            }
+
+            $('.Big_Dv div:nth-child(5)').click(function () {
+                if (can_Click) {
+                    time = 30;
+                    var num = Math.floor(Math.random() * 10);
+                    var num1 = Math.floor(Math.random() * 10);
+                    var num2 = num;
+                    if (num == 9) {
+                        num2 = num - num1;
+                    }
+                    setI(time, num2);
+                    can_Click = false;
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+<div class="Big_Dv">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>8</div>
+    <div>点击抽奖</div>
+    <div>4</div>
+    <div>7</div>
+    <div>6</div>
+    <div>5</div>
+</div>
+</body>
+</html>

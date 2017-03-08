@@ -1,0 +1,206 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.nav_tab{
+    background-color:#f4f4f4;
+    height: 50px;
+}
+.nav_tab span{
+    width: 45%;
+    background-color: #fff;
+    border: 1px #498ee9 solid;
+    color: #498ee9;
+    float: left;
+    height: 27px;
+    line-height: 27px;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 15px;
+}
+.nav_tab span.cur{
+    background-color: #498ee9;
+    color: #fff;
+}
+.nav_tab span:nth-child(1){
+    margin-left:5%;
+    border-right:none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+}
+.nav_tab span:nth-child(2){
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+}
+.yyxx>section:nth-child(1){
+    height: 99px;
+    border-bottom: 1px #e1e1e1 solid;
+    width: 97%;
+    margin-left: 3%;
+}
+.yyxx>section:nth-child(1)>div{
+    float: left;
+    height: 100%;
+}
+.tel{
+    width: 60%;
+    overflow: hidden;
+}
+.tel>p{
+    width: 100%;
+    display:block;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    margin-left: 4px;
+    color: #666767;
+    font-size: 13px;
+}
+.tel>p:nth-child(1){
+    margin-left: 2px;
+    font-size: 15px;
+    color: #3e3f3f;
+    padding-top: 18px;
+}
+.tel>p:nth-child(2){
+    padding-top: 13px;
+}
+.tel>p:nth-child(3){
+    padding-top: 11px;
+}
+.money{
+    width: 40%;
+    background: url("../img/mon_background.png") left top no-repeat;
+    background-size: 1px 100%;;
+}
+.money>div{
+    width: 100%;
+    float: left;
+    position: relative;
+}
+.money>div>p{
+    padding-right: 39px;
+}
+.money>div>p:nth-child(1){
+    font-size: 12px;
+    color: #454545;
+    padding-top: 39px;
+    text-align: right;
+}
+.money>div>p:nth-child(1)>span{
+    font-size: 19px;
+    color: #e7452f;
+}
+.money>div>p:nth-child(2){
+    font-size: 13px;
+    color: #666767;
+    text-align: right;
+    padding-top: 14px;
+}
+.money .xjt{
+    position: absolute;
+    right: 14px;
+    top: 59px;
+}
+.yyxx .xq_msg{
+    background-color: #f4f4f4;
+}
+.xq_msg div{
+    float: left;
+    width: 25%;
+}
+.xq_msg div:nth-child(1){
+    /*margin-right: 21px;*/
+    padding-top: 11px;
+    width: 30%;
+}
+.xq_msg div:nth-child(2){
+    /*margin-right: 17px;*/
+    padding-top: 16px;
+    width: 20%;
+}
+.xq_msg div:nth-child(3){
+    /*margin-right: 13px;*/
+    padding-top: 14px;
+}
+.xq_msg div:nth-child(4){
+    padding-top: 17px;
+}
+.xq_msg div:nth-child(1) p:nth-child(2){
+    font-size: 11px;
+    color: #979898;
+    padding-top: 5px;
+}
+.xq_msg div:nth-child(2) p:nth-child(2){
+    font-size: 12px;
+    color: #595959;
+    padding-top: 12px;
+}
+.xq_msg .fontFamily{
+    font-size: 25px;
+}
+.xq_msg div:nth-child(3) p:nth-child(2){
+    font-size: 12px;
+    color: #979898;
+    padding-top: 9px;
+    padding-left: 7px;
+}
+.xq_msg div:nth-child(3) p:nth-child(2) span{
+    text-decoration: line-through;
+}
+.xq_msg div:nth-child(2) p:nth-child(1){
+    font-size: 13px;
+    color: #3e3f3f;
+}
+.xq_msg div:nth-child(3) p:nth-child(1){
+    font-size: 15px;
+    color: #e7452f;
+}
+.xq_msg div:nth-child(3) p:nth-child(1) span{
+    font-size: 19px;
+}
+.xq_msg div:nth-child(4) span{
+    display: block;
+    width: 58px;
+    height: 25px;
+    background-color: #fff;
+    border-radius: 3px;
+    border: 1px #498ee9 solid;
+    color: #498ee9;
+    text-align: center;
+    line-height: 25px;
+    font-size: 14px;
+}
+.xq_msg section{
+    height: 52px;
+    padding-bottom: 12px;
+    margin-left: 3%;
+    border-bottom: 1px #e0e0e0 solid;
+}
+.xq_msg section:last-child{
+    border: none;
+}
+.cur>section:first-child{
+    border: none;
+}
+.cur>section:nth-child(2){
+    border-top:1px #dbdada solid;
+    border-bottom:1px #dbdada solid;
+}
+.yyxx>section:nth-child(2){
+    display: none;
+}
+
+
+@font-face {
+    font-family: 'MyFont';
+    src: url('../../public/font/DS-DIGI.TTF');
+}
+.fontFamily{
+    font-family: 'MyFont';
+}
+

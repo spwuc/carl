@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>登录</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="Cache-Control" content="max-age=0">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/login-register.css"/>
+    <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('.reg_p img').click(function(){
+                if($(this).attr('src') == 'img/laert_put1.png'){
+                    $(this).attr('src','img/laert_put.png');
+                }else{
+                    $(this).attr('src','img/laert_put1.png');
+                }
+            });
+        })
+    </script>
+</head>
+<body>
+<header>
+    <div class="hea_div">
+        <a href="javascript:history.go(-1)"><img class="head_left" src="img/right_sj_hea.png"></a>
+        登录
+    </div>
+</header>
+<section class="reg_sec">
+    <div class="reg_m">
+        <ul class="reg_ul">
+            <li><img src="img/lan_not.png"><input type="text" placeholder="请输入注册邮箱或手机号"></li>
+            <li><img src="img/lan_s.png"><input type="password" placeholder="请输入密码"></li>
+        </ul>
+    </div>
+    <p class="reg_p"><img src="img/laert_put1.png">自动登录<span><a href="passwd.html">忘记密码</a></span></p>
+    <button class="reg_btn"><a href="../already-landing/my_center.html">登录</a></button><button class="reg_btn btns"><a href="register.html">注册</a></button>
+    <p class="reg_ps"><b></b><span>第三方登录</span><b></b></p>
+    <ul class="reg_uls">
+        <li><img src="img/lan_w.png"><p>新浪微博</p></li>
+        <li><img src="img/lan_wx.png"><p>微信</p></li>
+        <li><img src="img/lan_qq.png"><p>QQ</p></li>
+    </ul>
+</section>
+</body>
+</html>

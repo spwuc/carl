@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>公交车</title>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+    <meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0" name="viewport"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <link href="css/reset.css" rel="stylesheet" type="text/css">
+    <link href="css/self_transfer.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="../public/js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="../public/js/public.js"></script>
+    <script type="text/javascript" src="../cordova.js"></script>
+</head>
+<body>
+    <header>
+        <div class="hea_div">
+            <a href="javascript:history.go(-1);"><img class="head_left" src="img/right_sj_hea.png"></a>
+            我的关注
+            <span class="head_right"><a href="driving.html">完成</a></span>
+        </div>
+    </header>
+    <section class="dem_tion">
+        <div class="dem_top">
+            <img class="bus_trans" src="img/transfer.png">
+            <p class="tran_p">
+                <img class="tran_img" src="img/bus_green.png"/>
+                <input class="dem_put" placeholder="我的位置" type="text"/>
+            </p>
+            <p class="tran_ps">
+                <img class="tran_img" src="img/bus_red.png"/>
+                <input class="dem_put" placeholder="请输入终点站" type="text"/>
+            </p>
+        </div>
+        <div class="atte_time">
+            <p>推送时间：<span>7:30&nbsp;&nbsp;&nbsp;工作日</span><a href="self_time.html"><img src="img/pic_right.png"></a></p>
+        </div>
+    </section>
+</body>
+</html>

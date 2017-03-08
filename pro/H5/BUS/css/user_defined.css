@@ -1,0 +1,26 @@
+*{padding:0;margin: 0;font-style:none; }
+body{
+    background: #f4f4f4;
+}
+.tion_time{
+    margin-top: 15px;
+}
+.time_tis{
+    background: #fff;
+}
+.time_ul li{
+    border-bottom:1px solid #e1e1e1;
+    margin-left: 15px;
+    clear: both;
+    overflow: hidden;
+    line-height: 43px;
+    font-size: 14px;
+}
+.time_ul li:last-child{
+    border-bottom: none;
+}
+.tion_pic{
+    float: right;
+    width: 20px;
+    margin: 10px 10px 0 0;
+}

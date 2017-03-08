@@ -1,0 +1,104 @@
+*{padding:0;margin: 0;font-style:none;}
+body{
+    background:#f4f4f4;
+}
+.hea_div{
+    height: 45px;
+    line-height: 45px;
+    font-size: 17px;
+    text-align: center;
+    color: rgb(69, 140, 236);
+    position: relative;
+    border-bottom: 1px solid #D8D8D8;
+    background: #fff;
+}
+.head_left{
+    width: 11px;
+    position: absolute;
+    top: 14px;
+    left: 14px;
+}
+.head_right{
+    position: absolute;
+    right: 14px;
+    top: 12px;
+    font-size: 14px;
+    width: 20px;
+}
+
+.con_le{
+    float: left;
+    margin: 15px 0;
+    padding: 0 10px;
+    border-right:1px solid #e1e1e1;
+}
+.con_le p{
+    text-align: center;
+}
+.con_le img{
+    width: 45px;
+}
+.con_p{
+    float: left;
+    padding: 15px 0 0 10px;
+}
+.con_p p{
+    line-height: 21px;
+}
+.con_p p:first-child{
+    font-size: 15px;
+    color: #4d4d4d;
+}
+.con_p p:first-child span{
+    color: #666;
+    font-size: 13px;
+}
+.con_p p:first-child img{
+    width: 15px;
+    padding: 0 5px;
+}
+.con_p p:nth-child(2) b{
+    color: #df4948;
+    font-weight: 100;
+}
+.con_p p:nth-child(3) b{
+    color: #df4948;
+    font-weight: 100;
+}
+.con_img{
+    position: absolute;
+    top:0;
+    right:0;
+    width: 50px;
+}
+.con_tin{
+    overflow: hidden;
+    background: #fff;
+    position: relative;
+    margin-top: 15px;
+}
+.delete-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    text-align: center;
+    background-color: #df432d;
+    width: 68px;
+    margin: 0px;
+    float: right;
+    border: none;
+    height: 100%;
+    line-height: 90px;
+    color: #fff;
+}
+.con_div{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 2;
+    overflow: hidden;
+    color: #666;
+    font-size: 13px;
+}

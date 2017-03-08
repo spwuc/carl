@@ -1,0 +1,49 @@
+*{
+  padding:0;
+  margin:0;
+  font-family: "华文黑体";
+  list-style:none;
+}
+body{
+  background:#f4f4f4;
+}
+.add_sel{
+  background: #fff;
+  margin-top: 10px;
+}
+.add_dz{
+  overflow: hidden;
+  width: 100%;
+}
+.add_left{
+  width: 75%;
+  float: left;
+  margin-left: 10px;
+}
+.add_left p{
+	padding-top: 10px;
+	color: #3e3f3f;
+	font-size: 15px;
+}
+.add_left p span{
+	float: right;
+}
+.add_left p:last-child{
+	font-size: 13px;
+}
+.add_righ{
+  width: 25px;
+  float: left;
+  margin-left: 8%;
+  margin-top: 25px;
+}
+.add_righ img{
+	width: 100%;
+}
+.add_div{
+  overflow: hidden;
+  width: 96%;
+  margin-left: 4%;
+  border-bottom: 1px #eee solid;
+  padding-bottom: 12px;
+}

@@ -1,0 +1,48 @@
+/* CSS Document */
+@charset "utf-8";
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{margin:0;padding:0;}
+body{font-size:13px;font-family:'Microsoft Yahei',helvetica,arial;background:#f8f8f8;-webkit-text-size-adjust:none;-webkit-tap-highlight-color:rgba(0,0,0,0);}
+table{border-collapse:collapse;border-spacing:0;}
+th,td{text-align:center;vertical-align:top;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:400;}
+fieldset,img{border:0;}
+ol,ul,li{list-style:none;}
+input{font-size:100%;background:none;}
+img,input,button,a,select,textarea{ margin: 0; padding: 0; resize:none; border:none; outline:none; }
+ins,a{text-decoration:none;color:#000;}
+a:hover,a:active,a:visited{text-decoration:none;}
+a:focus {
+    outline: none;
+}
+.atte_dizhi{
+    background: #fff;
+    margin-top:15px;
+    padding: 10px 0;
+}
+.atte_dizhi p{
+    color: #2b2b2b;
+    line-height: 20px;
+    padding-left: 15px;
+}
+.atte_dizhi span{
+    color: #999;
+    padding-left: 15px;
+}
+.atte_time{
+    background: #fff;
+    margin-top: 15px;
+}
+.atte_time p{
+    line-height: 50px;
+    overflow: hidden;
+    color: #2b2b2b;
+    padding-left: 15px;
+}
+.atte_time p span{
+    color: #999;
+}
+.atte_time p img{
+    float: right;
+    width: 12px;
+    margin: 12px;
+}

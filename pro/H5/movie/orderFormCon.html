@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>订单确认</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="Cache-Control" content="max-age=0">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/orderFormCon.css"/>
+    <script type="text/javascript" src="../public/js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="../public/js/public.js"></script>
+    <script type="text/javascript" src="../public/js/cordova.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $(document).addHeader();
+        })
+    </script>
+</head>
+<body>
+<header>请核对订单信息，影票售出后不可退换！</header>
+<section class="nav">影票信息</section>
+<section class="con_1">
+    <table class="con">
+        <tr>
+            <th><span class="th_show">影</span>院：</th>
+            <td>UME华星国际影城</td>
+        </tr>
+        <tr>
+            <th><span class="th_show">电</span>影：</th>
+            <td>星际穿越</td>
+        </tr>
+        <tr>
+            <th><span class="th_show">场</span>次：</th>
+            <td>2014-12-03&nbsp;&nbsp;周三&nbsp;&nbsp;15:26</td>
+        </tr>
+        <tr class="msg">
+            <th></th>
+            <td>4&nbsp;号厅&nbsp;&nbsp;5排13座&nbsp;&nbsp;5排14座</td>
+        </tr>
+        <tr class="num">
+            <th><span class="th_show_1">购买张数</span>：</th>
+            <td><span class="z_num">2</span>&nbsp;张</td>
+        </tr>
+        <tr class="money">
+            <th><span class="th_show">金</span>额：</th>
+            <td>¥ 2000.00</td>
+        </tr>
+    </table>
+</section>
+<footer>
+    <span id="pay">确认完成</span>
+</footer>
+<script type="text/javascript">
+    $(function(){
+        $('#pay').click(function(){
+            cordova.exec(function(data){
+                alert('success:'+data)
+            },function(msg){
+                alert('err:'+msg)
+            },'OrderViewPlugin','start',[{'productId':'8e76e826we87q'}])
+            cordova.exec(function(data){
+                var param = JSON.parse(data);
+                alert('success:'+data)
+            },null,'类名','方法名',[''])
+        })
+    })
+</script>
+</body>
+</html>

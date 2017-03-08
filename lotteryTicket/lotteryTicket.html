@@ -1,0 +1,212 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>lotteryTicket</title>
+    <link rel="shortcut icon" href="../images/ke.ico" type="image/x-icon">
+    <script src="js/jquery-1.7.1.js"></script>
+    <style>
+        body, ul, li, div, img, dl, dd, dt {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .index0, .index1, .index2 {
+            display: none;
+        }
+
+        .curdiv {
+            display: block;
+        }
+
+        .clear {
+            width: 0;
+            height: 0;
+            clear: both;
+        }
+
+        .box {
+            width: 332px;
+            height: 255px;
+            margin: 100px auto;
+            /*overflow: hidden;*/
+        }
+
+        #Tab {
+            width: 245px;
+            height: 30px;
+            float: left;
+        }
+
+            #Tab li {
+                width: 76px;
+                height: 23px;
+                float: left;
+                line-height: 23px;
+                margin-right: 5px;
+                text-align: center;
+                background: #eee;
+                cursor: pointer;
+            }
+
+            #Tab .cur {
+                color: #fff;
+                background: #f00;
+            }
+
+        #twocolor {
+            width: 266px;
+            height: 48px;
+            font-size: 12px;
+        }
+
+            #twocolor dd, #twocolor dt {
+                float: left;
+            }
+
+            #twocolor dt {
+                margin-left: 20px;
+                line-height: 24px;
+                color: #727187;
+            }
+
+        .qiu li {
+            margin: 0;
+            padding: 0;
+            width: 40px;
+            height: 40px;
+            font-size: 16px;
+            font-weight: bold;
+            background: url(img/tab_11.gif) no-repeat;
+            float: left;
+            line-height: 37px;
+            text-align: center;
+            margin-right: 2px;
+            margin-left: 5px;
+        }
+
+            .qiu li input {
+                text-align: center;
+                border: none;
+                width: 22px;
+                height: 20px;
+            }
+
+        .qiu .last {
+            background: url(img/tab_14.gif) no-repeat;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul id="Tab">
+            <li class="cur">双色球</li>
+            <li>大乐透</li>
+            <li>11选5</li>
+        </ul>
+        <img src="img/tab_03.gif" />
+        <div class="clear"></div>
+        <div class="index0 curdiv ">
+            <dl id="twocolor">
+                <dd>
+                    <img src="img/tab_03-07.gif" /></dd>
+                <dt>
+                    <span style="color: #2b2b2b;"><b>第2013035期</b></span><br />
+                    <span>离截至时间还有：0天7小时49分57秒</span>
+                </dt>
+            </dl>
+            <div class="clear"></div>
+            <p style="font-size: 13px; color: #727187; font-weight: bold;">红球:[红球]从<span style="color: red;">1-33</span>中选6个不重复的整数</p>
+            <p style="font-size: 13px; color: #727187; font-weight: bold;">蓝球:[蓝球]从<span style="color: blue;">1-16</span>中选1个整数</p>
+            <ul class="qiu">
+                <li>
+                    <input type="text" maxlength="2" value="00" /></li>
+                <li>
+                    <input type="text" maxlength="2" value="00" /></li>
+                <li>
+                    <input type="text" maxlength="2" value="00" /></li>
+                <li>
+                    <input type="text" maxlength="2" value="00" /></li>
+                <li>
+                    <input type="text" maxlength="2" value="00" /></li>
+                <li>
+                    <input type="text" maxlength="2" value="00" /></li>
+                <li class="last">
+                    <input type="text" maxlength="2" value="00" /></li>
+            </ul>
+            <div style="float: right; margin-right: 20px; margin-top: 10px;">
+                <input type="submit" value="机选一注" id="sj" />
+                <input type="submit" value="清空" id="qk" />
+                <img src="img/tab_19.gif" style="cursor: pointer;" />
+            </div>
+        </div>
+        <div class="index1">
+            大乐透
+        </div>
+        <div class="index2">
+            11选5
+        </div>
+    </div>
+    <script>
+        var tag = 0, repeat;
+        $('#Tab').find('li').each(function (index) {
+            $(this).mouseover(function () {
+                tag = 0;
+                var self = this;
+                repeat = setInterval(function () {
+                    tag++;
+                    if (tag >= 3) {
+                        clearInterval(repeat);
+                        $(self).addClass('cur').siblings().removeClass();
+                        $('.index' + index).addClass('curdiv').siblings().removeClass('curdiv');
+                        tag = 0;
+                    }
+                }, 100)
+
+            }).mouseleave(function () {
+                clearInterval(repeat)
+            })
+        })
+        $('#qk').click(function () {
+            $('.qiu').find('input').attr('value', '00')
+        })
+        $('#sj').click(function () {
+            var tag = 0;
+            var arr = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33'], newArr = [];
+            var repeat = setInterval(function () {               
+                newArr = [];
+                for (var i = 0; i < 6; i++) {
+                    var index = Math.floor(Math.random() * 33);
+                    newArr.push(arr[index]);
+                    $(".qiu input").eq(i).attr("value", newArr[i]);
+                }
+                var num = Math.floor(Math.random() * (16));
+                if (num < 10) {
+                    num = '0' + num;
+                }
+                $('.qiu input').eq(6).attr('value', num);
+                tag++;
+                if (tag >= 300) {
+                    clearInterval(repeat)
+                    newArr = [];
+                    for (var i = 0; i < 6; i++) {
+                        var index = Math.floor(Math.random() * (33 - i));
+                        newArr.push(arr[index]);
+                        arr.splice(index, 1);
+                        $(".qiu input").eq(i).attr("value", newArr[i]);
+                    }
+                }
+               
+            }, 1)
+            
+            
+        })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="Cache-Control" content="max-age=0">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no" />
+    <title></title>
+    <script src="../jquery-1.8.0.js"></script>
+</head>
+<body>
+<a href="javascript:wbLogin();">登陆微博</a>
+<script>
+    var Rechargedata = "";
+    var ajax = {
+        url: "/trade/addmoneysubmit",
+        data: $rechargeForm.serialize(),
+        type: 'POST',
+        async: false,//注意这里同步设置
+        dataType: 'json',
+        success: function (data) {
+            if (data.success) {
+                if (data.data !== "") {
+                    Rechargedata = data.data;//这里是一个URL
+                    PayMentWriteDialog.show();//显示一个遮罩浮层，用户在第三方操作完成后的对应操作
+                } else {
+                    window.location = "/home";
+                }
+            }
+            else {//这里是错误提示
+                xbox.showMsg({
+                    cls: 'error',
+                    subTitle: '出错了',
+                    msg: data.msg
+                });
+            }
+        }
+    };
+    $.ajax(ajax);
+    //模拟新新窗口方式的表单提交以打开新开页
+    if (Rechargedata !== "") {
+        var $tempForm = $('<form method="post" target="_blank" action="' + Rechargedata + '"></form>');
+        $("body").append($tempForm);
+        $tempForm.submit();
+        $tempForm.remove();
+    }
+</script>
+</body>
+</html>

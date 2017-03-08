@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="js/jquery-1.8.0.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            function circle(param){
+                var canvas = document.getElementById('myCanvas'),hist_h = 0,hist_w = 0;
+                if (canvas.getContext) {
+                    var ctx = canvas.getContext('2d');
+                }
+                var param_1 = {
+                        posX:20,
+                        posY:100,
+                        vx:20,
+                        vy:-20,
+                        gravity:1
+                }
+                $.extend(param_1,param);
+                var repeat = setInterval(function() {
+                    ctx.fillStyle = "black";
+                    ctx.fillRect(01,0,canvas.width, canvas.height);
+                    param_1.posX += param_1.vx;
+                    param_1.posY += param_1.vy;
+                    if (param_1.posY > canvas.height-10) {
+                        param_1.vy *= -0.6;
+                        param_1.vx *= 0.75;
+                        param_1.posY = canvas.height-10;
+                    }else if(param_1.posY <10){
+                        param_1.vy *= -0.6;
+                        param_1.vx *= 0.75;
+                        param_1.posY = 10;
+                    }
+                    if(param_1.posX > canvas.width-10){
+                        param_1.vy *= 0.6;
+                        param_1.vx *= -0.75;
+                        param_1.posX = canvas.width-10;
+                    }else if(param_1.posX <10){
+                        param_1.vy *= 0.6;
+                        param_1.vx *= -0.75;
+                        param_1.posX = 10;
+                    }
+                    if(param_1.posY == hist_h&&param_1.posX.toFixed(2) == hist_w.toFixed(2)){
+                        if(hist_h == canvas.height-10){
+                            clearInterval(repeat);
+                        }
+                    }
+                    hist_h = param_1.posY;
+                    hist_w = param_1.posX;
+                    param_1.vy += param_1.gravity;
+                    ctx.beginPath();
+                    ctx.fillStyle = "white";
+                    ctx.arc(param_1.posX, param_1.posY, 10, 0, Math.PI*2, true);
+                    ctx.closePath();
+                    ctx.fill();
+                }, 20);
+
+            }
+//            circle({posX:200,posY:100,vx:40,vy:-40})
+            circle({posX:0,posY:150,vx:20,vy:-20})
+
+        })
+    </script>
+</head>
+<body>
+<canvas id="myCanvas" width="400" height="200">
+    您的浏览器不支持canvas！
+</canvas>
+</body>
+</html>

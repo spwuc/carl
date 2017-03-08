@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>公交车</title>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+    <meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0" name="viewport"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <link href="css/reset.css" rel="stylesheet" type="text/css">
+    <link href="css/demand.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="../public/js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="../public/js/public.js"></script>
+    <script type="text/javascript" src="../cordova.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $(document).addHeader('<img class="right_h" src="img/tp_r.png" width="20">', function () {
+
+            });
+        })
+    </script>
+</head>
+<body>
+    <section class="dem_tion">
+        <div class="dem_top">
+            <span>站点：</span>
+            <input class="dem_put" placeholder="请输入要查询的公交站点" type="text"/>
+        </div>
+        <button class="dem_but">查询</button>
+        <div class="dem_jilu">
+            <h1>查询记录</h1>
+            <ul class="dem_uls">
+                <li><img class="img_left" src="img/jilu.png">正阳桥北<span>(3.2Km)</span><img class="img_right" src="img/pic_right.png"></li>
+                <li><img class="img_left" src="img/jilu.png">昆太路市后街<span>(2.5Km)</span><img class="img_right" src="img/pic_right.png"></li>
+                <li><img class="img_left" src="img/jilu.png">长江中路<span>(1.8Km)</span><img class="img_right" src="img/pic_right.png"></li>
+            </ul>
+            <p class="dem_ps"><img src="img/dem_del.png">清空历史记录</p>
+        </div>
+    </section>
+    <footer class="bus_foot">
+        <ul class="bus_uls">
+            <li class="cur"><img src="img/bus_zhu.png"/><p>关注</p></li>
+            <li><img src="img/bus_guan1.png"/><p>站点</p></li>
+            <li><img src="img/bus_guan2.png"/><p>线路</p></li>
+            <li><img src="img/bus_guan3.png"/><p>换乘</p></li>
+        </ul>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,166 @@
+*{padding:0;margin: 0;font-style:none; }
+body{
+    background: #498ee9;
+}
+.hea_div{
+    height: 45px;
+    line-height: 45px;
+    font-size: 17px;
+    text-align: center;
+    position: relative;
+    background: #498ee9;
+    color: #fff;
+}
+.head_left{
+    width: 11px;
+    position: absolute;
+    top: 14px;
+    left: 14px;
+}
+.head_right{
+    position: absolute;
+    right: 14px;
+    top: 0;
+    font-size: 14px;
+    height: 45px;
+}
+.head_img{
+    position: absolute;
+    right: 14px;
+    top: 10px;
+    font-size: 14px;
+    height: 20px;
+}
+.wea_tion{
+    margin-top: 15px;
+}
+.wea_div{
+    margin-top: 15px;
+    font-size: 13px;
+}
+.wea_gang{
+    padding-left: 15px;
+    color: #b0d2ff;
+}
+.wae_xz{
+    color: #fff;
+    text-align: center;
+    padding-top:30px;
+}
+.wae_xz img{
+    width: 70px;
+}
+.wae_xz span{
+    display: block;
+    font-size: 20px;
+    padding-top: 2px;
+    color: #b0d2ff;
+}
+.wea_gan{
+    color: #fff;
+    text-align: center;
+    padding-top: 15px;
+}
+.wea_gan b{
+    font-size: 60px;
+    display: block;
+    font-weight: 100;
+    padding-bottom: 5px;
+}
+.wea_gan span{
+    letter-spacing: 2px;
+}
+.wea_cent{
+    font-size: 12px;
+    text-align: center;
+    margin-top: 40px;
+    color: #E6EFFC;;
+    background: rgba(255,255,255,0.1);
+    padding: 5px 0;
+}
+.wea_cent span{
+    padding-left: 5px;
+}
+.wea_img{
+    width: 15px;
+    padding-right: 4px;
+    vertical-align: bottom;
+}
+.wea_imgs{
+    width: 15px;
+    margin-left: 18%;
+    padding: 0 10px 0 15px;
+}
+.wea_pic{
+    width: 10px;
+    padding: 0 5px 0 15px;
+}
+.wae_ul{
+    margin: 5px 0;
+    padding:10px 0;
+    overflow: hidden;
+    background: rgba(255,255,255,0.1);
+}
+.wae_ul li{
+    float: left;
+    text-align: center;
+    width: 50%;
+}
+.wae_ul li span{
+    width: 1px;
+    height: 80px;
+    background: #fff;
+    float: right;
+}
+.wae_ul li p{
+    color: #fff;
+    padding: 3px 0;
+}
+.wae_ul li img{
+    padding: 10px 0;
+
+}
+.ul_img1{
+    width: 65px;
+}
+.ul_img{
+    width:53px;
+}
+.wea_bot{
+    clear: both;
+    overflow: hidden;
+    background:rgba(255, 255, 255, 0.1);
+    font-size: 13px;
+    color: #fff;
+}
+.wea_bot h1{
+    padding-top: 22px;
+    color: #3975c4;
+    padding-left: 15px;
+    clear: both;
+}
+.wea_lef{
+    width: 42%;
+    margin-top: 5px;
+    padding-left:5%;
+    float: left;
+}
+.wea_lef p{
+    line-height: 25px;
+}
+.wea_lef p:first-child{
+    border-bottom: 1px solid #fff;
+}
+.wea_lef span{
+    float: right;
+}
+.wea_p{
+    padding:10px 0;
+    clear: both;
+}
+.wea_pzs{
+    clear: both;
+    margin-left: 15px;
+    color: #b0d2ff;
+    line-height: 20px;
+}

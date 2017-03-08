@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+section{
+    width: 100%;
+}
+section dl{
+    margin-left: 4.4%;
+    width: 95.6%;
+    padding-top: 15px;
+    height: 106px;
+    border-bottom: 1px #e1e1e1 solid;
+}
+section dl:first-child{
+    margin-top: 65px;
+}
+section dl dd{
+    width: 34.3%;
+    float: left;
+}
+section dl dt{
+    width: 65.7%;
+    float: left;
+}
+section dl dt:nth-child(2){
+    margin-top: 1px;
+    font-size: 16px;
+    color: #2b2b2b;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+section dl dt:last-child{
+    color: #666767;
+    font-size: 13px;
+    line-height: 19px;
+    margin-top: 7px;
+}

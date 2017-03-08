@@ -1,0 +1,1344 @@
+html,body{
+	overflow: hidden;
+}
+body{
+	display: none;
+}
+* {
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+.section{
+	background-image: url(../images/section_bg_icon.png);	
+}
+/*第一屏*/
+.one_tit{
+	width: 640px;
+	height: 340px;
+	background-image: url(../images/one_tit.png);
+}
+.one_font1{
+	width: 310px;
+	height: 85px;
+	background-image: url(../images/one_font1.png);
+	margin: 40px auto 35px;
+	animate-delay: 0.5s;
+	-moz-animation-delay:0.5s; /* Firefox */
+    -webkit-animation-delay:0.5s;/* Safari and Chrome */
+    -o-animation-delay:0.5s;/* Opera */
+}
+.one_font2{
+	width: 540px;
+	height: 85px;
+	background-image: url(../images/one_font2.png);
+	margin: 0 auto 37px;
+	animate-delay: 1s;
+	-moz-animation-delay:1s; /* Firefox */
+    -webkit-animation-delay:1s;/* Safari and Chrome */
+    -o-animation-delay:1s;/* Opera */
+}
+.one_font3{
+	width: 480px;
+	height: 85px;
+	background-image: url(../images/one_font3.png);
+	margin: 0 auto 140px;
+	animate-delay: 1.5s;
+	-moz-animation-delay:1.5s; /* Firefox */
+    -webkit-animation-delay:1.5s;/* Safari and Chrome */
+    -o-animation-delay:1.5s;/* Opera */
+}
+.one_logo{
+	width: 176px;
+	height: 55px;
+	background-image: url(../images/one_logo.png);
+	margin: 0 auto 40px;
+	animate-delay: 2s;
+	-moz-animation-delay:2s; /* Firefox */
+    -webkit-animation-delay:2s;/* Safari and Chrome */
+    -o-animation-delay:2s;/* Opera */
+}
+.one_main_logo{
+	width: 119px;
+	height: 47px;
+	background-image: url(../images/one_main_logo.png);
+	margin: 0 auto 80px;
+	animate-delay: 2.2s;
+	-moz-animation-delay:2.2s; /* Firefox */
+    -webkit-animation-delay:2.2s;/* Safari and Chrome */
+    -o-animation-delay:2.2s;/* Opera */
+}
+.one_hand{
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: 640px;
+	height: 281px;
+	background-image: url(../images/one_hand.png);
+	animate-delay: 2.2s;
+	-moz-animation-delay:2.2s; /* Firefox */
+    -webkit-animation-delay:2.2s;/* Safari and Chrome */
+    -o-animation-delay:2.2s;/* Opera */
+}
+/*第二屏*/
+.two_tit{
+	position: absolute;
+	top: 67px;
+	left: 50%;
+	z-index: 2;
+	margin-left: -261.5px;
+	width: 523px;
+	height: 131px;
+	background-image: url(../images/two_tit.png);
+}
+.two_down{
+	position: absolute;
+	top: 160px;
+	left: 50%;
+	margin-left: -129px;
+	width: 238px;
+	height: 175px;
+	background-image: url(../images/two_down.png);
+	animate-delay: 0.3s;
+	-moz-animation-delay:0.3s; /* Firefox */
+    -webkit-animation-delay:0.3s;/* Safari and Chrome */
+    -o-animation-delay:0.3s;/* Opera */
+}
+.two_font{
+	position: absolute;
+	top: 375px;
+	left: 50%;
+	margin-left: -251px;
+	width: 502px;
+	height: 251px;
+	background: url(../images/two_font.png) no-repeat;
+}
+.two_dot{
+	position: absolute;
+	top: 643px;
+	left: 50%;
+	margin-left: -251px;
+	width: 502px;
+	height: 6px;
+	background: url(../images/two_dot.png) repeat-x;
+	animate-delay: 0.8s;
+	-moz-animation-delay:0.8s; /* Firefox */
+    -webkit-animation-delay:0.8s;/* Safari and Chrome */
+    -o-animation-delay:0.8s;/* Opera */
+}
+.two_code1{
+	position: absolute;
+	bottom: 137px;
+	left: 63px;
+	width: 162px;
+	height: 213px;
+	background: url(../images/two_code.png) no-repeat 0 0;
+	animate-delay: 0.8s;
+	-moz-animation-delay:0.8s; /* Firefox */
+    -webkit-animation-delay:0.8s;/* Safari and Chrome */
+    -o-animation-delay:0.8s;/* Opera */
+}
+.two_code2{
+	position: absolute;
+	bottom: 137px;
+	left: 238px;
+	width: 162px;
+	height: 213px;
+	background: url(../images/two_code.png) no-repeat -175px 0 ;
+	animate-delay: 0.9s;
+	-moz-animation-delay:0.9s; /* Firefox */
+    -webkit-animation-delay:0.9s;/* Safari and Chrome */
+    -o-animation-delay:0.9s;/* Opera */
+}
+.two_code3{
+	position: absolute;
+	bottom: 137px;
+	left: 412px;
+	width: 162px;
+	height: 213px;
+	background: url(../images/two_code.png) no-repeat -349px 0;
+	animate-delay: 1s;
+	-moz-animation-delay:1s; /* Firefox */
+    -webkit-animation-delay:1s;/* Safari and Chrome */
+    -o-animation-delay:1s;/* Opera */
+}
+.two_logo,.three_logo,.four_logo,.five_logo,.six_logo,.seven_logo,.eight_logo,.nine_logo,.ten_logo,.eleven_logo{
+	position: absolute;
+	bottom: 37px;
+	left: 37px;
+	width: 293px;
+	height: 37px;
+	background: url(../images/two_logo.png) no-repeat 0 0;
+	animate-delay: 1.8s;
+	-moz-animation-delay:1.8s; /* Firefox */
+    -webkit-animation-delay:1.8s;/* Safari and Chrome */
+    -o-animation-delay:1.8s;/* Opera */
+}
+/*第三屏*/
+.three_tit{
+	width: 640px;
+	height: 213px;
+	background-image: url(../images/three_tit.png);
+}
+.section3_box{
+	width: 458px;
+	height: 444px;
+	position: relative;
+	background-image: url(../images/three_map_bg.png);
+	margin: 50px auto;
+}
+.three_start{
+	position: absolute;
+	left: -13px;
+    top: -70px;
+	width: 57px;
+	height: 57px;
+	background-image: url(../images/three_start.png);
+	animate-delay: 0.5s;
+	-moz-animation-delay:0.5s; /* Firefox */
+    -webkit-animation-delay:0.5s;/* Safari and Chrome */
+    -o-animation-delay:0.5s;/* Opera */
+}
+.threefont{
+	position: absolute;
+}
+.threefont1{
+	left: -81px;
+    top: 17px;
+	width: 200px;
+	height: 30px;
+	background-image: url(../images/three_font1.png);
+	animate-delay: 0.8s;
+	-moz-animation-delay:0.8s; /* Firefox */
+    -webkit-animation-delay:0.8s;/* Safari and Chrome */
+    -o-animation-delay:0.8s;/* Opera */
+}
+.threefont2{
+	left: 240px;
+    top: -21px;
+	width: 164px;
+	height: 30px;
+	background-image: url(../images/three_font2.png);
+	animate-delay: 1.2s;
+	-moz-animation-delay:1.2s; /* Firefox */
+    -webkit-animation-delay:1.2s;/* Safari and Chrome */
+    -o-animation-delay:1.2s;/* Opera */
+}
+.threefont3{
+	left: 86px;
+    top: 111px;
+	width: 136px;
+	height: 32px;
+	background-image: url(../images/three_font4.png);
+	animate-delay: 1.6s;
+	-moz-animation-delay:1.6s; /* Firefox */
+    -webkit-animation-delay:1.6s;/* Safari and Chrome */
+    -o-animation-delay:1.6s;/* Opera */
+}
+.threefont4{
+    left: 367px;
+    top: 64px;
+    width: 162px;
+    height: 44px;
+	background-image: url(../images/three_font3.png);
+	animate-delay: 2s;
+	-moz-animation-delay:2s; /* Firefox */
+    -webkit-animation-delay:2s;/* Safari and Chrome */
+    -o-animation-delay:2s;/* Opera */
+}
+.threefont5{
+    left: 70px;
+    top: 221px;
+    width: 149px;
+    height: 47px;
+	background-image: url(../images/three_font6.png);
+	animate-delay: 2.4s;
+	-moz-animation-delay:2.4s; /* Firefox */
+    -webkit-animation-delay:2.4s;/* Safari and Chrome */
+    -o-animation-delay:2.4s;/* Opera */
+}
+.threefont6{
+	left: -81px;
+    top: 89px;
+    width: 172px;
+    height: 35px;
+	background-image: url(../images/three_font5.png);
+	animate-delay: 2.8s;
+	-moz-animation-delay:2.8s; /* Firefox */
+    -webkit-animation-delay:2.8s;/* Safari and Chrome */
+    -o-animation-delay:2.8s;/* Opera */
+}
+.threefont7{
+	left: 47px;
+    top: 351px;
+    width: 143px;
+    height: 32px;
+	background-image: url(../images/three_font7.png);
+	animate-delay: 3.2s;
+	-moz-animation-delay:3.2s; /* Firefox */
+    -webkit-animation-delay:3.2s;/* Safari and Chrome */
+    -o-animation-delay:3.2s;/* Opera */
+}
+.threefont8{
+	left: 242px;
+    top: 247px;
+    width: 134px;
+    height: 34px;
+	background-image: url(../images/three_font8.png);
+	animate-delay: 3.6s;
+	-moz-animation-delay:3.6s; /* Firefox */
+    -webkit-animation-delay:3.6s;/* Safari and Chrome */
+    -o-animation-delay:3.6s;/* Opera */
+}
+.threefont9{
+	left: 267px;
+    top: 363px;
+    width: 201px;
+    height: 39px;
+	background-image: url(../images/three_font9.png);
+	animate-delay: 3.6s;
+	-moz-animation-delay:3.6s; /* Firefox */
+    -webkit-animation-delay:3.6s;/* Safari and Chrome */
+    -o-animation-delay:3.6s;/* Opera */
+}
+.threefont10{
+	left: -74px;
+    top: 461px;
+    width: 191px;
+    height: 40px;
+	background-image: url(../images/three_font10.png);
+	animate-delay: 4s;
+	-moz-animation-delay:4s; /* Firefox */
+    -webkit-animation-delay:4s;/* Safari and Chrome */
+    -o-animation-delay:4s;/* Opera */
+}
+.dian{
+	position: absolute;
+	left: 5px;
+    top: -7px;
+	width: 17px;
+	height: 17px;
+	background-image: url(../images/three_sm_doc.png);
+	animate-delay: 0.5s;
+	-moz-animation-delay:0.5s; /* Firefox */
+    -webkit-animation-delay:0.5s;/* Safari and Chrome */
+    -o-animation-delay:0.5s;/* Opera */
+}
+.dian2{
+    left: 314px;
+    top: 22px;
+	animate-delay: 1s;
+	-moz-animation-delay:1s; /* Firefox */
+    -webkit-animation-delay:1s;/* Safari and Chrome */
+    -o-animation-delay:1s;/* Opera */
+}
+.dian3{
+    left: 146px;
+    top: 75px;
+	animate-delay: 1.4s;
+	-moz-animation-delay:1.4s; /* Firefox */
+    -webkit-animation-delay:1.4s;/* Safari and Chrome */
+    -o-animation-delay:1.4s;/* Opera */
+}
+.dian4{
+    left: 441px;
+    top: 124px;
+	animate-delay: 1.8s;
+	-moz-animation-delay:1.8s; /* Firefox */
+    -webkit-animation-delay:1.8s;/* Safari and Chrome */
+    -o-animation-delay:1.8s;/* Opera */
+}
+.dian5{
+    left: 135px;
+    top: 198px;
+	animate-delay: 2.2s;
+	-moz-animation-delay:2.2s; /* Firefox */
+    -webkit-animation-delay:2.2s;/* Safari and Chrome */
+    -o-animation-delay:2.2s;/* Opera */
+}
+.dian6{
+	left: 10px;
+    top: 127px;
+	animate-delay: 2.6s;
+	-moz-animation-delay:2.6s; /* Firefox */
+    -webkit-animation-delay:2.6s;/* Safari and Chrome */
+    -o-animation-delay:2.6s;/* Opera */
+}
+.dian7{
+	left: 116px;
+    top: 321px;
+	animate-delay: 3s;
+	-moz-animation-delay:3s; /* Firefox */
+    -webkit-animation-delay:3s;/* Safari and Chrome */
+    -o-animation-delay:3s;/* Opera */
+}
+.dian8{
+	left: 220px;
+    top: 274px;
+	animate-delay: 3.4s;
+	-moz-animation-delay:3.4s; /* Firefox */
+    -webkit-animation-delay:3.4s;/* Safari and Chrome */
+    -o-animation-delay:3.4s;/* Opera */
+}
+.dian9{
+	left: 360px;
+    top: 336px;
+	animate-delay: 3.8s;
+	-moz-animation-delay:3.8s; /* Firefox */
+    -webkit-animation-delay:3.8s;/* Safari and Chrome */
+    -o-animation-delay:3.8s;/* Opera */
+}
+.three_qizhi{
+	position: absolute;
+    left: -17px;
+    top: 356px;
+    width: 54px;
+	height: 95px;
+	background-image: url(../images/three_qizhi.png);
+	animate-delay: 4.2s;
+	-moz-animation-delay:4.2s; /* Firefox */
+    -webkit-animation-delay:4.2s;/* Safari and Chrome */
+    -o-animation-delay:4.2s;/* Opera */
+}
+.three_logo{
+	position: absolute;
+	bottom: 37px;
+	left: 37px;
+	width: 293px;
+	height: 37px;
+	background: url(../images/two_logo.png) no-repeat 0 0;
+	animate-delay: 0.5s;
+	-moz-animation-delay:0.5s; /* Firefox */
+    -webkit-animation-delay:0.5s;/* Safari and Chrome */
+    -o-animation-delay:0.5s;/* Opera */
+}
+.three_map{
+	position: absolute;
+	bottom: 114px;
+	right: 37px;
+	width: 413px;
+	height: 229px;
+	background: url(../images/three_map.png) no-repeat 0 0;
+}
+/*第四屏*/
+.four_tit{
+	width: 640px;
+	height: 272px;
+	background-image: url(../images/four_tit.png);
+	margin-bottom: 20px;
+}
+.four_deng{
+	position: absolute;
+    top: 67px;
+    right: 49px;
+    width: 113px;
+    height: 159px;
+	background: url(../images/four_deng.png) no-repeat 0 0;
+	animate-delay: 0.5s;
+	-moz-animation-delay:0.5s; /* Firefox */
+    -webkit-animation-delay:0.5s;/* Safari and Chrome */
+    -o-animation-delay:0.5s;/* Opera */
+}
+.four_font{
+	width: 513px;
+	height: 119px;
+	margin: 0 auto;
+	background: url(../images/four_font.png) no-repeat 0 0 ;
+	animate-delay: 1s;
+	-moz-animation-delay:1s; /* Firefox */
+    -webkit-animation-delay:1s;/* Safari and Chrome */
+    -o-animation-delay:1s;/* Opera */
+}
+.four_font1{
+	height: 113px;
+	background: url(../images/four_font.png) no-repeat 0 -121px ;
+	animate-delay: 1.4s;
+	-moz-animation-delay:1.4s; /* Firefox */
+    -webkit-animation-delay:1.4s;/* Safari and Chrome */
+    -o-animation-delay:1.4s;/* Opera */
+}
+.four_font2{
+	height: 148px;
+	background: url(../images/four_font.png) no-repeat 0 -235px ;
+	animate-delay: 1.8s;
+	-moz-animation-delay:1.8s; /* Firefox */
+    -webkit-animation-delay:1.8s;/* Safari and Chrome */
+    -o-animation-delay:1.8s;/* Opera */
+}
+.four_font3{
+	height: 117px;
+	background: url(../images/four_font.png) no-repeat 0 -384px ;
+	animate-delay: 2.2s;
+	-moz-animation-delay:2.2s; /* Firefox */
+    -webkit-animation-delay:2.2s;/* Safari and Chrome */
+    -o-animation-delay:2.2s;/* Opera */
+}
+.four_font4{
+	height: 94px;
+	background: url(../images/four_font.png) no-repeat 0 -500px ;
+	animate-delay: 2.6s;
+	-moz-animation-delay:2.6s; /* Firefox */
+    -webkit-animation-delay:2.6s;/* Safari and Chrome */
+    -o-animation-delay:2.6s;/* Opera */
+}
+.four_zuan{
+	position: absolute;
+    bottom: 80px;
+    right: 36px;
+    width: 150px;
+    height: 150px;
+	background: url(../images/four_zuan.png) no-repeat 0 0;
+	animate-delay: 2.8s;
+	-moz-animation-delay:2.8s; /* Firefox */
+    -webkit-animation-delay:2.8s;/* Safari and Chrome */
+    -o-animation-delay:2.8s;/* Opera */
+}
+/*第五屏*/
+.five_tit{
+	width: 640px;
+	height: 241px;
+	background-image: url(../images/five_tit.png);
+}
+.five_bg{
+	position: relative;
+	width: 640px;
+	height: 658px;
+	background-image: url(../images/five_bg.png);
+}
+.five_num{
+	display: none;
+	position: absolute;
+	left: 315px;
+	top: 56px;
+	width: 39px;
+	height: 57px;
+	background: url(../images/five_ico.png) no-repeat 0 0;
+   	animate-delay: 0.5s;
+	-moz-animation-delay:0.5s; /* Firefox */
+    -webkit-animation-delay:0.5s;/* Safari and Chrome */
+    -o-animation-delay:0.5s;/* Opera */
+}
+.five_num2{
+	left: 226px;
+	top: 186px;
+	width: 39px;
+	height: 57px;
+	background-position: -111px 0;
+	animate-delay: 1s;
+	-moz-animation-delay:1s; /* Firefox */
+    -webkit-animation-delay:1s;/* Safari and Chrome */
+    -o-animation-delay:1s;/* Opera */
+}
+.five_num3{
+	left: 248px;
+	top: 312px;
+	width: 37px;
+	height: 55px;
+	background-position: 0 -62px;
+	animate-delay: 1.5s;
+	-moz-animation-delay:1.5s; /* Firefox */
+    -webkit-animation-delay:1.5s;/* Safari and Chrome */
+    -o-animation-delay:1.5s;/* Opera */
+}
+.five_num4{
+	left: 430px;
+	top: 310px;
+	width: 42px;
+	height: 58px;
+	background-position: -110px -62px;
+	animate-delay:2s;
+	-moz-animation-delay:2s; /* Firefox */
+    -webkit-animation-delay:2s;/* Safari and Chrome */
+    -o-animation-delay:2s;/* Opera */
+}
+.five_num5{
+	left: 408px;
+	top: 445px;
+	width: 44px;
+	height: 64px;
+	background-position: 0 -125px;
+	animate-delay:2.5s;
+	-moz-animation-delay:2.5s; /* Firefox */
+    -webkit-animation-delay:2.5s;/* Safari and Chrome */
+    -o-animation-delay:2.5s;/* Opera */
+}
+.five_num6{
+	left: 331px;
+	top: 544px;
+	width: 43px;
+	height: 63px;
+	background-position: -107px -125px;
+	animate-delay:3s;
+	-moz-animation-delay:3s; /* Firefox */
+    -webkit-animation-delay:3s;/* Safari and Chrome */
+    -o-animation-delay:3s;/* Opera */
+}
+.five_con{
+	position: absolute;
+	left: 370px;
+	top: 56px;
+	width: 110px;
+	height: 60px;
+	background: url(../images/five_ico.png) no-repeat 0 -199px;
+	animate-delay: 0.8s;
+	-moz-animation-delay:0.8s; /* Firefox */
+    -webkit-animation-delay:0.8s;/* Safari and Chrome */
+    -o-animation-delay:0.8s;/* Opera */
+}
+.five_con2{
+	left: 282px;
+	top: 184px;
+	background-position: 0 -265px;
+	animate-delay: 1.3s;
+	-moz-animation-delay:1.3s; /* Firefox */
+    -webkit-animation-delay:1.3s;/* Safari and Chrome */
+    -o-animation-delay:1.3s;/* Opera */
+}
+.five_con3{
+	left: 128px;
+	top: 314px;
+	background-position: 0 -336px;
+	animate-delay:1.8s;
+	-moz-animation-delay:1.8s; /* Firefox */
+    -webkit-animation-delay:1.8s;/* Safari and Chrome */
+    -o-animation-delay:1.8s;/* Opera */
+}
+.five_con4{
+	left: 485px;
+	top: 317px;
+	background-position: 0 -410px;
+	animate-delay:2.3s;
+	-moz-animation-delay:2.3s; /* Firefox */
+    -webkit-animation-delay:2.3s;/* Safari and Chrome */
+    -o-animation-delay:2.3s;/* Opera */
+}
+.five_con5{
+	left: 461px;
+	top: 448px;
+	background-position: 0 -484px;
+	animate-delay:2.8s;
+	-moz-animation-delay:2.8s; /* Firefox */
+    -webkit-animation-delay:2.8s;/* Safari and Chrome */
+    -o-animation-delay:2.8s;/* Opera */
+}
+.five_con6{
+	left: 384px;
+	top: 549px;
+	background-position: 0 -552px;
+	animate-delay:3.3s;
+	-moz-animation-delay:3.3s; /* Firefox */
+    -webkit-animation-delay:3.3s;/* Safari and Chrome */
+    -o-animation-delay:3.3s;/* Opera */
+}
+/*第六屏*/
+.six_tit{
+	width: 640px;
+	height: 214px;
+	background-image: url(../images/six_tit.png);
+}
+.six_pc{
+	position: relative;
+	width: 640px;
+	height: 700px;
+	background: url(../images/six_pc.png) no-repeat center center;
+}
+.six_pc_font{
+	position: absolute;
+	left: 244px;
+	top: 271px;
+	width: 154px;
+	height: 124px;
+	background: url(../images/six_pc_font.png) no-repeat;
+	animate-delay:0.3s;
+	-moz-animation-delay:0.3s; /* Firefox */
+    -webkit-animation-delay:0.3s;/* Safari and Chrome */
+    -o-animation-delay:0.3s;/* Opera */
+}
+.six_flow{
+	position: absolute;
+	top: 150px;
+	left: 12px;
+}
+.six_flow2{
+	top: 72px;
+	left: 216px;
+}
+.six_flow3{
+	top: 150px;
+	left: 441px;
+}
+.six_flow4{
+	top: 360px;
+	left: 395px;
+}
+.six_flow5{
+	top: 360px;
+	left: 59px;
+}
+.line{
+	width: 87px;
+	border-top: 4px dashed #ca022b;
+	animate-delay:0.5s;
+	-moz-animation-delay:0.5s; /* Firefox */
+    -webkit-animation-delay:0.5s;/* Safari and Chrome */
+    -o-animation-delay:0.5s;/* Opera */
+}
+.six_flow3 .line{
+	animate-delay:1.5s;
+	-moz-animation-delay:1.5s; /* Firefox */
+    -webkit-animation-delay:1.5s;/* Safari and Chrome */
+    -o-animation-delay:1.5s;/* Opera */
+}
+.six_flow4 .line{
+	width: 40px;
+	margin-left: 47px;
+	animate-delay:2.1s;
+	-moz-animation-delay:2.1s; /* Firefox */
+    -webkit-animation-delay:2.1s;/* Safari and Chrome */
+    -o-animation-delay:2.1s;/* Opera */
+}
+.six_flow5 .line{
+	width: 40px;
+	margin-right: 47px;
+	animate-delay:2.7s;
+	-moz-animation-delay:2.7s; /* Firefox */
+    -webkit-animation-delay:2.7s;/* Safari and Chrome */
+    -o-animation-delay:2.7s;/* Opera */
+}
+.ver_line{
+	border-left:4px dashed #ca022b ;
+	height: 98px;
+	width: 0;
+	margin: 0 auto;
+}
+.six_flow1 .ver_line{
+	animate-delay:0.7s;
+	-moz-animation-delay:0.7s; /* Firefox */
+    -webkit-animation-delay:0.7s;/* Safari and Chrome */
+    -o-animation-delay:0.7s;/* Opera */
+}
+.six_flow2 .ver_line{
+	height: 90px;
+	animate-delay:1.1s;
+	-moz-animation-delay:1.1s; /* Firefox */
+    -webkit-animation-delay:1.1s;/* Safari and Chrome */
+    -o-animation-delay:1.1s;/* Opera */
+}
+.six_flow3 .ver_line{
+	animate-delay:1.7s;
+	-moz-animation-delay:1.7s; /* Firefox */
+    -webkit-animation-delay:1.7s;/* Safari and Chrome */
+    -o-animation-delay:1.7s;/* Opera */
+}
+.six_flow4 .ver_line{
+	animate-delay:2.3s;
+	-moz-animation-delay:2.3s; /* Firefox */
+    -webkit-animation-delay:2.3s;/* Safari and Chrome */
+    -o-animation-delay:2.3s;/* Opera */
+}
+.six_flow5 .ver_line{
+	animate-delay:3.1s;
+	-moz-animation-delay:3.1s; /* Firefox */
+    -webkit-animation-delay:3.1s;/* Safari and Chrome */
+    -o-animation-delay:3.1s;/* Opera */
+}
+.six_dot{
+	height: 24px;
+	background: url(../images/six_dot.png) no-repeat center center;
+}
+.six_flow1 .six_dot{
+	animate-delay:0.9s;
+	-moz-animation-delay:0.9s; /* Firefox */
+    -webkit-animation-delay:0.9s;/* Safari and Chrome */
+    -o-animation-delay:0.9s;/* Opera */
+}
+.six_flow2 .six_dot{
+	animate-delay:1.3s;
+	-moz-animation-delay:1.3s; /* Firefox */
+    -webkit-animation-delay:1.3s;/* Safari and Chrome */
+    -o-animation-delay:1.3s;/* Opera */
+}
+.six_flow3 .six_dot{
+	animate-delay:1.9s;
+	-moz-animation-delay:1.9s; /* Firefox */
+    -webkit-animation-delay:1.9s;/* Safari and Chrome */
+    -o-animation-delay:1.9s;/* Opera */
+}
+.six_flow4 .six_dot{
+	animate-delay:2.5s;
+	-moz-animation-delay:2.5s; /* Firefox */
+    -webkit-animation-delay:2.5s;/* Safari and Chrome */
+    -o-animation-delay:2.5s;/* Opera */
+}
+.six_flow5 .six_dot{
+	animate-delay:3.3s;
+	-moz-animation-delay:3.3s; /* Firefox */
+    -webkit-animation-delay:3.3s;/* Safari and Chrome */
+    -o-animation-delay:3.3s;/* Opera */
+}
+.six_con{
+	width: 184px;
+	height: 59px;
+	background: url(../images/six_ico.png) no-repeat 0 0;
+}
+.six_flow1 .six_con{
+	animate-delay:1.1s;
+	-moz-animation-delay:1.1s; /* Firefox */
+    -webkit-animation-delay:1.1s;/* Safari and Chrome */
+    -o-animation-delay:1.1s;/* Opera */
+} 
+.six_flow2 .six_con{
+	background: url(../images/six_ico.png) no-repeat 0 -60px;
+	animate-delay:1.5s;
+	-moz-animation-delay:1.5s; /* Firefox */
+    -webkit-animation-delay:1.5s;/* Safari and Chrome */
+    -o-animation-delay:1.5s;/* Opera */
+}
+.six_flow3 .six_con{
+	background: url(../images/six_ico.png) no-repeat 0 -120px;
+	animate-delay:2.1s;
+	-moz-animation-delay:2.1s; /* Firefox */
+    -webkit-animation-delay:2.1s;/* Safari and Chrome */
+    -o-animation-delay:2.1s;/* Opera */
+}
+.six_flow4 .six_con{
+	background: url(../images/six_ico.png) no-repeat 0 -180px;
+	animate-delay:2.7s;
+	-moz-animation-delay:2.7s; /* Firefox */
+    -webkit-animation-delay:2.7s;/* Safari and Chrome */
+    -o-animation-delay:2.7s;/* Opera */
+}
+.six_flow5 .six_con{
+	background: url(../images/six_ico.png) no-repeat 0 -240px;
+	animate-delay:3.5s;
+	-moz-animation-delay:3.5s; /* Firefox */
+    -webkit-animation-delay:3.5s;/* Safari and Chrome */
+    -o-animation-delay:3.5s;/* Opera */
+}
+/*第七屏*/
+.seven_tit{
+	width: 640px;
+	height: 232px;
+	background-image: url(../images/seven_tit.png);
+}
+.seven_btn{
+	height: 114px;
+	width: 100%;
+	background: url(../images/seven_btn.png) no-repeat center center;
+	animate-delay:0.8s;
+	-moz-animation-delay:0.8s; /* Firefox */
+    -webkit-animation-delay:0.8s;/* Safari and Chrome */
+    -o-animation-delay:0.8s;/* Opera */
+}
+.person_box{
+	text-align: center;
+	margin-top: 40px;
+}
+.seven_man_box,.seven_wemon_box{
+	display: inline-block;
+	width: 150px;
+	
+}
+.seven_man{
+	display: block;
+	width: 100px;
+	height: 100px;
+	background: url(../images/seven_man.png) no-repeat;
+	margin: 0 auto;
+	animate-delay:1s;
+	-moz-animation-delay:1s; /* Firefox */
+    -webkit-animation-delay:1s;/* Safari and Chrome */
+    -o-animation-delay:1s;/* Opera */
+}
+.seven_wemon{
+	display: block;
+	width: 100px;
+	height: 100px;
+	background: url(../images/seven_wemon.png) no-repeat;
+	margin: 0 auto;
+	animate-delay:1.4s;
+	-moz-animation-delay:1.4s; /* Firefox */
+    -webkit-animation-delay:1.4s;/* Safari and Chrome */
+    -o-animation-delay:1.4s;/* Opera */
+}
+.seven_man_num{
+	display: block;
+	width: 100px;
+	height: 40px;
+	background: url(../images/seven_man_num.png) no-repeat;
+	margin: 20px auto 0;
+	animate-delay:1.2s;
+	-moz-animation-delay:1.2s; /* Firefox */
+    -webkit-animation-delay:1.2s;/* Safari and Chrome */
+    -o-animation-delay:1.2s;/* Opera */
+}
+.seven_wemon_num{
+	display: block;
+	width: 100px;
+	height: 40px;
+	background: url(../images/seven_wemon_num.png) no-repeat;
+	margin:  20px auto 0;
+	animate-delay:1.6s;
+	-moz-animation-delay:1.6s; /* Firefox */
+    -webkit-animation-delay:1.6s;/* Safari and Chrome */
+    -o-animation-delay:1.6s;/* Opera */
+}
+.seven_echart{
+	width: 527px;
+	height: 240px;
+	background: url(../images/seven_table.png) no-repeat;
+	margin: 0 auto ;
+	padding-top: 130px;
+	animate-delay:1.8s;
+	-moz-animation-delay:1.8s; /* Firefox */
+    -webkit-animation-delay:1.8s;/* Safari and Chrome */
+    -o-animation-delay:1.8s;/* Opera */
+}
+.seven_line{
+	position: relative;
+	width: 363px;
+	height: 192px;
+	background: url(../images/seven_line.png) no-repeat;
+	margin-left: 122px;
+}
+.seven_dot{
+	position: absolute;
+	width: 14px;
+	height: 14px;
+	background: url(../images/six_dot.png) no-repeat;
+	background-size: cover;
+}
+.seven_dot1{
+	top: 179px;
+    left: -5px;
+}
+.seven_dot2{
+	top: 65px;
+    left: 104px;
+}
+.seven_dot3{
+	top: -6px;
+    left: 178px;
+}
+.seven_dot4{
+	top: 146px;
+    left: 267px;
+}
+.seven_dot5{
+	top: 171px;
+    left: 353px;
+}
+.seven_num{
+	position: absolute;
+	width: 80px;
+	height: 30px;
+}
+.seven_num1{
+	top: 144px;
+    left: -39px;
+	background: url(../images/seven_num1.png) no-repeat;
+}
+.seven_num2{
+	top: 33px;
+    left: 74px;
+	background: url(../images/seven_num2.png) no-repeat;
+}
+.seven_num3{
+	top: -36px;
+    left: 147px;
+	background: url(../images/seven_num3.png) no-repeat;
+}
+.seven_num4{
+	top: 116px;
+    left: 243px;
+	background: url(../images/seven_num4.png) no-repeat;
+}
+.seven_num5{
+	top: 144px;
+    left: 321px;
+	background: url(../images/seven_num5.png) no-repeat;
+}
+/*第八屏*/
+.eight_btn1{
+	width: 395px;
+	height: 75px;
+	margin: 0 auto 44px;
+	background: url(../images/eight_btn1.png) no-repeat;
+}
+.eight_font1{
+	width: 558px;
+	height: 36px;
+	margin: 0 auto 13px;
+	background: url(../images/eight_font1.png) no-repeat;
+	animate-delay:0.5s;
+	-moz-animation-delay:0.5s; /* Firefox */
+    -webkit-animation-delay:0.5s;/* Safari and Chrome */
+    -o-animation-delay:0.5s;/* Opera */
+}
+.eight_echart1{
+	width: 526px;
+	height: 156px;
+	margin: 0 auto 17px;
+	background: url(../images/eight_echart1.png) no-repeat;
+	animate-delay:1s;
+	-moz-animation-delay:1s; /* Firefox */
+    -webkit-animation-delay:1s;/* Safari and Chrome */
+    -o-animation-delay:1s;/* Opera */
+}
+.eight_btn2{
+	width: 394px;
+	height: 75px;
+	margin: 0 auto 41px;
+	background: url(../images/eight_btn2.png) no-repeat;
+	animate-delay:1.2s;
+	-moz-animation-delay:1.2s; /* Firefox */
+    -webkit-animation-delay:1.2s;/* Safari and Chrome */
+    -o-animation-delay:1.2s;/* Opera */
+}
+.eight_echart2{
+	width: 526px;
+	height: 295px;
+	margin: 0 auto 24px;
+	background: url(../images/eight_echart2.png) no-repeat;
+	animate-delay:1.5s;
+	-moz-animation-delay:1.5s; /* Firefox */
+    -webkit-animation-delay:1.5s;/* Safari and Chrome */
+    -o-animation-delay:1.5s;/* Opera */
+}
+.eight_num{
+	width: 541px;
+	height:82px;
+	margin: 0 auto;
+	background: url(../images/eight_num.png) no-repeat;
+	animate-delay:1.7s;
+	-moz-animation-delay:1.7s; /* Firefox */
+    -webkit-animation-delay:1.7s;/* Safari and Chrome */
+    -o-animation-delay:1.7s;/* Opera */
+}
+.h67{
+	height: 67px;
+}
+/*第九屏*/
+.nine_btn1{
+	width: 395px;
+	height: 75px;
+	margin: 0 auto 44px;
+	background: url(../images/nine_btn1.png) no-repeat;
+}
+.nine_echart1{
+	width: 531px;
+	height: 186px;
+	margin: 0 auto 17px;
+	background: url(../images/nine_echart1.png) no-repeat;
+	animate-delay:1s;
+	-moz-animation-delay:1s; /* Firefox */
+    -webkit-animation-delay:1s;/* Safari and Chrome */
+    -o-animation-delay:1s;/* Opera */
+}
+.nine_btn2{
+	width: 395px;
+	height: 79px;
+	margin: 0 auto 41px;
+	background: url(../images/nine_btn2.png) no-repeat;
+	animate-delay:1.2s;
+	-moz-animation-delay:1.2s; /* Firefox */
+    -webkit-animation-delay:1.2s;/* Safari and Chrome */
+    -o-animation-delay:1.2s;/* Opera */
+}
+.nine_echart2{
+	width: 550px;
+	height: 275px;
+	margin: 0 auto 24px;
+	background: url(../images/nine_echart2.png) no-repeat;
+	animate-delay:1.5s;
+	-moz-animation-delay:1.5s; /* Firefox */
+    -webkit-animation-delay:1.5s;/* Safari and Chrome */
+    -o-animation-delay:1.5s;/* Opera */
+}
+.nine_num{
+	float: right;
+	width: 200px;
+	height:170px;
+	background: url(../images/nine_num.png) no-repeat;
+	animate-delay:1.7s;
+	-moz-animation-delay:1.7s; /* Firefox */
+    -webkit-animation-delay:1.7s;/* Safari and Chrome */
+    -o-animation-delay:1.7s;/* Opera */
+}
+.h77{
+	height: 77px;
+}
+/*第十屏*/
+.ten_tit{
+	width: 640px;
+	height:232px;
+	background: url(../images/ten_tit.png) no-repeat;
+}
+.ten_btn{
+	width: 311px;
+	height: 80px;
+	margin: 15px auto 62px;
+	background: url(../images/ten_btn.png) no-repeat;
+	animate-delay:0.5s;
+	-moz-animation-delay:0.5s; /* Firefox */
+    -webkit-animation-delay:0.5s;/* Safari and Chrome */
+    -o-animation-delay:0.5s;/* Opera */
+}
+.ten_table{
+	width: 550px;
+	height: 518px;
+	background: url(../images/ten_table.png) no-repeat;
+	margin: 0 auto;
+	animate-delay:1s;
+	-moz-animation-delay:1s; /* Firefox */
+    -webkit-animation-delay:1s;/* Safari and Chrome */
+    -o-animation-delay:1s;/* Opera */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*第十一屏*/
+.eleven_tit{
+	width: 640px;
+	height: 232px;
+	background-image: url(../images/eleven_tit.png);
+}
+.eleven_tit_font{
+	position: absolute;
+	top: 85px;
+	right: 55px;
+	width: 258px;
+	height: 37px;
+	background-image: url(../images/eleven_tit_font.png);
+	animate-delay:0.8s;
+	-moz-animation-delay:0.8s; /* Firefox */
+    -webkit-animation-delay:0.8s;/* Safari and Chrome */
+    -o-animation-delay:0.8s;/* Opera */
+}
+.form_input{
+	display: block;
+	width: 393px;
+	height: 93px;
+	line-height: 93px;
+	border: none;
+	background: url(../images/eleven_input1.png) no-repeat;
+	margin: 0 auto 30px;
+	font-size: 36px;
+	color: #040000;
+	padding: 0 60px;
+	/*-webkit-text-stroke: 1.6px #040000;*/
+	font-weight: bolder;
+}
+.form_input2{
+	background: url(../images/eleven_input2.png) no-repeat;
+}
+.form_input3{
+	background: url(../images/eleven_input3.png) no-repeat;
+}
+.submit_btn{
+	display: block;
+	width: 230px;
+	height: 76px;
+	border: none;
+	background: url(../images/eleven_btn.png) no-repeat;
+	margin: 90px auto 0;
+}
+
+.up_arrow{
+	position: absolute;
+	bottom: 20px;
+	left: 50%;
+	margin-left: -30px;
+	width: 60px;
+	height: 60px;
+	background: url(../images/up_arrow.png) no-repeat;
+	z-index: 99;
+}
+
+/*遮罩*/
+.shade_box{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.8) url(../images/shade_light.png) no-repeat center;
+	background-size: cover;
+}
+.eleven_fly{
+	position: relative;
+	top: 30px;
+	left: 241px;
+	width: 318px;
+	height: 350px;
+	background: url(../images/eleven_fly.png) no-repeat;
+}
+.info_box{
+	width: 470px;
+	height: 198px;
+	background: url(../images/info_bg.png) no-repeat;
+	margin: 25px auto;
+	padding-top: 90px;
+	text-align: center;
+}
+.info_tit{
+	font-size: 50px;
+	color: #a71006;
+	margin-top: 0;
+}
+.info_con{
+	font-size: 18px;
+	color: #996633;
+	margin: 0;
+	padding: 0;
+	line-height: 1.5;
+}
+::-webkit-input-placeholder { color:#9e7b57; }
+::-moz-placeholder { color:#9e7b57; } /* firefox 19+ */
+:-ms-input-placeholder { color:#9e7b57; } /* ie */
+input:-moz-placeholder { color:#9e7b57; }
+
+.icon_yy{
+	position: absolute;
+    z-index: 100;
+    top: 10px;
+    overflow: hidden;
+    border-radius: 50%;
+    right: 10px;
+	width: 70px;
+	height: 70px;
+	background: url(../images/icon_yy.png) no-repeat;
+	background-size: cover;
+   opacity: 0.8;
+}
+.icon_yy.infinite{
+	animation:earn 2s linear infinite;
+    -moz-animation:earn 2s linear infinite; /* Firefox */
+    -webkit-animation:earn 2s linear infinite; /* Safari and Chrome */
+    -o-animation:earn 2s linear infinite; /* Opera */
+}
+@keyframes earn{
+    0%{
+        transform: rotate(0);
+        -ms-transform: rotate(0);       /* IE 9 */
+        -webkit-transform: rotate(0);   /* Safari and Chrome */
+        -o-transform: rotate(0);        /* Opera */
+        -moz-transform: rotate(0);      
+    }
+    50%{
+        transform: rotate(180);
+        -ms-transform: rotate(180);     /* IE 9 */
+        -webkit-transform: rotate(180); /* Safari and Chrome */
+        -o-transform: rotate(180);      /* Opera */
+        -moz-transform: rotate(180);        
+    }
+    100%{
+        transform: rotate(360deg);
+        -ms-transform: rotate(360deg);      /* IE 9 */
+        -webkit-transform: rotate(360deg);  /* Safari and Chrome */
+        -o-transform: rotate(360deg);       /* Opera */
+        -moz-transform: rotate(360deg); 
+    }
+}
+@-moz-keyframes earn{
+    0%{
+        transform: rotate(0);
+        -ms-transform: rotate(0);       /* IE 9 */
+        -webkit-transform: rotate(0);   /* Safari and Chrome */
+        -o-transform: rotate(0);        /* Opera */
+        -moz-transform: rotate(0);      
+    }
+    50%{
+        transform: rotate(180);
+        -ms-transform: rotate(180);     /* IE 9 */
+        -webkit-transform: rotate(180); /* Safari and Chrome */
+        -o-transform: rotate(180);      /* Opera */
+        -moz-transform: rotate(180);        
+    }
+    100%{
+        transform: rotate(360deg);
+        -ms-transform: rotate(360deg);      /* IE 9 */
+        -webkit-transform: rotate(360deg);  /* Safari and Chrome */
+        -o-transform: rotate(360deg);       /* Opera */
+        -moz-transform: rotate(360deg); 
+    }
+}
+@-webkit-keyframes earn{
+    0%{
+        transform: rotate(0);
+        -ms-transform: rotate(0);       /* IE 9 */
+        -webkit-transform: rotate(0);   /* Safari and Chrome */
+        -o-transform: rotate(0);        /* Opera */
+        -moz-transform: rotate(0);      
+    }
+    50%{
+        transform: rotate(180);
+        -ms-transform: rotate(180);     /* IE 9 */
+        -webkit-transform: rotate(180); /* Safari and Chrome */
+        -o-transform: rotate(180);      /* Opera */
+        -moz-transform: rotate(180);        
+    }
+    100%{
+        transform: rotate(360deg);
+        -ms-transform: rotate(360deg);      /* IE 9 */
+        -webkit-transform: rotate(360deg);  /* Safari and Chrome */
+        -o-transform: rotate(360deg);       /* Opera */
+        -moz-transform: rotate(360deg); 
+    }
+}
+@-o-keyframes earn{
+    0%{
+        transform: rotate(0);
+        -ms-transform: rotate(0);       /* IE 9 */
+        -webkit-transform: rotate(0);   /* Safari and Chrome */
+        -o-transform: rotate(0);        /* Opera */
+        -moz-transform: rotate(0);      
+    }
+    50%{
+        transform: rotate(180);
+        -ms-transform: rotate(180);     /* IE 9 */
+        -webkit-transform: rotate(180); /* Safari and Chrome */
+        -o-transform: rotate(180);      /* Opera */
+        -moz-transform: rotate(180);        
+    }
+    100%{
+        transform: rotate(360deg);
+        -ms-transform: rotate(360deg);      /* IE 9 */
+        -webkit-transform: rotate(360deg);  /* Safari and Chrome */
+        -o-transform: rotate(360deg);       /* Opera */
+        -moz-transform: rotate(360deg); 
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+.pull_right{
+	float: right;
+}
+.clear{
+	height: 0;
+	line-height: 0;
+	clear: both;
+}
+.mb10{margin-bottom: 10px;}
+.mt10{margin-top: 10px;}
+.mt85{margin-top: 85px;}
+.audioDV{
+	display: none;
+}

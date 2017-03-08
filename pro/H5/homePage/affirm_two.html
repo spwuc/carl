@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>订单确定</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="Cache-Control" content="max-age=0">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/affirm_two.css"/>
+    <script type="text/javascript" src="../public/js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="../public/js/public.js"></script>
+    <script type="text/javascript" src="../cordova.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            var addMsg = $.cookie('addMsg')||0;
+            var product_num = $.cookie('product_num')||1;
+            var aff_yunIndex = $.cookie('aff_yunIndex')||0;
+            var user_id = '';
+            $(document).addHeader();
+            var param = $.cookie('dataDet');
+            $.cookie('dataDet', null);
+            $('#product_num').val(product_num);
+            $('.reducing').on('click', function () {
+                var val = $(this).next().val();
+                if (val > 1) {
+                    val--;
+                    $(this).next().val(val);
+                } else {
+                    return;
+                }
+
+            })
+            $('.add').on('click', function () {
+                var val = $(this).prev().val();
+                val++;
+                $(this).prev().val(val);
+            })
+            $('.aff_fs li').on('click', function () {
+                if ($(this).find('p').text().trim() == '自提') {
+                    $('.aff_yun').find('div').removeClass('cur');
+                    $(this).find('.aff_yun div').addClass('cur');
+                    $('.aff_ims').hide();
+                    $('.aff_ims_1').show();
+                } else {
+                    $('.aff_ims').show();
+                    $('.aff_ims_1').hide();
+                    $('.aff_yun').find('div').removeClass('cur');
+                    $(this).find('.aff_yun div').addClass('cur');
+                }
+            })
+            $('#aff_pic').attr('src', param.goodsImgPath);
+            if (param.exchangeRate == 0) {
+                $('#Product').html('<b>' + param.goodsName + '</b>' +
+                        '<span>￥' + param.activityPrice + '</span></span>')
+            } else {
+                $('#Product').html('<b>' + param.goodsName + '</b>' +
+                        '<span>￥' + param.activityPrice + '</span>' +
+                        '<span>+' + param.exchangeRate + '<span>积分</span></span>')
+            }
+            $('#aff_pj').html('优惠：' + (Number(param.goodsPrice) - Number(param.activityPrice)) + ' 元&nbsp;&nbsp; 赠送：' + param.giveIntegral + ' 积分');
+
+            var params = {};
+            params.sid = '3002';
+            params.product_id = param.goodsId;
+            iss.details(function (data) {
+                data = JSON.parse(data);
+                params.user_id = user_id;
+                iss.request(function (data) {
+                    data = JSON.parse(data);
+                    var someData = data.data;
+                    //显示配送方式
+                    var li_list = '',
+                            allocation = someData.distributions;
+                    for (var n = 0; n < allocation.length; n++) {
+                        if(aff_yunIndex == n){
+                            li_list += '<li data-psId="' + allocation[i].distribution_id + '">' +
+                                    '<p>' + allocation[i].distribution_name + '<span class="price" price=' + allocation[i].fee + '>￥' + allocation[i].fee + '</span></p>' +
+                                    '<div class="aff_yun">' +
+                                    '<div class="cur"></div>' +
+                                    '</div>' +
+                                    '</li>';
+                        }else{
+                            li_list += '<li data-psId="' + allocation[i].distribution_id + '">' +
+                                    '<p>' + allocation[i].distribution_name + '<span class="price" price=' + allocation[i].fee + '>￥' + allocation[i].fee + '</span></p>' +
+                                    '<div class="aff_yun">' +
+                                    '<div></div>' +
+                                    '</div>' +
+                                    '</li>';
+                        }
+
+                    }
+                    $('.aff_fs ul').html(li_list);
+                    //显示收货地址或者提货地址
+                    $('.aff_yun').find('.aff_yun div').hasClass('cur').parents('li').trigger('click');
+                    var sh_html = '';
+                    if (addMsg) {
+                        sh_html += '<div class="aff_ims" data-add_id="' + someData.delivery_addrs[addMsg].addressId + '">' +
+                                '<h1>收货信息</h1>' +
+                                '<img class="add_sh" src="img/aff_ims.png"/>' +
+                                '<p>收货人：' + someData.delivery_addrs[addMsg].consignee + '<span>' + someData.delivery_addrs[addMsg].telphone + '</span></p>' +
+                                '<p>收货地址：' + someData.delivery_addrs[addMsg].specify_addr + '</p>' +
+                                '</div>';
+                    } else {
+                        for (var i = 0; i < someData.delivery_addrs.length; i++) {
+                            if (someData.delivery_addrs[i].default_addr == '1') {
+                                sh_html += '<div class="aff_ims" data-add_id="' + someData.delivery_addrs[i].addressId + '">' +
+                                        '<h1>收货信息</h1>' +
+                                        '<img class="add_sh" src="img/aff_ims.png"/>' +
+                                        '<p>收货人：' + someData.delivery_addrs[i].consignee + '<span>' + someData.delivery_addrs[i].telphone + '</span></p>' +
+                                        '<p>收货地址：' + someData.delivery_addrs[i].specify_addr + '</p>' +
+                                        '</div>';
+                            }
+                        }
+                    }
+                    sh_html += '<div class="aff_ims_1">' +
+                            '<h1>提货信息</h1>' +
+                            '<p>联系电话：' + someData.phone + '</p>' +
+                            '<p>提货地址：' + someData.pickedup_address + '</p>' +
+                            '</div>';
+                    $(".msg").html(sh_html);
+                    //显示确认按钮相关信息
+                    var footerHtml = '';
+                    var Integral = param.exchangeRate * $('.reducing').next().val();
+                    var amount = param.activityPrice * $('.reducing').next().val();
+                    var amounts = param.activityPrice * $('.reducing').next().val() + $('.price').attr('price');
+                    if ($('.aff_yun').find('.aff_yun div').hasClass('cur').parent().siblings().text().trim() == '自提') {
+                        if (param.exchangeRate == 0) {
+                            footerHtml += '<p><i>总计：</i><span class="count">￥' + amount + '</span>' +
+                                    '</p>' +
+                                    '<button>确认</button>';
+                        } else {
+                            footerHtml += '<p><i>总计：</i><span class="count">￥' + amount + '</span>' +
+                                    '<span class="count">+' + Integral + '<span>积分</span></span>' +
+                                    '</p>' +
+                                    '<button>确认</button>';
+                        }
+                    } else {
+                        if (param.exchangeRate == 0) {
+                            footerHtml += '<p><i>总计：</i><span>￥' + amounts + '</span>' +
+                                    '<br />' +
+                                    '<b>(含运费)</b>' +
+                                    '</p>' +
+                                    '<button>确认</button>';
+                        } else {
+                            footerHtml += '<p><i>总计：</i><span>￥' + amounts + '</span>' +
+                                    '<span>+' + Integral + '<span>积分</span></span>' +
+                                    '<br />' +
+                                    '<b>(含运费)</b>' +
+                                    '</p>' +
+                                    '<button>确认</button>';
+                        }
+
+                    }
+                    $(".fer").html(footerHtml);
+                    //点击确认
+                    $('.fer button').on('click', function () {
+                        iss.getUserInfo(function(data){
+                            data = JSON.parse(data);
+                            user_id = data.data.userId;
+                        },failCallBack)
+                        var param_w = {};
+                        param_w.sid = '3003';
+                        param_w.product_id = param.goodsId;
+                        param_w.product_num = $('#product_num').val();
+                        param_w.distribution_id = $('.aff_yun').find('.aff_yun div').hasClass('cur').parents('li').data('psId');
+                        param_w.add_id = $('.aff_ims').data('add_id');
+                        param_w.user_id = user_id;
+                        iss.request(function (data_1) {
+                            data_1 = JSON.parse(data_1);
+                            if (data_1.errcode == '0') {
+                                //使用支付插件
+                                var paramw={};
+                                iss.orderView(function(){},failCallBack,paramw)
+                            } else {
+                                iss.alert(data_1.errmsg)
+                            }
+                        }, failCallBack, param_w)
+                    })
+                    $('.aff_ims').on('click', function () {
+                        $.cookie('delivery_addrs', someData.delivery_addrs);
+                        $.cookie('product_num',$('#product_num').val());
+                        $.cookie('aff_yunIndex',$('.aff_yun').find('.aff_yun div').hasClass('cur').parents('li').data('index'));
+                        iss.changeNextPage(null, failCallBack, {'html': 'address.html'})
+                    })
+                }, failCallBack, params)
+            })
+        })
+    </script>
+</head>
+<body>
+<section class="aff_tion">
+    <h1>产品信息</h1>
+
+    <div class="aff_chan">
+        <div class="aff_chans">
+            <img id="aff_pic" src="img/qu_t.png"/>
+        </div>
+        <p class="Product">
+            <b>团购券</b>
+            <span>￥45.00</span>
+            <span>+1500<span>积分</span></span>
+        </p>
+
+        <p>
+            <button class="reducing"><img src="img/qu_j.png"></button>
+            <input id="product_num" type="text" value="1"/>
+            <button class="add"><img src="img/qu_j1.png"></button>
+        </p>
+        <div class="aff_pj">优惠：0.00 元&nbsp;&nbsp; 赠送：0 积分</div>
+    </div>
+    <h1>配送方式</h1>
+
+    <div class="aff_fs">
+        <ul>
+            <li>
+                <p>快递配送<span>￥10.00</span></p>
+
+                <div class="aff_yun">
+                    <div class="cur"></div>
+                </div>
+            </li>
+            <li>
+                <p>EMS配送<span>￥25.00</span></p>
+
+                <div class="aff_yun">
+                    <div></div>
+                </div>
+            </li>
+            <li>
+                <p>自提</p>
+
+                <div class="aff_yun">
+                    <div></div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="msg">
+        <a style="text-decoration: none;" href="address.html"><div class="aff_ims">
+            <h1>收货信息</h1>
+            <!--<img class="add_sh" src="img/aff_ims.png"/>-->
+            <p>收货人：王佳珉<span>18603320980</span></p>
+
+            <p>收货地址：花桥镇绿地大道255弄2-2室</p>
+        </div></a>
+
+        <div class="aff_ims_1">
+            <h1>提货信息</h1>
+            <!--<img class="add_th" src="img/aff_ims.png"/>-->
+            <p>联系电话：186 0332 0980</p>
+
+            <p>提货地址：花桥镇绿地大道255弄2-2室</p>
+        </div>
+    </div>
+</section>
+<footer class="fer">
+    <p><i>总计：</i><span>￥45.00</span>
+        <span>+1000<span>积分</span></span>
+        <br/>
+        <b>(含运费)</b>
+    </p>
+    <button><a style="color:#fff;text-decoration: none;" href="../../protogenesis/already-landing/payment.html">确认</button>
+</footer>
+</body>
+</html>

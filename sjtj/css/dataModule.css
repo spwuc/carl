@@ -1,0 +1,536 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{margin:0;padding:0;}
+*{padding:0;margin:0;}
+/*body{font-size:12px;font-family:'Microsoft Yahei',helvetica,arial;background:#fbfbfb;-webkit-text-size-adjust:none;-webkit-tap-highlight-color:rgba(0,0,0,0);}
+*/table{border-collapse:collapse;border-spacing:0;}
+th,td{text-align:center;vertical-align:top;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:400;}
+fieldset,img{border:0;}
+ol,ul,li{list-style:none;}
+input{font-size:100%;
+border-radius:0;
+-webkit-appearance: none; }
+ins,a{text-decoration:none;}
+a:hover, a:active, a:visited, a:link{text-decoration:none; cursor:pointer;}
+a:focus {
+outline: none;
+}
+.membersPd10{padding:10px;}
+*:-moz-placeholder {
+    color: #ccc;
+}
+
+*:-ms-input-placeholder {
+    color: #ccc;
+}
+
+*::-webkit-input-placeholder {
+    color: #ccc;
+}
+@font-face {
+	font-family:"DS-DIGIB";
+	src: url('../fonts/DS-DIGI.TTF');
+}
+html,body {
+	width: 100%;
+	font-family: "微软雅黑";
+	background: url(../img/background.png) no-repeat 0 0;
+	background-size: 100% 100%;
+}
+.header {
+	position: relative;
+    width: 100%;
+    padding-top: 36px;
+    background: url(../img/bg.png) no-repeat 0 0;   
+    background-size: 100% 100%;
+    overflow: hidden;
+}
+.light {
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+	opacity: 0;
+}
+.light.show {
+	animation:rotateIn 2s 1;
+	-webkit-animation:rotateIn 2s 1;
+    -moz-animation:rotateIn 2s 1;
+    -o-animation:rotateIn 2s 1;
+	opacity: 1;
+}
+.part {
+	width: 100%;
+	text-align: center;
+}
+.partTitle {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 98px;
+}
+.partTitleText {
+	margin-left: 0;
+	margin-top: 21px;
+	font-family: "微软雅黑";
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: 400;
+    text-indent: 6px;
+    color: white;
+    clear: right;
+    background: url(../img/tiao_biaoti.png) no-repeat 0 0;
+    width: 100%;
+    height: 25px;
+    background-size: 147px 25px;
+    display: block;
+    text-align: left;
+    opacity: 0;
+}
+.header-bk {
+	
+}
+.logo {
+	position: absolute;
+    width: 15%;
+    top: 9%;
+    right: 12%;
+    opacity: 0;
+}
+.logo.show {
+    -webkit-animation: bounceInDown 0.8s 1;
+    -moz-animation: bounceInDown 0.8s 1;
+    -o-animation: bounceInDown 0.8s 1;
+	animation: bounceInDown 0.8s 1;
+	opacity: 1;
+}
+.mainTitle {
+    font-size: 24px;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+    line-height: 2;
+    font-family: "微软雅黑";
+    animation: zoomIn 1s 1;
+    -webkit-animation: zoomIn 1s 1;
+    -moz-animation: zoomIn 1s 1;
+    -o-animation: zoomIn 1s 1;
+	opacity: 1;
+}
+.title {	
+    font-size: 15px;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    line-height: 2;
+    z-index: 5;
+    animation: zoomIn 1s 1;
+    -webkit-animation: zoomIn 1s 1;
+    -moz-animation: zoomIn 1s 1;
+    -o-animation: zoomIn 1s 1;
+	opacity: 1;
+}
+.people {
+	position: absolute;
+	width: 35%;
+	top:50%;
+	margin-left: 5%;
+	opacity: 0;
+	z-index: 1;
+}
+.people.show {
+	animation: fadeInUp 1s 1;
+    -webkit-animation: fadeInUp 1s 1;
+    -moz-animation: fadeInUp 1s 1;
+    -o-animation: fadeInUp 1s 1;
+	opacity: 1;
+}
+.shade {
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	left: 0;
+	z-index: 2;
+}
+/*会议时间*/
+.meetingTime {
+	font-size: 24px;
+	text-align: center;
+}
+.time {
+	font-family: "DS-DIGIB";
+	font-size: 13px;
+	margin-top: 21px;
+	text-align: center;
+	color: rgb(232, 56, 89);
+	opacity: 0;
+}
+.time span:nth-child(1){
+	
+}
+.time span:nth-child(2){
+	font-weight: 600;
+}
+.timeData {
+	font-family: "DS-DIGIB";
+	font-size: 87px;
+	text-align: center;
+	color: rgb(232, 56, 89);
+	opacity: 0;
+}
+.startTime,.endTime {
+	width: 19%;
+	margin-top: 21px;
+	display: inline-block;
+}
+.timeLength {
+	width: 34%;
+	margin-top: 21px;
+	display: inline-block;
+	opacity: 0;
+}
+.timeLength.show {
+	animation: showIt 0.5s 1;
+	-webkit-animation: showIt 0.5s 1;
+	-moz-animation: showIt 0.5s 1;
+	-o-animation: showIt 0.5s 1;
+}
+.startTime {
+	float: left;
+	margin-left: 9%;
+    margin-top: 9%;
+	background: url(../img/icon_shizhong.png) no-repeat 0 0;
+	background-size: 100%;
+	display: none;
+}
+.startTime.show {
+	display: inline-block;
+	animation: fadeInLeft 0.5s 1;
+	-webkit-animation: fadeInLeft 0.5s 1;
+	-moz-animation: fadeInLeft 0.5s 1;
+	-o-animation: fadeInLeft 0.5s 1;
+}
+.timeLength {
+	background: url(../img/kaihui.png) no-repeat 0 0;
+	background-size: 100% ;
+}
+.endTime {
+	float:right;
+	margin-right: 9%;
+    margin-top: 9%;
+	background: url(../img/icon_shizhong.png) no-repeat 0 0;
+	background-size: 100% ;
+	display: none;
+}
+.endTime.show {
+	display: inline-block;
+	animation: fadeInRight 0.5s 1;
+	-webkit-animation: fadeInRight 0.5s 1;
+	-moz-animation: fadeInRight 0.5s 1;
+	-o-animation: fadeInRight 0.5s 1;
+}
+.hour {
+	font-size: 10px;
+	color: rgb(111, 148, 141);
+	margin-top: 64%;
+}
+.TimeText {
+	font-size: 10px;
+	margin-top: 61%;
+	font-family: "微软雅黑";
+	font-weight: 800;
+}
+.timeLengthText {
+	margin-top: 92%;
+}
+.startDay ,.endDay {
+	font-size: 7px;
+	color: rgb(153, 157, 163);
+}
+.timeLine {
+	width: 66%;
+	margin-top: 13px;
+	opacity: 0;
+}
+/*参加人数*/
+.attend-number {
+	
+}
+.totalNumber {
+	font-size: 30px;
+	color: rgb(232, 56, 89);
+	margin-top: 22px;
+	margin-bottom: 22px;
+	font-family: "微软雅黑";
+	font-weight: 900;
+	opacity: 0;
+}
+.totalNumber.show {
+	animation: fadeInLeft 0.5s 1;
+	-webkit-animation: fadeInLeft 0.5s 1;
+	-moz-animation: fadeInLeft 0.5s 1;
+	-o-animation: fadeInLeft 0.5s 1;
+	opacity: 1;
+}
+.tn span:nth-child(1){
+	float: left;
+	margin-left: 10%;
+}
+.th span:nth-child(3){
+	float: right;
+	margin-right: 10%;
+}
+
+.whole,.midwayIn,.midwayOut {
+	display: inline-block;
+	opacity: 0;
+}
+.whole {
+	width: 20%;
+	margin-left: 10%;
+	background: url(../img/sanren.png) no-repeat 0 0;
+	background-size: 100%;
+	float: left;
+	display: none;
+}
+.whole.show {
+	animation: showIt 0.5s 1;
+	-webkit-animation: showIt 0.5s 1;
+	-moz-animation: showIt 0.5s 1;
+	-o-animation: showIt 0.5s 1;
+	opacity: 1;
+	display: inline-block;
+}
+.midwayOut {
+	width: 20%;
+	background: url(../img/exit.png) no-repeat 0 0;
+	background-size: 100%;
+}
+.midwayOut.show {
+	animation: showIt 0.5s 1;
+	-webkit-animation: showIt 0.5s 1;
+	-moz-animation: showIt 0.5s 1;
+	-o-animation: showIt 0.5s 1;
+	opacity: 1;
+	display: inline-block;
+}
+.midwayIn {
+	width: 20%;
+	margin-right: 9%;
+	background: url(../img/into.png) no-repeat 0 0;
+	background-size: 100%;
+	float: right;	
+}
+.midwayIn.show {
+	animation: showIt 0.5s 1;
+	-webkit-animation: showIt 0.5s 1;
+	-moz-animation: showIt 0.5s 1;
+	-o-animation: showIt 0.5s 1;
+	opacity: 1;
+	display: inline-block;
+}
+.peopleNumber {
+	font-size: 11px;
+	font-weight: 900;
+	color: rgb(174, 47, 71);
+	margin-top: 160%;
+}
+.joinText {
+	font-family: "微软雅黑";
+	font-size: 10px;
+	font-weight: 800;
+	color: rgb(118, 126, 133);
+}
+/*语音*/
+.voice {
+	width: 100%;		
+}
+.contain-mike {
+	margin-top: 36px;
+    margin-left: 10%;
+    padding: 5% 0 0 15%;
+    background: url(../img/icon_huatong.png) no-repeat 0 0;
+    background-size: 41%;
+    opacity: 0;
+}
+.contain-mike.show {
+	animation: showIt 0.5s 1;
+	-webkit-animation: showIt 0.5s 1;
+	-moz-animation: showIt 0.5s 1;
+	-o-animation: showIt 0.5s 1;
+	opacity: 1;
+}
+.wire {
+	width: 31%;
+    height: 1px;
+    vertical-align: middle;
+}
+.line {
+	font-family: "微软雅黑";
+	font-size: 9px;
+	font-weight: 800;
+    line-height: 3.1;
+    color: black;
+    text-align: left;
+    
+}
+.line span:nth-child(1), .line span:nth-child(2) {
+	font-size: 9px;
+	font-weight: 200;
+	color: white;
+}
+.rate {
+	font-size: 16px;
+	font-weight: 800;
+	color: rgb(232, 56, 89);
+}
+.totalVoive {
+	width: 29%;
+	height: 38px;
+    line-height: 2;
+    font-family: "微软雅黑";
+    font-size: 10px;
+    font-weight: 900;
+    color: white;
+	background: url(../img/icon_voice.png) no-repeat;
+    background-position: 0;
+    background-size: 100%;
+    display: inline-block;
+    opacity: 0;
+}
+.totalVoice.show {
+	animation: fadeInLeft 0.5s 1;
+	-webkit-animation: fadeInLeft 0.5s 1;
+	-moz-animation: fadeInLeft 0.5s 1;
+	-o-animation: fadeInLeft 0.5s 1;
+	display: inline-block;
+}
+.totalVoive span {
+	font-size: 17px;
+}
+.totalMinute {
+	width: 22%;
+	height: 38px;
+    line-height: 2;
+    font-family: "微软雅黑";
+    font-size: 10px;
+    font-weight: 900;
+    color: black;
+    display: inline-block;
+    opacity: 0;
+}
+.totalMinute.show {
+	animation: fadeInRight 0.5s 1;
+	-webkit-animation: fadeInRight 0.5s 1;
+	-moz-animation: fadeInRight 0.5s 1;
+	-o-animation: fadeInRight 0.5s 1;
+	opacity: 1;
+}
+.totalMinute span {
+	font-size: 17px;
+	color: rgb(232, 56, 89);
+}
+/*文本信息*/
+.textMessage {
+	
+}
+.totalText {
+	font-family: "微软雅黑";
+    font-size: 10px;
+    font-weight: 900;
+    color: black;
+    opacity: 0;
+}
+.totalText.show {
+	animation: fadeInLeft 0.5s 1;
+	-webkit-animation: fadeInLeft 0.5s 1;
+	-moz-animation: fadeInLeft 0.5s 1;
+	-o-animation: fadeInLeft 0.5s 1;
+}
+.totalText span {
+	font-size: 18px;
+	color: rgb(232, 56, 89);
+}
+.chart {
+	width: 100%;
+	opacity: 0;
+}
+.chart.show {
+	animation: zoomIn 0.5s 1;
+	-webkit-animation: zoomIn 0.5s 1;
+	-moz-animation: zoomIn 0.5s 1;
+	-o-animation: zoomIn 0.5s 1;
+	opacity: 1;
+}
+/*文件/图片*/
+.fileAndPic {
+	
+}
+.word, .pdf, .page {
+	width: 20%;
+	margin-top: 28px;
+	display: inline-block;
+	opacity: 0;
+}
+
+.word {
+	float: left;
+	margin-left: 9%;
+}
+/*.word.show {
+	animation: bounce 3s 1;
+	opacity: 1;
+}*/
+/*.pdf.show {
+	animation: bounce 3s 1;
+	opacity: 1;
+}*/
+.page {
+	width: 24%;
+	float: right;
+	margin-right: 9%;
+}
+/*.page.show {
+	animation: bounce 3s 1;
+	opacity: 1;
+}*/
+.filePic {
+	width: 100%;
+}
+.number {
+	font-size: 13px;
+	font-weight: 900;
+}
+.readTime {
+	font-size: 12px;
+	color: rgb(232, 56, 89);
+}
+.readTime span:nth-child(1){
+	color: black;
+}
+/*底部图片*/
+.footer {
+	margin-top: 10px;
+}
+.footer-pic {
+	width: 100%;
+}
+.a {
+	display: none;
+}
+.show {	
+	animation: showIt 0.5s 1;
+	-webkit-animation: showIt 0.5s 1;
+	-moz-animation: showIt 0.5s 1;
+	-o-animation: showIt 0.5s 1;
+	opacity: 1;
+}
+.show1 {
+	animation: fadeInLeft 0.5s 1;
+	-webkit-animation: fadeInLeft 0.5s 1;
+	-moz-animation: fadeInLeft 0.5s 1;
+	-o-animation: fadeInLeft 0.5s 1;
+	opacity: 1;
+}
+
+
+

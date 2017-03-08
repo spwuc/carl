@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <script src="../jquery-1.8.0.js"></script>
+    <script src="js/JQ-md5.js"></script>
+    <title></title>
+</head><body>
+<input id="input_md5" type="file" multiple="multiple" />
+
+<div class="progress progress-striped active progress-success">
+    <div id="div_load" style="width: 40%" class="bar"></div>
+</div>
+
+<div id="md5_show"></div>
+</body>
+
+<script type="text/javascript">
+
+    var message = [];
+
+    if(!document.getElementById("input_md5").files){
+        message = '<p>浏览器不支持FileReader API</p>';
+        document.querySelector("body").innerHTML = message;
+    }else{
+        document.getElementById('input_md5').addEventListener('change', handleFileSelection, false);
+    }
+
+    function handleFileSelection(event) {
+        $("#md5_show").html('');
+        var files = event.target.files;
+
+        var file = files[0];
+
+        var chunkSize = 2*1024*1024*1024;//限制最大2GB
+        if (file.size>chunkSize) {
+        	return alert('选择的文件不能大于2GB。');
+        };
+        var pos = 0;
+
+        var md5Instance = CryptoJS.algo.MD5.create();
+
+        var reader = new FileReader();
+        function progressiveReadNext(){
+            var end = Math.min(pos + chunkSize, file.size);
+
+            reader.onload = function(e) {
+                pos = end;
+                md5Instance.update(CryptoJS.enc.Latin1.parse(e.target.result));
+                var present = (parseFloat(pos)/parseFloat(file.size))*10000/100;
+                $("#div_load").css("width",Math.round(present) +"%");
+                if (pos < file.size) {
+                    progressiveReadNext();
+                } else {
+                    var md5Value = md5Instance.finalize();
+                    $("#md5_show").html(md5Value.toString());
+
+                }
+            }
+
+            if (file.slice) {
+                var blob = file.slice(pos, end);
+            } else if (file.webkitSlice) {
+                var blob = file.webkitSlice(pos, end);
+            }else if(File.prototype.mozSlice){
+                var blob = file.mozSlice(pos, end);
+            }
+            reader.readAsBinaryString(blob);
+        }
+        progressiveReadNext();
+    }
+</script>

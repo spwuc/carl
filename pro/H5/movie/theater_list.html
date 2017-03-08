@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>影院列表</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="Cache-Control" content="max-age=0">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/footer.css"/>
+    <link rel="stylesheet" href="css/theater_list.css"/>
+    <script type="text/javascript" src="../public/js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="../public/js/public.js"></script>
+    <script type="text/javascript" src="../public/js/touch.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $(document).addHeader()
+            $('.nav_tab section img').css('width',$('body').width());
+            $('.nav_tab section').css('height',$('.nav_tab section img').height());
+            touch.on('.nav_tab section', 'drag', function(ev){
+                var marL = parseInt($('.nav_tab section').css('marginLeft'));
+                $('.nav_tab section').css('marginLeft',ev.position.x)
+            });
+            touch.on('.nav_tab section', 'swipeleft', function(ev){
+
+            });
+            touch.on('.nav_tab section', 'swiperight', function(ev){
+
+            });
+        })
+    </script>
+</head>
+<body>
+<header class="nav_tab">
+    <section>
+        <img src="img/tab_3.png" />
+        <img src="img/tab_1.png" />
+        <img src="img/tab_2.png" />
+        <img src="img/tab_3.png" />
+        <img src="img/tab_1.png" />
+    </section>
+</header>
+<section class="con">
+    <ul>
+        <li>
+            <section>
+                <section class="yc">西园影城</section>
+                <section class="address">昆山市金阊区人民路西街2号</section>
+            </section>
+            <section>
+                <section><span>￥43.00</span>&nbsp;起</section>
+                <img src="img/left_sj.png" width="7" />
+            </section>
+        </li>
+    </ul>
+</section>
+<footer class="ft">
+    <ul>
+        <li><a href="beams.html"><img src="img/fe_re.png"/><p>电影</p></a></li>
+        <li class="hoves"><a href="theater_list.html"><img src="img/fe_tb1.png"/><p>影院</p></a></li>
+        <li><a href=""><img src="img/fe_re2.png"/><p>活动</p></a></li>
+        <li><a href=""><img src="img/fe_re3.png"/><p>票券</p></a></li>
+    </ul>
+</footer>
+</body>
+</html>

@@ -1,0 +1,92 @@
+*{padding:0;margin: 0;font-style:none; }
+body{
+    background: #f4f4f4;
+}
+.dem_tion{
+    margin-top: 15px;
+}
+.dem_top{
+    margin-top: 15px;
+    background: #fff;
+    width: 100%;
+    font-size: 13px;
+    line-height: 40px;
+}
+.dem_top span{
+    margin-left: 15px;
+}
+.dem_top input{
+    height: 40px;
+    line-height: 40px;
+    width: 80%;
+}
+.dem_but{
+    width: 90%;
+    height: 42px;
+    margin-left: 5%;
+    margin-top: 31px;
+    border-radius: 5px;
+    background: #498ee9;
+    font-size: 15px;
+    color: #fff;
+}
+.dem_jilu{
+    font-size: 13px;
+    color: #2b2b2b;
+    border-bottom: 1px solid #e1e1e1;
+    background: #fff;
+    margin-top: 25px;
+}
+.dem_jilu h1{
+    background: #e5e5e5;
+    padding-left: 15px;
+    line-height: 30px;
+}
+.dem_uls li{
+    height: 46px;
+    border-bottom: 1px solid #e1e1e1;
+    margin-left: 15px;
+    line-height: 46px;
+}
+.img_left{
+    width: 16px;
+    margin-right: 10px;
+    vertical-align: sub;
+}
+.img_right{
+    width: 10px;
+    float: right;
+    margin-top: 14px;
+    margin-right: 10px;
+}
+.dem_ps{
+    height: 46px;
+    text-align: center;
+    line-height: 46px;
+    color: #a8a8a8;
+}
+.dem_ps img{
+    width: 16px;
+    vertical-align: sub;
+    margin-right: 7px;
+}
+.bus_foot{
+    width: 100%;
+    background: #fff;
+    border-top: 1px solid #cecece;
+    overflow: hidden;
+    position:fixed;
+    bottom: 0;
+    padding: 5px 0;
+}
+.bus_uls li{
+    width: 25%;
+    margin:0 auto;
+    float: left;
+    font-size: 12px;
+    text-align: center;
+    color: #5f646e;
+}
+.bus_uls li img{
+    width: 24px;
+}

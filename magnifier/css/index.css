@@ -1,0 +1,215 @@
+﻿.lh {
+overflow: hidden;
+zoom: 1;
+}
+
+html, body, div, span, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, address, big, cite, code, del, em, font, img, ins, small, strong, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend {
+    margin: 0;
+    padding: 0;
+}
+ol, ul {
+    list-style: none;
+}
+.spec-control {
+    background-image: url(../images/newicon20121210.png);
+    background-repeat: no-repeat;
+}
+
+
+
+#preview {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 352px;
+    *z-index: 4;
+}
+
+    #preview #spec-list a.disabled {
+        cursor: default;
+    }
+
+#spec-n1 {
+    width: 350px;
+    height: 350px;
+    border: 1px solid #ddd;
+    margin-bottom: 5px;
+}
+
+#spec-list {
+    position: relative;
+    width: 310px;
+    height: 54px;
+    overflow: hidden;
+    padding: 0 21px;
+}
+
+    #spec-list .spec-control {
+        display: block;
+        position: absolute;
+        top: 0;
+        width: 17px;
+        height: 54px;
+    }
+
+#spec-forward {
+    left: 0;
+    background-position: 0 -139px;
+}
+
+#spec-backward {
+    right: 0;
+    background-position: -17px -139px;
+}
+
+#preview .view-sup {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 3;
+}
+
+    #preview .view-sup a {
+        display: block;
+        width: 50px;
+        height: 50px;
+        overflow: hidden;
+        text-indent: -200px;
+    }
+
+#view-360 a {
+    background: url(i/360_flash.png) no-repeat 0 0;
+}
+
+#view-video a {
+    background: url(i/360_video.png) no-repeat 0 0;
+}
+
+* html #view-360 a {
+    background-image: none;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src='http://misc.360buyimg.com/201007/skin/df/i/360_flash.png');
+}
+
+* html #view-video a {
+    background-image: none;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src='http://misc.360buyimg.com/201007/skin/df/i/360_video.png');
+}
+
+#spec-forward:hover {
+    background-position: -34px -139px;
+}
+
+#spec-backward:hover {
+    background-position: -51px -139px;
+}
+
+#spec-forward.disabled {
+    background-position: -68px -139px;
+}
+
+#spec-backward.disabled {
+    background-position: -85px -139px;
+}
+
+#spec-list .spec-items {
+    position: absolute;
+    top: 0;
+    left: 21px;
+}
+
+    #spec-list .spec-items li {
+        width: 62px;
+        text-align: center;
+        font-size: 0;
+        position: relative;
+        left:0;
+        top:0;
+    }
+
+#spec-list li b {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 4px;
+    width: 54px;
+    height: 49px;
+    height: 18px;
+    font: 12px/18px simsun;
+    color: #fff;
+}
+
+#spec-list li b {
+    background: rgba(0,0,0,0.4);
+    filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr='#8c000000',EndColorStr='#8c000000');
+}
+
+:root #spec-list li b, :root #spec-list li b {
+    filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr='#00000000',EndColorStr='#00000000');
+}
+.spec-items {
+    
+}
+#spec-list .spec-items img {
+    width: 50px;
+    height: 50px;
+    padding: 1px;
+    border: 1px solid #CECFCE;
+}
+
+#spec-list .spec-items .curr img {
+    padding: 0;
+    border: 2px solid #C00;
+}
+
+.jqzoom {
+    position: relative;
+    padding: 0;
+}
+
+.zoomdiv {
+    z-index: 8;
+    position: absolute;
+    top: 0;
+    left: 362px;
+    width: 400px;
+    height: 400px;
+    background: url(../images/loading.gif) #fff no-repeat center center;
+    border: 1px solid #e4e4e4;
+    display: block;
+    text-align: center;
+    overflow: hidden;
+    display:none;
+}
+
+.bigimg {
+    width: 800px;
+    height: 800px;
+}
+
+.jqZoomPup {
+    z-index: 3;
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #aaa;
+    background: #FEDE4F 50% top no-repeat;
+    opacity: .5;
+    -moz-opacity: .5;
+    -khtml-opacity: .5;
+    filter: alpha(Opacity=50);
+    cursor: move;
+    display:none;
+}
+
+#spec-list .spec-items img.img-hover {
+    border: 2px solid #c00;
+    padding: 0;
+}
+.lh li, .lh dl, .lh .item {
+float: left;
+}
+

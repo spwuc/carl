@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>我的消费</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="Cache-Control" content="max-age=0">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/consumption.css"/>
+    <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            function prevent_default(e) {
+                e.preventDefault();
+            }
+
+            function disable_scroll() {
+                $(document).on('touchmove', prevent_default);
+            }
+
+            function enable_scroll() {
+                $(document).unbind('touchmove', prevent_default);
+            }
+
+            var x;
+            $('.con_div')
+                    .on('touchstart', function (e) {
+                        $('.con_div.open').css('left', '0px').removeClass('open');
+                        $(e.currentTarget).addClass('open');
+                        x = e.originalEvent.targetTouches[0].pageX;
+                    })
+                    .on('touchmove', function (e) {
+                        var change = e.originalEvent.targetTouches[0].pageX - x;
+                        var currentLeft = parseInt(e.currentTarget.style.left);
+                        if (change < 0 || (currentLeft < 0 && change > 0 && change + currentLeft < 0)) {
+                            change = Math.min(Math.max(-68, change), 100);
+                            e.currentTarget.style.left = change + 'px';
+                            if (change < -10) disable_scroll();
+                        }
+                    })
+                    .on('touchend', function (e) {
+                        var left = parseInt(e.currentTarget.style.left);
+                        var new_left;
+                        if (left < -35) {
+                            new_left = '-68px';
+                        } else if (left > 0) {
+                            new_left = '0px';
+                        } else {
+                            new_left = '0px';
+                        }
+                        $(e.currentTarget).animate({left: new_left}, 200);
+                        enable_scroll();
+                    });
+
+            $('.delete-btn').on('touchend', function (e) {
+                e.preventDefault();
+                $(this).parents('li').slideUp('fast', function () {
+                    $(this).remove();
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+<header>
+    <div class="hea_div">
+        <a href="javascript:history.go(-1)"><img class="head_left" src="img/right_sj_hea.png"></a>
+        我的消费
+        <a href="consumption-two.html"><img class="head_right" src="img/con_c.png"/></a>
+    </div>
+</header>
+    <section>
+        <div class="con_tin">
+            <div class="con_div">
+                <div class="con_le">
+                    <img src="img/con_d.png"/>
+                    <p>电影</p>
+                </div>
+                <div class="con_p">
+                    <p>灰姑娘<span>（共2张）</span></p>
+                    <p>西园影城  2015-03-19  周三 14:00</p>
+                    <p>2号厅  5排14座  5排15 座</p>
+                </div>
+                <img class="con_img" src="img/con_rigy.png"/>
+            </div>
+            <a class="delete-btn">删除</a>
+        </div>
+        <div class="con_tin">
+            <div class="con_div">
+                <div class="con_le">
+                    <img src="img/con_d.png"/>
+                    <p>电影</p>
+                </div>
+                <div class="con_p">
+                    <p>团购券名称</p>
+                    <p>数量20张</p>
+                    <p>验证码: 201503191412</p>
+                </div>
+                <img class="con_img" src="img/con_rigz.png"/>
+            </div>
+            <a class="delete-btn">删除</a>
+        </div>
+        <div class="con_tin">
+            <div class="con_div">
+                <div class="con_le">
+                    <img src="img/con_j.png"/>
+                    <p>商品券</p>
+                </div>
+                <div class="con_p">
+                    <p>美度经典男款手表</p>
+                    <p>价格: <b>¥7862.00</b></p>
+                </div>
+                <img class="con_img" src="img/con_rigw.png"/>
+            </div>
+            <a class="delete-btn">删除</a>
+        </div>
+        <div class="con_tin">
+            <div class="con_div">
+                <div class="con_le">
+                    <img src="img/con_p.png"/>
+                    <p>汽车票</p>
+                </div>
+                <div class="con_p">
+                    <p>昆山<img src="img/bus_right.png">千灯镇</p>
+                    <p>乘车日期: 2015-03-19</p>
+                    <p>价格: <b>¥ 30.00</b></p>
+                </div>
+                <img class="con_img" src="img/con_rigy.png"/>
+            </div>
+            <a class="delete-btn">删除</a>
+        </div>
+        <div class="con_tin">
+            <div class="con_div">
+                <div class="con_le">
+                    <img src="img/con_l.png"/>
+                    <p>兑换</p>
+                </div>
+                <div class="con_p">
+                    <p>汉根达斯9积分+30元兑换</p>
+                    <p>价格:<b>¥ 39.00</b></p>
+                </div>
+                <img class="con_img" src="img/con_rigc.png"/>
+            </div>
+            <a class="delete-btn">删除</a>
+        </div>
+        <div class="con_tin">
+            <div class="con_div">
+                <div class="con_le">
+                    <img src="img/con_mo.png"/>
+                    <p>缴费</p>
+                </div>
+                <div class="con_p">
+                    <p>有线电视缴费</p>
+                    <p>缴费时间: 2015-03-19</p>
+                    <p>缴费金额: <b>¥ 50.00</b></p>
+                </div>
+                <img class="con_img" src="img/con_rigc.png"/>
+            </div>
+            <a class="delete-btn">删除</a>
+        </div>
+        <div class="con_tin">
+            <div class="con_div">
+                <div class="con_le">
+                    <img src="img/con_j.png"/>
+                    <p>商品券</p>
+                </div>
+                <div class="con_p">
+                    <p>美度经典手表</p>
+                    <p>缴费金额: <b>¥ 50.00</b></p>
+                </div>
+                <img class="con_img" src="img/con_rigc.png"/>
+            </div>
+            <a class="delete-btn">删除</a>
+        </div>
+    </section>
+</body>
+</html>

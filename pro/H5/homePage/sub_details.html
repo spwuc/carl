@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>商品</title>
+<meta charset="utf-8">
+<meta name="viewport"content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+<meta http-equiv="Cache-Control" content="max-age=0">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="css/sub_Details.css"/>
+<script type="text/javascript" src="../public/js/jquery-2.0.3.min.js"></script>
+<script type="text/javascript" src="../public/js/public.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $(document).addHeader('<img class="right_h" src="img/zy_x.png" width="22">',function(){
+
+            });
+            var data;
+            var param={};
+            param.sid = '1003';
+            iss.details(function(){
+                data = JSON.parse(data);
+                param.id = data.id;
+                param.type = data.type;
+                iss.request(function(data){
+                    data = JSON.parse(data).data;
+                    if(errcode = 0){
+                        $("#det_pic").attr('src',data.items.goodsImgPath);
+                        $("#det_jg").html(data.items.activityPrice);
+                        $("#det_b").html(data.items.goodsPrice);
+                        //活动计时
+
+                        $("#det_zb p").html(data.items.goodsName);
+                        $("#det_jf").html(data.items.giveIntegral);
+                        //产品介绍
+                    }
+                })
+                $("#det_but").click(function(e){
+                    e.stopPropagation();
+                    e.preventDefault();
+                    var param={};
+                    param.html='affirm_two.html';
+                    iss.changeNextPage(function(){
+                        $.cookie('Path',data);
+                    },failCallBack.param);
+                });
+
+            },failCallBack,param)
+        })
+
+    </script>
+</head>
+<body>
+	<section class="det_cent">
+		<img src="img/sub_zu.png" id="det_pic"/>
+		<div class="det_js">
+			<p id="det_jg">￥130.00<span>起<b id="det_b">￥200.00</b></span></p>
+			<div>活动倒计时:<span>05:43:27</span></div>
+			<button id="det_but"><a style="color:#fff;  text-decoration: none;" href="affirm_two.html">立即购买</a></button>
+		</div>
+		<div class="det_zb" id="det_zb">
+			<p>小辉哥火锅</p>
+			<span>赠送<a id="det_jf">200</a>积分</span>
+		</div>
+		<div class="det_jss">
+			<div class="det_zw"></div>
+			<h1>产品介绍</h1>
+			<div class="det_jxx">
+				<p>手打鲮鱼滑</p>
+				<img src="img/sub_zt.png"/>
+			</div>
+			
+		</div>
+	</section>
+</body>
+</html>

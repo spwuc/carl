@@ -1,0 +1,46 @@
+*{
+  padding:0;
+  margin:0;
+  font-family: "华文黑体";
+  list-style:none;
+}
+body{
+  background:#f4f4f4;
+}
+.sur_header{
+  background: #fff;
+  border-bottom: 1px solid #cecece;
+  border-top: 1px solid #cecece;
+  overflow: hidden;
+}
+.sur_img{
+  width:40px;
+  float: left;
+}
+.sur_img img{
+  width: 100%;
+}
+.sur_ti{
+  float: left;
+  text-align: center;
+  padding-left: 30px;
+}
+.sur_bv{
+  width:230px;
+  overflow: hidden;
+  padding: 35px 0;
+  margin: 0 auto;
+}
+.sur_ti p:nth-child(1){
+  font-size: 16px;
+  color: #3e3f3f;
+}
+.sur_ti p:last-child{
+	padding-top: 10px;
+}
+
+.sur_ti p:nth-child(2){
+  color: #8a8a8a;
+  font-size: 15px;
+  padding-top: 10px;
+}

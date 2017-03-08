@@ -1,0 +1,115 @@
+*{padding:0;margin: 0;font-style:none;}
+body{
+    background:#f4f4f4;
+}
+.hea_div{
+    height: 45px;
+    line-height: 45px;
+    font-size: 17px;
+    text-align: center;
+    color: rgb(69, 140, 236);
+    position: relative;
+    border-bottom: 1px solid #D8D8D8;
+    background: #fff;
+}
+.head_left{
+    width: 11px;
+    position: absolute;
+    top: 14px;
+    left: 14px;
+}
+.head_right{
+    position: absolute;
+    right: 14px;
+    top: 0;
+    font-size: 14px;
+    height: 45px;
+}
+.reg_sec{
+    font-size: 13px;
+}
+.cla_ul{
+    background: #fff;
+}
+.cla_ul li{
+    border-bottom: 1px solid #e1e1e1;
+    overflow: hidden;
+    margin-left: 15px;
+    line-height: 45px;
+}
+.cla_ul li span{
+    letter-spacing: 15px;
+}
+.cla_ul li button{
+    color: #498ee8;
+    border: 1px solid #498ee8;
+    border-radius: 5px;
+    background: none;
+    float: right;
+    width: 60px;
+    height: 30px;
+    margin-top: 8px;
+    margin-right: 13px;
+}
+.cla_ul li:nth-child(3) span{
+    letter-spacing: 1px;
+}
+.cla_ul li:last-child{
+    border-bottom: none;
+}
+.cla_ul li img{
+    width: 20px;
+}
+.cla_ul li b{
+    font-weight: 100;
+    float: right;
+    padding-right: 15px;
+}
+.cla_ul li:nth-last-child(2) img{
+    float: right;
+    padding: 13px 7px 0 0;
+}
+.cla_ul li:first-child img{
+    width: 40px;
+    float: right;
+    margin: 5px 10px 5px 0;
+}
+.cla_ul li:last-child img{
+    width: 16px;
+    float: right;
+    padding: 17px 15px 0 0;
+}
+.data_ul{
+    background: #fff;
+    margin-top: 15px;
+}
+.data_ul li{
+    border-bottom: 1px solid #e1e1e1;
+    margin-left: 15px;
+    line-height: 40px;
+}
+.data_ul li:last-child{
+    border-bottom: none;
+}
+.data_ul li img{
+    width: 10px;
+    float: right;
+    padding: 12px 15px 0 0;
+}
+.data_ul li a{
+    color: #000;
+}
+.data_btn{
+    width: 90%;
+    height: 35px;
+    color: #fff;
+    background: #498ee9;
+    border: none;
+    border-radius: 5px;
+    margin-left: 5%;
+    margin-top: 35px;
+    font-size: 15px;
+}
+.data_btn a{
+    color: #fff;
+}

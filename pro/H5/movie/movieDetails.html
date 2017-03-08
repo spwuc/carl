@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>天降雄狮</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="Cache-Control" content="max-age=0">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet"  href="css/movieDetails.css" />
+    <link rel="stylesheet"  href="css/reset.css" />
+    <script type="text/javascript" src="../public/js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="../public/js/public.js"></script>
+    <script type="text/javascript">
+
+        $(function(){
+            $('.xq').on('click',function(){
+                $(this).next().slideToggle();
+            })
+            $('#concent').css('width',$('body').width()-10-18-30);
+            $('.pf_w>img').eq(0).css('marginLeft',($('body').width()/2)-($('.pf_w>img').length*$('.pf_w>img').outerWidth()+$('.pf_w>span').outerWidth())/2);
+
+        })
+//        $(function(){
+////            $(document).addHeader();
+//
+//        })
+    </script>
+
+
+</head>
+<body>
+    <header>
+        <div class="hea_div">
+            <a href="javascript:history.go(-1);"><img class="head_left" src="../public/img/right_sj_hea.png"></a>
+            天降雄狮
+        </div>
+    </header>
+    <header>
+        <img class="dyxx" src="img/movie_more.png" width="128">
+        <div class="pf_w">
+            <img src="img/star.png" width="11">
+            <img src="img/star.png" width="11">
+            <img src="img/star.png" width="11">
+            <img src="img/star.png" width="11">
+            <img src="img/star.png" width="11">
+            <span>7.<span>6</span></span>
+        </div>
+    </header>
+<section class="con">
+    <div class="xq ypxx">
+        <span>影片信息</span>
+        <img src="img/down_movie.png" width="13">
+    </div>
+    <div class="ypxx-con">
+       <table class="tab_con">
+           <tr>
+               <th><span class="th_show">导</span>演：</th>
+               <td>李仁港</td>
+           </tr>
+           <tr class="lineH21">
+               <th><span class="th_show">主</span>演：</th>
+               <td>成龙&nbsp;&nbsp;约翰·库萨克&nbsp;&nbsp;阿德里安·布洛迪&nbsp;&nbsp;林鹏&nbsp;&nbsp;王若心</td>
+           </tr>
+           <tr>
+               <th><span class="th_show">类</span>型：</th>
+               <td>动作/战争/古装</td>
+           </tr>
+           <tr>
+               <th><span class="th_show">地</span>区：</th>
+               <td>中国大陆/香港</td>
+           </tr>
+           <tr>
+               <th><span class="th_show">时</span>长：</th>
+               <td>127分钟</td>
+           </tr>
+           <tr>
+               <th>上映时间：</th>
+               <td>2015-02-19(中国大陆)</td>
+           </tr>
+       </table>
+    </div>
+    <div class="xq ypjz">
+        <span>影片剧照</span>
+        <img src="img/down_movie.png" width="13">
+    </div>
+    <div class="ypjz-con">
+        <img src="img/dyjz.png" width="140" />
+        <img src="img/dyjz.png" width="140" />
+    </div>
+    <div class="xq wypl">
+        <span>我要评论</span>
+        <img src="img/down_movie.png" width="13">
+    </div>
+    <div class="wypl-con">
+         <dl>
+             <dt>
+                 <img src="img/pltx.png" width="41" />
+             </dt>
+             <dd>
+                 <span>Rockme</span>
+                 <span>2015-02-22&nbsp;&nbsp;15:17:06</span>
+             </dd>
+             <dd>成龙大哥，喜欢！</dd>
+             <dd>
+                 <span>回复</span>
+             </dd>
+         </dl>
+        <dl>
+             <dt>
+                 <img src="img/pltx.png" width="41" />
+             </dt>
+             <dd>
+                 <span>Rockme</span>
+                 <span>2015-02-22&nbsp;&nbsp;15:17:06</span>
+             </dd>
+             <dd>挺好的，成龙大哥不愧是一代枭雄，能把西蒙子那么淘的小孩都演的那么好，真是太赞了！很热血！</dd>
+             <dd>
+                 <span>回复</span>
+             </dd>
+         </dl>
+    </div>
+</section>
+<footer>
+    <div>
+        <div class="input_dv">
+            <img src="img/xie.png" width="18">
+            <input placeholder="写评论" id="concent" type="text" />
+        </div>
+    </div>
+
+    <div>
+        <a href="theater.html"><span>查看排期和购票</span></a>
+    </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,151 @@
+*{padding:0;margin: 0;font-style:none;}
+body{
+    background:#f4f4f4;
+}
+.hea_div{
+    height: 45px;
+    line-height: 45px;
+    font-size: 17px;
+    text-align: center;
+    color: rgb(69, 140, 236);
+    position: relative;
+    border-bottom: 1px solid #D8D8D8;
+    background: #fff;
+}
+.head_left{
+    width: 11px;
+    position: absolute;
+    top: 14px;
+    left: 14px;
+}
+.head_right{
+    position: absolute;
+    right: 14px;
+    top: 0;
+    font-size: 14px;
+    height: 45px;
+}
+.head_right a{
+    color: rgb(69, 140, 236);
+}
+.reg_sec{
+    font-size: 13px;
+}
+.heads{
+	width:100%;
+	background:#fff;
+}
+.heads p{
+	width:100%;
+	border-bottom: 1px solid #B2B2B2;
+} 
+.heads p img{
+	max-width:15px;
+	padding-top: 10px;
+	padding-left: 10px;
+	float:left;
+}
+.heads p span{
+	width: 100%;
+	display: block;
+	text-align: center;
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 50px;
+}
+.centers{
+	font-size:15px;
+    margin-top: 15px;
+}
+.centers li{
+	width:100%;
+	background:#fff;
+	color:#000;
+	overflow: auto;
+	padding:10px 0;
+    font-size: 13px;
+    border-bottom: 1px solid #e1e1e1;
+}
+.centers li:last-child{
+    border-bottom: none;
+}
+.centers li p{
+	width:70%;
+	float: left;
+	margin-left: 10%;
+}
+.centers li b{
+	font-weight:bold;
+}
+.centers li i{
+    float: right;
+    font-style: normal;
+    font-weight: bold;
+}
+.centers li span{
+	margin-top:7px;
+	display:block;
+    color: #9a9a9a;
+}
+.centers li span a{
+    color: red;
+}
+.centers li img{
+    width: 11px;
+    float: right;
+    padding-right: 4%;
+    padding-top: 10px;
+}
+.centers li.dizhi{
+	width:100%;
+	background:#5D6B85;
+	color:#fff;
+	overflow: auto;
+	padding:10px 0; 
+}
+.dizhi span.icon{
+    background: url("../img/pic_right.png") no-repeat;
+    background-size: 100% 100%;
+    width: 11px;
+    height: 18px;
+    float: right;
+    margin-right: 21px;
+    margin-top: 20px;
+}
+.dizhi p{
+	width:70%;
+	float: left;
+	margin-left: 10%;
+}
+.dizhi b{
+	font-weight:bold;
+}
+.dizhi i{
+	float:right;
+}
+.dizhi span{
+	margin-top:7px;
+	display:block;
+}
+.ding{
+	width:100%;
+	position:fixed;
+	bottom:0;
+	background:#fff;
+	border-top:1px solid #B2B2B2;
+}
+.ding ul li img{
+	margin-bottom:10px;
+}
+.ding input{
+	width:92%;
+	height:30px;
+	background-color:#FF7E33;
+	border:none;
+	margin-left:4%;
+	margin-top:12px;
+	color:#fff;
+	margin-bottom:10px;
+	border-radius:50px;
+}
+

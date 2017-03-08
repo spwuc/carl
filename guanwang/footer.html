@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>北京卓新思创科技有限公司</title>
+<link href="css/footer.css" type="text/css" rel="stylesheet" />
+<script src="js/jquery-1.8.3.min.js"></script>
+<script>
+
+$(function(){
+	var musicIndex = 0;
+	//音乐播放
+	$(".music").find("span").click(function(){
+		//让	musicIndex自增1	
+		musicIndex++;
+		//获取当前点击的span的index，以设置需要加载的music的地址。	
+		index = $(this).index();
+		
+		if(navigator.appName=="Microsoft Internet Explorer"){ //如果是ie
+			$("body").append('<bgsound class="myaudio'+ musicIndex +'" src="music/sound0'+ index +'.mp3" autostart=true loop=false>');
+		}else if(navigator.userAgent.indexOf("Firefox")>0){ //如果是火狐
+			$("body").append('<object  class="myaudio'+ musicIndex +'" data="music/sound0'+ index +'.mp3" type="application/x-mplayer2" width="0" height="0">'+
+					'<param name="src" value="music/sound0'+ index +'.mp3">'+
+					'<param name="autostart" value="1">'+
+					'<param name="playcount" value="infinite">'+
+				'</object>')
+		}else{ //其他
+			$("body").append('<embed class="myaudio'+ musicIndex +'" src="music/sound0'+ index +'.mp3" autostart="" loop="false" hidden="true"  ></embed>');
+		}
+		var removeIndex = musicIndex;
+		setTimeout(function(){
+			$(".myaudio"+removeIndex).remove();
+		},3000);
+		
+	});
+	
+	//备案声明点击打开查询网站
+	$("#beiaishenmin").click(function(){
+		window.open("http://www.miitbeian.gov.cn");
+	})
+})
+
+</script>
+
+</head>
+
+<body>
+	
+    <div class="footer_wrap">
+    	<div class="footer">
+        	<div class="music">
+            	<span></span>
+                <span style="background-image:url(images/yinyue_lai.png)"></span>
+                <span style="background-image:url(images/yinyue_mi.png)"></span>
+                <span style="background-image:url(images/yinyue_fa.png)"></span>
+                <span style="background-image:url(images/yinyue_suo.png)"></span>
+                <span style="background-image:url(images/yinyue_la.png)"></span>
+                <span style="background-image:url(images/yinyue_xi.png)"></span>
+            </div>
+            <div class="music_content">
+            	<!--<embed src="music/sound 68.mp3" autostart="true" loop="true" width="200" height="200"></embed>-->
+            	<!--<embed id="myaudio" src="" autostart="" loop="false" hidden="true"  >-->
+                 
+                <!--<embed src="music/sound00.mp3" autostart="true" playcount="true" loop="true" height="0" width="0"></embed>-->
+                
+                <!--<bgsound id="myaudio" src="music/sound00.mp3" autostart=true loop=false>
+                <embed id="myaudio" src="music/sound00.mp3" autostart="" loop="false" hidden="true"  ></embed>-->
+                
+            </div>
+            <div class="shenmin" id="beiaishenmin">蜀ICP备16002451号</div>
+        </div>
+    </div>
+
+</body>
+</html>

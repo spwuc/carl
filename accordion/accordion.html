@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>手风琴</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="../images/ke.ico" type="image/x-icon">
+<script type="text/javascript" src="jquery-1.8.0.js"></script>
+ <style>
+     body,html{
+         margin: 0;
+         padding: 0;
+     }
+     div{
+         border: 1px solid #ccc;
+         width: 150px;
+         background: #36a4ff;
+         height: 50px;
+         line-height: 25px;
+         text-align: center;
+         margin: 0;
+         padding: 0;
+     }
+     h4{
+         border: 1px solid #ccc;
+         background: #13ffd8;
+         width: 150px;
+         height: 30px;
+         line-height: 30px;
+         text-align: center;
+         margin: 0;
+         padding: 0;
+     }
+ </style>
+</head>
+<body>
+<h4>first title</h4>
+<div>first content<br>first content</div>
+<h4>second title</h4>
+<div>second content<br>second content</div>
+<h4>thred title</h4>
+<div>thred content<br>thred content</div>
+<script>
+    $(function(){
+        $('div').hide();
+        var tag=-1;
+        $('h4').each(function(index){
+            $(this).mouseenter(function(){
+                if(tag!=index){
+                    $('div').slideUp();
+                    $(this).next().slideDown();
+                    tag=index;
+                }
+            })
+        })
+    })
+</script>
+</body>
+</html>

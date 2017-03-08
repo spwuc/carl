@@ -1,0 +1,14 @@
+.sur_but{
+  width: 100%;
+  padding-top: 30px;
+}
+.sur_but button{
+  width: 90%;
+  height: 40px;
+  border: none;
+  background: #4d90e6;
+  color: #fff;
+  -webkit-border-radius: 5px;
+  margin-left: 5%;
+  font-size: 17px;
+}

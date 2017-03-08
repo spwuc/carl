@@ -1,0 +1,260 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>查询结果</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" /> 
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" /> 
+    <meta content="telephone=no" name="format-detection" /> 
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="../public/js/jquery-2.0.3.min.js"></script>
+    <!--<script type="text/javascript" src="../cordova.js"></script>-->
+    <!--<script type="text/javascript" src="../public/js/public.js"></script>-->
+    <style>
+        html{-webkit-text-size-adjust:none;}
+    </style>
+
+    <!--<script type="text/javascript">-->
+
+    <!--//获取cookie-->
+    <!--$(function(){-->
+        <!--document.addEventListener('deviceready', onDeviceready, false);-->
+        <!--function onDeviceready(){-->
+        <!--//header-->
+        <!--$(document).addHeader('', function () {-->
+
+        <!--});-->
+        <!--var uid = $.cookie('uid');-->
+        <!--var idCard = $.cookie('idCard');-->
+        <!--//社保账户信息-->
+        <!--var param={};-->
+            <!--param.sid='7002';-->
+            <!--param.uid= uid;-->
+            <!--param.id_card=idCard;-->
+        <!--iss.request(function(data){-->
+            <!--data= JSON.parse(data);-->
+            <!--if(data.error_no == '1'){-->
+                <!--$("#name").html(data.name);-->
+                <!--$("#socNum").html(data.personal_no);-->
+                <!--$("#comName").html(data.company_name);-->
+                <!--$("#birthday").html(data.birthday);-->
+                <!--$("#cjgzsj").html(data.cjgzsj);-->
+                <!--$("#ryzt").html(data.ryzt);-->
+            <!--}-->
+        <!--},failCallBack,param);-->
+        <!--//社保缴费明细-->
+        <!--var param01={};-->
+            <!--param01.sid='7003';-->
+            <!--param01.uid = uid;-->
+            <!--param01.id_card= idCard;-->
+        <!--iss.request(function(data){-->
+            <!--data=JSON.parse(data);-->
+            <!--if(data.error_no == '1'){-->
+                <!--$("#payMonth").html(data.pay_month);-->
+                <!--$("#payBaseline").html(data.pay_baseline);-->
+                <!--$("#companyPay").html(data.company_pay);-->
+                <!--$("#personalPay").html(data.personal_pay);-->
+                <!--$("#payDate").html(data.pay_date);-->
+                <!--$("#payType").html(data.pay_type);-->
+            <!--}-->
+        <!--},failCallBack,param01);-->
+        <!--//医保账户信息-->
+         <!--$(".health").click(function(){-->
+             <!--var param02={};-->
+             <!--param02.sid='7004';-->
+             <!--param02.uid = uid;-->
+             <!--param02.id_card= idCard;-->
+             <!--iss.request(function(data){-->
+                 <!--data=JSON.parse(data);-->
+                 <!--if(data.error_no == '1'){-->
+                     <!--$("#balance").html(data.balance);-->
+                     <!--$("#yearBalance").html(data.year_balance);-->
+                     <!--$("#thisYearbudge").html(data.this_year_budge);-->
+                     <!--$("#thisYearexpens").html(data.this_year_expens);-->
+                     <!--$("#thisYearincome").html(data.this_year_income);-->
+                     <!--$("#balanceMonthes").html(data.monthes);-->
+                 <!--}-->
+             <!--},failCallBack,param02);-->
+             <!--//医保缴费明细-->
+             <!--var param03={};-->
+             <!--param03.sid='7005';-->
+             <!--param03.uid = uid;-->
+             <!--param03.id_card= idCard;-->
+             <!--iss.request(function(data){-->
+                 <!--data=JSON.parse(data);-->
+                 <!--if(data.error_no == '1'){-->
+                     <!--$("#hosDate").html(data.date);-->
+                     <!--$("#hopName").html(data.hospital_name);-->
+                     <!--$("#fee").html(data.fee);-->
+                     <!--$("#unifyPay").html(data.unify_pay);-->
+                     <!--$("#accountPay").html(data.account_pay);-->
+                     <!--$("#currencyPay").html(data.currency_pay);-->
+                 <!--}-->
+             <!--},failCallBack,param03);-->
+         <!--});-->
+        <!--};-->
+    <!--})-->
+
+    <!--</script>-->
+</head>
+
+<body>
+
+    <div class="socialTab">
+        <ul class="">
+            <li><p class="cur">社保</p></li>
+            <li class="health"><p>医保</p></li>
+        </ul>
+    </div>
+    <div class="wraps">
+    <div id="social02">
+        <p class="watch03_message">个人信息</p>
+        <ul class="watch03_ul">
+            <li>
+                <label><b class="water1letter">姓</b>名:</label>
+                <span id="name"></span>
+            </li>
+            <li>
+                <label>个人编码:</label>
+                <span id="socNum"></span>
+            </li>
+            <li>
+                <label>单位名称:</label>
+                <span id="comName"></span>
+            </li>
+            <li>
+                <label>出身年月:</label>
+                <span id="birthday"></span>
+            </li>
+            <li>
+                <label>工作时间:</label>
+                <span id="cjgzsj"></span>
+            </li>
+            <li>
+                <label>人员状态:</label>
+                <span class="ryzt"></span>
+            </li>
+
+        </ul>
+        <p class="watch03_message">养老缴费明细</p>
+        <ul class="watch03_ul">
+            <li>
+                <label>缴费年月:</label>
+                <span id="payMonth"></span>
+            </li>
+            <li>
+                <label>缴费基数:</label>
+                <span class="spanColor" id="payBaseline">￥200.00</span>
+            </li>
+            <li>
+                <label>单位缴费:</label>
+                <span class="spanColor" id="companyPay">￥200.00</span>
+            </li>
+            <li>
+                <label>个人缴费:</label>
+                <span class="spanColor" id="personalPay">￥200.00</span>
+            </li>
+            <li>
+                <label>缴费时间:</label>
+                <span id="payDate">2010-07-20</span>
+            </li>
+            <li>
+                <label>缴费类型:</label>
+                <span id="payType">养老金</span>
+            </li>
+
+        </ul>
+        <p class="power01_tels">咨询热线 12333</p>
+        <p class="power01_messages">信息来源于社会保险服务网站</p>
+    </div>
+    <div id="social03" style="display:none;">
+        <p class="watch03_message">账户信息</p>
+        <ul class="watch03_ul">
+            <li>
+                <label>医保账户余额:</label>
+                <span id="balance">张三</span>
+            </li>
+            <li>
+                <label>历年账户余额:</label>
+                <span id="yearBalance">26459349802980</span>
+            </li>
+            <li>
+                <label>本年预化额度:</label>
+                <span id="thisYearbudge">昆山传媒</span>
+            </li>
+            <li>
+                <label>本年消费累计:</label>
+                <span id="thisYearexpens">1988-05-20</span>
+            </li>
+            <li>
+                <label>本年账户划入:</label>
+                <span id="thisYearincome">2010-07-20</span>
+            </li>
+            <li>
+                <label>累计月数:</label>
+                <span id="balanceMonthes">在职</span>
+            </li>
+
+        </ul>
+        <p class="watch03_message">缴费明细</p>
+        <ul class="watch03_ul">
+            <li>
+                <label>缴费年月:</label>
+                <span>2010-07</span>
+            </li>
+            <li>
+                <label>缴费基数:</label>
+                <span class="spanColor">￥200.00</span>
+            </li>
+            <li>
+                <label>单位缴费:</label>
+                <span class="spanColor">￥200.00</span>
+            </li>
+            <li>
+                <label>个人缴费:</label>
+                <span class="spanColor">￥200.00</span>
+            </li>
+            <li>
+                <label>划入账户:</label>
+                <span>2010-07-20</span>
+            </li>
+
+        </ul>
+        <p class="watch03_message">消费信息</p>
+        <ul class="watch03_ul">
+            <li>
+                <label>就诊日期:</label>
+                <span id="hosDate">2010-07</span>
+            </li>
+            <li>
+                <label>就诊医院:</label>
+                <span id="hopName">长江医院</span>
+            </li>
+            <li>
+                <label>就诊金额:</label>
+                <span class="spanColor" id="fee">￥200.00</span>
+            </li>
+            <li>
+                <label>统筹支付:</label>
+                <span id="unifyPay">正常</span>
+            </li>
+            <li>
+                <label>账户支付:</label>
+                <span id="accountPay">是</span>
+            </li>
+            <li>
+                <label>现金支付:</label>
+                <span id="currencyPay">否</span>
+            </li>
+        </ul>
+        <p class="power01_tels">咨询热线 12333</p>
+        <p class="power01_messages">信息来源于社会保险服务网站</p>
+    </div>
+    </div>
+</body>
+<script src="js/main.js">
+
+</script>
+</html>

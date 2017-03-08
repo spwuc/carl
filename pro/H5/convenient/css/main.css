@@ -1,0 +1,669 @@
+﻿/* CSS Document */
+@charset "utf-8";
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{margin:0;padding:0;}
+body{font-size:13px;font-family:'Microsoft Yahei',helvetica,arial;background:#f8f8f8;-webkit-text-size-adjust:none;-webkit-tap-highlight-color:rgba(0,0,0,0);}
+table{border-collapse:collapse;border-spacing:0;}
+th,td{text-align:center;vertical-align:top;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:400;}
+fieldset,img{border:0;}
+ol,ul,li{list-style:none;}
+input{font-size:100%;background:none;}
+img,input,button,a,select,textarea{ margin: 0; padding: 0; resize:none; border:none; outline:none; } 
+ins,a{text-decoration:none;color:#000;}
+a:hover,a:active,a:visited{text-decoration:none;}
+a:focus {
+outline: none;
+}
+.mt15 {
+margin-top:15px;
+}
+@font-face {
+    font-family: 'MyFont';
+    src: url('../font/DS-DIGI.TTF');
+}
+.fontFamily{
+    font-family: 'MyFont';
+}
+.clear {
+clear:both;
+}
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+    color: #e8e8e8;
+}
+　input:-moz-placeholder, textarea:-moz-placeholder {
+    color:#e8e8e8;
+}
+　input::-moz-placeholder, textarea::-moz-placeholder {
+    color:#e8e8e8;
+}
+　input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+    color:#e8e8e8;
+}
+
+
+/* b电费  01 */
+#power01{
+    width:100%;
+    font-size:13px;
+}
+#power01 label{
+    color:#404040;
+}
+.power01_ul{
+     width:100%;
+     background:#fff;
+     margin-top:5%;
+}
+.power01_ul li{
+    height:40px;
+    line-height:40px;
+    margin-left:5%;
+    border-bottom:1px solid #e1e1e1;
+}
+.power01_ul li:last-child{
+    border:none;
+}
+.power01_ul li input{
+    margin-left:2%;
+}
+.power01_ul li .code{
+    float: right;
+    width: 20%;
+    height: 30px;
+    background: #eeeeee;
+    margin-top: 5px;
+    margin-right: 5%;
+}
+#power01 .powerButton{
+    color:#fff;
+    line-height:40px;
+    text-align:center;
+    width:90%;
+    margin:0 auto;
+    border-radius: 4px;
+    background:#498ee9;
+    font-size:15px;
+    margin-left:5%;
+    margin-top:5%;
+}
+.power01_tel{
+    font-size: 13px;
+    height: 40px;
+    line-height: 40px;
+    background: #fff;
+    border: 1px solid #e1e1e1;
+    border-radius: 4px;
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    position: absolute;
+    bottom: 7%;
+    left: 25%;
+}
+.power01_message{
+    color: #a8a8a8;
+    text-align: center;
+    font-size: 13px;
+    position: absolute;
+    width: 100%;
+    bottom: 3%;
+}
+
+/* b电费  02 */
+#power02{
+    width:100%;
+    font-size:13px;
+    color:#404040;
+}
+.power02_message{
+    height:30px;
+    line-height:30px;
+    background:#e5e5e5;
+    /*margin-top:5%;*/
+    padding-left:5%;
+}
+.power02_ul{
+   padding-top:10px;
+    background:#fff;
+    border-bottom: 1px solid #e1e1e1;
+}
+.power02_ul li{
+    height:25px;
+    line-height:25px;
+}
+.power02_ul li label{
+   padding-left:5%;
+}
+.power02_ul li span{
+       color:#666666;
+    padding-left:2%;
+}
+
+.power02_message01{
+    height:30px;
+    line-height:30px;
+    background:#e5e5e5;
+    margin-top:5%;
+    padding-left:5%;
+}
+.power02_ul01{
+    padding-top:10px;
+    background:#fff;
+    border-bottom: 1px solid #e1e1e1;
+}
+.power02_ul01 li{
+    height:25px;
+    line-height:25px;
+}
+.power02_ul01 li label{
+    padding-left:5%;
+}
+.power02_ul01 li span{
+    color:#df4948;
+    padding-left:2%;
+}
+
+/* b电费  03 */
+#power03{
+    width:100%;
+    font-size:13px;
+    color:#404040;
+}
+.power03_ul{
+    margin-top:5%;
+    background:#fff;
+}
+.power03_ul li{
+    height:40px;
+    line-height:40px;
+    margin-left:5%;
+    border-bottom: 1px solid #e1e1e1;
+    position: relative;
+ }
+.power03_ul li>div:first-child{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 2;
+}
+.floatRight{
+    float:right;
+    color:#e0e0e0;
+    margin-right:2%;
+}
+.floatRight img{
+     width: 50%;
+     margin-top: 12px;
+ }
+.power03_ul li:last-child{
+    /*border:none;*/
+}
+
+/* b电费  06 */
+#power06{
+    width:100%;
+    font-size:13px;
+}
+#power06 label{
+    color:#404040;
+}
+.power06_ul{
+    width:100%;
+    background:#fff;
+    margin-top:5%;
+}
+.power06_ul li{
+    height:40px;
+    line-height:40px;
+    margin-left:5%;
+    border-bottom:1px solid #e1e1e1;
+}
+.power06_ul li:last-child{
+    border:none;
+}
+.power06_ul li input{
+    margin-left:2%;
+}
+.power06_ul li .code{
+    float: right;
+    width: 20%;
+    height: 30px;
+    background: #eeeeee;
+    margin-top: 5px;
+    margin-right: 5%;
+}
+#power06 .powerButton{
+    color:#fff;
+    line-height:40px;
+    text-align:center;
+    width:90%;
+    margin:0 auto;
+    border-radius: 4px;
+    background:#498ee9;
+    font-size:15px;
+    margin-left:5%;
+    margin-top:5%;
+}
+
+/* b电费  07 */
+#power08{
+    width:100%;
+    font-size:13px;
+}
+.power07Cont{
+    background:#fff;
+}
+.powersucc{
+    height:100px;
+    line-height:100px;
+    border-bottom:1px solid #e1e1e1;
+    margin-left:5%;
+    text-align:center;
+    position:relative;
+}
+.powersucc img{
+    width:40px;
+    height:40px;
+    position:absolute;
+    top:50%;
+    margin-top:-5%;
+    left:8%;
+}
+.power07Button{
+    height:70px;
+    border-bottom:1px solid #e1e1e1;
+}
+.power07Button input{
+    width:42%;
+    text-align: center;
+    color:#458cec;
+    height:33px;
+    line-height:33px;
+    border:1px solid #458cec;
+    border-radius:4px;
+    margin-top: 18px;
+    margin-left:5%;
+}
+
+/* c电视  01 */
+#watch01{
+    width:100%;
+    font-size:13px;
+}
+.watch01_ul{
+    color:#404040;
+    margin-top:5%;
+    background:#fff;
+}
+.watch01_ul li{
+    height:40px;
+    line-height:40px;
+    border-bottom:1px solid #e1e1e1;
+    margin-left:5%;
+}
+.watch01_ul li:last-child{
+    border:none;
+}
+.powerButton{
+    color:#fff;
+    line-height:40px;
+    text-align:center;
+    width:90%;
+    margin:0 auto;
+    border-radius: 4px;
+    background:#498ee9;
+    font-size:15px;
+    margin-left:5%;
+    margin-top:5%;
+}
+.watchnum{
+    margin-left:5%;
+    line-height:22px;
+}
+.watchHide{
+    width: 100%;
+    background: #000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity:0.7;
+}
+.watchTishiBg{
+    width:90%;
+    position:absolute;
+    left:5%;
+    top:50%;
+    height:150px;
+    margin-top:-75px;
+    background:#fff;
+    opacity:0.8;
+    border-radius: 20px;
+}
+.watchTishi{
+    width:90%;
+    position:absolute;
+    left:5%;
+    top:50%;
+     height:150px;
+    margin-top:-75px;
+}
+.watchTishi p{
+    text-align:center;
+    font-size:14px;
+    color:#858585;
+    line-height:40px;
+    border-bottom:1px solid #e1e1e1;
+}
+.watchTishi p:first-child{
+    font-size:15px;
+    color:#000;
+    border:none;
+    margin-top:20px;
+}
+.watchTishi p:last-child{
+    font-size:15px;
+    color:#458cec;
+    border:none;
+}
+
+/* c电视  03 */
+#watch03{
+    width:100%;
+    font-size:13px;
+    color:#404040;
+}
+.watch03_message{
+    height:30px;
+    line-height:30px;
+    background:#e5e5e5;
+    margin-top:5%;
+    padding-left:5%;
+}
+.watch03_ul{
+    padding-top:10px;
+    background:#fff;
+    border-bottom: 1px solid #e1e1e1;
+}
+.watch03_ul li{
+    height:25px;
+    line-height:25px;
+}
+.watch03_ul li label{
+    padding-left:5%;
+}
+.watch03_ul li span{
+    color:#666666;
+    padding-left:2%;
+}
+
+.watch03_message01{
+    height:30px;
+    line-height:30px;
+    background:#e5e5e5;
+    margin-top:5%;
+    padding-left:5%;
+}
+.watch03_ul01{
+    padding-top:10px;
+    background:#fff;
+
+}
+.watch03_ul01>li{
+    border-bottom: 1px solid #e1e1e1;
+    width:90%;
+    margin-left:5%;
+}
+.watch03_ul01>li ul li{
+    height:25px;
+    line-height:25px;
+}
+
+.watch03_ul01>li span{
+    padding-left:2%;
+}
+.watch03_ul01>li span.spanColor{
+    color:#df4948;
+}
+
+.watch03_ul>li span.spanColor{
+    color:#df4948;
+}
+.watchRight{
+    float:left;
+
+}
+.watchLeft{
+    float:left;
+}
+.power01_tels{
+    font-size: 13px;
+    height: 40px;
+    line-height: 40px;
+    background: #fff;
+    border: 1px solid #e1e1e1;
+    border-radius: 4px;
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top:10%;
+}
+.power01_messages{
+    color: #a8a8a8;
+    text-align: center;
+    font-size: 13px;
+
+    width: 100%;
+    margin-top:3%;
+    margin-bottom:3%;
+}
+.watchRight{
+    float:right;
+
+}
+.watchRights{
+    float:right;
+     margin-right:5%;
+}
+.watchTab{
+    background:#fff;
+    height:50px;
+    line-height:50px;
+     width:100%;
+}
+.watchTab>ul{
+    width:90%;
+    margin:0 auto;
+}
+.watchTab ul li{
+    height:50px;
+    line-height:50px;
+    width:47%;
+    float:left;
+    text-align:center;
+    font-size:13px;
+    border-right: 1px solid #e1e1e1;
+
+}
+.watchTab ul li:last-child{
+    border:none;
+}
+.watchTab ul li p{
+    height:50px;
+    line-height:50px;
+    width:90%;
+    margin:0 auto;
+
+}
+.watchTab ul li p.cur{
+    border-bottom:1px solid #458cec;
+}
+#watch04{
+
+}
+.watchicon{
+    margin:0 5px;
+}
+.watchicon img{
+    width: 7%;
+    vertical-align: middle;
+}
+.watchicon1Shows{
+    display:none;
+}
+/* c电视  03 */
+.power02_ul li span.spanColor{
+     color:#df4948;
+ }
+/* d社保  02 */
+.socialTab{
+    background:#fff;
+    height:50px;
+    line-height:50px;
+    width:100%;
+}
+.socialTab>ul{
+    width:90%;
+    margin:0 auto;
+}
+.socialTab ul li{
+    height:50px;
+    line-height:50px;
+    width:47%;
+    float:left;
+    text-align:center;
+    font-size:13px;
+    border-right: 1px solid #e1e1e1;
+
+}
+.socialTab ul li:last-child{
+    border:none;
+}
+.socialTab ul li p{
+    height:50px;
+    line-height:50px;
+    width:90%;
+    margin:0 auto;
+
+}
+.socialTab ul li p.cur{
+    border-bottom:1px solid #458cec;
+}
+/* e公积金  01 */
+.public01Select{
+   background:none;
+    border:none;
+    width:70%;
+}
+/* e公积金  03 */
+.public03{
+    height:40px;
+    font-size:13px;
+    background:#fff;
+    line-height:40px;
+    padding-left:5%;
+    margin-top: 5%;
+}
+.public03_ul{
+    background:#fff;
+    margin-top:5%;
+}
+.public03_ul li{
+       height:22px;
+    line-height:22px;
+    font-size:13px;
+    margin-left:5%;
+
+}
+/*  index   */
+.search_ul{
+    /*margin-top:5%;*/
+    background:#fff;
+    border-bottom: 1px solid #e1e1e1;
+}
+.search_ul li{
+    height:40px;
+    line-height:40px;
+    clear:both;
+}
+.search_ul li label{
+    float:left;
+    margin-left:5%;
+    width:15%;
+}
+.search_ul li label img{
+        width:30px;
+    vertical-align: middle;
+    padding-top:5px;
+}
+.search_ul li p{
+    height:40px;
+    line-height:40px;
+    width:79%;
+    border-bottom: 1px solid #e1e1e1;
+}
+.letters{
+    letter-spacing:51px;
+}
+.letteres{
+    letter-spacing:8.5px ;
+}
+.letter5{
+    letter-spacing:3.1px;
+}
+.water1letter{
+    letter-spacing:25px;
+}
+.letter4{
+    letter-spacing:4.3px;
+}
+.letter3{
+    letter-spacing:12.7px;
+}
+.letter4-3{
+    letter-spacing:6.2px;
+}
+
+.delete-btn{
+    position: absolute;
+    right: 0;
+    top: 0;
+    text-align: center;
+    background-color: #f00;
+    width: 68px;
+    margin: 0px;
+    float: right;
+    border: none;
+}
+.hea_div{
+    height: 45px;
+    line-height: 45px;
+    font-size: 17px;
+    text-align: center;
+    color: rgb(69, 140, 236);
+    position: relative;
+    border-bottom: 1px solid #D8D8D8;
+    background: #fff;
+}
+.head_left{
+    width: 11px;
+    position: absolute;
+    top: 14px;
+    left: 14px;
+}
+.head_right{
+    position: absolute;
+    right: 14px;
+    top: 0;
+    font-size: 14px;
+    height: 45px;
+}
+.rightText{
+    position: absolute;
+    /* float: right; */
+    font-size: 13px;
+    /* margin-right: 10px; */
+    right: 10px;
+    color: rgb(69, 140, 236);
+}

@@ -1,0 +1,44 @@
+*{padding:0;margin: 0;font-style:none;}
+body{
+    background:#f4f4f4;
+}
+.hea_div{
+    height: 45px;
+    line-height: 45px;
+    font-size: 17px;
+    text-align: center;
+    color: rgb(69, 140, 236);
+    position: relative;
+    border-bottom: 1px solid #D8D8D8;
+    background: #fff;
+}
+.head_left{
+    width: 11px;
+    position: absolute;
+    top: 14px;
+    left: 14px;
+}
+.head_right{
+    position: absolute;
+    right: 14px;
+    top: 0;
+    font-size: 14px;
+    height: 45px;
+}
+.reg_sec{
+    font-size: 13px;
+}
+.reg_ul li{
+    margin-top: 15px;
+    line-height: 47px;
+    background: #FFF;
+    padding-left: 15px;
+}
+.reg_ul li img{
+    width: 10px;
+    padding:16px 15px 0 0;
+    float: right;
+}
+.reg_ul li a{
+    color: #000;
+}

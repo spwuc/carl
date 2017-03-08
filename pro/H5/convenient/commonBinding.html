@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>公积金绑定</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" /> 
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" /> 
+    <meta content="telephone=no" name="format-detection" /> 
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <style>
+        html{-webkit-text-size-adjust:none;}
+    </style>
+    <script type="text/javascript" src="../public/js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="../cordova.js"></script>
+    <script type="text/javascript" src="../public/js/public.js"></script>
+    <!--<script type="text/javascript">-->
+        <!--$(function(){-->
+            <!--$(document).addHeader('', function () {-->
+
+            <!--});-->
+            <!--$('.powerButton').on('click',function(){-->
+                <!--e.stopPropagation();-->
+                <!--e.preventDefault();-->
+                <!--$(".power06_ul li input").each(function(){-->
+                    <!--if($(this).val() == ''){-->
+                        <!--iss.alert('请填写' + $(this).prev().text() + '!');-->
+                    <!--}-->
+                    <!--return;-->
+
+                <!--});-->
+                <!--var param={};-->
+                <!--param.sid='7014';-->
+                <!--iss.request(function(data){-->
+                    <!--data= JSON.parse(data).result;-->
+                    <!--if(data.errmsg ==0){-->
+                        <!--param.id_card=data.id_card;-->
+                        <!--param.uaccount=data.uaccount;-->
+                        <!--param.uphone=data.uphone;-->
+                    <!--}-->
+
+                <!--},failCallBack,param) ;-->
+            <!--});-->
+
+        <!--});-->
+    <!--</script>-->
+</head>
+
+<body>
+<header>
+    <div class="hea_div">
+        <a href="javascript:history.go(-1);"><img class="head_left" src="images/right_sj_hea.png"></a>
+        公积金
+        <!--<a href="bindingResult.html"><span class="rightText">完成</span></a>-->
+    </div>
+</header>
+    <section id="power01">
+           <ul class="power01_ul">
+               <li>
+                   <label><b class="letter4">绑定账</b>号</label>
+                   <input type="text" value="138****9888" placeholder="" />
+               </li>
+               <li>
+                   <label>公积金账号</label>
+                   <input type="text" value="" placeholder="请输入公积金账号" />
+               </li>
+               <li>
+                   <label><b class="letter4">证件类</b>型</label>
+                   <select class="public01Select">
+                       <option>居民身份证</option>
+                   </select>
+               </li>
+               <li>
+                   <label><b class="letter4">证件号</b>码</label>
+                   <input type="text" value="" placeholder="请输入证件号码" />
+               </li>
+               <li>
+                   <label><b class="letter3">验证</b>码</label>
+                   <input type="text" style="width:50%;" value="" placeholder="请输入验证码" />
+                   <span class="code"></span>
+               </li>
+           </ul>
+        <a href="bindingResult.html"><button class="powerButton">绑定</button></a>
+            <p class="power01_tel">咨询热线   12345</p>
+            <p class="power01_message">信息来源于住房公积金管理中心</p>
+    </section >
+</body>
+
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>查询结果</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" /> 
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" /> 
+    <meta content="telephone=no" name="format-detection" /> 
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <style>
+        html{-webkit-text-size-adjust:none;}
+    </style>
+    <script type="text/javascript" src="../public/js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="../cordova.js"></script>
+    <script type="text/javascript" src="../public/js/public.js"></script>
+    <!--<script type="text/javascript">-->
+        <!--$(function(){-->
+            <!--//header-->
+            <!--$(document).addHeader('', function () {-->
+                <!--iss.changeNextPage(function(){-->
+
+                <!--},failCallBack)-->
+            <!--});-->
+            <!--//公积金查询结果-->
+            <!--var custacno=$.cookie('custacno');-->
+            <!--$.cookie('custacno',null);-->
+            <!--var  paperid= $.cookie('paperid');-->
+            <!--$.cookie('paperid',null);-->
+            <!--var validateCode= $.cookie('validateCode');-->
+            <!--$.cookie('validateCode',null);-->
+            <!--var methodName= $.cookie('methodName'); //验证码-->
+            <!--$.cookie('methodName',null);-->
+
+            <!--//个人信息-->
+            <!--var param={};-->
+            <!--param.sid='7014';-->
+            <!--param.methodName=methodName-->
+            <!--param.custacno=custacno;  //公积金账号-->
+            <!--param.paperid=paperid;     //证件号码-->
+            <!--param.validateCode= validateCode;   //验证码-->
+            <!--param.methodName= validateCode;   //方法名称-->
+            <!--iss.request(function(data){-->
+                <!--data=JSON.parse(data);-->
+                <!--$(".commName").html(data.xm);-->
+                <!--$(".gjjzh").html(data.gjjzh);-->
+                <!--$(".gjhm").html(data.gjhm);-->
+                <!--$(".yyje").html(data.yyje);-->
+                <!--$(".zhye").html(data.zhye);-->
+                <!--$(".jzny").html(data.jzny);-->
+                <!--$(".zhzt").html(data.zhzt);-->
+                <!--$(".fkzt").html(data.fkzt);-->
+                <!--$(".dwmc").html(data.dwmc);-->
+                <!--$(".dwgjjdm").html(data.dwgjjdm);-->
+                <!--$(".jcyh").html(data.jcyh);-->
+                <!--$(".jcgzjs").html(data.jcgzjs);-->
+                <!--$(".dwjcbl").html(data.dwjcbl);-->
+                <!--$(".grjcbl").html(data.grjcbl);-->
+                <!--$(".jcbbbl").html(data.jcbbbl);-->
+            <!--},failCallBack,param)-->
+        <!--})-->
+    <!--</script>-->
+</head>
+
+<body>
+<header>
+    <div class="hea_div">
+        <a href="javascript:history.go(-1);"><img class="head_left" src="images/right_sj_hea.png"></a>
+        查询结果
+    </div>
+</header>
+<section id="power03">
+    <p class="public03">尊敬的XXX,您好！</p>
+    <ul class="public03_ul">
+        <li>
+            <span><span class="letters">姓</span>名：</span>
+            <span class="commName"></span>
+        </li>
+        <li>
+            <span><span class="letter5">公积金账</span>号：</span>
+            <span class="gjjzh"></span>
+        </li>
+        <li>
+            <span><span class="letteres">证件号</span>码：</span>
+            <span class="gjhm"></span>
+        </li>
+        <li>
+            <span><span class="letteres">月应缴</span>额：</span>
+            <span class="yyje"></span>
+        </li>
+        <li>
+            <span><span class="letteres">账户余</span>额：</span>
+            <span class="zhye"></span>
+        </li>
+        <li>
+            <span><span class="letteres">缴至年</span>月：</span>
+            <span class="jzny"></span>
+        </li>
+        <!--<li>-->
+            <!--<span><span class="letteres">缴至年</span>月：</span>-->
+            <!--<span class="jzny"></span>-->
+        <!--</li>-->
+        <li>
+            <span><span class="letteres">账户状</span>态：</span>
+            <span class="zhzt"></span>
+        </li>
+        <li>
+            <span><span class="letteres">发卡状</span>态：</span>
+            <span class="fkzt"></span>
+        </li>
+        <li>
+            <span><span class="letteres">单位名</span>称：</span>
+            <span class="dwmc"></span>
+        </li>
+        <li>
+            <span><span class="letter5">公积金代</span>码：</span>
+            <span class="dwgjjdm"></span>
+        </li>
+        <li>
+            <span><span class="letteres">缴存银</span>行：</span>
+            <span class="jcyh"></span>
+        </li>
+        <li>
+            <span>缴存工资基数：</span>
+            <span class="jcgzjs"></span>
+        </li>
+        <li>
+            <span>单位缴存比例：</span>
+            <span class="dwjcbl"></span>
+        </li>
+        <li>
+            <span>个人缴存比例：</span>
+            <span class="grjcbl"></span>
+        </li>
+        <li>
+            <span>缴存补贴比例：</span>
+            <span class="jcbbbl"></span>
+        </li>
+    </ul>
+    <p class="power01_tel">咨询热线 12345</p>
+    <p class="power01_message">信息来源于住房公积金管理中心</p>
+</section>
+</body>
+
+</html>

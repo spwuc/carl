@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="Cache-Control" content="max-age=0">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>问卷表</title>
+    <link rel="stylesheet" href="css/questionnaire.css" type="text/css"/>
+    <script type="text/javascript" src="js/jquery.1.10.2.js"></script>
+    <script type="text/javascript" src="js/sx.js"></script>
+    <script type="text/javascript">
+
+        document.addEventListener("deviceready", onDeviceReady, false);
+        var empoNo;
+        function onDeviceReady() {
+            SX.getUserInfo(function (data) {
+                data = JSON.parse(data);
+                $('#username').val(data.userName);
+                empoNo = data.loginEmail;
+                $('#username').attr('readonly', 'readonly');
+            }, function () {
+                alert('调用司信sdk失败！');
+            })
+        }
+
+        $(function () {
+            var problemsNumber;
+            var multipleChoiceNumber;
+            var shortAnswerNumber;
+            //姓名,TL姓名二次转码
+            var UserName = null;
+            $("#username").blur(function () {
+                UserName = $(this).val();
+                UserName = encodeURI(UserName);
+                UserName = encodeURI(UserName);
+
+            });
+
+            var TLName = null;
+            $("#TLname").blur(function () {
+                TLName = $(this).val();
+                TLName = encodeURI(TLName);
+                TLName = encodeURI(TLName);
+            });
+
+            var problemIds = new Array();
+            //初始化加载页面
+            $.ajax({
+                url: "../empMYDInterface/readProblem.action",
+//				   url:"readProblem.json",
+                type: "GET",
+                async: false,
+                success: function (data) {
+                    problemsNumber = data.problemList.length;
+
+                    for (var j = 0; j < data.problemList.length; j++) {
+                        problemIds[j] = data.problemList[j].problem_id;
+                    }
+
+                    var str1 = "";
+                    for (var i = 0; i < data.problemList.length; i++) {
+                        if (data.problemList[i].problem_type == 1) {
+                            str1 += '<div class="question"><p class="questionTitle"><span class="orderNumber">' + data.problemList[i].problem_no + '</span>.<span class="titleContent">' + data.problemList[i].problem_desc + '</span></p><div class="options"><div class="containRadio"><input type="radio" id="radio-5" name="sport" value="5"><label name="" class="labelForm" for="radio-5">5分</label></div><div class="containRadio"><input type="radio" id="radio-4" name="" value="4"><label name=""  class="labelForm" for="radio-4">4分</label></div><div class="containRadio"><input type="radio" id="radio-3" name="" value="3"><label name=""  class="labelForm" for="radio-3">3分</label></div><div class="containRadio"><input type="radio" id="radio-2" name="" value="2"><label name=""  class="labelForm"for="radio-2">2分</label></div><div class="containRadio"><input type="radio" id="radio-1" name="" value="1"><label name=""  class="labelForm"for="radio-1">1分</label></div></div></div>';
+                        }
+                        else {
+                            multipleChoiceNumber = i;
+                            shortAnswerNumber = problemsNumber - multipleChoiceNumber;
+                            break;
+                        }
+                    }
+                    $(".section1").append(str1);
+
+                    var str2 = "";
+                    for (var i = 0; i < data.problemList.length; i++) {
+                        if (data.problemList[i].problem_type == 2) {
+                            str2 += '<div class="question1"><p class="questionTitle"><span class="orderNumber">' + data.problemList[i].problem_no + '</span>.<span class="titleContent">' + data.problemList[i].problem_desc + '</span></p><div class="containTextarea"><textarea></textarea></div></div>'
+                        }
+                    }
+                    ;
+                    $(".section2").append(str2);
+                },
+                error: function (data) {
+                    alert("请求失败!");
+                },
+                beforeSend: function () {
+                    $(".containLoading").show();
+                },
+                complete: function () {
+                    $(".containLoading").hide();
+                }
+
+            });
+
+
+            //建立一个问题的分数数组并初始化
+            var grade = new Array(problemsNumber);
+            for (i = 0; i < multipleChoiceNumber; i++) {
+                grade[i] = 0;
+            }
+            for (i = multipleChoiceNumber; i < problemsNumber; i++) {
+                grade[i] = "";
+            }
+
+            $("textarea").blur(function () {
+                //获得所选分数值
+                var testAreaValue = $(this).val();
+
+                //获得问题编号
+                var presentNumber = $(this).parent().parent().find(".orderNumber").text();
+                var presentNumber = parseInt(presentNumber);
+                //改变分数数组内相对应的值
+                grade[presentNumber - 1] = testAreaValue;
+            });
+
+            //单击图片
+            $('.labelForm').click(function () {
+                //点击改变样式
+                $(this).parent().parent().find(".labelForm").css("background", "url(img/circle1.png) no-repeat left ");
+                $(this).css("background", "url(img/redPoint1.png) no-repeat left ");
+                //获得所选分数值
+                var labelValue = $(this).text();
+                var theGrade = labelValue.substring(0, 1);
+                var theGrade = parseInt(theGrade);
+
+                //获得问题编号
+                var presentNumber = $(this).parent().parent().parent().find(".orderNumber").text();
+                var presentNumber = parseInt(presentNumber);
+
+                //改变分数数组内相对应的值
+                grade[presentNumber - 1] = theGrade;
+                //总分变量
+                var totalPoint = 0;
+                //重新计算总分
+                for (i = 0; i < multipleChoiceNumber; i++) {
+                    totalPoint = totalPoint + grade[i];
+                }
+
+                //总分转换为字符串
+                var totalPoint = parseInt(totalPoint);
+                //赋值，输出总分
+                $(".number").text(totalPoint);
+            });
+
+            //单击提交按钮
+            $(".submit").click(function () {
+                var finished = true;
+                //判断是否答完所有的单选题
+                for (i = 0; i < multipleChoiceNumber; i++) {
+                    if (grade[i] == 0) {
+                        alert("请答完所有的单选题！");
+                        finished = false;
+                        break;
+                    }
+
+                }
+                ;
+
+
+                var problems = "";
+                if (finished == true) {
+                    for (i = 0; i < grade.length; i++) {
+                        problems = problems + problemIds[i] + "!!" + grade[i] + "@@";
+                    }
+                    problems = problems.substring(0, problems.length - 2);
+
+                    //问题答案进行二次转码
+                    var Problems = null;
+                    Problems = encodeURI(problems);
+                    Problems = encodeURI(Problems);
+
+
+                    //发出请求
+                    $.ajax({
+                        type: "get",
+                        url: "../empMYDInterface/addSurvey.action?empNo=" + empoNo + "&empName=" + UserName + "&tlName=" + TLName + "&problem=" + Problems,
+                        async: false,
+                        success: function (data) {
+                            if (data.addSurvey.SuccessOrFailure == "success") {
+                                alert(data.addSurvey.SuccessOrFailureContents);
+                            }
+                            else {
+                                alert(data.addSurvey.SuccessOrFailureContents);
+                            }
+
+                        },
+                        error: function () {
+                            alert("提交失败!");
+                        }
+
+                    });
+                }
+                ;
+
+            });
+
+        });
+    </script>
+</head>
+<body>
+<div class="userInformation">
+    <p>&nbsp;</p>
+
+    <h1 class="formTitle">员工满意度问卷表</h1>
+
+    <div>
+        <div class="containUsername">
+            <label for="username" class="lusername">您的姓名：</label>
+            <input id="username" type="text"/>
+        </div>
+        <div class="containTLname">
+            <label for="TLname" class="lTLname">您的TL姓名：</label>
+            <input id="TLname" type="text"/>
+        </div>
+    </div>
+    <img class="boundary" src="img/subfieldLine.png">
+</div>
+
+
+<div class="toDearWorkmates">
+    <p class="address">致亲爱的同事:</p>
+
+    <p class="mainBody">
+        以下是公司安排对您进行“员工满意度调查”，
+        让您有机会表达对自己这段时期的工作、公司以及所属部门整体运作的意见。
+        公司很重视这项问卷，因为其结果有助于我们及时了解您的想法，
+        以便我们能制定对您和公司有利的计划，并期望能成为您继续在公司服务的保障。
+        请您坦诚地回答卷册中的问题。该问券反馈会得到严格保密。
+    </p>
+</div>
+
+<div class="payAttention">
+    <p class="payAttention line1"><img class="exclamation" src="img/exclamation.png">请注意以下定义 </p>
+
+    <p class="payAttention line2">1.主管， 即是您的直属上司；<br/>2.管理层， 自您的主管至公司总经理的公司各层管理人员，可以被视为一个整体</p>
+</div>
+
+<div class="questionnaire">
+    <h1 class="questionnaireTitle">项目期间您的工作感受和体会</h1>
+
+    <p class="gradingStandard">(评分5-0：5代表 “最好” ，0代表 “最差”)</p>
+
+    <section class="section1"></section>
+
+    <div class="containTotalPoints">
+        <img class="boundary" src="img/subfieldLine.png">
+
+        <p class="totalPointsBar">总分</p>
+
+        <p style="display: inline-block;"></p>
+
+        <p class="totalPoints"><i><span class="number">0</span></i>&nbsp;分</p>
+    </div>
+
+    <section class="section2"></section>
+
+</div>
+<div class="containSubmit">
+    <input type="button" class="submit" value="提   交"/></input>
+</div>
+
+<!--加载图片-->
+<div class="containLoading" align="center">
+    <img class="loading" src="img/Loading (2).gif"/>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+.newsList{
+    width: 100%;
+    min-width: 1200px;
+    overflow: hidden;
+    margin-top: 50px;
+}
+.newsList .tip{
+    width: 900px;
+    margin: 0 auto;
+    display: block;
+    font-family: "微软雅黑";
+    font-size: 24px;
+    color: #666;
+    line-height: 20px;
+    margin-bottom: 30px;
+}
+.newsList .content{
+    width: 900px;
+    margin: 0 auto;
+}
+.newsList .content li{
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    background: #6a696d;
+    color: #fff;
+    font-family: "微软雅黑";
+    margin-top: 20px;
+    cursor: pointer;
+}
+.newsList .content li:nth-child(even){
+    background: #fff;
+    color: #6a696d;
+
+}
+.newsList .content span{
+    float: left;
+    display: inline-block;
+    padding-left: 30px;
+}
+.newsList .content i{
+    font-style: normal;
+    float: right;
+    display: inline-block;
+    padding-right: 10px;
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>社保</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" /> 
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" /> 
+    <meta content="telephone=no" name="format-detection" /> 
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="../public/js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="../cordova.js"></script>
+    <script type="text/javascript" src="../public/js/public.js"></script>
+    <style>
+        html{-webkit-text-size-adjust:none;}
+    </style>
+    <!--<script type="text/javascript">-->
+        <!--$(function () {-->
+            <!--document.addEventListener('deviceready', onDeviceready, false);-->
+            <!--function onDeviceready(){-->
+            <!--$(document).addHeader('<p class="right_h" >绑定管理</p>', function () {-->
+                <!--var param1={};-->
+                <!--param1.html='convenient/societyBindingControl.html';-->
+                <!--iss.changeNextPage(function(){-->
+                    <!--$.cookie('uid',$("#socNum").val());-->
+                    <!--$.cookie('idCard',$("#idCard").val());-->
+                <!--},failCallBack,param1);-->
+            <!--});-->
+            <!--$(".powerButton").click(function(e){-->
+                <!--e.stopPropagation();-->
+                <!--e.preventDefault();-->
+                <!--if($("#socNum").val()==''){-->
+                    <!--console.log('请填写社保编号!');-->
+                <!--}else if($("#idCard").val()==''){-->
+                    <!--console.log('请填写身份证号!');-->
+                <!--}-->
+
+                <!--var param={};-->
+                <!--param.sid='7001';-->
+                <!--param.uid=$('#socNum').val();-->
+                <!--param.id_card=$('#idCard').val();-->
+                <!--iss.request(function(data){-->
+                    <!--console.log(data);-->
+                    <!--data= JSON.parse(data).data;-->
+                    <!--console.log(data.error_no);-->
+                    <!--if(data.error_no == '1'){-->
+
+                        <!--var param_2={};-->
+                        <!--param_2.html='convenient/societyResult.html';-->
+                        <!--iss.changeNextPage(function(){-->
+                            <!--$.cookie('uid',$("#socNum").val());-->
+                            <!--$.cookie('idCard',$("#idCard").val());-->
+                        <!--}, failCallBack,param_2);-->
+                    <!--}else{-->
+                        <!--alert(2);-->
+                    <!--}-->
+                <!--},failCallBack,param);-->
+
+            <!--});-->
+            <!--};-->
+        <!--});-->
+    <!--</script>-->
+</head>
+
+<body>
+    <header>
+        <div class="hea_div">
+            <a href="javascript:history.go(-1);"><img class="head_left" src="images/right_sj_hea.png"></a>
+            社保
+            <a href="societyBindingControl.html"><span class="rightText">绑定管理</span></a>
+        </div>
+    </header>
+    <section id="power06">
+           <ul class="power06_ul">
+               <li>
+                   <label>社保编号</label>
+                   <input type="text" id="socNum" value="" placeholder="请输入您的社保编号" />
+               </li>
+               <li>
+                   <label>身份证号</label>
+                   <input type="text" id="idCard" value="" placeholder="请输入您的身份证号" />
+               </li>
+
+           </ul>
+            <a href="societyBindingResult.html" /><button class="powerButton">查询</button></a>
+            <p class="power01_tel">咨询热线   12333</p>
+            <p class="power01_message">信息来源于社会保险服务网站</p>
+    </section >
+</body>
+
+</html>

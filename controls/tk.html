@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>日历</title>
+    <script src="js/jquery-1.8.0.js"></script>
+    <link href="css/StyleSheet.css" rel="stylesheet"/>
+</head>
+<body>
+<button class="kj">显示控件</button>
+<div class="big_box">
+    <div>
+        <p>张三</p>
+        <img class="close" src="img/close.png" />
+    </div>
+    <div class="tab_c">
+        <span data-num='0' class="cur_tab">工时单</span>
+        <span data-num='1'>个人信息</span>
+    </div>
+    <div class="show_box">
+        <div class="box">
+
+        </div>
+        <div class="box_1">
+            <div class="shows_1">
+                <p class="wkq">暂未开启</p>
+                <div>
+                    <span>雇员将于</span>
+                    <input class="show_sdate" type="text" readonly="readonly" value="2015年12月10日 9:00 前"/>
+                    <span>到岗</span>
+                    <span class="toChange">保存变更</span>
+                    <div class="boxs_1"></div>
+                </div>
+                <button class="but">雇员还未就位</button>
+            </div>
+            <div class="change">
+                <p>到岗时间</p>
+                <p>修改成功</p>
+                <span>确定</span>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script src="js/calendar.js"></script>
+<script type="text/javascript">
+    $('.kj,.close').click(function () {
+        $('.big_box').toggleClass('showBox');
+    })
+    Datepicker('.box')
+    $('.date td').live('dblclick', function () {
+        $(this).find('p').eq(1).addClass('hide');
+        $(this).find('input').addClass('show');
+        $(this).find('input').trigger('focus');
+        if ($(this).find('input').val() != 0) {
+            $(this).find('input').select();
+        } else {
+            $(this).find('input').val('')
+        }
+
+    })
+    $('.date td input').live('blur', function () {
+        if (!$(this).val() || isNaN($(this).val())) {
+            $(this).val('0');
+        } else {
+            $(this).val(Number($(this).val()))
+        }
+        $(this).parent().find('p').eq(1).text($(this).val())
+        $(this).parent().find('p').eq(1).removeClass('hide');
+        $(this).removeClass('show');
+    })
+    $('.tab_c span').click(function () {
+        $('.tab_c span').removeClass('cur_tab');
+        $(this).addClass('cur_tab');
+        $('.show_box>div').hide()
+        $('.show_box>div').eq($(this).attr('data-num')).show()
+        if ($(this).attr('data-num') == '0') {
+            Datepicker('.box')
+        }
+    })
+    $('.show_sdate').click(function () {
+        if ($('.boxs_1').html() == '') {
+            Datepicker('.boxs_1', true);
+        }
+    })
+    $('.toChange').click(function(){
+        if(!$('.change').hasClass('show')){
+            $('.change').addClass('show');
+        }
+    })
+    $('.change span').click(function(){
+        if($('.change').hasClass('show')){
+            $('.change').removeClass('show');
+        }
+    })
+</script>
+</body>
+</html>

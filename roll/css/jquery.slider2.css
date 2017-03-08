@@ -1,0 +1,41 @@
+﻿body {
+    font-family: Georgia, serif;
+}
+
+#slider1, #slider2 {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    overflow:hidden;
+}
+
+.slides {
+    width: 300px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+    .slides li {
+        float: left;
+        width: 300px;
+        height: 200px;
+        margin: 0;
+        padding: 0;
+        line-height: 200px;
+        font-size: 80px;
+        text-align: center;
+        color: #fff;
+    }
+
+.ctrl {
+    margin-top: 10px;
+}
+
+    .ctrl button {
+        width: 60px;
+        cursor: pointer;
+    }

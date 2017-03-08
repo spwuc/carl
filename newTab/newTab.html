@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <title>动态添加tab</title>
+    <link rel="shortcut icon" href="../images/ke.ico" type="image/x-icon">
+    <script src="jquery-1.8.0.js"></script>
+    <style>
+        body,html{
+            margin: 0;
+            padding: 0;
+            background: #F7F7F7 ;
+        }
+        ul li{
+            list-style: none;
+            display: inline;
+            background: #fff;
+            border: 1px #ccc solid;
+        }
+        .clean{
+            clear: both;
+            width: 0;
+            height: 0;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .conBox{
+            width: 300px;
+            height:100px;
+            margin: 0;
+            padding: 0;
+            border: 1px #ccc solid;
+            margin-left: 40px;
+            /*margin-top: -17px;*/
+            line-height: 100px;
+                               text-align: left;
+        }
+        .firstUl{
+            height: 30px;
+            width: 164px;
+            float: left;
+        }
+        .firstUl>li{
+            display: block;
+            height: 30px;
+            width: 80px;
+            float: left;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+        }
+        .firstUl>li:last-child{
+            position: relative;
+        }
+        .firstUl ul{
+            position: absolute;
+            left: 0;
+            top: 30px;
+            width: 80px;
+            display: block;
+            border: 1px #ccc solid;
+            -webkit-padding-start: 0px;
+        }
+        .firstUl ul li{
+            border: none;
+            height: 25px;
+            width: 80px;
+            display: block;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            cursor: pointer;
+        }
+        .secondUl{
+            -webkit-padding-start: 0px;
+            float: left;
+        }
+        .secondUl>li{
+            display: block;
+            width: 80px;
+            height: 30px;
+            float: left;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+        }
+        .secondUl>li:first-child{
+            border-left: none;
+        }
+        .overLi{
+            background: #32A7DF;
+        }
+        .curLi{
+            background: #32A7DF;
+        }
+    </style>
+</head>
+<body>
+<div class="bigbox">
+    <div class="tabs">
+        <ul class="firstUl">
+            <li data-role="1" class="curLi">当前背景</li>
+            <li data-role="2">
+                工作管理▼
+                <ul>
+                    <li data-role="3">社交互动</li>
+                    <li data-role="4">学习资料</li>
+                    <li data-role="5">项目管理</li>
+                    <li data-role="6">工作评估</li>
+                    <li data-role="7">名片管理</li>
+                    <li data-role="8">站内信</li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="secondUl">
+            <li data-role="9">柴门之外</li>
+        </ul>
+    </div>
+    <div class="clean"></div>
+    <div class="conBox">
+        当前背景
+    </div>
+</div>
+<script>
+    var Uls=$('.firstUl li:eq(1) ul'),cons=['当前背景','工作管理','社交互动','学习资料','项目管理','工作评估','名片管理','站内信','柴门之外'],tag= 0,needAddLi;
+    Uls.hide();
+    $(function(){
+        $(document).click(function(){
+            Uls.hide();
+            tag=0;
+        })
+        $('.firstUl li:eq(1)').click(function(e){
+            e.preventDefault()
+            e.stopPropagation()
+            if(!tag){
+                Uls.show();
+                tag=1;
+            }else{
+                Uls.hide();
+                tag=0;
+            }
+        })
+        Uls.find('li').each(function(){
+            $(this).click(function(e){
+                var tag1=$(this).data('role');
+                e.preventDefault()
+                e.stopPropagation()
+                Uls.hide();
+                $('.secondUl li').each(function(){
+                    if($(this).data('role')==tag1){
+                        $(this).remove()
+                    }
+                })
+                tag=0;
+                needAddLi='<li data-role="'+tag1+'">'+cons[Number(tag1)-1]+'</li>'
+                $('.secondUl>li:eq(0)').before(needAddLi)
+                $('.conBox').text(cons[tag1-1])
+                $('.tabs>ul>li').removeClass('curLi')
+                $('.secondUl>li:eq(0)').addClass('curLi').siblings().removeClass('curLi')
+            }).mouseover(function(){
+                $(this).addClass('overLi').siblings().removeClass('overLi')
+                $(this).parents('li').removeClass('overLi').siblings().removeClass('overLi')
+            })
+        })
+        $('.tabs>ul>li').live('mouseover',function(){
+            $(this).addClass('overLi').siblings().removeClass('overLi')
+        })
+        $('.tabs>ul>li').live('mouseleave',function(){
+                    $(this).removeClass('overLi')
+                })
+        $('.tabs>ul>li').live('click',function(){
+                    if($(this).data('role')!='2'){
+                        $('.conBox').text(cons[Number($(this).data('role'))-1])
+                        $('.tabs>ul>li').removeClass('curLi')
+                        $(this).addClass('curLi')
+                    }
+
+                })
+
+    })
+</script>
+</body>
+</html>

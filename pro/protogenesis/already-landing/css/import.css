@@ -1,0 +1,36 @@
+*{padding:0;margin: 0;font-style:none;}
+body{
+    background:#f4f4f4;
+}
+.two{
+    background:#F8F8F8;
+    overflow:hidden;
+}
+.two h2{
+    height:45px;
+    line-height:45px;
+    background:#fff;
+    margin-top:15px;}
+.two h2 span{
+    color:#0A0A0A;
+    width:25%;
+    display:inline-block;
+    font-size:15px;
+    font-weight:normal;
+    margin-left:3%;}
+.two h2 input{
+    width:65%;
+    display:inline-block;
+    border:none;}
+.two p{
+    height:40px;
+    width:94%;
+    margin-left:3%;
+    margin-top:30px;}
+.two p button{
+    width:100%;
+    height:40px;
+    border:none;
+    background:#498EE9;
+    border-radius:5px;
+    color:#fff;}

@@ -1,0 +1,159 @@
+{
+  "addSurvey" : null,
+  "empName" : null,
+  "empNo" : null,
+  "problem" : null,
+  "problemList" : [
+    {
+      "problem_desc" : "您对公司作为一个工作场所评价如何",
+      "problem_id" : "e691f86d61ca11e5b4cd001a64d21168",
+      "problem_no" : "1",
+      "problem_type" : "1"
+    },
+    {
+      "problem_desc" : "我所属部门内部合作默契，帮助我工作上更快适应和取得更好成绩。",
+      "problem_id" : "e696edb661ca11e5b4cd001a64d21168",
+      "problem_no" : "2",
+      "problem_type" : "1"
+    },
+    {
+      "problem_desc" : "就我这类工作而言，工作条件可说不错。",
+      "problem_id" : "e69de65461ca11e5b4cd001a64d21168",
+      "problem_no" : "3",
+      "problem_type" : "1"
+    },
+    {
+      "problem_desc" : "我向朋友夸赞这里是理想的工作场所",
+      "problem_id" : "e6a4c5c361ca11e5b4cd001a64d21168",
+      "problem_no" : "4",
+      "problem_type" : "1"
+    },
+    {
+      "problem_desc" : "我们的上级在安排协调我们的工作方面做得很不错。",
+      "problem_id" : "e6ab7aec61ca11e5b4cd001a64d21168",
+      "problem_no" : "5",
+      "problem_type" : "1"
+    },
+    {
+      "problem_desc" : "我的上级会尽力了解我的需求和问题。",
+      "problem_id" : "e6b199a261ca11e5b4cd001a64d21168",
+      "problem_no" : "6",
+      "problem_type" : "1"
+    },
+    {
+      "problem_desc" : "有事情困扰您，您都会去和您的上级商量？",
+      "problem_id" : "e6b7c95061ca11e5b4cd001a64d21168",
+      "problem_no" : "7",
+      "problem_type" : "1"
+    },
+    {
+      "problem_desc" : "上级会给我提出有用的意见，帮助我在工作上取得提高。",
+      "problem_id" : "e6be1cd561ca11e5b4cd001a64d21168",
+      "problem_no" : "8",
+      "problem_type" : "1"
+    },
+    {
+      "problem_desc" : "上级明确我们要做的事情和工作分配，我知道他对我的期许。",
+      "problem_id" : "e6c3f83361ca11e5b4cd001a64d21168",
+      "problem_no" : "9",
+      "problem_type" : "1"
+    },
+    {
+      "problem_desc" : "公司能提供我需要的培训和发展机会",
+      "problem_id" : "e6ca67f861ca11e5b4cd001a64d21168",
+      "problem_no" : "10",
+      "problem_type" : "1"
+    },
+    {
+      "problem_desc" : "您对公司的团队合作精神评价如何？",
+      "problem_id" : "e6d0cf7f61ca11e5b4cd001a64d21168",
+      "problem_no" : "11",
+      "problem_type" : "1"
+    },
+    {
+      "problem_desc" : "您对公司的企业文化和工作氛围接受程度状态。",
+      "problem_id" : "e6dae1fc61ca11e5b4cd001a64d21168",
+      "problem_no" : "12",
+      "problem_type" : "1"
+    },
+    {
+      "problem_desc" : "我们这里订立很高的工作表现标准。",
+      "problem_id" : "e6e154d561ca11e5b4cd001a64d21168",
+      "problem_no" : "13",
+      "problem_type" : "1"
+    },
+    {
+      "problem_desc" : "公司主管及管理层对员工有多关心？",
+      "problem_id" : "e6e8f24361ca11e5b4cd001a64d21168",
+      "problem_no" : "14",
+      "problem_type" : "1"
+    },
+    {
+      "problem_desc" : "您了解人力资源部在公司的功能和作用吗？",
+      "problem_id" : "e6f147e261ca11e5b4cd001a64d21168",
+      "problem_no" : "15",
+      "problem_type" : "1"
+    },
+    {
+      "problem_desc" : "您对目前的工作岗位和工作性质满意接受程度。",
+      "problem_id" : "e6fa5ee061ca11e5b4cd001a64d21168",
+      "problem_no" : "16",
+      "problem_type" : "1"
+    },
+    {
+      "problem_desc" : "您认为公司内、部门间、同事间的沟通交流氛围如何？",
+      "problem_id" : "e700cc3d61ca11e5b4cd001a64d21168",
+      "problem_no" : "17",
+      "problem_type" : "1"
+    },
+    {
+      "problem_desc" : "整体而言，您对管理层与员工的沟通评价如何？",
+      "problem_id" : "e7072c6861ca11e5b4cd001a64d21168",
+      "problem_no" : "18",
+      "problem_type" : "1"
+    },
+    {
+      "problem_desc" : "您认为您的主管致力培养与其他部门的团队合作精神",
+      "problem_id" : "e70d771c61ca11e5b4cd001a64d21168",
+      "problem_no" : "19",
+      "problem_type" : "1"
+    },
+    {
+      "problem_desc" : "您对公司人事行政规章制度和行为规范的知晓程度。",
+      "problem_id" : "e714308961ca11e5b4cd001a64d21168",
+      "problem_no" : "20",
+      "problem_type" : "1"
+    },
+    {
+      "problem_desc" : "您有否注意到客户(包含内部上下游部门)如何看待我们公司或所在部门？如果注意到，公司或所在部门有否采取行动改善客户对公司或所在部门印象。",
+      "problem_id" : "e71b63b761ca11e5b4cd001a64d21168",
+      "problem_no" : "21",
+      "problem_type" : "2"
+    },
+    {
+      "problem_desc" : "相对于您之前所在的企业，您认为现在的公司管理比较好还是比较差，原因在哪里？“比较好” “一样” “比较差”",
+      "problem_id" : "e722623061ca11e5b4cd001a64d21168",
+      "problem_no" : "22",
+      "problem_type" : "2"
+    },
+    {
+      "problem_desc" : "如果您有能力改变公司一点的话，您会改变哪一点？为什么？",
+      "problem_id" : "e7289cdc61ca11e5b4cd001a64d21168",
+      "problem_no" : "23",
+      "problem_type" : "2"
+    },
+    {
+      "problem_desc" : "要帮助您在工作中取得好成绩，公司管理层或主管最重要是改善哪一点？",
+      "problem_id" : "e72f440a61ca11e5b4cd001a64d21168",
+      "problem_no" : "24",
+      "problem_type" : "2"
+    },
+    {
+      "problem_desc" : "如果有什么其他事情是您特别关注的（某个别问题、建议等），请在下方表示您的意见。如果您对选择题有任何想法，也可以利用以下空间，请注明题号。",
+      "problem_id" : "e736503861ca11e5b4cd001a64d21168",
+      "problem_no" : "25",
+      "problem_type" : "2"
+    }
+  ],
+  "tlName" : null
+}

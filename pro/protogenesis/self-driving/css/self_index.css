@@ -1,0 +1,106 @@
+*{padding:0;margin: 0;font-style:none;}
+body{
+    background:#f4f4f4;
+}
+.hea_div{
+    height: 45px;
+    line-height: 45px;
+    font-size: 17px;
+    text-align: center;
+    color: rgb(69, 140, 236);
+    position: relative;
+    border-bottom: 1px solid #D8D8D8;
+    background: #fff;
+}
+.head_left{
+    width: 11px;
+    position: absolute;
+    top: 14px;
+    left: 14px;
+}
+.head_right{
+    position: absolute;
+    right: 14px;
+    top: 0;
+    font-size: 14px;
+}
+.head_right a{
+    color: rgb(69, 140, 236);
+}
+.ind_sec{
+    background: #fff;
+    margin-top: 15px;
+    font-size: 13px;
+    color: #333;
+    position: relative;
+}
+.ind_cent p{
+    line-height: 35px;
+}
+.ind_cent p span{
+    color: #ccc;
+    padding-right: 10px;
+}
+.ind_cent p:nth-child(4){
+    width: 83%;
+    margin: 0 auto;
+    border-bottom: 1px solid #e1e1e1;
+}
+.ind_cent p:nth-child(5){
+    width: 83%;
+    margin: 0 auto;
+}
+.ind_cent p:nth-child(6){
+    width: 90%;
+    margin: 0 auto;
+    border-top: 1px solid #e1e1e1;
+}
+.img_pic{
+    width: 11px;
+    position: absolute;
+    top: 13px;
+    left: 10px;
+}
+.img_pics{
+    width: 11px;
+    position: absolute;
+    top: 47px;
+    left: 10px;
+}
+.ing_imgs{
+    width: 10px;
+    position: absolute;
+    right: 12px;
+    top: 26px;
+}
+.ind_xx{
+    width: 1px;
+    height: 20px;
+    border-left: dotted 1px #ccc;
+    position: absolute;
+    top: 26px;
+    left: 15px;
+}
+.delete-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    text-align: center;
+    background-color: #df432d;
+    width: 68px;
+    margin: 0px;
+    float: right;
+    border: none;
+    height: 100%;
+    line-height: 110px;
+    color: #fff;
+}
+.ind_cent{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 2;
+    overflow: hidden;
+}

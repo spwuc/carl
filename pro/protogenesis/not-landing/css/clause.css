@@ -1,0 +1,59 @@
+*{padding:0;margin: 0;font-style:none;}
+body{
+    background:#f4f4f4;
+}
+.hea_div{
+    height: 45px;
+    line-height: 45px;
+    font-size: 17px;
+    text-align: center;
+    color: rgb(69, 140, 236);
+    position: relative;
+    border-bottom: 1px solid #D8D8D8;
+    background: #fff;
+}
+.head_left{
+    width: 11px;
+    position: absolute;
+    top: 14px;
+    left: 14px;
+}
+.head_right{
+    position: absolute;
+    right: 14px;
+    top: 0;
+    font-size: 14px;
+    height: 45px;
+}
+.reg_sec{
+    font-size: 13px;
+}
+.reg_m{
+    background: #fff;
+    padding-bottom: 60px;
+}
+.reg_m p{
+    width: 90%;
+    margin:0 auto;
+    line-height: 30px;
+}
+.reg_btn{
+    width: 90%;
+    height: 40px;
+    margin-left: 5%;
+    background: #498ee9;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 15px;
+}
+.cla_btn{
+    width: 100%;
+    background: #fff;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 10px 0;
+}
+.cla_btn a{
+    color: #fff;
+}

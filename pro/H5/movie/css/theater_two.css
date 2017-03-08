@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.tels{
+    width: 60%;
+    overflow: hidden;
+}
+.tels img{
+  width: 65px;
+  float: left;
+  margin-top: 5px;
+  margin-right: 10px;
+}
+.tels p{
+  width: 59%;
+  font-size: 13px;
+  color: #2e3030;
+  float: left;
+  line-height: 22px;
+}
+.tels p:nth-child(2){
+  font-size: 14px;
+  padding-top: 7px;
+}

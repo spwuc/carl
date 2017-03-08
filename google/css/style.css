@@ -1,0 +1,59 @@
+body, p, div,ul,li {
+    margin: 0;
+    padding: 0;
+}
+#box {
+    width: 470px;
+    height:200px;
+    position:absolute;
+    left:50%;
+    top:50%;
+    margin-left:-235px;
+    margin-top:-150px;
+}
+.img {
+    width: 472px;
+    height: 175px;
+    margin-bottom: 10px;
+}
+#tet {
+    width: 468px;
+    height: 29px;
+    border: 1px #ccc solid;
+    font-size:24px;
+}
+.btn {
+    background: url(../img/shous.jpg);
+    width: 86px;
+    height: 29px;
+    margin-left: 143px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.btn1 {
+    background: url(../img/bc.jpg);
+    width: 76px;
+    height: 29px;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+.fot {
+    text-align:center;
+    font-size:14px;
+    font-weight:bold;
+    color:#333;
+    padding-top:5px;
+}
+#tab {
+    list-style:none;
+    line-height:25px;
+    border: 1px #ccc solid;
+    border-top:none;
+    width: 469px;
+    display: none;
+    position:absolute;
+    background:#fff;
+}
+.aa {
+    background:#fff;
+}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>公交车</title>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+    <meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0" name="viewport"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <link href="css/reset.css" rel="stylesheet" type="text/css">
+    <link href="css/footer.css" rel="stylesheet" type="text/css">
+    <link href="css/BUS.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="../public/js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="../public/js/public.js"></script>
+    <script type="text/javascript" src="../cordova.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $(document).addHeader('<img class="right_h" src="img/tp_r.png" width="20">', function () {
+
+            });
+        })
+        $(function () {
+            function prevent_default(e) {
+                e.preventDefault();
+            }
+
+            function disable_scroll() {
+                $(document).on('touchmove', prevent_default);
+            }
+
+            function enable_scroll() {
+                $(document).unbind('touchmove', prevent_default);
+            }
+
+            var x;
+            $('.bus_divs')
+                    .on('touchstart', function (e) {
+                        $('.bus_divs.open').css('left', '0px').removeClass('open');
+                        $(e.currentTarget).addClass('open');
+                        x = e.originalEvent.targetTouches[0].pageX;
+                    })
+                    .on('touchmove', function (e) {
+                        var change = e.originalEvent.targetTouches[0].pageX - x;
+                        var currentLeft = parseInt(e.currentTarget.style.left);
+                        if (change < 0 || (currentLeft < 0 && change > 0 && change + currentLeft < 0)) {
+                            change = Math.min(Math.max(-68, change), 100);
+                            e.currentTarget.style.left = change + 'px';
+                            if (change < -10) disable_scroll();
+                        }
+                    })
+                    .on('touchend', function (e) {
+                        var left = parseInt(e.currentTarget.style.left);
+                        var new_left;
+                        if (left < -35) {
+                            new_left = '-68px';
+                        } else if (left > 0) {
+                            new_left = '0px';
+                        } else {
+                            new_left = '0px';
+                        }
+                        $(e.currentTarget).animate({left: new_left}, 200);
+                        enable_scroll();
+                    });
+
+            $('.delete-btn').on('touchend', function (e) {
+                e.preventDefault();
+                $(this).parents('li').slideUp('fast', function () {
+                    $(this).remove();
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+    <section class="bus_tion">
+        <div class="bus_div">
+            <div class="bus_divs">
+                <div class="bus_top">
+                    <div class="bus_yuan">1路</div>
+                    <p>火车站北广场<img class="bus_img" src="img/bus_right.png"/>新生首末站</p>
+                    <p class="bus_pot">下班车距<span>正阳桥北</span>还有<span>4</span>站</p>
+                </div>
+                <p class="bus_zd">推送时间<span>7:30&nbsp;&nbsp;&nbsp;工作日</span>
+                    <div id="switch">
+                        <label class="toggle">
+                            <input type="checkbox" checked>
+
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
+                    </div>
+                </p>
+            </div>
+            <a class="delete-btn">删除</a>
+        </div>
+
+        <div class="bus_div">
+            <div class="bus_divs">
+                <div class="bus_top">
+                    <div class="bus_yuan">1路</div>
+                    <p>火车站北广场<img class="bus_img" src="img/bus_right.png"/>新生首末站</p>
+                    <p class="bus_pot">下班车距<span>正阳桥北</span>还有<span>4</span>站</p>
+                </div>
+                <p class="bus_zd">推送时间<span>7:30&nbsp;&nbsp;&nbsp;工作日</span>
+                <div id="switch">
+                    <label class="toggle">
+                        <input type="checkbox" checked>
+
+                        <div class="track">
+                            <div class="handle"></div>
+                        </div>
+                    </label>
+                </div>
+                </p>
+            </div>
+            <a class="delete-btn">删除</a>
+        </div>
+        <p class="bus_zf">数据来源：昆山市公共交通有限公司</p>
+    </section>
+<footer class="bus_foot">
+    <ul class="bus_uls">
+        <li class="cur"><a href="BUS.html"><img src="img/bus_zhu.png"/><p>关注</p></a></li>
+        <li><a href="bus_demand.html"><img src="img/bus_guan1.png"/><p>站点</p></a></li>
+        <li><a href="bus_transfer.html"><img src="img/bus_guan2.png"/><p>线路</p></a></li>
+        <li><a href="find_transfer.html"><img src="img/bus_guan3.png"/><p>换乘</p></a></li>
+    </ul>
+</footer>
+</body>
+</html>

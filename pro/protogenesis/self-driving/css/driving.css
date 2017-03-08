@@ -1,0 +1,50 @@
+*{padding:0;margin: 0;font-style:none;}
+body{
+    background:#f4f4f4;
+}
+.hea_div{
+    height: 45px;
+    line-height: 45px;
+    font-size: 17px;
+    text-align: center;
+    color: rgb(69, 140, 236);
+    position: relative;
+    border-bottom: 1px solid #D8D8D8;
+    background: #fff;
+}
+.head_left{
+    width: 11px;
+    position: absolute;
+    top: 14px;
+    left: 14px;
+}
+.head_right{
+    position: absolute;
+    right: 14px;
+    top: 0;
+    font-size: 14px;
+    height: 45px;
+}
+.ind_right{
+    width: 18px;
+    position: absolute;
+    right: 10px;
+    top: 11px;
+}
+.img{
+    width: 100%;
+}
+.driv_f{
+    position: absolute;
+    bottom: 29px;
+    left: 15px;
+    width: 45%;
+    height: 50px;
+}
+.driv_fs{
+    position: absolute;
+    bottom: 29px;
+    right: 15px;
+    width: 45%;
+    height: 50px;
+}

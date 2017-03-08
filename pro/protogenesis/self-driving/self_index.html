@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>我的关注</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="Cache-Control" content="max-age=0">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/self_index.css"/>
+    <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            function prevent_default(e) {
+                e.preventDefault();
+            }
+
+            function disable_scroll() {
+                $(document).on('touchmove', prevent_default);
+            }
+
+            function enable_scroll() {
+                $(document).unbind('touchmove', prevent_default);
+            }
+
+            var x;
+            $('.ind_cent')
+                    .on('touchstart', function (e) {
+                        $('.ind_cent.open').css('left', '0px').removeClass('open');
+                        $(e.currentTarget).addClass('open');
+                        x = e.originalEvent.targetTouches[0].pageX;
+                    })
+                    .on('touchmove', function (e) {
+                        var change = e.originalEvent.targetTouches[0].pageX - x;
+                        var currentLeft = parseInt(e.currentTarget.style.left);
+                        if (change < 0 || (currentLeft < 0 && change > 0 && change + currentLeft < 0)) {
+                            change = Math.min(Math.max(-68, change), 100);
+                            e.currentTarget.style.left = change + 'px';
+                            if (change < -10) disable_scroll();
+                        }
+                    })
+                    .on('touchend', function (e) {
+                        var left = parseInt(e.currentTarget.style.left);
+                        var new_left;
+                        if (left < -35) {
+                            new_left = '-68px';
+                        } else if (left > 0) {
+                            new_left = '0px';
+                        } else {
+                            new_left = '0px';
+                        }
+                        $(e.currentTarget).animate({left: new_left}, 200);
+                        enable_scroll();
+                    });
+
+            $('.delete-btn').on('touchend', function (e) {
+                e.preventDefault();
+                $(this).parents('li').slideUp('fast', function () {
+                    $(this).remove();
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+    <header>
+        <div class="hea_div">
+            <a href="javascript:history.go(-1);"><img class="head_left" src="img/right_sj_hea.png"></a>
+            我的关注
+            <span class="head_right"><a href="self_transfer.html
+            ">添加</a></span>
+        </div>
+    </header>
+    <section>
+        <div class="ind_sec">
+            <div class="ind_cent">
+                <img class="img_pic" src="img/bus_green.png"/>
+                <div class="ind_xx"></div>
+                <img class="img_pics" src="img/bus_red.png"/>
+                <p><span>起点</span>人民中路128号</p>
+                <p><span>终点</span>四季城小商品商场</p>
+                <p>关注路线时间：<span>7:30&nbsp;&nbsp;工作日</span></p>
+                <img class="ing_imgs" src="img/pic_right.png"/>
+            </div>
+            <a class="delete-btn">删除</a>
+        </div>
+        <div class="ind_sec">
+            <div class="ind_cent">
+                <img class="img_pic" src="img/bus_green.png"/>
+                <div class="ind_xx"></div>
+                <img class="img_pics" src="img/bus_red.png"/>
+                <p><span>起点</span>人民中路128号</p>
+                <p><span>终点</span>四季城小商品商场</p>
+                <p>关注路线时间：<span>7:30&nbsp;&nbsp;工作日</span></p>
+                <img class="ing_imgs" src="img/pic_right.png"/>
+            </div>
+            <a class="delete-btn">删除</a>
+        </div>
+        <div class="ind_sec">
+            <div class="ind_cent">
+                <img class="img_pic" src="img/bus_green.png"/>
+                <div class="ind_xx"></div>
+                <img class="img_pics" src="img/bus_red.png"/>
+                <p><span>起点</span>人民中路128号</p>
+                <p><span>终点</span>四季城小商品商场</p>
+                <p>关注路线时间：<span>7:30&nbsp;&nbsp;工作日</span></p>
+                <img class="ing_imgs" src="img/pic_right.png"/>
+            </div>
+            <a class="delete-btn">删除</a>
+        </div>
+    </section>
+</body>
+</html>

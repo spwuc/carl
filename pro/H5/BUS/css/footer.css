@@ -1,0 +1,26 @@
+.bus_foot{
+    width: 100%;
+    background: #fff;
+    border-top: 1px solid #cecece;
+    overflow: hidden;
+    position:fixed;
+    bottom: 0;
+    padding: 5px 0;
+}
+.bus_uls li{
+    width: 25%;
+    margin:0 auto;
+    float: left;
+    font-size: 12px;
+    text-align: center;
+    color: #5f646e;
+}
+.bus_uls li img{
+    width: 24px;
+}
+.bus_uls li a{
+    color: #5f646e;
+}
+.cur a p{
+    color:#498ee9!important;
+}

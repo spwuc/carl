@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>订单确认</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="Cache-Control" content="max-age=0">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/choosesThePlace.css"/>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <script type="text/javascript" src="../public/js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="../cordova.js"></script>
+    <script type="text/javascript" src="../public/js/underscore.js"></script>
+    <script type="text/javascript" src="../public/js/pinchzoom.js"></script>
+    <script type="text/javascript" src="../public/js/public.js"></script>
+    <script type="text/javascript">
+        var canC = true, canT = 0,paddingArr=[];
+        function moveEnd(n, m) {
+            $('.show_box_1 p').each(function(index){
+                $(this).css('paddingTop',(paddingArr[index]*n)+'px');
+            })
+        }
+        $(function () {
+            $('.show_box_1 p').each(function(index){
+                paddingArr[index] = parseInt($(this).css('paddingTop'));
+            })
+
+            var canC = true, canT = 0,up=[];
+//            $(document).addHeader();
+            $('.show_zw>div>p').each(function (index) {
+                if (index != 12) {
+                    if (index == 0) {
+                        $(this).find('span').eq(0).addClass('none');
+                        $(this).find('span').eq(1).addClass('none');
+                    } else if (index == 1 || index == 2 || index == 3 || index == 4) {
+                        $(this).find('span').eq(0).addClass('none');
+                    } else if (index == 11) {
+                        $(this).find('span').eq(1).addClass('none');
+                        $(this).find('span').eq(2).addClass('none');
+                        $(this).find('span').eq(3).addClass('none');
+                    } else {
+                        $(this).find('span').eq(0).addClass('none');
+                        $(this).find('span').eq(1).addClass('none');
+                        $(this).find('span').eq(2).addClass('none');
+                        $(this).find('span').eq(3).addClass('none');
+                    }
+                }
+            })
+            $('.show_zw>div>p').eq(6).find('span').eq(10).addClass('unnone');
+            $('.pinch-zoom').each(function () {
+                new RTP.PinchZoom($(this), {});
+            });
+            $('.show_zw>div>p>span').each(function (index) {
+                $(this).click(function () {
+                    if ($(this).hasClass('xuanzhe')) {
+                        $(this).removeClass('xuanzhe');
+                        canT--;
+                        $('.piao span').each(function () {
+                            if ($(this).hasClass('wz_' + (parseInt(index / 22) + 1)+'|'+(parseInt(index % 22) + 1))) {
+                                $(this).remove();
+                                canC = true;
+                                if (canT == 0) {
+                                    $('footer').hide();
+                                    $('.show_xz').show();
+                                    $('.con').css('marginBottom','0px');
+                                }
+                                up=[];
+                                for(var i=0;i<canT;i++){
+                                    up[i] = {
+                                        x : Number($('.piao span').eq(i).attr('zw').split('|')[1]),
+                                        y : Number($('.piao span').eq(i).attr('zw').split('|')[0])
+                                    }
+                                }
+                            }
+                        })
+
+                    }
+                    else if (!$(this).hasClass('none')&&!$(this).hasClass('unnone')) {
+                        if (!canC) {
+                            alert('最多可同时选择4张票！');
+                            return;
+                        }
+                        var y = parseInt(index / 22) + 1;
+                        var x = parseInt(index % 22) + 1;
+                        for(var m = 0; m < up.length;m++){
+                            if(y==up[m].y){
+                                if(x+2==up[m].x||x-2==up[m].x){
+                                    alert('同排座位最少空两位！');
+                                    return;
+                                }
+                            }
+                        }
+                        $(this).addClass('xuanzhe');
+                        $('.piao').append('<span zw="'+y+'|'+x+'" class="wz_' +y+'|'+x+'">'+y+'排'+x+'座</span>');
+                        $('.money_zj').html('&yen;'+($('.piao span').length*43));
+                        up[canT]={
+                            x:x,
+                            y:y
+                        }
+                        canT++;
+                        if (canT == 4) {
+                            canC = false;
+                        }
+                        if (canT != 0) {
+                            $('footer').show();
+                            $('.show_xz').hide();
+                            $('.con').css('marginBottom','97px');
+                        }
+                    }
+                })
+            })
+
+        })
+
+    </script>
+</head>
+<body>
+<header>
+    <div class="hea_div">
+        <a href="javascript:history.go(-1);"><img class="head_left" src="../public/img/right_sj_hea.png"></a>
+        西园影城
+        <!--<a href="bindingResult.html"><span class="rightText">完成</span></a>-->
+    </div>
+</header>
+<header style="height:62px;border-bottom: 1px #e1e1e1 solid;">
+    <p>天将雄师</p>
+    <span>2月26日&nbsp;&nbsp;星期三&nbsp;&nbsp;17:05</span>
+</header>
+<section class="con">
+<div class="show_box">
+    <div class="show_box_1">
+        <p>1</p>
+
+        <p>2</p>
+
+        <p>3</p>
+
+        <p>4</p>
+
+        <p>5</p>
+
+        <p>6</p>
+
+        <p>7</p>
+
+        <p>8</p>
+
+        <p>9</p>
+
+        <p>10</p>
+
+        <p>11</p>
+
+        <p>12</p>
+
+        <p>13</p>
+    </div>
+</div>
+<div class="show_zw pinch-zoom">
+<div class="show_text">
+    <P>1号厅屏幕</P>
+    <P>（剩余191个座位）</P>
+    <P>银幕中心</P>
+</div>
+<div>
+<p class="zw_1">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</p>
+
+<p class="zw_2">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</p>
+
+<p class="zw_3">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</p>
+
+<p class="zw_4">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</p>
+
+<p class="zw_5">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</p>
+
+<p class="zw_6">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</p>
+
+<p class="zw_7">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</p>
+
+<p class="zw_8">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</p>
+
+<p class="zw_9">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</p>
+
+<p class="zw_10">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</p>
+
+<p class="zw_11">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</p>
+
+<p class="zw_12">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</p>
+
+<p class="zw_13">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</p>
+<div class="center_line"></div>
+</div>
+
+</div>
+
+</section>
+<section class="show_xz">
+    <section>
+        <img src="img/kexuan.png" width="16">
+        <span>可选</span>
+    </section>
+    <section>
+        <img src="img/yixuan.png" width="16">
+        <span>已选</span>
+    </section>
+    <section>
+        <img src="img/bukexuan.png" width="16">
+        <span>不可选</span>
+    </section>
+</section>
+<footer>
+    <div class="piao">
+    </div>
+    <div class="zj">
+        <span>总计：<span class="money_zj">￥43.00</span></span>
+        <span><a href="orderFormCon.html">确定</a></span>
+    </div>
+</footer>
+</body>
+</html>

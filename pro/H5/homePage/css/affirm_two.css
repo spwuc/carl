@@ -1,0 +1,263 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "华文黑体";
+    list-style: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+body {
+    background: #f4f4f4;
+}
+
+.aff_tion {
+    margin-bottom: 52px;
+}
+
+.aff_tion h1 {
+    font-size: 13px;
+    font-weight: 100;
+    padding: 9px 12px;
+    background: #e5e5e5;
+    color: #2b2b2b;
+}
+
+.aff_chans img {
+    width: 100px;
+    padding: 13px 15px 0 15px;
+    float: left;
+}
+
+.aff_chan {
+    overflow: hidden;
+    border-bottom: 1px solid #e1e1e1;
+    padding-bottom: 10px;
+    background: #fff;
+    margin-bottom: 18px;
+}
+
+.aff_chan p {
+    width: 55%;
+    float: left;
+    font-size: 15px;
+    padding-top: 15px;
+}
+
+.aff_chan p b {
+    width: 50%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-weight: 100;
+    float: left;
+    line-height: 22px;
+}
+
+.aff_chan p span {
+    font-size: 18px;
+    color: #e54637;
+    font-weight: bold;
+    float: right;
+    display: block;
+}
+
+.aff_chan p span span {
+    font-size: 13px;
+    font-weight: 100;
+    margin-top: 4px;
+}
+
+.aff_chan p button {
+    width: 20%;
+    height: 35px;
+    background: #fff;
+    border: 1px solid #c7c7c7;
+    float: left;
+}
+
+.aff_chan p button:nth-child(1) {
+    border-radius: 5px 0 0 5px;
+    -webkit-border-radius: 5px 0 0 5px;
+}
+
+.aff_chan p button:nth-child(3) {
+    border-radius: 0 5px 5px 0;
+    -webkit-border-radius: 0 5px 5px 0;
+}
+
+.aff_chan p button:nth-child(1) img {
+    padding-bottom: 3px;
+}
+
+.aff_chan p button:nth-child(3) {
+    border-radius: 0 5px 5px 0;
+    -webkit-border-radius: 0 5px 5px 0;
+}
+
+.aff_chan p input {
+    float: left;
+    width: 20%;
+    height: 33px;
+    border: none;
+    border-bottom: 1px solid #c7c7c7;
+    border-top: 1px solid #c7c7c7;
+    text-align: center;
+}
+
+.aff_chan p button img {
+    width: 10px;
+}
+
+.fer {
+    background: #fff;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid #e1e1e1;
+}
+
+.fer p {
+    padding: 15px 10px;
+    color: #2e3030;
+    font-size: 14px;
+    font-style: normal;
+}
+.count{
+    display: inline-block;
+    padding-top: 10px;
+}
+
+.fer p i {
+    font-style: normal;
+    padding-top: 10px;
+    float: left;
+}
+
+.fer span {
+    font-size: 17px;
+    color: #e54637;
+    font-weight: bold;
+}
+
+.fer span span {
+    font-size: 13px;
+    font-weight: 100;
+    padding-left: 4px;
+}
+
+.fer b {
+    font-size: 12px;
+    font-weight: 100;
+}
+
+.fer button {
+    position: absolute;
+    bottom: 6px;
+    right: 14px;
+    width: 90px;
+    height: 35px;
+    border: none;
+    background: #4d90e5;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.aff_pj {
+    clear: both;
+    padding: 16px 0 0 15px;
+    color: #7a7b7b;
+    font-size: 14px;
+}
+
+.aff_fs {
+    background: #fff;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 18px;
+}
+
+.aff_fs ul li>div {
+    width: 24px;
+    height: 24px;
+    border: 1px #e1e1e1 solid;
+    border-radius: 24px;
+    -webkit-border-radius: 24px;
+    margin-right: 15px;
+}
+
+.aff_yun div {
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    border-radius: 13px;
+    -webkit-border-radius: 13px;
+    margin-top: 6px;
+    margin-left: 6px;
+}
+
+.aff_yun div.cur {
+    background-color: #4d90e5;
+}
+
+.aff_fs ul li {
+    width: 96%;
+    padding: 10px 0;
+    margin-left: 4%;
+    border-bottom: 1px solid #ccc;
+    overflow: hidden;
+    line-height: 26px;
+    font-size: 15px;
+    color: #3e3f3f;
+}
+
+.aff_fs ul li:last-child {
+    border-bottom: none;
+}
+
+.aff_fs ul li p {
+    float: left;
+}
+
+.aff_fs ul li p span {
+    color: #e54637;
+    margin-left: 10px;
+    font-size: 19px;
+}
+
+.aff_yun {
+    float: right;
+}
+
+.aff_ims,.aff_ims_1 {
+    background: #fff;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 70px;
+}
+.aff_ims_1{
+    display: none;
+}
+.aff_ims>p>span{
+    margin-left: 80px;
+}
+.aff_ims img,.aff_ims_1 img {
+    width: 50px;
+    margin: 16px 0 0 15px;
+    margin-bottom: 18px;
+}
+
+.aff_ims p,.aff_ims_1 p {
+    margin-left: 15px;
+    padding-top: 15px;
+    color: #525353;
+    font-size: 14px;
+    /*display: none;*/
+}
+
+.aff_ims p:last-child,.aff_ims_1 p:last-child {
+    padding-bottom: 15px;
+}

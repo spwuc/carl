@@ -1,0 +1,246 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>waterfall</title>
+    <link rel="shortcut icon" href="../images/ke.ico" type="image/x-icon">
+    <script src="js/jquery-1.8.0.js"></script>
+    
+    <style>
+        body, div {
+            margin: 0;
+            padding: 0;
+        }
+
+        .waterfall {
+            margin: 0 auto;
+            width: 1024px;
+            height: 500px;
+            border: 3px dashed #000;
+            position: relative;
+        }
+
+        .box {
+            text-align: center;
+            width: 200px;
+            border: 1px solid #ccc;
+            background: #f0f;
+            float: left;
+            overflow: hidden;
+            position: absolute;
+        }
+
+        .st1 {
+            height: 150px;
+            line-height: 150px;
+        }
+
+        .st2 {
+            height: 170px;
+            line-height: 170px;
+        }
+
+        .st3 {
+            height: 200px;
+            line-height: 200px;
+        }
+
+        .st4 {
+            height: 230px;
+            line-height: 230px;
+        }
+
+        .st5 {
+            height: 270px;
+            line-height: 270px;
+        }
+        #loader {
+            width: 1024px;
+            height: 40px;
+            margin:-43px auto 0 auto;
+            background:#0f0 url('loader.gif') no-repeat center ;
+            opacity:0.5;
+            filter:alpha(opacity=50);
+            display: none;
+        }
+        #toTop {
+            position: fixed;
+            bottom: 30px;
+            right: 20px;
+            margin-left: -150px;
+        }
+        #toTop a {
+            width: 90px;
+            display: block;
+            text-align: center;
+            font: 11px/100% Arial, Helvetica, sans-serif;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #bbb;
+            -webkit-transition: 1s;
+            -moz-transition: 1s;
+            transition: 1s;
+        }
+        #toTop span {
+            width: 90px;
+            height: 60px;
+            display: block;
+            margin-bottom: 7px;
+            background: #ddd;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+            -webkit-transition: 1s;
+            -moz-transition: 1s;
+            transition: 1s;
+        }
+        #toTop a:hover span {
+            background-color: #777;
+        }
+    </style>
+    <!--[if IE 6]>
+    <style type="text/css">
+        #toTop {
+            position: absolute;
+            bottom:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,40)||30)-(parseInt(this.currentStyle.marginBottom,40)||30)));
+            right: expression(eval(document.documentElement.scrollLeft+document.documentElement.clientWidth-this.offsetWidth)-(parseInt(this.currentStyle.marginLeft,30)||20)-(parseInt(this.currentStyle.marginRight,30)||20));
+            margin-left: -150px;
+        }
+    </style>
+    <![endif]-->
+</head>
+<body>
+    <div class="waterfall">
+        <div class="box st1">1</div>
+        <div class="box st2">2</div>
+        <div class="box st5">3</div>
+        <div class="box st4">4</div>
+        <div class="box st2">5</div>
+        <div class="box st4">6</div>
+        <div class="box st3">7</div>
+        <div class="box st5">8</div>
+        <div class="box st1">9</div>
+        <div class="box st4">10</div>
+        <div class="box st2">11</div>
+        <div class="box st5">12</div>
+        <div class="box st2">13</div>
+        <div class="box st4">14</div>
+        <div class="box st3">15</div>
+    </div>
+    <div id="loader"></div>
+    <span id="toTop">
+        <a href="javascript:void(0)"><span style="font-size: 80px;font-weight: bold;padding-top: 30px">↑</span>Back to Top</a>
+    </span>
+    <script>
+        $(function(){
+            $("#toTop").hide();
+            $(function () {
+                $(window).scroll(function () {
+                    if ($(this).scrollTop() > 100) {
+                        $('#toTop').fadeIn(200);
+                    } else {
+                        $('#toTop').fadeOut();
+                    }
+                });
+                $('#toTop a').click(function () {
+                    $('body').stop().animate({
+                        scrollTop: 0
+                    }, 300);
+                    return false;
+                });
+            });
+        })
+        if (!Array.prototype.indexOf) {
+            Array.prototype.indexOf = function (searchElement /*, fromIndex */) {
+                if (this == null) {
+                    throw new TypeError();
+                }
+                var t = Object(this);
+                var len = t.length >>> 0;
+                if (len === 0) {
+                    return -1;
+                }
+                var n = 0;
+                if (arguments.length > 1) {
+                    n = Number(arguments[1]);
+                    if (n != n) { // shortcut for verifying if it's NaN
+                        n = 0;
+                    } else if (n != 0 && n != Infinity && n != -Infinity) {
+                        n = (n > 0 || -1) * Math.floor(Math.abs(n));
+                    }
+                }
+                if (n >= len) {
+                    return -1;
+                }
+                var k = n >= 0 ? n : Math.max(len - Math.abs(n), 0);
+                for (; k < len; k++) {
+                    if (k in t && t[k] === searchElement) {
+                        return k;
+                    }
+                }
+                return -1;
+            }
+        }
+        function createchild() {
+            var Divbox = [];
+            var tex = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+            for (var i = 0; i < 5; i++) {
+                var Text = tex[Math.floor(Math.random() * 12)];
+                var box = document.createElement("div");
+                var num = Math.floor(Math.random() * 6)
+                if (num < 1) {
+                    num = 1;
+                }
+                $(box).addClass("box st" + num);
+                box.innerHTML = Text;
+                Divbox.push(box)
+            }
+            return Divbox;
+        }
+
+        $.fn.waterfall = function () {
+            var containerWidth = this.width();
+            var boxWidth = this.children().first().outerWidth(true);
+            var count = Math.floor(containerWidth / boxWidth);
+            var $children = this.children();
+            var heightArr = [];
+            for (var i = 0; i < count; i++) heightArr[i] = 0;
+            for (var n = 0; j = $children.length, n < j; n++) {
+                var minHeight = Math.min.apply(Math, heightArr);
+
+                var index = heightArr.indexOf(minHeight);
+                var $child = $children.eq(n);
+                $child.animate({ left: index * boxWidth, top: minHeight }, 500)
+                heightArr[index] += $child.outerHeight(true);
+            }
+            var self = this;
+            var left = boxWidth * 2
+            $(window).scroll(function () {
+                var bottom = $(document).height() - $(window).height() - $(window).scrollTop();
+                if (bottom < 50) {
+                    $('#loader').css('display', 'block')
+                    setTimeout(function () {
+                        $('#loader').css('display','none')
+                        var $boxes = $(createchild());
+                        self.append($boxes);
+                        for (var i = 0; i < $boxes.length; i++) {
+                            $boxes.eq(i).css({ left: left, top: self.height() - $(window).height() })
+                        }
+                        for (var i = 0; i < $boxes.length; i++) {
+                            var minHeight = Math.min.apply(Math, heightArr);
+                            var index = heightArr.indexOf(minHeight);
+                            $boxes.eq(i).animate({ left: index * boxWidth, top: minHeight }, 500)
+                            heightArr[index] += $boxes.eq(i).outerHeight(true);
+                        }
+                    }, 1000)
+                }
+                $(self).height(Math.max.apply(Math, heightArr));
+            })
+            this.height(Math.max.apply(Math, heightArr));
+        }
+    </script>
+    <script>
+        $('.waterfall').waterfall();
+
+    </script>
+</body>
+</html>

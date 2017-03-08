@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>我的关注</title>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+    <meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0" name="viewport"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <link href="css/reset.css" rel="stylesheet" type="text/css">
+    <link href="css/Concern_about.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="../public/js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="../public/js/public.js"></script>
+    <script type="text/javascript" src="../cordova.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $(document).addHeader('', function () {});
+        })
+        $(function () {
+            function prevent_default(e) {
+                e.preventDefault();
+            }
+
+            function disable_scroll() {
+                $(document).on('touchmove', prevent_default);
+            }
+
+            function enable_scroll() {
+                $(document).unbind('touchmove', prevent_default);
+            }
+
+            var x;
+            $('.con_cey')
+                    .on('touchstart', function (e) {
+                        $('.con_cey.open').css('left', '0px').removeClass('open');
+                        $(e.currentTarget).addClass('open');
+                        x = e.originalEvent.targetTouches[0].pageX;
+                    })
+                    .on('touchmove', function (e) {
+                        var change = e.originalEvent.targetTouches[0].pageX - x;
+                        var currentLeft = parseInt(e.currentTarget.style.left);
+                        if (change < 0 || (currentLeft < 0 && change > 0 && change + currentLeft < 0)) {
+                            change = Math.min(Math.max(-68, change), 100);
+                            e.currentTarget.style.left = change + 'px';
+                            if (change < -10) disable_scroll();
+                        }
+                    })
+                    .on('touchend', function (e) {
+                        var left = parseInt(e.currentTarget.style.left);
+                        var new_left;
+                        if (left < -35) {
+                            new_left = '-68px';
+                        } else if (left > 0) {
+                            new_left = '0px';
+                        } else {
+                            new_left = '0px';
+                        }
+                        $(e.currentTarget).animate({left: new_left}, 200);
+                        enable_scroll();
+                    });
+
+            $('li .delete-btn').on('touchend', function (e) {
+                e.preventDefault();
+                $(this).parents('li').slideUp('fast', function () {
+                    $(this).remove();
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+    <section class="con_me">
+        <div class="con_about">
+            <div class="con_cey">
+                <ul class="con_UL">
+                    <li><a href="add_attention.html">汛塘南苑<span>南汛塘路到底娄江面馆门口，靠北步行50米</span><img src="img/con_sh.png" class="con_img" /></a></li>
+                    <li>可借车辆：<b>26</b>可停车辆：<b>24</b></li>
+                    <li>推送时间：<i>7:30&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;工作日</i><a href="attention_time.html"><img src="img/pic_right.png" class="con_imgs"></a></li>
+                </ul>
+            </div>
+            <a class="delete-btn"><img src="img/del.png"/></a>
+        </div>
+        <div class="con_about">
+            <div class="con_cey">
+                <ul class="con_UL">
+                    <li>汛塘南苑<span>南汛塘路到底娄江面馆门口，靠北步行50米</span><img src="img/con_sh.png" class="con_img" /></li>
+                    <li>可借车辆：<b>26</b>可停车辆：<b>24</b></li>
+                    <li>推送时间：<i>7:30&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;工作日</i><img src="img/pic_right.png" class="con_imgs"></li>
+                </ul>
+            </div>
+            <a class="delete-btn"><img src="img/del.png"/></a>
+        </div>
+        <P class="con_zp">数据来源：昆山市城市管理局</P>
+    </section>
+</body>
+</html>

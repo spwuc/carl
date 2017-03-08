@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>HTML5大文件分片上传示例</title>
+    <script src="../jquery-1.8.0.js"></script>
+    <script src="JQ-md5.js"></script>
+    <script>
+        var Md5;
+        function handleFileSelection(files,Start,End) {
+            var file = files.slice(Start, End);
+
+        }
+
+        var page = {
+            init: function () {
+                $("#upload").click($.proxy(this.upload, this));
+            },
+            upload: function () {
+                var file = $("#file")[0].files[0],  //文件对象
+                        name = file.name,        //文件名
+                        size = file.size;        //总大小
+
+                var chunkSize = 2*1024*1024*1024;
+                if(size>chunkSize){
+                    return alert('上传文件不能大于2G！');
+                }
+                var files = file.slice(0,1024);
+                var pos = 0;
+                var md5Instance = CryptoJS.algo.MD5.create();
+                var reader = new FileReader();
+                !function progressiveReadNext(){
+                    var end = files.size;
+                    if (files.slice) {
+                        var blob = files.slice(pos, end);
+                    } else if (files.webkitSlice) {
+                        var blob = files.webkitSlice(pos, end);
+                    }else if(File.prototype.mozSlice){
+                        var blob = files.mozSlice(pos, end);
+                    }
+                    reader.readAsBinaryString(blob);
+                    reader.onload = function(e) {
+                        pos = end;
+                        console.log(e.target.result)
+                        md5Instance.update(CryptoJS.enc.Latin1.parse(e.target.result));
+                        var md5Value = md5Instance.finalize().toString();
+                        Md5 = md5Value;
+//                        $.ajax
+                    }
+                }();
+
+            }
+        };
+
+        $(function () {
+            page.init();
+        });
+    </script>
+
+</head>
+<body>
+<input type="file" id="file"/>
+<button id="upload">上传</button>
+<span id="output" style="font-size:12px">等待</span>
+</body>
+</html>

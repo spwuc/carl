@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>snow</title>
+    <link rel="shortcut icon" href="../images/ke.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="assets/base.css" media="screen">
+    <script src="../jquery-1.8.0.js"></script>
+    <script src="assets/jquery.snow.js"></script>
+    <style>
+        html{
+            background:url(assets/08.jpg) #000;
+            overflow:hidden;
+        }
+        .info{
+            font-size:30px;
+            text-align:center;
+            margin:100px;
+        }
+        .info a{
+            color:green;
+        }
+    </style>
+
+    <script>
+        //越小，透明图越低
+        $(document).ready( function(){
+            $.fn.snow({minSize:1,maxSize:2,newOn: 1});
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

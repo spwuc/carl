@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>grade</title>
+    <link rel="shortcut icon" href="../images/ke.ico" type="image/x-icon">
+    <script src="jquery-1.8.0.js"></script>
+    <style>
+        body, img {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="star" style="width: 144px; height: 24px; margin: 0 auto">
+        <img src="img/star-off-big.png" /><img src="img/star-off-big.png" /><img src="img/star-off-big.png" /><img src="img/star-off-big.png" /><img src="img/star-off-big.png" /><img src="img/star-off-big.png" />
+    </div>
+    <script>
+        ; (function ($) {
+            var tag = false;
+            $.fn.star = function (options) {
+                var setings = {
+                    off: '',
+                    on: '',
+                    half: ''
+                }
+                $.extend(setings, options)
+                var imgs = $(this).find('img'),k;
+                imgs.each(function (index) {
+                    $(this).mousemove(function (e) {
+                        imgs.attr('src',setings.off)
+                        for (var i = 0; i < index; i++) {
+                            imgs.eq(i).attr('src',setings.on)
+                        }
+                        var x = e.screenX - $(this).parent().offset().left;
+                        if (x / 24 < Number(index) + 0.5) {
+                            imgs.eq(index).attr('src', setings.half)
+                            k = index + 0.5;
+                        } else {
+                            imgs.eq(index).attr('src', setings.on)
+                            k = index + 1;
+                        }
+                        if (x <= 0) {
+                            imgs.eq(0).attr('src', setings.off)
+                        }
+                    })
+                })
+                $(this).click(function () {
+                    $(this).find('img').unbind('mousemove')
+                    $(this).append('您的评分为:' + k)
+                    $(this).unbind('click')
+                })
+            }
+        }(jQuery))
+        $('#star').star({off: 'img/star-off-big.png',on: 'img/star-on-big.png',half: 'img/star-half-big.png'})
+    </script>
+</body>
+</html>

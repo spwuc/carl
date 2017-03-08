@@ -1,0 +1,118 @@
+*{padding:0;margin: 0;font-style:none;}
+body{
+    background:#f4f4f4;
+}
+.three{
+    background:#F8F8F8;
+}
+.three ul li{
+    clear:both;
+    padding-top:30px;
+    overflow:hidden;}
+.three ul li.odd dl dt{
+    float:left;
+    width:20%;
+    margin-left:3%;}
+.three ul li.odd dl dt img{
+    width:90%;}
+.three ul li.odd dl dd{
+    width:60%;
+    margin-left:3%;
+    float:left;}
+.three ul li.odd dl dd h2{
+    position:relative;
+}
+.three ul li.odd dl dd h2 img{
+    z-index:999;
+    float:left;
+    width:15px;
+    position:absolute;
+    left:-15px;
+    top:7px;}
+.three ul li.odd dl dd h2 span{
+    line-height:18px;
+    background:#fff no-repeat;
+    float:left;
+    padding:10px;
+    border:1px solid #DCDCDC;
+    margin-left:-2px;
+    z-index:998;
+    width:90%;
+    border-radius:5px;
+    font-size:13px;
+    font-weight:normal;}
+.three ul li.odd dl dd p{
+    clear:both;
+    color:#ccc;
+    padding-top:15px;}
+.three ul li.odd dl dd p b{
+    margin-left:10px;
+    display:inline-block;
+    font-weight:normal;}
+
+.three ul li.even dl dt{
+    float:right;
+    width:20%;
+    margin-right:3%;
+    text-align:right;}
+.three ul li.even dl dt img{
+    width:90%;}
+.three ul li.even dl dd{
+    width:60%;
+    margin-right:3%;
+    float:right;}
+.three ul li.even dl dd h2{
+    position:relative;
+}
+.three ul li.even dl dd h2 img{
+    width:15px;
+    position:absolute;
+    right:-15px;
+    top:7px;}
+.three ul li.even dl dd h2 span{
+    line-height:18px;
+    background:#A0E759 no-repeat;
+    float:right;
+    padding:10px;
+    border:1px solid #99C280;
+    margin-right:-2px;
+    z-index:998;
+    width:90%;
+    border-radius:5px;
+    font-size:13px;
+    font-weight:normal;}
+.three ul li.even dl dd p{
+    clear:both;
+    color:#ccc;
+    padding-top:15px;
+    text-align:right;}
+.three ul li.even dl dd p b{
+    margin-left:10px;
+    display:inline-block;
+    font-weight:normal;}
+.th-down p{
+    height:45px;
+    line-height:45px;
+    background:#FEFEFE;
+    border-top:1px solid #CECECE;
+    padding: 5px 0;}
+.th-down {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+.th-down p input{
+    width:75%;
+    height:40px;
+    margin-top:3px;
+    margin-left:3%;
+    border-radius:5px;
+    border: 1px solid #e1e1e1;}
+.th-down p button{
+    width:15%;
+    margin-left:4%;
+    background:#498EE8;
+    border:none;
+    height:40px;
+    color:#fff;
+    border-radius:5px;}

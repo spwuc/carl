@@ -1,0 +1,115 @@
+.zhaopin_content{
+    width: 100%;
+    min-width: 1200px;
+    background: #fff;
+    overflow: hidden;
+    padding-bottom: 50px;
+}
+.zhaopin_column {
+    width: 1200px;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-top: 35px;
+}
+.zhaopin_column span {
+    display: block;
+    font-family: "微软雅黑";
+    font-size: 24px;
+    color: #666;
+    line-height: 20px;
+    margin-bottom: 80px;
+}
+.gangwei01 {
+    width: 200px;
+    height: 150px;
+    background-color: #f0f0f0;
+    float: left;
+    text-align: center;
+    font-family: "微软雅黑";
+    font-size: 16px;
+    color: #1b1b1b;
+    font-weight: bold;
+    overflow: hidden;
+    margin-left: 127px;
+}
+.yaoqiu01 {
+    width: 746px;
+    height: 146px;
+    border: #ebebeb 2px solid;
+    float: left;
+    overflow: hidden;
+}
+.gangwei02 {
+    margin-left: 127px;
+    width: 196px;
+    height: 146px;
+    border: #ebebeb 2px solid;
+    float: left;
+    text-align: center;
+    font-family: "微软雅黑";
+    font-size: 16px;
+    color: #1b1b1b;
+    font-weight: bold;
+    overflow: hidden;
+}
+.gangwei01 img, .gangwei02 img {
+    margin: 35px auto 25px auto;
+    display: block;
+}
+.yaoqiu02 {
+    width: 750px;
+    height: 150px;
+    background-color: #f0f0f0;
+    float: left;
+    overflow: hidden;
+}
+.zhaopin_column h1 {
+    margin: 0;
+    padding: 0;
+    font-family: "微软雅黑";
+    font-size: 14px;
+    color: #333;
+    line-height: 30px;
+    font-weight: normal;
+    padding-left: 50px;
+    padding-top: 15px;
+}
+.daiyu {
+    width: 500px;
+    height: 205px;
+    box-shadow: 0px 0px 10px rgba(178,178,178,0.6);
+    margin-bottom: 35px;
+}
+.city {
+    width: 500px;
+    height: 55px;
+    box-shadow: 0px 0px 10px rgba(178,178,178,0.6);
+}
+.more {
+    width: 240px;
+    float: right;
+    margin-top: 150px;
+    margin-right: 127px;
+}
+.more span {
+    text-align: center;
+    font-size: 14px;
+    line-height: 30px;
+    display: block;
+    font-family: "微软雅黑";
+    color: #666;
+    margin-bottom: 30px;
+}
+/*底部*/
+.footer{
+    width: 100%;
+    min-width: 1200px;
+    height: 80px;
+    background-color: #333;
+    text-align: center;
+    font-family: "微软雅黑";
+    font-size: 14px;
+    line-height: 24px;
+    color: white;
+    padding-top: 20px;
+}

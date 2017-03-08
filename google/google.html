@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <title>google</title>
+    <link rel="shortcut icon" href="../images/ke.ico" type="image/x-icon">
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery-1.8.0.js"></script>
+    <script>
+        var n = 0;
+        var key = null;
+        function transfer() {
+            var lis = document.getElementsByTagName('li');
+            //这是检测输入框是否为空，如果已经输入了东西，让UL显示
+            if (document.getElementById("tet").value != '') {
+                document.getElementById('tab').style.display = 'block';
+            }
+            if (event.keyCode == 8 && document.getElementById("tet").value == ''/*如果点击的是撤销键并且输入框是空的话，直接返回*/) {
+                conceal()
+                return false;
+            }
+            if (event.keyCode == 40 && document.getElementById("tet").value !== ''/*如果按的是下键*/) {
+                var lis = document.getElementsByTagName('li')
+                for (var i = 0; i < lis.length; i++) {
+                    lis[i].style.background = '';
+                }
+                document.getElementsByTagName('li')[n].style.background = '#ccc';
+                $($('li')[n]).siblings().attr("background", "#ccc");
+                n++;
+                if (n > 9) {
+                    n = 0;
+                }
+                key = 40;
+                return false;
+            } else if (event.keyCode == 38 && document.getElementById("tet").value !== ''/*如果按的是上键*/) {
+                n--;
+                if (n <= 0) {
+                    n = 10;
+                }
+
+                var lis = document.getElementsByTagName('li')
+                for (var i = 0; i < lis.length; i++) {
+                    lis[i].style.background = '';
+                }
+                document.getElementsByTagName('li')[n - 1].style.background = '#ccc';
+                key = 38;
+
+                return false;
+            }
+            //下面的(replace)是去除输入框中的"<b></b>"标签
+            if (event.keyCode == 13/*如果点击的是确定键*/) {
+                document.getElementById("tet").value = lis[n - 1].innerHTML.replace('<b>', "").replace('</b>', '');
+                //隐藏UL
+                conceal()
+            }
+            //上边到这是判断的键盘事件，下面是JQ封装好的AJAX
+            $.ajax({
+                dataType: 'json',
+                type: "GET",
+                url: "script.php?rand=" + document.getElementById("tet").value,
+                //success是把从服务器端得到的数据拼接到输入框下面的UL中
+                success: function (msg) {
+                    var html = '';
+                    var len = document.getElementById("tet").value.length;
+                    for (var i in msg) {
+                        var lens = msg[i]['label'].length;
+                        //拼接li
+                        html += "<li>" + msg[i]['label'].substring(0, len) + "<b>" + msg[i]['label'].substring(len, lens) + "</b></li>"
+
+                    }
+                    //把拼接好的li添加给UL
+                    document.getElementById("tab").innerHTML = html;
+                    //以下是判断鼠标经过时给li添加高亮
+                    for (var i = 0; i < lis.length; i++) {
+                        //先把其他的高亮全部删除
+                        lis[i].style.background = '';
+                        //鼠标经过添加高亮
+                        lis[i].onmouseover = function () {
+                            this.style.background = '#ccc';
+                            this.style.cursor = 'pointer';
+                        }
+                        //鼠标离开删除高亮
+                        lis[i].onmouseout = function () {
+                            this.style.background = 'none';
+                        }
+                        //鼠标点击时把LI的内容添加到输入框中，隐藏UL
+                        lis[i].onclick = function () {
+                            document.getElementById("tet").value = this.innerHTML.replace('<b>', "").replace('</b>', '');
+                            conceal();
+                        };
+                    }
+
+                },
+                async: true
+            })
+
+        }
+
+        //当鼠标离开焦点(相当于点击其他地方)时，隐藏UL
+        document.onclick = function () {
+            conceal();
+        }
+        function conceal() {
+            document.getElementById('tab').style.display = 'none';
+        }
+        function opens(s) {
+            if(s){
+                window.open("https://www.google.com.hk");
+            }
+            var con = $('#tet').val();
+            if(con){
+                var urls = "https://www.google.com.hk/#bav=on.2,or.&fp=bc7d7d70834509c&newwindow=1&q=" + con + "&safe=strict";
+                window.open(urls)
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="box">
+        <img src="img/nav.gif" class="img" />
+        <input name="" type="text" id="tet" onkeyup="transfer(event)" />
+        <div>
+            <ul id="tab"></ul>
+            <input name="" type="button" class="btn" onclick="opens()" />
+            <input name="" type="button" class="btn1" onclick="opens()" />
+        </div>
+
+        <p class="fot">Google.com.hk 使用下列语言：中文（繁体） English</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,309 @@
+/* CSS Document */
+@charset "utf-8";
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 13px;
+    font-family: 'Microsoft Yahei', helvetica, arial;
+    background: #f8f8f8;
+    -webkit-text-size-adjust: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+th, td {
+    text-align: center;
+    vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: 400;
+}
+
+fieldset, img {
+    border: 0;
+}
+
+ol, ul, li {
+    list-style: none;
+}
+
+input {
+    font-size: 100%;
+    background: none;
+}
+
+img, input, button, a, select, textarea {
+    margin: 0;
+    padding: 0;
+    resize: none;
+    border: none;
+    outline: none;
+}
+
+ins, a {
+    text-decoration: none;
+}
+
+a:hover, a:active, a:visited {
+    text-decoration: none;
+}
+
+a:focus {
+    outline: none;
+}
+
+.mt15 {
+    margin-top: 15px;
+}
+.hea_div{
+    height: 45px;
+    line-height: 45px;
+    font-size: 17px;
+    text-align: center;
+    color: rgb(69, 140, 236);
+    position: relative;
+    border-bottom: 1px solid #D8D8D8;
+    background: #fff;
+}
+.head_left{
+    width: 11px;
+    position: absolute;
+    top: 14px;
+    left: 14px;
+}
+.head_right{
+    position: absolute;
+    right: 14px;
+    top: 0;
+    font-size: 14px;
+    height: 45px;
+}
+.zhi_f{
+    text-align: center;
+    padding-top: 10px;
+}
+.font{
+    text-align: center;
+    padding: 10px 0;
+    color: #959596;
+    font-size: 20px;
+}
+.zhi_two{
+    padding-bottom: 51px;
+    overflow: hidden;
+}
+.zhi_two h1{
+    padding:10px 15px;
+    background: #e5e5e5;
+    margin-top: 10px;
+}
+.zhi_ul{
+    background: #fff;
+}
+.zhi_ul li{
+    border-bottom: 1px solid #e1e1e1;
+    margin-left: 15px;
+    padding: 10px 0;
+}
+.zhi_ul li:last-child{
+    border-bottom: none;
+}
+.zhi_ul li img{
+    width: 50px;
+    vertical-align: middle;
+    padding-right: 10px;
+}
+.zhi_ul li b{
+    font-weight: 100;
+    font-size: 12px;
+    color: #807f7f;
+}
+.zhi_ul li>div{
+    width: 24px;
+    height: 24px;
+    border: 1px #e1e1e1 solid;
+    border-radius: 24px;
+    -webkit-border-radius: 24px;
+    margin-right: 15px;
+    float: right;
+}
+.zhi_yuan div{
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    border-radius: 13px;
+    -webkit-border-radius: 13px;
+    margin-top: 6px;
+    margin-left: 6px;
+}
+.cur{
+    background-color: #4d90e5 !important;
+}
+.zhi_k{
+    overflow: hidden;
+    background: #fff;
+}
+.zhi_k p{
+    float: left;
+    padding-left: 15px;
+    line-height: 40px;
+}
+.zhi_k p span{
+    color: #498ee8;
+}
+.zhi_k p b{
+    font-weight: 100;
+    color: #e7452f;
+}
+.add_two>div {
+    margin-top: 13px;
+    background: #fff;
+    line-height: 48px;
+    color: #333333;
+    padding-left: 15px;
+    height: 48px;
+}
+
+.add_two>div>span {
+    float: left;
+}
+
+#switch {
+    float: right;
+    margin-top: 5px;
+    margin-right: 13px;
+}
+
+#switch .toggle {
+    position: relative;
+    display: inline-block;
+    pointer-events: auto;
+    margin: -5px;
+    padding: 5px;
+}
+
+#switch .toggle input:checked + .track {
+    border-color: #458cec;
+    background-color: #458cec;
+}
+
+#switch .toggle.dragging .handle {
+    background-color: #f2f2f2 !important;
+}
+
+#switch .toggle input {
+    display: none;
+}
+
+#switch .toggle .track {
+    -webkit-transition-timing-function: ease-in-out;
+    transition-timing-function: ease-in-out;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: background-color, border;
+    transition-property: background-color, border;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 51px;
+    height: 31px;
+    border: solid 2px #e6e6e6;
+    border-radius: 20px;
+    background-color: #fff;
+    content: ' ';
+    cursor: pointer;
+    pointer-events: none;
+}
+
+#switch .platform-android4_2 .toggle .track {
+    -webkit-background-clip: padding-box;
+}
+
+#switch .toggle .handle {
+    -webkit-transition: 0.3s cubic-bezier(0, 1.1, 1, 1.1);
+    transition: 0.3s cubic-bezier(0, 1.1, 1, 1.1);
+    -webkit-transition-property: background-color, transform;
+    transition-property: background-color, transform;
+    position: absolute;
+    display: block;
+    width: 27px;
+    height: 27px;
+    border-radius: 27px;
+    background-color: #fff;
+    top: 7px;
+    left: 7px;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.35), 0 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+#switch .toggle .handle:before {
+    position: absolute;
+    top: -4px;
+    left: -21px;
+    padding: 18px 0px 18px 34px;
+    content: " ";
+}
+
+#switch .toggle input:checked + .track .handle {
+    -webkit-transform: translate3d(20px, 0, 0);
+    transform: translate3d(20px, 0, 0);
+    background-color: #fff;
+}
+
+#switch .item-toggle.active {
+    box-shadow: none;
+}
+
+#switch .item-toggle, .ionic .item-toggle.item-complex .item-content {
+    padding-right: 99px;
+}
+
+#switch .item-toggle.item-complex {
+    padding-right: 0;
+}
+
+#switch .item-toggle .toggle {
+    position: absolute;
+    top: 10px;
+    right: 16px;
+    z-index: 3;
+}
+
+#switch .toggle input:disabled + .track {
+    opacity: 0.6;
+}
+
+.zhi_foot{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: #fff;
+    border-top:1px solid #e1e1e1;
+    font-size: 15px;
+}
+.zhi_foot p{
+    color: #575858;
+    line-height: 50px;
+    float: left;
+    padding-left: 15px;
+}
+.zhi_foot p b{
+    color: #e7452f;
+}
+.zhi_foot button{
+    width: 65px;
+    height: 35px;
+    float: right;
+    background: #458cec;
+    color: #fff;
+    border-radius: 5px;
+    margin: 8px 15px 0 0;
+}

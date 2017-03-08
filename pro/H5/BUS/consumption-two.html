@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>查询</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="Cache-Control" content="max-age=0">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/consumption.css"/>
+    <link rel="stylesheet" href="css/consumptions.css"/>
+    <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            function prevent_default(e) {
+                e.preventDefault();
+            }
+
+            function disable_scroll() {
+                $(document).on('touchmove', prevent_default);
+            }
+
+            function enable_scroll() {
+                $(document).unbind('touchmove', prevent_default);
+            }
+
+            var x;
+            $('.con_div')
+                    .on('touchstart', function (e) {
+                        $('.con_div.open').css('left', '0px').removeClass('open');
+                        $(e.currentTarget).addClass('open');
+                        x = e.originalEvent.targetTouches[0].pageX;
+                    })
+                    .on('touchmove', function (e) {
+                        var change = e.originalEvent.targetTouches[0].pageX - x;
+                        var currentLeft = parseInt(e.currentTarget.style.left);
+                        if (change < 0 || (currentLeft < 0 && change > 0 && change + currentLeft < 0)) {
+                            change = Math.min(Math.max(-68, change), 100);
+                            e.currentTarget.style.left = change + 'px';
+                            if (change < -10) disable_scroll();
+                        }
+                    })
+                    .on('touchend', function (e) {
+                        var left = parseInt(e.currentTarget.style.left);
+                        var new_left;
+                        if (left < -35) {
+                            new_left = '-68px';
+                        } else if (left > 0) {
+                            new_left = '0px';
+                        } else {
+                            new_left = '0px';
+                        }
+                        $(e.currentTarget).animate({left: new_left}, 200);
+                        enable_scroll();
+                    });
+
+            $('.delete-btn').on('touchend', function (e) {
+                e.preventDefault();
+                $(this).parents('li').slideUp('fast', function () {
+                    $(this).remove();
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+<header>
+    <div class="hea_divx">
+        <a href="javascript:history.go(-1)"><img class="head_left" src="img/right_sj_hea.png"></a>
+        <input type="text" placeholder="请输入查询线路"/>
+        <button><a style="color: #fff" href="particulars_line.html">搜索</a></button>
+    </div>
+</header>
+    <section>
+        <ul class="con_ul">
+            <li><span><img class="con_img" src="img/img.png">公交1路<b>（火车站北广场 — 新生首末站）</b></span><img class="con_pic" src="img/left_t.png"></li>
+            <li><span><img class="con_img" src="img/img.png">公交2路<b>（火车站北广场 — 新生首末站）</b></span><img class="con_pic" src="img/left_t.png"></li>
+            <li><span><img class="con_img" src="img/img.png">公交11路<b>（火车站北广场 — 新生首末站）</b></span><img class="con_pic" src="img/left_t.png"></li>
+        </ul>
+        <p class="con_p"><img src="img/dem_del.png">清空历史记录</p>
+    </section>
+</body>
+</html>

@@ -1,0 +1,78 @@
+﻿html {
+	height: 100%;
+}
+
+body, button, input, select, textarea {
+	font: 14px / 1.5 arial, 华 文 细 黑, sans-serif;
+	background: #fbfbfb;
+	position: relative;
+}
+
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td {
+	margin: 0;
+	padding: 0;
+	outline: 0 none;
+
+}
+
+img {
+	border: 0;
+}
+
+.container {
+    position:relative;
+	width: 100%;
+	margin: 0 auto;
+    overflow:hidden;
+}
+
+em {
+	font-style: normal
+}
+
+.bd {
+	font-weight: bold;
+	color: #646464;
+}
+
+.cor {
+	color: #ff952b;
+}
+
+a {
+	text-decoration: none;
+}
+
+li {
+	list-style: none outside none;
+}
+
+.mb20 {
+	margin-bottom: 20px;
+}
+
+.fr {
+	float: right;
+}
+
+.clearfix:after {
+	clear: both;
+	content: ".";
+	display: block;
+	height: 0;
+	visibility: hidden;
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+.clearfix:before, .clearfix:after {
+	content: "";
+	display: table;
+}
+
+.clearfix:before, .clearfix:after {
+	content: "";
+	display: table;
+}

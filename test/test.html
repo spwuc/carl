@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="Cache-Control" content="max-age=0">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no" />
+    <title></title>
+    <script type="text/javascript" src="../jquery-1.8.0.js" charset="utf-8" ></script>
+    <script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="222222" charset="utf-8" ></script>
+
+</head>
+<body>
+
+<span id="qqLoginBtn">111</span>
+    <span class="logout">退出</span>
+<script type="text/javascript">
+    var cbLoginFun = function(oInfo, oOpts){
+        alert(oInfo.nickname); // 昵称
+        console.log(oOpts);
+        console.log(oInfo);
+    };
+    var cbLogoutFun = function(){
+        alert("注销成功!");
+    };
+    QC.Login({
+//        btnId : "qqLoginBtn",//插入按钮的html标签id
+        size : "",//按钮尺寸
+        scope : "",//展示授权，全部可用授权可填 all
+        display : "mobile"//应用场景，可选
+    },cbLoginFun,cbLogoutFun);
+    $('#qqLoginBtn img').attr('src','');
+    $('#qqLoginBtn').click(function(){
+        window.open('https://graph.qq.com/oauth2.0/authorize?client_id=222222&response_type=token&scope=all&redirect_uri=http%3A%2F%2Fqzonestyle.gtimg.cn%2Fqzone%2Fopenapi%2Fredirect-1.0.1.html&display=mobile', 'oauth2Login_10281' ,'height=525,width=585, toolbar=no, menubar=no, scrollbars=no, status=no, location=yes, resizable=yes');
+    })
+    $('.logout').click(function(){
+        QC.Login.signOut();
+    })
+
+</script>
+
+
+</body>
+</html>
+

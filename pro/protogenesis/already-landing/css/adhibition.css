@@ -1,0 +1,49 @@
+*{padding:0;margin: 0;font-style:none;}
+body{
+    background:#f4f4f4;
+}
+.ad_div{
+    background: #fff;
+    border-bottom: 1px solid #e1e1e1;
+    overflow: hidden;
+    position: relative;
+    font-size: 12px;
+    padding: 10px 0;
+}
+.ad_div:last-child{
+    border-bottom: none;
+}
+.adh_img{
+    width: 60px;
+    float: left;
+    padding:0 10px;
+}
+.adh_cent{
+    float: left;
+    color: #a8a8a8;
+}
+.abh_p{
+    font-size: 15px;
+    color: #000;
+}
+.abh_ps{
+    clear: both;
+}
+.ad_ul li{
+    float: left;
+    padding: 3px 1px;
+}
+.ad_ul li img{
+    width: 12px;
+}
+.abh_btn{
+    width: 50px;
+    height: 30px;
+    position: absolute;
+    top: 25px;
+    right: 15px;
+    color: #458cec;
+    background: #fff;
+    border: 1px solid #458cec;
+    border-radius: 5px;
+}

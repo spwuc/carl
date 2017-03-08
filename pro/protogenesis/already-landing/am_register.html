@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>修改支付密码</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="Cache-Control" content="max-age=0">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/am_register.css"/>
+    <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('.reg_btn').click(function(){
+                $('.reg_div').show();
+                $('.reg_tn').show();
+            });
+            $('.reg_tn button').click(function(){
+                $('.reg_div').hide();
+                $('.reg_tn').hide();
+            });
+        })
+    </script>
+</head>
+<body>
+<header>
+    <div class="hea_div">
+        <a href="javascript:history.go(-1)"><img class="head_left" src="img/right_sj_hea.png"></a>
+        修改支付密码
+    </div>
+</header>
+<section class="reg_sec">
+    <div class="reg_ms">
+        <ul class="reg_uls">
+            <li><span>原始密码</span><input type="password" placeholder="请输入输入密码"></li>
+            <li><span>新密码</span><input type="password" placeholder="请再次输入密码"></li>
+            <li><span>确认新密码</span><input type="password" placeholder="请再次输入密码"></li>
+        </ul>
+    </div>
+    <button class="reg_btn">完成</button>
+    <div class="reg_div"></div>
+    <div class="reg_tn">
+        <p>密码修改成功</p>
+        <button><a href="register-passwd.html">确定</a></button>
+    </div>
+</section>
+</body>
+</html>

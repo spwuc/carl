@@ -1,0 +1,120 @@
+*{padding:0;margin: 0;font-style:none; }
+body{
+    background: #f4f4f4;
+}
+.bus_tion{
+    margin-top:15px;
+}
+.bus_div{
+    font-size: 13px;
+    background: #fff;
+    margin-top: 15px;
+    overflow: hidden;
+    color: #2b2b2b;
+    position: relative;
+}
+.bus_divs{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 2;
+    overflow: hidden;
+}
+.delete-btn{
+    position: absolute;
+    right: 0;
+    top: 0;
+    text-align: center;
+    background-color: #df432d;
+    width: 68px;
+    margin: 0px;
+    float: right;
+    border: none;
+    height: 100%;
+    line-height: 110px;
+    color: #fff;
+}
+.bus_yuan{
+    width: 37px;
+    height: 37px;
+    border: 1px solid #498ee9;
+    color: #498ee9;
+    -webkit-border-radius:37px;
+    text-align: center;
+    line-height: 37px;
+    float: left;
+    margin: 7px;
+}
+.bus_top p{
+    line-height: 25px;
+}
+.bus_pot{
+    color: #999;
+}
+.bus_pot span{
+    padding: 0px 2px;
+    border: 1px solid #999;
+    -webkit-border-radius: 20px;
+    margin-right: 3px;
+}
+.bus_pot span:nth-child(2){
+    margin-left:9%;
+}
+.bus_img{
+    width: 20px;
+    padding: 0 10px;
+}
+.bus_top{
+    overflow: hidden;
+    margin-left: 15px;
+    border-bottom: 1px solid #e1e1e1;
+    padding: 7px 0;
+}
+.bus_zd{
+    width: 95%;
+    padding-left: 5%;
+    line-height: 50px;
+}
+.bus_zd span{
+    color: #498ee9;
+}
+.bus_zd span:nth-child(2){
+    margin-left: 15%;
+}
+.stop_img{
+    width: 11px;
+    float: right;
+    padding-top: 15px;
+    margin-right: 15px;
+}
+.stop_sp{
+    height: 45px;
+    border-bottom: 1px solid #e1e1e1;
+    border-top: 1px solid #e1e1e1;
+    background: #fff;
+    color: #999;
+    padding-left: 15px;
+    line-height: 45px;
+}
+.stop_sp span{
+    border: 1px solid #e1e1e1;
+    border-radius: 5px;
+    padding: 3px 5px;
+}
+.stop_sp span b{
+    color: #498ee9;
+    font-weight: 100;
+}
+.stop_pic{
+    margin-left: 10%;
+    padding-right: 5px;
+    width: 11px;
+    vertical-align: middle;
+}
+.stop_pics{
+    float: right;
+    width: 20px;
+    margin: 14px 10px 0 0;
+}

@@ -1,0 +1,146 @@
+*{padding:0;margin: 0;font-style:none;}
+body{
+    background: url(../img/ind_back.png) no-repeat center;
+    -webkit-background-size: 100% auto;
+}
+.ind_head{
+    height: 40px;
+    width: 100%;
+    overflow: auto;
+    background: rgba(0,0,0,0.2);
+    text-align: center;
+    position: relative;
+    color: #fff;
+    line-height: 40px;
+    font-size: 15px;
+}
+.ind_left{
+    position: absolute;
+    margin-left: 10px;
+    color: #fff;
+    font-size: 12px
+}
+.ind_left a{
+    color: #fff;
+}
+.ind_left img{
+    width: 23px;
+}
+.ind_right{
+    width: 18px;
+    position: absolute;
+    right: 10px;
+    top: 9px;
+}
+.fig img{
+    width: 100%;
+    float: left;
+}
+.ind_cent{
+    clear: both;
+}
+.ind_g{
+    height: 31px;
+    background: rgba(0,0,0,0.2);
+    font-size: 13px;
+    color: #fff;
+}
+.ind_g img{
+    width: 16px;
+    margin: 8px 10px 0 15px;
+}
+.ind_ul{
+    padding-top: 15px;
+}
+.ind_ul li{
+    float: left;
+    text-align: center;
+    width: 33%;
+    margin-bottom: 20px;
+    position: relative;
+}
+.ind_ul li a{
+      outline: none;
+     -moz-outline:none;
+}
+.ind_ul li p{
+    font-size: 13px;
+    color: #fff;
+    padding-top: 5px;
+}
+.ind_ul li span{
+    position: relative;
+}
+.ind_img{
+    width: 40px;
+}
+.ind_pos{
+    position: absolute;
+    right: -3px;
+    top: -23px;
+    width: 15px;
+}
+.ind_div{
+    background: rgba(0,0,0,0.5);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+.ind_hui{
+    position: absolute;
+    top: 8%;
+    left: 5%;
+    z-index: 10;
+    font-size: 13px;
+    width: 90%;
+    border-radius: 5px;
+    overflow: hidden;
+    display: none;
+}
+.ind_hui h1{
+    text-align: center;
+    background:rgba(69,140,236,0.9);
+    line-height: 35px;
+    position: relative;
+    color: #fff;
+}
+.ind_hui h1 span{
+    color: #000;
+    position: absolute;
+    top:0;
+    right:10px;
+    font-size: 12px;
+}
+.ind_uls{
+    background: rgba(225,225,225,0.9);
+    padding-bottom: 10px;
+}
+.ind_uls li{
+    line-height: 45px;
+    overflow: hidden;
+}
+.ind_uls li p{
+    float: right;
+    width: 78%;
+    border-bottom: 1px solid #C0C0C0;
+}
+.ind_uls li p img{
+    float: right;
+    width: 15px;
+    margin: 16px 15px 0 0;
+}
+.ind_pic{
+    width: 30px;
+    float: left;
+    margin: 10px 10px 0 15px;
+}
+.ind_footr{
+    background: rgba(225,225,225,0.9);
+    line-height: 35px;
+    text-align: center;
+    color: #498ee9;
+    border-top: 1px solid #C0C0C0;
+}

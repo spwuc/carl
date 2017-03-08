@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>专题</title>
+<meta charset="utf-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+<meta http-equiv="Cache-Control" content="max-age=0">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="homePage/css/sub.css"/>
+<script type="text/javascript" src="public/js/jquery-2.0.3.min.js"></script>
+<script type="text/javascript" src="public/js/public.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $(document).addHeader('',null,true);
+            var param = {};
+            param.sid = '1003';
+            iss.details(function(data){
+                data = JSON.parse(data);
+                param.id = data.id;
+                param.type = data.type;
+                iss.request(function(data){
+                    data = JSON.parse(data);
+                    if( errcode== 0){
+                        $('#pic').attr('src',data.imgPath);
+                        $('#text').html(data.imgTxt);
+                        var html='';
+                       // for(var i=0;i<data.items.length;i++){
+                            $("#sud_img").attr('src',data.items.goodsImgPath);
+                            $("#Name").html(data.items.goodsName);
+                            //评分
+
+                            $("#price").html('￥'+data.items.activityPrice+'/人');
+                            $("#sud_dp").html(data.items.businessAddress);
+                       // }
+                    }
+                },failCallBack,param);
+            },failCallBack)
+        })
+    </script>
+</head>
+<body>
+	<header class="sud_der">
+		<img src="homePage/img/zy_tb.png" id="pic"/>
+		<p id="text">昆山美食网是立足昆山美食饭店餐厅、提供昆山美食餐饮团购服务、昆山美食网为消费者推荐最优惠的昆山美食网团购打折资讯,找好吃又不贵的美食就上昆山美食网!</p>
+	</header>
+	<section class="sud_tin">
+		<div class="sud_tiao">
+			<div class="sud_img">
+				<a href="homePage/sub_details.html"><img id="sud_img" src="homePage/img/zy_top.png"/></a>
+			</div>
+			<div class="sud_zp">
+				<p id="Name">小辉哥火锅</p>
+				<div>
+					<ul>
+						<li><img src="homePage/img/star.png"></li>
+						<li><img src="homePage/img/star.png"></li>
+						<li><img src="homePage/img/star.png"></li>
+						<li><img src="homePage/img/star.png"></li>
+						<li><img src="homePage/img/star.png"></li>
+					</ul>
+					<span id="price">￥130/人</span>
+				</div>
+				<p id="sud_dp">前进西路119号长城国际广场129</p>
+			</div>
+		</div>
+		
+	</section>
+</body>
+</html>

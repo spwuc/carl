@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="Cache-Control" content="max-age=0">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/animate.min.css" />
+    <link rel="stylesheet" href="css/dataModule.css" />
+    <link rel="stylesheet" href="css/jquery.jqplot.min.css" />
+    <script type="text/javascript" src="js/jquery.1.10.2.js"></script>
+    <script src="js/jquery.jqplot.min.js"></script>
+    <script src="js/jqplot.donutRenderer.min.js"></script>
+    <script type="text/javascript">
+         $(function(){
+         	 
+             $(".header").height($(".header").width()/2);
+             $(".startTime, .endTime").height($(".startTime").width()*1.6);
+             $(".timeLength").height($(".timeLength").width()*0.75);
+             $(".whole").height($(".whole").width()*2);
+             $(".midwayIn, .midwayOut").height($(".midwayIn").width()*1.4);
+             $(".contain-mike").height($(".contain-mike").width()*0.9043);
+             
+             var s1 = [['项目主管', 50], ['产品', 25], ['UI', 15], ['Android', 5],['iOS', 5]];
+             //三个地方需要配置 target，data，options
+             $.jqplot('chart', [s1], {
+                 seriesDefaults: {
+                     renderer: $.jqplot.DonutRenderer,
+                     rendererOptions: {                   
+                         showDataLabels: true,
+                         fill:true,
+                         sliceMargin: 0,                       
+                         startAngle: -90
+                     }
+                 },
+                 //默认显示的分类颜色
+                 seriesColors: [ "rgb(232, 56, 89)", "rgb(128, 201, 202)", "rgb(89, 160, 160)", "rgb(78, 138, 139)", "rgb(249, 91, 121)"],
+                 //图标区域
+                 grid:{
+                 	drawBorder:false,
+                 	shadow:false,
+                 	background:'transparent'
+                 },
+                 //分类名称框
+                 legend: {
+                     show: true,
+                     location: "e",
+                     textColor: "red"
+                 }
+             });
+             
+             $(".no1").addClass("show");
+             var r0 = setTimeout(function(){
+                 $(".time").addClass("show");
+                 $(".timeData").addClass("show");
+                 $(".timeLine").addClass("show");
+                 $(".timeLength").addClass("show");
+                 $(".startTime").addClass("show");
+                 $(".endTime").addClass("show");
+             },500)
+             //屏幕高度
+             var windowHeight= $(window).height();
+            $(window).scroll(function(){
+            	//高度数组
+            	var partHeight= new Array();
+            	for(i=2;i<=5;i++){
+            		partHeight[i]= $(".part"+i).height();           		
+            	};
+            	//偏移量数组
+            	var offsetTop= new Array();
+            	for(i=2;i<=5;i++){
+            		offsetTop[i]= $(".part"+i).offset().top;        		
+            	};  
+            	var scrollTop=$(window).scrollTop();
+                for(i=2;i<=5;i++){
+                	if(partHeight[i]+offsetTop[i]< windowHeight+ scrollTop){
+                		$(".no"+i).addClass("show");
+                        if(i=='2'){
+                            $(".totalNumber").addClass("show");
+                            var r3 = setTimeout(function(){
+                                $(".whole").addClass("show");
+                                var r4 = setTimeout(function(){
+                                    $(".midwayOut").addClass("show");
+                                    setTimeout(function(){
+                                        $(".midwayIn").addClass("show");
+                                    },500);
+                                },500);
+                            },500)
+
+                        }else if(i=='3'){
+                            $(".contain-mike").addClass("show");
+                            var r5 = setTimeout(function(){
+                                $(".totalVoive").addClass("show");
+                                $(".totalMinute").addClass("show");
+                            },500)
+                        }else if(i=='4'){
+                            $(".totalText").addClass("show");
+                            var r6 = setTimeout(function(){
+                                $(".chart").addClass("show");
+                            },500)
+                        }else if(i=='5'){
+                            $(".word").addClass("show");
+                            $(".pdf").addClass("show");
+                            $(".page").addClass("show");
+                        }
+                	};
+                };
+            });
+             //动画
+             var r1 = setTimeout(function(){
+                 $(".light").addClass("show");
+                 var r2 = setTimeout(function(){
+                     $(".logo").addClass("show");
+                     $(".people").addClass("show");
+                 },2000)
+             },1000)
+           
+ 
+      
+      });
+    </script>
+	<title>司信推广运营</title>
+	</head>
+	<body>
+<!--顶部图片-->
+		<div class="header">
+			<img src="img/guang1.png" class="light"/>
+			<img src="img/logo.png" class="logo">
+			<h1 class="mainTitle">司信推广运营</h1>
+			<h2 class="title">会议数据小计</h2>				
+			<img src="img/xiaoren.png" class="people"/>	
+			<img src="img/jiao.png" class="shade"/>
+		</div>
+<!--会议时间-->
+		<div class="part part1 meetingTime">		
+			<p class="partTitleText no1">会议时间</p>
+			<p class="time"><span>time</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>会议时间</span></p>
+			<p class="timeData">2:00</p>
+			
+			<div class="startTime">
+				<p class="hour">10:30</p>
+				<p class="TimeText startTimeText">创建时间</p>
+					<p class="startDay">2015-11-11</p>
+				</div>
+				<div class="timeLength">
+				<p class="TimeText timeLengthText">持续时间</p>					
+				</div>
+				<div class="endTime">
+				<p class="hour">10:30</p>
+				<p class="TimeText endTimeText">结束时间</p>
+					<p class="endDay">2015-11-11</p>
+				</div>
+				<img src="img/line_shijianxian.png" class="timeLine"/>
+		</div>
+<!--参与人数-->		
+		<div class="part part2 attend-number">
+			<p class="partTitleText no2">参与人数</p>
+			
+			<p class="totalNumber"><span>12</span>人</p>
+			<div class="whole">
+				<p class="peopleNumber" style="color: rgb(174, 47, 71);"><span>9</span>人</p>
+				<p class="joinText wholeCourse">全程参加</p>					
+				</div>
+				<div class="midwayOut">
+				<p class="peopleNumber" style="color: rgb(137, 137, 137);"><span>1</span>人</p>
+				<p class="joinText midwayQuit">中途退场</p>					
+				</div>
+				<div class="midwayIn">
+				<p class="peopleNumber" style="color: rgb(138, 193, 212);"><span>2</span>人</p>
+				<p class="joinText midwayJoin">中途进入</p>				
+				</div>
+		</div>
+<!--语音/分钟-->
+		<div class="part part3 voice">			
+			<p class="partTitleText no3">语音/分钟</p>
+			<div class="contain-mike">
+				<p class="line line1"><span>3</span><span>人</span><img src="img/line.png" class="wire">收听率<span class="rate">95%</span>以上</p>
+				<p class="line line2"><span>2</span><span>人</span><img src="img/line.png" class="wire">收听率<span class="rate">75%-94%</span>以上</p>
+				<p class="line line3"><span>4</span><span>人</span><img src="img/line.png" class="wire">收听率<span class="rate">74%</span>以上</p>
+			</div>
+			<p class="totalVoive">共<span>480</span>条语音</p>
+			<p class="totalMinute">共<span>190</span>分钟</p>
+		</div>
+<!--文本信息-->
+		<div class="part part4 textMessage">
+			<p class="partTitleText no4">文本信息</p>
+			<p class="totalText">共<span>235</span>条文本信息，其中<span>5</span>个人发言</p>
+			<!--环形图-->
+			<div id="chart" class="chart"></div>
+
+		</div>
+<!--文件/图片-->
+		<div class="part part5 fileAndPic">
+			<p class="partTitleText no5">文本/图片</p>
+			<div class="word">
+				<img src="img/icon_word.png" class="filePic"/>
+				<p class="number"><span>3</span>个</p>
+				<p class="readTime"><span>阅读：</span><span>10</span>次</p>				
+				</div>
+				<div class="pdf">
+				<img src="img/icon_pdf.png" class="filePic"/>
+				<p class="number"><span>1</span>个</p>
+				<p class="readTime"><span>阅读：</span><span>2</span>次</p>
+				</div>
+				<div class="page">
+				<img src="img/icon_tupian.png" class="filePic"/>
+				<p class="number"><span>26</span>张</p>
+				<p class="readTime"><span>阅读：</span><span>6</span>次</p>
+				</div>
+		</div>
+<!--底部图片-->
+		<div class="footer">
+			<img src="img/dibu_logo.png" class="footer-pic"/>
+		</div>
+	</body>
+</html>

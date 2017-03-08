@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>换乘查找</title>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+    <meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0" name="viewport"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <link href="css/reset.css" rel="stylesheet" type="text/css">
+    <link href="css/header.css" rel="stylesheet" type="text/css">
+    <link href="css/find_transfer.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="../public/js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('.find_tar>span').on('click',function(){
+                $(this).addClass('cur').siblings().removeClass('cur');
+                $(".sec_div .fi_div").eq($(this).index()).show().siblings().hide();
+            })
+            $('.tran_show').on('click',function(e){
+
+            })
+            $('.fi_div>div').on('click',function(){
+                if(!$(this).hasClass('cur')){
+                    $(this).addClass('cur');
+                    $(this).find('.tran_show').slideDown();
+                }else{
+                    $(this).removeClass('cur');
+                    $(this).find('.tran_show').slideUp();
+
+                }
+            })
+            $(".nav_tab span").on('click',function(){
+                $(this).addClass('cur').siblings().removeClass('cur');
+                $(".tabList>section").eq($(this).index()).show().siblings().hide();
+            })
+        })
+    </script>
+</head>
+<body>
+<header>
+    <div class="hea_div">
+        <a href="javascript:history.go(-1);"><img class="head_left" src="img/right_sj_hea.png"></a>
+        换乘查找
+    </div>
+</header>
+    <section class="find_tion">
+        <div class="find_tar">
+            <span class="cur">最少换乘</span>
+            <span>最少站点</span>
+            <span>最少步行</span>
+        </div>
+        <section class="sec_div">
+            <div class="fi_div" style="display: block">
+                <div class="tran_div">
+                    <div class="tran_top">
+                        <b>105路<img class="tran_bimg" src="img/bus_right.png">5路</b>
+                        <p><img class="tran_pimg" src="img/bus_guan2.png">全程1.9公里<img class="tran_pimg1" src="img/bus_time.png">约27分钟</p>
+                        <img class="find_img" src="img/tp_shu.png"/>
+                        <img class="find_imgs" src="img/bus_bottom.png"/>
+                    </div>
+                    <section class="tran_show">
+                        <ul class="find_ul">
+                            <li><img class="find_pic" src="img/bus_green.png"><p><span>起点</span>火车站北广场</p></li>
+                            <li><img class="find_pic1" src="img/find_hui.png"><p>105路(火车站北广场<img class="find_pics" src="img/bus_right.png">石碑)</p></li>
+                            <li><img class="find_pic" src="img/bus_grey.png"><p><b>火车站北广场</b>站上车</p></li>
+                            <li><img class="find_pic" src="img/bus_grey.png"><p><b>白水潭</b>站下车</p></li>
+                            <li><img class="find_pic" src="img/bus_red.png"><p><span>终点</span>市政府北</p></li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+            <div class="fi_div">
+                <div class="tran_div">
+                    <div class="tran_top">
+                        <b>106路<img class="tran_bimg" src="img/bus_right.png">5路</b>
+                        <p><img class="tran_pimg" src="img/bus_guan2.png">全程1.9公里<img class="tran_pimg1" src="img/bus_time.png">约27分钟</p>
+                        <img class="find_img" src="img/tp_shu.png"/>
+                        <img class="find_imgs" src="img/bus_bottom.png"/>
+                    </div>
+                    <section class="tran_show">
+                        <ul class="find_ul">
+                            <li><img class="find_pic" src="img/bus_green.png"><p><span>起点</span>火车站北广场</p></li>
+                            <li><img class="find_pic1" src="img/find_hui.png"><p>105路(火车站北广场<img class="find_pics" src="img/bus_right.png">石碑)</p></li>
+                            <li><img class="find_pic" src="img/bus_grey.png"><p><b>火车站北广场</b>站上车</p></li>
+                            <li><img class="find_pic" src="img/bus_grey.png"><p><b>白水潭</b>站下车</p></li>
+                            <li><img class="find_pic" src="img/bus_red.png"><p><span>终点</span>市政府北</p></li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+            <div class="fi_div">
+                <div class="tran_div">
+                    <div class="tran_top">
+                        <b>107路<img class="tran_bimg" src="img/bus_right.png">5路</b>
+                        <p><img class="tran_pimg" src="img/bus_guan2.png">全程1.9公里<img class="tran_pimg1" src="img/bus_time.png">约27分钟</p>
+                        <img class="find_img" src="img/tp_shu.png"/>
+                        <img class="find_imgs" src="img/bus_bottom.png"/>
+                    </div>
+                    <section class="tran_show">
+                        <ul class="find_ul">
+                            <li><img class="find_pic" src="img/bus_green.png"><p><span>起点</span>火车站北广场</p></li>
+                            <li><img class="find_pic1" src="img/find_hui.png"><p>105路(火车站北广场<img class="find_pics" src="img/bus_right.png">石碑)</p></li>
+                            <li><img class="find_pic" src="img/bus_grey.png"><p><b>火车站北广场</b>站上车</p></li>
+                            <li><img class="find_pic" src="img/bus_grey.png"><p><b>白水潭</b>站下车</p></li>
+                            <li><img class="find_pic" src="img/bus_red.png"><p><span>终点</span>市政府北</p></li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </section>
+</body>
+</html>

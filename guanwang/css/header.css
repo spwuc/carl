@@ -1,0 +1,86 @@
+@charset "utf-8";
+
+/*头部*/
+.header_wrap{
+	background:#221236 url(../images/header_bg.jpg) top center;
+	min-width:1100px;
+}
+.header{
+	height:120px;
+	width:1100px;
+	margin:0 auto;
+}
+.logo{
+	float:left;
+}
+/*导航*/
+.nav_wrap{
+	width:630px;
+	margin:0px auto;
+	height:25px;
+	line-height:25px;
+	float:right;
+	margin-top:45px;
+	text-align:right;
+}
+.nav_piece{
+	float:left;
+	position:relative;
+	color:#fff;
+	z-index:999;
+}
+.nav_piece h1{
+	font-size:16px;
+	text-align:center;
+	padding:0 15px;
+	position:relative;
+	cursor:pointer;
+	height:35px;
+}
+.nav_piece h1:hover{
+	background:url(../images/nav_now_bg.png) no-repeat bottom center;
+}
+.now h1{
+	background:url(../images/nav_now_bg.png) no-repeat bottom center;
+}
+.has_downnav h1{
+	padding:0 40px 0 15px;
+}
+.has_downnav h1 .xiajiantou_img{
+	position: absolute;
+	display:block;
+	width:25px;
+	height:25px;
+	right: 8px;
+	top: 0;
+	background:url(../images/nav_xiajiantou.png) no-repeat;
+	z-index: 999;
+}
+.has_downnav h1:hover:after{
+	/*background:url(../images/nav_xiajiantou_hover.png) no-repeat;*/
+}
+.nav_piece ul{
+	font-size:15px;
+	position:absolute;
+	left:-16px;
+	top:35px;
+	width:180px;
+	line-height:40px;
+	background:#36264a;
+	color:#fff;
+	cursor:pointer;
+	z-index:999;
+	display:none;
+}
+.nav_piece ul li{
+	text-align:left;
+	padding-left:30px;
+	transition: padding-left 0.4s ease 0s;
+}
+.nav_piece ul li:hover{
+	color:#fff;
+	padding-left:40px;
+	transition: padding-left 0.4s ease 0s;
+	background:#3498db url(../images/nav_li_bg.png) no-repeat 165px 15px;
+}
+
