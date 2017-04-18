@@ -1,0 +1,15 @@
+{
+  "name": "carl",
+  "version": "1.0.0",
+  "description": "Private documents",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spwuc/carl.git"
+  },
+  "author": "spwuc",
+  "homepage": "https://github.com/spwuc/carl"
+}
