@@ -1,8 +1,8 @@
 {
-  "name": "spwuc",
+  "name": "carl",
   "version": "1.0.0",
   "description": "Private documents",
-  "main": "index.html",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,6 +10,10 @@
     "type": "git",
     "url": "git+https://github.com/spwuc/carl.git"
   },
-  "author": "spwuc",
-  "homepage": "https://github.com/spwuc/carl"
+  "author": "carl (spwuc)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/spwuc/carl/issues"
+  },
+  "homepage": "https://github.com/spwuc/carl#readme"
 }
