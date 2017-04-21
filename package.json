@@ -1,5 +1,5 @@
 {
-  "name": "carl",
+  "name": "spwuc",
   "version": "1.0.0",
   "description": "Private documents",
   "main": "index.js",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/spwuc/carl/issues"
   },
-  "homepage": "https://github.com/spwuc/carl#readme"
+  "homepage": "https://github.com/spwuc/carl#readme",
+  "directories": {
+    "test": "test"
+  }
 }

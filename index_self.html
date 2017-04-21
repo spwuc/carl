@@ -1,0 +1,492 @@
+﻿<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>小克合集</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="images/ke.ico" type="image/x-icon">
+<script type="text/javascript" src="jquery-1.8.0.js"></script>
+<style>
+body, div, input, img, h1, h2, h3, h4, h5 {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #EFEEEB;
+}
+
+.box {
+    width: 100%;
+    position: absolute;
+    height: 100%;
+}
+
+.top {
+    width: 100%;
+    height: 40px;
+    background: #3D4250;
+}
+
+.curs {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.bottom {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 30px;
+    background: #3D4250;
+    color: #fff;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.select {
+    width: 100px;
+    display: block;
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    font-size: 20px;
+    color: white;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.select a {
+    color: white;
+    text-decoration: none;
+}
+
+.select a:hover {
+    color: #666;
+}
+
+.con {
+    margin-left: 50px;
+    float: left;
+    text-align: center
+}
+
+.clean {
+    width: 0;
+    height: 20px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    clear: both;
+}
+
+.table {
+    width: 1024px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+}
+
+.table .tr {
+    width: 80%;
+}
+
+.table .tr th {
+    display: block;
+    float: left;
+    width: 230px;
+    height: 230px;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.table .tr th img {
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -o-border-radius: 10px;
+    padding: 4px;
+    border: 1px solid #ccc;
+    cursor: pointer
+}
+
+.table .tr th span {
+    cursor: pointer;
+    background: #d9d9d9;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+
+.span {
+    display: block;
+    color: #000;
+    font-size: 14px;
+    width: 88px;
+    padding: 5px;
+    margin-top: 2px;
+    margin-left: 72px
+}
+
+.spanHover {
+    background: #b4b4b4 !important;
+}
+
+.wh {
+    width: 200px;
+    height: 200px;
+}
+
+#somebox {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+#somebox1 {
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+#somebox1 p {
+    color: #fff;
+    margin-left: 10px;
+}
+
+#somebox1 a {
+    color: #fff;
+    text-decoration: none;
+}
+
+@-webkit-keyframes bounceIn {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale(.1)
+    }
+    50% {
+        opacity: 1;
+        -webkit-transform: scale(1.05)
+    }
+    70% {
+        opacity: 1;
+        -webkit-transform: scale(.9)
+    }
+    100% {
+        -webkit-transform: scale(1)
+    }
+
+}
+
+@-webkit-keyframes show {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    70% {
+        opacity: 0.7;
+    }
+    100% {
+        opacity: 1;
+    }
+
+}
+
+@-webkit-keyframes bounceOut {
+    0% {
+        opacity: 1;
+        -webkit-transform: scale(1)
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: scale(0)
+    }
+
+}
+
+@-webkit-keyframes hide {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+
+}
+
+#toTop {
+    position: fixed;
+    bottom: 40px;
+    right: 30px;
+    margin-left: -150px;
+}
+
+#toTop a {
+    width: 90px;
+    display: block;
+    text-align: center;
+    font: 11px/100% Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #bbb;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    transition: 1s;
+}
+
+#toTop span {
+    width: 90px;
+    height: 60px;
+    display: block;
+    margin-bottom: 7px;
+    background: #ddd;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    transition: 1s;
+}
+
+#toTop a:hover span {
+    background-color: #777;
+}
+</style>
+<!--[if IE 6]>
+<style type="text/css">
+    .bottom {
+        position: absolute;
+        left: expression(eval(document.documentElement.scrollLeft+document.documentElement.clientWidth-this.offsetWidth)-(parseInt(this.currentStyle.marginLeft,10)||0)-(parseInt(this.currentStyle.marginRight,10)||0));
+        top: expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0)));
+        width: 100%;
+        height: 30px;
+        text-align: center;
+        font-size: 16px;
+        line-height: 30px;
+        background: #3D4250;
+        color: #fff;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    #toTop {
+        position: absolute;
+        bottom: expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,50)||40)-(parseInt(this.currentStyle.marginBottom,50)||40)));
+        margin-left: -150px;
+    }
+</style>
+<![endif]-->
+<script>
+
+    $(function () {
+        $('.table .tr img').click(function () {
+            window.open($(this).parent().attr('value'))
+        }).mouseenter(function () {
+                    $(this).css({'padding': '3px', 'borderWidth': '2px', 'borderColor': '#00CCB3'})
+                }).mouseleave(function () {           /*00CCB3*/
+                    $(this).css({'padding': '4px', 'borderWidth': '1px', 'borderColor': '#ccc'})
+                })
+        $('.table .tr span').click(function () {
+            window.open($(this).parent().attr('value'))
+        }).mouseenter(function () {
+                    $(this).addClass('spanHover')
+                }).mouseleave(function () {
+                    $(this).removeClass('spanHover')
+                })
+    })
+</script>
+</head>
+<body>
+
+<div class="box">
+    <div class="top">
+        <div class="con">
+            <span class="select curs"><a href="/carl">Home</a></span>
+            <span class="select"><a href="/carl">project</a></span>
+            <span class="select"><a href="#">Aboutme</a></span>
+        </div>
+        <div class="clean"></div>
+        <table class="table">
+
+            <tr class="tr">
+                <th value="ShowImg/ShowImg.html">
+                    <img src="images/1.jpg" class="wh"/><br>
+                    <span class="span">show case</span>
+                </th>
+                <th value="roll/roll.html">
+                    <img src="images/4.jpg" class="wh"/><br>
+                    <span class="span">show case</span>
+                </th>
+                <th value="magnifier/magnifier.html">
+                    <img src="images/5.jpg" class="wh"/><br>
+                    <span class="span">show case</span>
+                </th>
+                <th value="counter/counter.html">
+                    <img src="images/counter.jpg" class="wh"/><br>
+                    <span class="span">show case</span>
+                </th>
+                <th value="showOtherImg/showOtherImg.html">
+                    <img src="images/showOtherImg.png" class="wh"/><br>
+                    <span class="span">show case</span>
+                </th>
+                <th value="calendar/3d.html">
+                    <img src="images/3d.png" class="wh"/><br>
+                    <span class="span">show case</span>
+                </th>
+                <th value="drawingBoard/drawbox.html">
+                    <img src="images/drawbox.png" class="wh"/><br>
+                    <span class="span">show case</span>
+                </th>
+                <th value="apply/apply.html">
+                    <img src="images/2.jpg" class="wh"/><br>
+                    <span class="span">show case</span>
+                </th>
+                <th value="grade/grade.html">
+                    <img src="images/6.jpg" class="wh"/><br>
+                    <span class="span">show case</span>
+                </th>
+                <th value="waterfall/waterfall.html">
+                    <img src="images/8.jpg"  class="wh"/><br>
+                    <span class="span">show case</span>
+                </th>
+                <th value="google/google.html">
+                    <img src="images/11.jpg" class="wh"/><br>
+                    <span class="span">show case</span>
+                </th>
+                <th value="game/game.html">
+                    <img src="images/12.jpg" class="wh"/><br>
+                    <span class="span">show case</span>
+                </th>
+                <th value="lotteryTicket/lotteryTicket.html"><img src="images/3.jpg" class="wh"/><br>
+                    <span class="span">show case</span>
+                </th>
+                <th value="newTab/newTab.html">
+                    <img src="images/newTab.png" class="wh"/><br>
+                    <span class="span">show case</span>
+                </th>
+                <th value="Drawing/Drawing.html">
+                    <img src="images/Drawing.png" class="wh"/><br>
+                    <span class="span">show case</span>
+                </th>
+                <th value="fileMD5/fileMD5.html">
+                    <img src="images/MD5.jpg" class="wh"/><br>
+                    <span class="span">show case</span>
+                </th>
+                <th value="zf/index.html">
+                    <img src="images/zf.png" class="wh"/><br>
+                    <span class="span">show case</span>
+                </th>
+                <th value="controls/tk.html">
+                    <img src="images/time.png" class="wh"/><br>
+                    <span class="span">show case</span>
+                </th>
+                <th value="backend/index.html">
+                    <img src="images/houtai.png" class="wh"/><br>
+                    <span class="span">show case</span>
+                </th>
+                <th value="self/yaoyiyao.html">
+                    <img src="images/yyy.png" class="wh"/><br>
+                    <span class="span">show case</span>
+                </th>
+            </tr>
+        </table>
+    </div>
+    <div class="bottom">create by 小克</div>
+</div>
+<span id="toTop">
+        <a href="javascript:void(0)"><span style="font-size: 80px;font-weight: bold;padding-top: 30px">↑</span>Back to
+            Top</a>
+    </span>
+
+<div id="somebox" style="position:absolute;left:0;top:0;width: 100%; height: 100%; background: rgba(0,0,0,0.5); display:none">
+    <div id="somebox1" style="position: absolute; left: 50%; top: 50%; margin-left: -250px; margin-top: -150px; width: 350px; height: 180px; background-color: #3D4250; border: 1px solid;">
+        <p>作<a style="color: #3D4250">一一</a>者：小克（本名：武帅鹏）</p>
+
+        <p>联系方式：QQ<a target="_blank" href="http://sighttp.qq.com/authd?IDKEY=b394e76d348866353c5bb1c8607541e6947a00d86466c523">958627905</a>
+        </p>
+
+        <p>邮<a style="color: #3D4250">一一</a>箱：<a href="mailto:13241847015@163.com">13241847015@163.com</a></p>
+
+        <p>
+            <a style="color: #3D4250">邮一一箱：</a><a href="mailto:xhtml5@qq.com">xhtml5@qq.com</a></p>
+
+        <p>有什么需要，请您联系我！</p>
+
+        <span style="cursor:pointer; position:absolute; right:0px;top:5px; width:30px; height:30px; font-size:24px;" id="out">×</span>
+    </div>
+</div>
+<script>
+    var Promise = function () {
+        this.thens = [];
+    }
+    Promise.prototype.then = function (Resolved) {
+        this.thens.push(Resolved)
+        return this;
+    }
+    Promise.prototype.resoved = function (n) {
+        var next = this.thens.shift();
+        if (next) {
+            var prms = next.apply(null, arguments);
+            prms instanceof Promise && (prms.thens = this.thens)
+        }
+    }
+
+
+    function doKeyframes(element, flipName, flipTime) {
+        var promise = new Promise();
+        if (!element) {
+            return;
+        }
+        element.style.webkitAnimation = "" + flipName + " " + flipTime;
+        var fn = function () {
+            element.style.webkitAnimation = "";
+            element.removeEventListener("webkitAnimationEnd", fn);
+            promise.resoved();
+        }
+        element.addEventListener("webkitAnimationEnd", fn);
+        return promise;
+    }
+    ;
+    $('.con .select').eq(1).find('a').click(function (e) {
+        $('.con .select').eq(1).addClass('curs').siblings().removeClass('curs')
+    })
+    $('.con .select').eq(0).find('a').click(function (e) {
+        $('.con .select').eq(0).addClass('curs').siblings().removeClass('curs')
+    })
+    $('.con .select').eq(2).find('a').click(function (e) {
+        e.preventDefault();
+        $('#somebox').css('display', 'block')
+        doKeyframes($('#somebox')[0], 'show', '0.5s')
+        doKeyframes($('#somebox1')[0], 'bounceIn', '0.5s')
+        document.body.style.overflow = 'hidden';
+    })
+    $('#out').click(function (e) {
+        e.preventDefault();
+        $('#somebox').css('display', 'none')
+        document.body.style.overflow = '';
+    })
+    $(function () {
+        $("#toTop").hide();
+        $(function () {
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 30) {
+                    $('#toTop').fadeIn();
+                } else {
+                    $('#toTop').fadeOut();
+                }
+            });
+            $('#toTop a').click(function () {
+                $('body').stop().animate({
+                    scrollTop: 0
+                }, 300);
+                return false;
+            });
+        });
+    })
+</script>
+</body>
+</html>
