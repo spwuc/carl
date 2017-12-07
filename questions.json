@@ -1,0 +1,717 @@
+{
+
+  "html": {
+    "type": "HTML",
+    "questions": [
+      {
+        "question": "谈谈你对web标准的理解。",
+        "answer": "WEB标准不是某一个标准，而是一系列标准的集合。<br>网页主要由三部分组成：<br>1）、结构（structure）结构化标准语言主要包括XHTML和XML。<br>2）、表现（presentation）表现标准语言主要包括CSS<br>3）、行为（behavior）行为标准主要包括对象模型（如W3C DOM）、ECMAScript等。这些标准大部分由<br>万维网联盟（外语缩写：W3C）起草和发布，也有一些是其他标准组织<br>制订的标准，比如ECMA（European Computer Manufacturers Association）的ECMAScript标准。"
+      },
+      {
+        "question": "浏览器标准模式和怪异模式之间的区别是什么？",
+        "answer": "盒子模型  渲染模式的不同"
+      },
+      {
+        "question": "<img>标签上title与alt属性的区别是什么？",
+        "answer": "alt当图片不显示时，用文字代替<br>title为该属性提供信息"
+      },
+      {
+        "question": "你如何对网站的文件和资源进行优化？",
+        "answer": "文件合并<br>文件最小化/文件压缩<br>使用CDN托管<br>缓存的的使用"
+      },
+      {
+        "question": "前端页面有哪三层构成，分别是什么？作用是什么？",
+        "answer": "结构层 Html 表示层CSS 行为层js"
+      },
+      {
+        "question": "什么是语义化的HTML？",
+        "answer": "直观的认识标签 对于搜索引擎的抓取有好处"
+      },
+      {
+        "question": "超级链接有哪些常见的表现形式？",
+        "answer": "<a>元素用于创建超级链接，常见的表现形式有：<br>1）、普通超级链接，语法为：<a href='' target = ''>文本</a><br>2)、下载链接，即目标文档为下载资源，语法如：<a href='DAY02.zip'>下载</a><br>3）、电子邮件链接，用于链接到email，语法如：<br><a href= 'mailto:tarena@tarena.com.cn'>联系我们</a><br>4）、空连接，用于返回页面顶部，语法如：<a href =''>...</a><br>5)、链接到JavaScript，以实现特定的代码功能，语法如：<br><a href = 'javascript:....'>JS功能</a>"
+      },
+      {
+        "question": "列举常用的结构标记，并描述其作用。",
+        "answer": "结构标记专门用于标识页面的不同结构，相对于使用<div>元素而言，可以实现语义化的标签。<br>常用的结构标记有：<br> <header>元素：用于定义文档的页眉；<br><nav>元素：用于定义页面的导航链接部分；<br> <section>元素：用于定义文档中的节，表示文档中的一个具体组成部分；<br><article>元素：常用于定义独立于文档的其他部分的内容；<br><footer>元素：常用于定义某区域的脚注信息；<br><aside>元素：常用于定义页面的一些额外组成部分，如广告栏、侧边栏和相关引用信息等。"
+      },
+      {
+        "question": "使用<label>元素显示文本与使用其他文本标记显示文本有什么不同？",
+        "answer": "<label>元素的直观效果是直接显示标记之间的文本，而且不会为文本呈现任何<br>特殊效果。但是，它和其他文本标记所不同的是，它为鼠标用户改进了用户体验性。<br>这是因为，<label>元素可以附带一个for属性，只要将该属性的值设置为表单<br>中任何一个控件的id属性的值，则当用户点击该标签（文本）时，浏览器就会<br>自动将焦点转到和标签相观的表单控件上。即：如果在<label>元素内点击文本，就会触发此控件。"
+      },
+      {
+        "question": "锚点的作用是什么？如何创建锚点？",
+        "answer": "锚点是文档中某行的一个记号，类似于书签，用于链接到文档中的某个位置。当<br> 定义了锚点后，我们可以创建直接跳至该锚点（比如页面中某个小节）链接，这样<br>使用者就无需不停地滚动页面来寻找他们需要的信息了。<br>在使用<a>元素创建锚点时，需要使用name属性为其命名，代码如下所示：<br><a name = 'anchorname1 '>锚点一</a><br>然后就可以创建链接，直接跳转到锚点，代码如下所示：<br><a href = '#anchorname1 '>回到锚点一<a/>"
+      },
+      {
+        "question": "你做的页在哪些浏览器测试过？这些浏览器的内核分别是什么？",
+        "answer": "常见的浏览器内核有：<br>Trident：IE浏览器；<br>Gecko：Mozilla浏览器，比如Firefox；<br> Webkit：Safari浏览器，也是Chrome浏览器的内核原型；<br>Blink：Chrome浏览器，Opera浏览器。<br>Opera的内核原为Presto，现为Blink；"
+      },
+      {
+        "question": "写出几种IE6 BUG的解决方法",
+        "answer": "1、双边距BUG float引起的  使用display<br>2、像素问题 使用float引起的  使用display：inline-block<br> 3、超链接hover 点击后失效 使用正确的书写顺序 link visited hover active<br>4、Ie z-index问题 给父级添加position：relative<br>5、png 透明 使用js代码 改<br>6、Min-height 最小高度 ！Important解决<br>7、select 在ie6下遮盖 使用iframe嵌套<br>8、为什么没有办法定义1px左右的宽度容器（IE6默认的行高造成的，使用overflow：hidden，zoom：0.08，line-height：1px）"
+      },
+      {
+        "question": "Doctype作用？严格模式与混杂模式如何区分？它们有何意义？",
+        "answer": "（1）、<!DOCTYPE>声明位于文档中的最前面，处于<html>标签之前。告知浏览器的解析器，用什么文档类型规范来解析这个文档。<br>（2）、严格模式的排版和JS运作模式是 以该浏览器支持的最高标准运行。<br>（3）、在混杂模式中，页面以宽松的向后兼容的方式显示。模拟老式浏览器的行为以防止站点无法工作。<br>（4）、DOCTYPE不存在或格式不正确会导致文档以混杂模式呈现。"
+      },
+      {
+        "question": "行内元素有哪些？块级元素有哪些？空（void）元素有哪些？",
+        "answer": "（1）CSS规范规定，每个元素都有display属性，确定该元素的类型，每个元素都有默认的display值，<br>比如div默认display属性值为'block'，成为'块级元素'；<br>span默认display属性值为'nline'，是'行内'元素。<br>（2）行内元素有： a  b  span  img  input  select  strong(强调的语气)<br>块级元素有： div  ul ol li  dl dt dd h1 h2 h3 ... p<br>（3）知名的空元素：<br><br> <hr> <img> <input> <link> <meta><br>鲜为人知的是：<br><area> <base> <col> <command> <embed> <keygen> <param> <source> <track> <wbr>"
+      },
+      {
+        "question": "link 和@import的区别是？ ",
+        "answer": "（1）link属于XHTML标签，而@import是CSS提供的；<br>（2）页面被加载的同时，link会同时被加载，而@import引用的CSS会等到页面加载完在加载；<br>（3）import只在IE5以上才能识别，而link是XHTML标签，无兼容问题；<br>（4）link方式的样式的权重高于@import的权重。"
+      },
+
+      {
+        "question": "常见兼容性问题？ ",
+        "answer": "png24位的图片在iE6浏览器上出现背景，解决方案是做成PNG8。<br>浏览器默认的margin和padding不同。解决方案是加一个全局的*{margin：0；padding：0}来统一。<br>IE6双边距bug:块属性标签float后，又有横行的margin情况下，在ie6显示margin比设置的大。<br>浮动ie产生的双倍距离#box{float：left；width：10px；margin：0 0 0 100px；}<br>种情况之下IE会产生20px的距离，解决方案是在float的标签样式控制中加<br>入—_display:inline;将其转化为行内属性。（这个符号只有ie6会识别）<br>渐进识别的方式，从总体中逐渐排出局部。<br>首先巧妙的使用'\\9'这一标记，将IE浏览器从所有情况中分离出来。接着，<br>再次使用“+”将IE8和IE7、IE6分离出来，这样IE8已经独立识别。<br> css<br>.bb{background-color:#f1ee18;<br> /*所有识别*/ .background-color:#f1ee18\\9;<br> /*IE6、7、8识别*/ _background-color:#f1ee18；<br> /*IE6识别*/}<br>IE下，可以使用获取常规属性的方法来获取自定义属性，<br>也可以使用getAttribute（）获取自定义属性；<br> Firefox下，只能使用getAttribute（）获取自定义属性。<br>解决方法：统一通过getAttribute（）获取自定义属性。<br> IE下，even对象有想x，y属性，但是没有pageX，pageY属性；<br> Firefox下，event对象有pageX，pageY属性，但是没有x，y属性。<br>解决方法：（条件注释）缺点是在IE浏览器下可能会增加额外的HTTP请求数。<br>Chrome中文界面下默认会将小于12px的文本强烈按照12px显示，<br>可通过加入CSS属性 -webkit-text-size-adjust：none；解决。<br>超链接访问过后hover样式就不出现了 被点击访问过的超链接样式不在具有<br>hover 和active了解决方法是改变CSS属性的排列顺序：<br>L-V-H-A: a:link{} a:visited{} a:hover{} a:active{}"
+      },
+      {
+        "question": "xhtml 和html有什么区别？",
+        "answer": "HTML是一种基本的WEB网页设计语言，XHTML是一个基于XML的置标语言<br>最主要的不同：<br> XHTML元素必须被正确地嵌套。<br> XHTML元素必须被关闭。<br>标签名必须用小写字母。<br> XHTML文档必须拥有根元素。"
+      },
+      {
+        "question": "html5有哪些新特性、移除了哪些元素？如何处理HTML5新标签的的浏览器兼容问题？如何区分HTML和HTML5？",
+        "answer": "HTML5现在已经不是SGML的子集，主要是关于图像，位置，存储，多任务等功能的增加。<br>绘画 canvas <br>用于媒介回放的video 和audio元素 <br>本地离线存储 localStorage 长期存储数据，浏览器关闭后数据不丢失；<br>sessionStorage的数据在浏览器关闭后自动删除<br>语义化更好的内容元素，比如 article、footer、header、nav、section <br>表单控件：calendar、date、time、email、url、search <br>新的技术 webworker，websockt，Geolocation <br>移除的元素：<br>纯表现的元素：basefont，big，center ,font , s, strike, tt ,u; <br> 对可用性产生负面影响的元素：frame，frameset，noframes； <br>支持HTML5新标签：<br> IE8/IE7/IE6支持通过document.createElement方法产生的标签，可以利用这一特性让这些浏览器支持HTML5新标签，<br>浏览器支持新标签后，还需要添加标签默认的样式：<br>当然最好的方式是直接使用成熟的框架、使用最多的是html5shim框架<br><!--[if lt IE 9]><br><script>src='http://html5shim.googlecode.com/svn/trunk/html5.js'</script><br><![endif]-->"
+      },
+      {
+        "question": "如何区分：DOCTYPE声明新增的结构元素功能元素，语义化的理解？",
+        "answer": "用正确的标签做正确的事情！<br>html语义化就是让页面的内容结构化，便于对浏览器、搜索引擎解析；<br> 在没有样式CSS情况下也以一种文档格式显示，并且是容易阅读的。<br>搜索引擎的爬虫标记来确定上下文和各个关键字的权重，利于SEO。<br>使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解。"
+      }
+    ,
+      {
+        "question": "HTML5新的Doctype 和Charset 是什么？",
+        "answer": "<! DOCTYPE html><br><meta charset = 'UTF-8'>"
+      },
+      {
+        "question": "如何在HTML5页面中嵌入音频？",
+        "answer": "<audio controls = 'controls' ><br><source  src= '...' type = 'audio/mpeg'>audio<br></audio>"
+      },
+      {
+        "question": "如何在HTML5页面中嵌入视频？",
+        "answer": "<video width=550 height= 550 controls = 'controls'><br><source  src= '...' type = 'audio/mpeg'>video<br></video >"
+      },
+      {
+        "question": "除了音频和视频，HTML5还支持其他什么新的媒体元素？",
+        "answer": "<embed>作为对外部应对容器<br><track>为媒介规定外部文本轨道<br><source>为元素<video>和<audio>定义多媒体资源"
+      },
+      {
+        "question": "HTML有哪不同类型的存储，区别是什么？",
+        "answer": "HTML5 能够本地存储数据，在之前都是使用cookie使用的。HTML5提供了下面两种本地存储方案：<br>localStorage用于持久化的本地存储，数据永远不会过期，关闭浏览器也不会丢失。<br>sessionStorage同一个会话中的页面才能访问并且当会话结束后数据也随之销毁。<br>因此sessionStorage不是一种持久化的本地存储，仅仅是会话级别的存储。"
+      },
+      {
+        "question": "HTML5引入什么新的表单属性？",
+        "answer": "Datalist<br>Datatime<br>Output<br>Keygen<br>Date<br>Month<br>Week<br>Time<br>Number<br>Range<br>Email<br>Url"
+      },
+      {
+        "question": "HTML5标准提供了哪些新的API？",
+        "answer": "Media api<br>History api"
+      },
+      {
+        "question": "什么是HTML5?",
+        "answer": "HTML5是最新的html标准，它主要目标是提供所有内容而不需要任何额外插件。"
+      },
+      {
+        "question": "没有<!DOCTYPE HTML>,HTML还会工作吗？",
+        "answer": "不会，浏览器不能识别它是HTML文档；"
+      },
+      {
+        "question": "哪些浏览器支持HTML5？",
+        "answer": "所有浏览器都支持HTML5。"
+      },
+      {
+        "question": "HTML5的页面结构？",
+        "answer": "<header>代表HTML的头部数据<br><nav>页面导航元素<br><article>自包含的内容<br><section>把分组内容放到区域里<br><aside>代表页面的侧边栏内容<br><footer>代表页面的脚步区域"
+      },
+      {
+        "question": "HTML5中的datalist是什么？",
+        "answer": "HTML5中的Datalist元素有助于提供文本档自动完成特性"
+      },
+      {
+        "question": "HTML5中新的表单元素是什么？",
+        "answer": "<input type  = 'color'/><br><input type= 'date'/><br><input type = 'datetime-local'/><br><input type = 'email'/>含有email校验的HTML文本框；<br><input type = 'url'/>url校验；<br><input type = 'number' min = '1' max = '5'/><br><input type = 'range' min = '1' max = '5' step = '2' value = '3'/><br>range范围 step（步骤）<br> //step指的是拉动的距离，value指的是初始值；<input type = 'search'/>搜索引擎；<br><input type = 'time'/>只输入时间；<br><input type = 'tel'/>只输入电话；"
+      },
+      {
+        "question": "HTML中什么是输出元素？",
+        "answer": "Output当你需要输出值的时候就是输出元素；"
+      },
+      {
+        "question": "什么是SVG？",
+        "answer": "SVG表示可缩放矢量图形；(跟canvas差不多)"
+      },
+      {
+        "question": "HTML5中canvas是什么？",
+        "answer": "Canvas元素用于在网页上绘制图形，该元素标签强大之处在于可以直接在HTML上进行图形操作。"
+      },
+      {
+        "question": "HTML5的离线储存？",
+        "answer": "localStorage 长期存储数据，浏览器关闭后数据不丢失；<br>sessionStorage数据在浏览器关闭后自动删除。"
+      },
+      {
+        "question": "HTML5应用程序缓存和浏览器缓存有什么区别？",
+        "answer": "应用程序缓存是HTML5的重要特性之一，提供了离线使用的功能，<br>让应用程序可以获取本地的网站内容，例如HTML、CSS、图片以及JavaScript。这个特性<br> 可以提高网站性能，它的实现借助于mainfest文件，如下：<br>1< !doctype html><br>2< html mainfest = 'example.appcache'><br>3.....<br>4</html><br>与传统浏览器缓存相比，它不强制用户访问的网站内容被缓存。"
+      },
+      {
+        "question": "描述一段语义的html吧",
+        "answer": "（HTML5中新增加的很多标签（如：<article>、<nav>、<header>和<footer>等）就是基于语义化设计原则）<br><div id = 'header'><br> <h1>标题</h1><br><h2>专注web前端技术</h2><br></div>"
+      },
+      {
+        "question": "iframe有哪些缺点？ ",
+        "answer": "iframe有阻塞主页面的Onload事件；<br>iframe和主页面共享连接池，而浏览器对相同域的连接有限制，所以会影响页面的并行加载。<br>使用iframe之前需要考虑这两个缺点。如果需要使用iframe，最好是通过javascript<br>动态给iframe添加src属性值，这样可以绕开以上两个问题。"
+      },
+      {
+        "question": "请描述一下cookie，sessionStorage 和localStorage的区别？ ",
+        "answer": "cookie在浏览器和服务器间来回传递。sessionStorage和localStorage不会<br>sessionStorage和localStorage的存储空间更大；<br>sessionStorage和localStorage有更多丰富易用的接口；<br>sessionStorage和localStorage各自独立的存储空间；<br>如何实现浏览器内多个标签之间的通信？（阿里）<br>调用localStorage 、cookies等本地存储方式"
+      },
+      {
+        "question": "webSocket如何兼容低浏览器？（阿里）",
+        "answer": "Adobe Flash Socket、AcitiveX  HTMLFile（IE）、基于multipart编码发送XHR、基于长轮询的XHR"
+      },
+      {
+        "question": "为什么HTML5里面我们不需要DTD（Document Type Definition文档类型定义）？",
+        "answer": "在HTML 4.01中，<!DOCTYOE>声明引用DTD，因为HTML 4.01 基于SGML。<br>DTD规定了标记语言的规则，这样浏览器才能正确地呈现内容。<br>HTML5 不基于SGML，所以不需要引用DTD，因此没有声明DTD。"
+      },
+      {
+        "question": "Canvas 和 SVG图形之间的区别是什么？",
+        "answer": "Canvas<br>依赖分辨率<br>不支持事件处理器<br>弱的文本渲染能力<br>能够以 .png 或 .jpg格式保存结果图像最适合图像密集型的游戏，其中的许多对象会被频繁重绘<br> SVG<br>不依赖分辨率<br>支持事件处理器<br>最适合带有大型渲染区域的应用程序（比如谷歌地图）<br>复杂度高会减慢渲染速度（任何过度使用DOM的应用都不快）<br>不适合游戏应用"
+      },
+      {
+        "question": "简要描述HTML5中的本地存储？",
+        "answer": "很多时候我们会存储用户本地信息到电脑上，例如：比方说用户有一个填充了一半的长表格，<br>然后突然网络连接段开了，这样用户希望你能存储这些信息到本地，当网络恢复的时候，他想获取这些信息然后发送到服务器进行存储。<br>现代浏览器拥有的存储被叫做“Local Storage ”,用于存储这些信息。"
+      },
+      {
+        "question": "HTML5应用缓存是什么？",
+        "answer": "常用于实现用户的离线浏览。如果网络连接不可用，页面用该来自浏览器缓存，离线应用缓存可以帮助你打到这个目的。<br>应用缓存可以帮助你指定哪些文件需要缓存，哪些不需要。"
+      },
+      {
+        "question": "什么是Web Worker？为什么我们需要他们？",
+        "answer": "查看如下代码（模拟会执行上百次的繁重代码）：<br> Function test（）{ <br>For（i = 0；i< 1000000000;i ++）{<br> X = x + i;<br>}<br>}如果上述代码在HTML按钮单击以后执行，这种执行时同步的，即，浏览器必须等到执行完毕之后才能进行其他操作。<br>因为此操作耗时较长，那么这个操作会导致浏览器冻结并且没有响应，而且屏幕还会出现异常信息。<br>如果可以将这些繁重的代码移动到JavaScript文件中，并采用异步的方式运行，就可以解决 这个问题。<br>这就是webworker的作用。Web Worker用于异步执行JavaScript文件，提高浏览器的敏捷度。"
+      }
+    ]
+  },
+  "css":{
+    "type":"CSS",
+    "questions":[
+      {
+        "question":"谈谈你对浏览器兼容性问题的理解",
+        "answer":"浏览器的类型及版本的不同会造成CSS效果不尽相同，因此需要实现浏览器兼容，也可以针对不同的浏览器编写不同的CSS。<br>目前，各主流浏览器的新版本，对于W3C的保准支持很好，因此，首先保证代码符合W3C的保准，这是解决浏览器兼容问题的前提。<br> 其次，对于某些支持受限的属性，针对不同的浏览器添加相应的前缀，比如-webkit-、-o-、0moz-。<br>第三，对于IE的低版本，可以编写带有特定前缀的代码，实现版本识别。比如：<br>.b{<br> background-color:#f1ee18; <br> /*所有识别*/ .background-color:#f1ee18\9; <br> /*IE6、7、8识别*/+background-color:#f1ee18；<br> /*IE6、7识别*/_background-color:#f1ee18；<br> /*IE6识别*/ }<br>另外，对于特定的兼容性问题，特殊解决。常见的特殊问题有：<br>1、使用CSS reset：对于有些HTML标签，浏览器默认的margin 和padding不同，可以使用CSS代码该写默认的样式效果，从而实现统一；<br> 2、IE 低版本中，不能使用auto关键字实现块级元素居中显示，可以改用设置父元素的text-align；<br>3、子元素设置上外边距时，父元素需要设置边框或者外边距；"
+      },
+      {
+        "question":"哪些属性可以继承？",
+        "answer":"CSS中可以继承的属性如下：<br>1）文本相关属性：font-family、font-size、font-style 、font-variant,<br>Font-weight、font、letter-spacing 、line-height 、text-align 、text-indent 、text-transform 、word-spacing 、color;<br>2)列表相关属性：list-style-image、 list-style-type、 list-style<br>3)表格相关属性：border-collapse 、 border-spacing 、caption-sidetable-layoute;<br>4)其他属性：Cursor、 visibility"
+      },
+      {
+        "question":"如何理解CSS样式表的层叠性？",
+        "answer":"CSS使用层叠（Cascade）的原则来考虑继承、层叠次序和优先级等重要特征，从而判断相互冲突的规则中哪个规则应该起作用。<br> 继承性是指，许多CSS的样式规则不但影响选择器所定义的元素，而且会被这些元素的后代继承。<br>层叠性是指，当一个web页面使用多个样式表，多个样式表中的样式可层叠为一个。在多个样式表之间所定义的样式没有冲突的时候，浏览器会显示所有的样式。<br>有先级是指，当发生样式定义冲突时，浏览器首先会按照不同样式规则的优先级来应用样式。<br>CSS样式的优先级如下所示（其中数字3拥有最高的优先级）：<br>1.浏览器缺省设置；<br>2.外部样式表（.CSS文件）或者内部样式表（位于<head>元素内部）；<br>3.内联样式（作为某个元素的style属性的值）。同等优先级下，以最后定义的样式为准，important比内联高。<br>cellpadding与cellspacing有何区别？<br>Cellpadding：代表单元格边框到内容之间的距离（留白）<br>Cellspacing：代表单元格间边框，以及和table边框之间的距离"
+      },
+      {
+        "question":"列举常用的CSS选择器",
+        "answer":"ID、元素、class、伪类、组、包含、子等"
+      },
+      {
+        "question":"介绍一下CSS 的盒子模型？",
+        "answer":"（1）有两种，IE盒子模型、标准w3c盒子模型；IE的content部分包含； border和pading;<br>（2）盒子模型：内容（content）、填充（padding）、边界（margin）、边框（border）。"
+      },
+      {
+        "question":"描述css reset的作用和用途。",
+        "answer":"Reset重置浏览器的css默认属性      浏览器的品种不同，样式不同，然后重置，让他们统一 解释css  sprite，<br>如何使用Css精灵  把一堆小的图片整合到一张大的图片上，减轻服务器对图片的请求数量"
+      },
+      {
+        "question":"清除浮动的几种方式，各自的优缺点  如果清除浮动元素带来影响",
+        "answer":"1、使用空标签清除浮动clear:both（理论上能清楚任何标签，，，，，增加无意义的标签）<br> 2、使用overflow:auto（空标签无元素清除浮动而不得不增加无意代码的弊端，，使用zoom:1用于兼容IE）<br>3、是用afert伪元素清除浮动（用于非IE浏览器）<br>浮动定位是指将元素排除在普通流之外，并且将它放置在包含框的左边或者右边，但是依旧位于包含框之内。<br>也就是说，浮动的框可以向左向右移动，直到它的外边缘碰到包含框或另一个浮动框的边框为止。<br>由于浮动元框不在文档的普通流中，所以元素浮动之后，其元有位置不在保留，其他元素的位置会受到影响。<br>如果需要清除左侧或者右侧浮动元素带来的影响，则可以使用clear属性来设置。<br>另外，包含框内的子元素浮动后，如果包含框没有设置具体的高度，则其高度会发生变化，<br>此时，可以使用overflow属性来清除子元素浮动后带来的影响。"
+      },
+      {
+        "question":"Css选择器有哪些？哪些属性可以继承？优先级算法如何计算？CSS3新增伪类有哪些？",
+        "answer":"1、id选择器(#myid)<br>2、类选择器(.myclassname)<br>3、标签选择器(div、h1、p)<br>4、相邻选择器(h1+p)<br>5、子选择器(ul<li)<br>6、后代选择器(li a)<br>7、通配符选择器(*)<br>\8、属性选择器(a[rel=’external’])<br>\9、伪类选择器(a:hover,li:nth-child)<br>\* 可继承的样式：font-size font-family	color，ul li dl dd dt<br>\*不可继承的样式：border padding margin width height<br>\*优先级就原则，同权重情况下样式定义最近者为准<br>\*载入样式以最后载入的定位为准<br>\优先级为：！Important>id>class>tag<br>\Important比内联优先级高"
+      },
+      {
+        "question":"CSS3新增伪类举例：",
+        "answer":"P:first-of-type 选择属于其父元素的首个<p>元素的每个<p>元素<br> P:last-of-type 选择属于其父元素的最后<p>元素的每个<p>元素<br>P:only-of-type 选择属于其父元素的唯一<p>元素的每个<p>元素<br>P:only-child 选择属于其父元素的唯一子元素的每个<p>元素<br>P:nth-child(2) 选择属于其父元素的第二个子元素的每个<p>元素"
+      },
+      {
+        "question":"外边距合并问题。",
+        "answer":"为什么建议设置背景图像的同事还设置背景颜色？<br>一般建议在使用背景图像的同时提供 background-color 属性，并且将其设置为和图像主要颜色类似的颜色。<br>这样，如果正在加载页面，或者因为各种原因无法显示背景图像时，页面可以使用这种颜色作为背景颜色。"
+      },
+      {
+        "question":"11、内联原色可以实现浮动吗？",
+        "answer":"在CSS中，任何元素都可以浮动。浮动元素会生成一个块级框，而不论它本身是何种元素。因此，对于内联元素，如果设置为浮动，会产生和块级框相同的效果。"
+      },
+      {
+        "question":"什么情况下需要额外设置表格的显示规则？",
+        "answer":"默认情况下（不额外设置表格的显示规则时），表格按照自动表格布局进行显示，即，浏览器在显示表格之前查看每一个单元格，<br>然后基于所有单元格的设置计算表的大小，而列的宽度是有列单元格中没有折行的最宽的内容设定的。<br>此时，单元格的大小会适应内容的大小。<br> 自动表格布局的算法在表格复杂时会比较慢，这是由于它需要在确定最终的布局之前房屋表格所有的内容。<br>在不能提前确定每一列的大小时，这种方法会非常适用。<br> 如果额外设置表格的显示规则，即，设置table-layout 属性的值为fixed，则称为固定表格布局。<br>在固定表格布局中，水平布局仅取决于表格宽度、列宽度、表格边框宽度、单元格间距，而与单元格的内容无关。<br>浏览器将使用某列指定的宽度来计算布局（如果给了宽度的话），并使用该宽度计算该列中所有其他单元格的宽度。固定表格布局与自动表格布局相比，允许浏览器更快的对表格进行布局。<br>因为如果指定使用固定表格布局，浏览器在接收到第一行后就可以显示表格。<br>如果表格庞大且已指定了大小，则会加速表格的显示。"
+      },
+      {
+        "question":"简要描述CSS中content属性的作用。",
+        "answer":"Content属性与：before及：after伪元素配合使用，来插入生成内容，可以在元素之前或之后放置生成的内容。<br>可以插入文本、图像、引号，并可以结合计数器为页面元素插入编号。比如，查看如下代码：<br>Body {counter-reset:chapter:}<br>h1:before{content:'第'counter(chapter)'章';}<br>h1{counter-increment:chapter;}<br>使用content属性，并结合：before选择器和计数器counter，可以再每个<h1>元素前插入新的内容。"
+      },
+      {
+        "question":"在设置文本的字体时，为什么建议设置替换字体？",
+        "answer":"可以使用font-family属性来制定文本的字体，代码如下所示：font-family：name/inherit；<br>此时，name为首选字体的名称。如果字体名称有多个单词，即中间有空格，则需要将字体名称用一对单引号或者双引号包围起来。<br>但是，如果用户机器上并没有安装name所指定的字体，则会显示默认字体。<br>因此，如果可以指定一种替代字体，替代字体可以和指定字体不完全相同，相似且不会影响页面的布局，就可以解决问题了。<br>我们可以为font-family属性指定多种字体，且多种字体之间用逗号隔开，这样可以为页面指定一个字体列表。<br>如果用户机器没有第一种字体，则浏览器会查找字体列表中的下一种字体作为替代字体显示。<br>如果找遍了字体列表还是没有可以使用的字体，浏览器才会使用默认字体显示页面。代码如下所示：<br>H1{font-family:Georgia，serif；}<br>此时，如果用户机器上没有安装Georgia，但安装了Times字体（serif字体洗礼中的一种字体），浏览器就可能对<h1>元素使用Times。<br>尽管Times与Georgia并不完全匹配，但至少足够接近。<br> 因此，我们建议在所有font-family规则中都提供一个通用字体系列。<br>这样就提供了一条后路，在用户机器无法提供与规则匹配的特定字体时，就可以选择一个通用字体作为替换。"
+      },
+      {
+        "question":"简要描述CSS中的定位机制。",
+        "answer":"CSS中，出了默认的流定位方式以外，还有如下几种定位机制：浮动定位、相对定位、绝对定位和固定定位。<br>浮动定位是指将元素排除在普通流之外，并且将它放置在包含框的左边或者右边，但是依旧位于包含框之内。<br>相对定位将元素相对于它在普通流中完全移除，并且可以使用偏移属性来固定该元素的位置。<br>固定定位是指将元素的内容固定在页面的某个位置"
+      },
+      {
+        "question":"display与visibility有何异同？",
+        "answer":"可以使用display属性定义建立布局时元素生成的显示框类型。<br>如果将display属性设置为block，可以让行内元素（比如<a>元素）表现得像块级元素一样；<br>如果将display属性设置为inline，可以让块级元素（比如<p>元素）表现的像内联元素一样；<br>可以通过把display属性设置为none，让生成的元素根本没有框。<br>这样的话，该框及其所有内容就不再显示，不占用文档中的空间。<br>在DIV设计中，使用display：none属性后，HTML元素（对象）的宽度、高度等各种属性值都将“丢失”；<br>而使用visibility：hidden属性后，HTML元素（对象）仅仅是在视觉上看不见（完全透明），<br>而它所占用的空间位置仍然存在，也即是说它仍具有高度、宽度等属性值。"
+      },
+      {
+        "question":"怎么在网页中实现绝对定位？",
+        "answer":"将position设置为：absolute。"
+      },
+      {
+        "question":"table-layout、border-collapse有何用途？",
+        "answer":"table-layout：设置表格是否自动调整宽高；<br>border-collapse：表格与单元格及单元格间的边框是否融合在一起。"
+      },
+      {
+        "question":"链接标记target属性的_top、_parent、_blank、main、left、top各有何用处？",
+        "answer":"_top：在顶层window中打开链接；<br>parent：在包含当前frame的父window中打开链接；<br>blank：在新window中打开链接；<br> Main、left、top是由Adobe Dreamweaver生成的主、左、上框架集的框架默认名。"
+      },
+      {
+        "question":"CSS引入的方式有哪些？",
+        "answer":"内联、内嵌、外链、导入。"
+      },
+      {
+        "question":"CSS中的选择器是什么？",
+        "answer":"选择器就是你想去应用一个样式的时候去帮你选择元素<br>:enabled  :disabled 控制表单控件的禁用状态。<br>:checked   单选框或复选框被选中。"
+      },
+      {
+        "question":"如何居中div？如何居中一个浮动元素？",
+        "answer":"给div设置一个宽度，然后添加margin：0  auto属性<br>div{<br>width：200px；<br>margin：0 auto；<br>}"
+      },
+      {
+        "question":"居中一个浮动元素：",
+        "answer":"确定容器的宽高   宽500   高300 的层 设置层的外边距<br>.div{<br>width:500px;   height:300px;   <br> //高度可以不设 margin：-150px  0  0  -250px；<br>position：relative；    <br> //相对定位 background-color：pink；<br> //方便看效果 left：50%；<br>top：50%；<br>}"
+      },
+      {
+        "question":"列出display的值，说明它们的作用？Position的值，relative和absolute定位原点是？",
+        "answer":"1、block像块元素一样显示。<br> None缺省值。像行内元素而理性一样显示。<br>Inline-block  像行内元素一样显示，但其内容像块类型元素一样显示。<br>List-item 像块类型元素一样显示，并添加样式列表标记。<br>2、*absolute<br>生成绝对定位的元素，相对于static定位以外的第一个父元素进行定位。<br>*fixed(老IE不支持)生成绝对定位的元素，相对于浏览器窗口进行定位。<br>*relative生成相对定位的元素，相对于其正常位置进行定位。<br>*static 默认值。没有定位，元素出现在正常的流中<br>*（忽略top,bottom,left,right z-index声明）。<br>*inherit规定从父元素继承positition属性的值。"
+      },
+      {
+        "question":"Css3有哪些新特性？",
+        "answer":"Css3实现圆角（border-radius:8px）,阴影（box-shadow:10px）,<br>对文字加特效（text-shadow、），线性渐变（gradient）,旋转（transform）<br>Transform：rotate（9deg） scale（0.85,0.90） translate（0px,-30px）<br>Skew（-9deg,0deg）;//旋转，缩放，定位，倾斜。增加了更多的css选择器 多背景 rgba"
+      },
+      {
+        "question":"一个满屏 ‘品’ 字布局如何设计？",
+        "answer":"<!DOCTYPE html><br><head><br><title>Title</title><br></head><br><style><br>*{<br>margin: 0;<br>padding: 0;<br>}<br>.main{<br>width: 100%;<br>height: 60%;<br>}<br>.main .left,.main .right{<br>width: 50%;<br>height: 100%;<br>float: left;<br>background: #a23;<br>}<br>.main .right{<br>background: #e11;<br>}<br>.clear{<br>clear: both;<br>}<br>.header{<br> height:40%;<br>background: #e33;<br>width: 100%;<br>}<br></style><br><body><br><div class='header'></div><br><div class='main'><br><div class='left'></div><br><div class='right'></div><br><div class='clear'></div><br></div><br></body><br></html>"
+      },
+      {
+        "question":"经常遇到的CSS的兼容性有哪些？原因，解决方法是什么？",
+        "answer":"参考：http://www.jb51.net/css/43686.html"
+      },
+      {
+        "question":"为什么要初始化CSS样式？",
+        "answer":"-因为浏览器的兼容性问题，不同浏览器对有些标签的默认值是不同的，如果没对CSS初始化往往会出现浏览器之间的页面显示差异。<br>-当然，初始化样式会对SEO有一定的影响，但鱼和熊掌不可兼得，但力求影响最小的情况下初始化。<br>*最简单的初始化方法就是：*{margin: 0;padding: 0;}(不建议)<br>淘宝的样式初始化：<br>body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td{margin: 0;padding: 0;}<br>body,button,input,select,textarea{font: 12px/1.5 Tahoma,Arial,\5b8b\4f53;}<br>h1,h2,h3,h4,h5,h6{font-size: 100%;}<br>address,cite,dfn,em,var{font-style: normal;}<br>code,kbd,pre,samp{font-family: couriernew,courier,monospace;}<br>small{font-size: 12px;}<br>ul,ol{list-style: none;}<br>a{text-decoration: none;}<br> a:hover{text-decoration: underline;}<br>sup{vertical-align: text-top;}<br>sub{vertical-align: text-bottom;}<br>legend{color: #000;}<br>fieldset,img{border: 0;}<br>button,input,select,textarea{font-size: 100%;}<br>table{border-collapse: collapse;border-spacing: 0;}"
+      },
+      {
+        "question":"Absolute的containing block计算方式跟正常流有什么不同？",
+        "answer":"一个 block-level element ('display' 属性值为 'block', 'list-item' 或是 ‘table’)<br> 会生成一个 block-level box，这样的盒子会参与到 block-formatting context (一种布局的方式) 中。<br>block formatting context<br>在这种布局方式下，盒子们自所在的 containing block 顶部起一个接一个垂直排列，水平方向上撑满整个宽度 (除非内部的盒子自己内部建立了新的 BFC)。<br>containing block<br>一般来说，盒子本身就为其子孙建立了 containing block，用来计算内部盒子的位置、大小，而对内部的盒子，具体采用哪个 containing block 来计算，需要分情况来讨论：<br>若此元素为 inline 元素，则 containing block 为能够包含这个元素生成的第一个和最后一个 inline box 的 padding box (除 margin, border 外的区域) 的最小矩形；<br>否则则由这个祖先元素的 padding box 构成。<br>根元素所在的 containing block 被称为 initial containing block，在我们常用的浏览器环境下，指的是原点与 canvas 重合，大小和 viewport 相同的矩形；<br>对于 position 为 static 或 relative 的元素，其 containing block 为祖先元素中最近的 block container box 的 content box (除 margin, border, padding 外的区域)；<br>对于 position:fixed 的元素，其 containing block 由 viewport 建立；<br>对于 position:absolute 的元素，则是先找到其祖先元素中最近的 position 属性非 static 的元素，然后判断：<br>如果都找不到，则为 initial containing block。"
+      },
+      {
+        "question":"position跟display、margin collapse、overflow、float这些特性相互叠加后会怎么样？",
+        "answer":"这个题目应该能拆成几个点来回答：1、'display'、'position' 和 'float' 的相互关系；2、position跟display、overflow、float下的margin collapse。<br>一、'display'、'position' 和 'float' 的相互关系<br>首先我们先来看下这3个属性。<br>display 属性规定元素应该生成的框的类型。 block 象块类型元素一样显示，<br>none 缺省值。象行内元素类型一样显示，inline-block 象行内元素类型一样显示，但其内容象块类型元素一样显示，list-item象块类型元素一样显示，并添加样式列表标记（display 还有很多其他值设置，读者自行查找）。<br>Position属性规定元素的定位类型。Absolute 表示生成绝对定位的元素，相对于static 定位以外的第一个父元素进行定位；fixed（老IE不支持）生成绝对定位的元素，相对于浏览器窗口进行定位；relative生成绝对定位的元素，相对于其正常位置进行定位；static 默认值。没有定位，元素出现在正常流中（忽略top，bottom，left，right，z-index声明）。<br>Float也是一种布局方式，它定义元素在哪个方向浮动。以往这个属性总应用于图像，是文本环绕在图像周围，不过在css中，任何元素都可以浮动。<br>浮动元素会生成一个块级框，而不论它本身是何种元素。在布局过程中也经常会使用它来达到左右并排布局的效果。<br>那么这三种布局和框形成的关键属性（display）之间有什么关系呢，请看下面流程图：<br>转换对应表：<br>设定值 计算值<br>Inline-table table<br>Inline，run-in，table-row-group，table-column，table-column-group，table-header-group<br>table-footer-group，table-row，table-cell，table-caption，Inline-block，block<br>其他 同设定值<br>总的来说，可以把它看做是一个类似优先级的机制，“position：absolute”和'position：fixed'优先级最高，有它存在的时候，浮动不起作用，‘display’的值也需要调整；<br>其次，元素的‘float’特性的值不是‘none’的时候或者它是根元素的时候，调整‘display’的值；最后，非根元素，并且非浮动元素，并且非绝对定位的元素，‘display’特性值同设置值。<br>这从另一个侧面说明了一个问题：浮动或绝对定位的元素，只能是魁岸元素或表格。<br>1.‘display’的值为‘none’<br>如果‘display’的值为‘none’，那么‘position’和‘float’不起作用。在这种情况下，元素不产生框。因此浮动和定位无效。<br>2.‘position’的值是‘absolute’或‘fixed’<br>否则，如果‘position’的值是‘absolute’或‘fixed’，框就是绝对定位的，‘float’计算后的值应该是‘none’，并且，‘display’会被按照上表设置。框的位置将由‘top’，‘right’，‘bottom’，和‘left’属性和该框的包含块确定。<br>也就是说，当元素是绝对定位是，浮动失败。‘display’会被按规则重置<br>示例代码:<br><script type='text/javascript'><br>function getstyle(obj,style){<br>var _style = (style == 'float')?'styleFloat':style;return document.defaultView?document.defaultView.getComputedStyle(obj,null).getPropertyValue(style):obj.currentStyle[_style.replace(/-[a-z]/g,function () {<br>return arguments[0].charAt(1).toUpperCase()  })]}<br>window.onload = function() {<br>document.getElementById('info').innerHTML = 'float : ' + getStyle(document.getElementById('test'), 'float') +'<br/><br>display : ' + getStyle(document.getElementById('test'), 'display');<br>}<br></script><div id='test' style='position:absolute; float:left;display:inline;'></div><div id='info'></div>"
+      },
+      {
+        "question":"使用css预处理器吗？喜欢那个？",
+        "answer":"Sass，less....<br>如果需要手动写动画，你认为最小时间间隔是对久，为什么？<br>多数显示浏览器默认频率是60Hz，即一秒刷新60次，所以理论上最小间隔为1/60*1000ms = 16.7ms"
+      },
+      {
+        "question":"Display：inline-block 什么时候显示间隙？",
+        "answer":"移出空格、使用margin负值、使用font-size：0.letter-spacing、word-spacing<br>超链接点击后hover样式就不会出现的问题？<br>被点击访问过的超链接样式不再具有hover和active样式了，解决方法是改变css属性的排列顺序：L-V-H-A"
+      },
+      {
+        "question":"IE6的margin双倍边距bug问题？",
+        "answer":" 在IE6的浏览器中明明设置的是10px的margin却为什么显示的是20px的margin其实这个Ie6的一个双边距BUG<br>例如:<br><style type='text/css'><br>body {margin:0}<br>div { float:left; margin-left:10px; width:300px; height:300px; border:1px solid red; }<br></style><br>因为加上浮动后就会多出一倍的边距，浮动后本来外边距10px,但IE6会解析成20px,只需要在div的样式里加上display:inline;就可以解决以上问题。"
+      },
+      {
+        "question":"为什么中火狐浏览器下文本无法撑开容器的高度？",
+        "answer":"标准浏览器中固定高度值的容器是不会象IE6里那样被撑开的,那我又想固定高度，又想能被撑开需要怎样设置呢？<br>办法就是去掉height设置min-height:200px; 这里为了照顾不认识min-height的 IE6 可以这样定义：<br>div { height:auto!important; height:200px; min-height:200px; } "
+      },
+      {
+        "question":"过渡与动画的区别是什么？",
+        "answer":"过渡属性transition可以在一定的时间内实现元素的状态过渡为最终状态，用于模拟一种过渡动画效果，但是功能有限，只能用于制作简单的动画效果；而动画属性animation可以制作类似Flash动画，通过关键帧控制动画的每一步，控制根伟精确，从而可以制作更为复杂的动画。<br>一个网站，主要是使用其他网站提供的JavaScript api 如QQ 。使用script的可以直接读取跨域资源。<br>当然跨域还有其他处理方式：如代理服务器，改变DOmain，JSONP等。"
+      },
+      {
+        "question":"你在项目中有使用到服务器的即通信么？说说你采用什么手段处理以及你所知道的处理方法？",
+        "answer":"没有用到，但我知道html的websockets，flash的socket，ajax长轮询等都可以实现。"
+      }
+    ]
+  },
+  "js":{
+    "type":"javascript",
+    "questions":[
+      {
+        "question":"你在AJAX中遇到过论码么？如果遇到，你是如何解决的？",
+        "answer":"遇到过。<br>一般我首先统一页面和服务器代码，对请求和响应的Content-Type设置正确编码；对请求参数进行编码处理。"
+      },
+      {
+        "question":"你使用过jQuery么？如果有，你为什么要使用jQuery呢？",
+        "answer":"用过。<br>如果使用原生JavaScript开发的话，会面临很多问题，如浏览器兼容，Ajax数据解析，Dom，事件注册操作等都非常繁琐，而jQuery正好解决了这些问题。<br>当然jQuery还有非常有用的其他特性，如dom对象绑定数据,动画,等。<br>并且jQuery还非常容易扩展，在它的基础上开发非常灵活，也有众多插件可用，如jQueryUI。rasyUI等。"
+      },
+      {
+        "question":"在jQuery中如何注册事件？",
+        "answer":"使用bind（）方法注册事件，但通过我们使用与事件同名的方法注册更方便，如：click（），hover（）等。"
+      },
+      {
+        "question":"如何获取HTML内容？如何获取文本内容？如何获取属性值？如何获取input值？如何创建新的节点？",
+        "answer":"可以使用html（）获取html内容。<br>使用text（）获取文本内容。<br>使用attr（）可以获取属性值<br>使用css（）可以获取样式属性值<br>通过val（）便可以获取input值<br>把节点元素加上<  >作为参数调用jQuery方法便可以创建新的节点，如jQuery（'<div>'）。"
+      },
+      {
+        "question":"如何向页面插入节点？",
+        "answer":"调用append方法，将新节点作为参数。<br> aiax ，get，post，ajaxSetup，getJSON各有何用途？<br>aiax：jQuery对ajax执行的核心方法。将它ajax方法都使用该方法实现。<br>get：专门用于发送get 请求的便捷方法。<br>post: 专门用于发送post 请求的便捷方法。<br>ajaxSetup：设置调用ajax方法是的黑认值。<br>getJSON：专门用于向服务器请求json格式数据的便捷方法。"
+      },
+      {
+        "question":"如何使用从服务器获取一个复杂的数据（对象）？",
+        "answer":"通常会把这个数据转化为通用的数据交换格式，如xml或json。由于xml解析比较麻烦，所以使用json比较多。<br>在jQuery中有专门的获取服务器json数据的方法，getJSON（），在回调中，jQuery会自动将json转化为JavaScript对象。"
+      },
+      {
+        "question":"addClass，css有何用途？",
+        "answer":"addClass：为元素设置class属性，如果该元素已经存在class属性，则在其值后添加空格及新的class值。<br>Css：操作元素style属性的方法。"
+      },
+      {
+        "question":"如何获取一个元素的实际位置？",
+        "answer":"使用position（）或offset（）都可以。"
+      },
+      {
+        "question":"bind（），unbind（），hover（）有何用途？",
+        "answer":"bind（）：注册特定事件。<br>unbind（）：删除特定事件。<br>hover（）：同时注册鼠标移入，移出事件。"
+      },
+      {
+        "question":"你知道jQuery插件么？你了解jQuery执行原理和插件机制么？你都用过哪些jQuery插件？",
+        "answer":"知道jQuery插件<br>其原理是扩展jQuery本身及其核心函数的原型实现。可以调用其extend实现对它的扩展。<br>31——32<br>jQuery插件有很多，常见的有：JQueryUI、jQuery-Cookie、jQuery-Timer等<br> Array 的join、push、splice、slice各有何用途，splice与slice有何异同？<br>Join：使用指定间隔符连接所有元素为字符串<br>Push：在尾部添加元素并维护array实例的length<br>Splice与slice都是截取一部分元素。不同的在于：slice返回截取后的新实例，splice在原array实例上操作"
+      },
+      {
+        "question":"什么是BOM？什么是DOM？你如何理解DOM？",
+        "answer":"BOM指浏览器对象，DOM指文档模型中定义的对象"
+      },
+      {
+        "question":"DOM操作中，如何获取元素的属性值？",
+        "answer":"参考答案：<br>对于元素节点，获取某属性的值有多种方式，如下所示：<br>element.attribute[下标].value<br>element.attribute[‘属性名’].value<br>element.getAttributeNode(‘属性名’).value<br>Element.getAttribute(‘属性名’)"
+      },
+      {
+        "question":"简要描述DOM操作中查找元素的方式",
+        "answer":"参考答案：<br>通过HTML中的信息选取元素，比如：<br>、getElementById()方法：根据元素的id属性值查询单个节点<br>、getElementsByTagName()方法：根据元素标签的名称查询<br>、getElementsByName()方法:根据元素name属性的值查询<br>通过CSS类选取元素<br>、getElementsByClassName()方法：根据class名称选取元素<br>、querySelector()和querySelectorAll()方法：根据CSS选择器选取元素<br>通过document对象选取，如document.all、document.body等<br>通过节点遍历选取节点，如parentNode、firstChild等"
+      },
+      {
+        "question": "如何判断一个变量的值是否为数字？以及有哪些手段判断变量值的数据类型？",
+        "answer": "全局函数IsNaN可以判断一个变量的值是否为数字,可以使用运算符type、instanceof判断变量值的数据类型"
+      },
+      {
+        "question": "JavaScript的typeof返回哪些数据类型？",
+        "answer": "Object,number,function,Boolean	,underfind"
+      },
+      {
+        "question": "列举3种强制类型转换和2种隐式类型转换？",
+        "answer": "强制（parseInt	，parseFloat、number),隐式	（==		-	===）"
+      },
+      {
+        "question": "Split()与join()的区别",
+        "answer": "前者是切割成数组的形式，后者是将数组转换成字符串。<br>Push()尾部添加，pop()尾部删除。<br>Unshift()头部添加，shift()头部删除"
+      },
+      {
+        "question": "IE和DOM事件流的区别",
+        "answer": "执行顺序不一样、参数不一样、事假加不加on、This指向问题"
+      },
+      {
+        "question": "IE和标准下有哪些兼容性的写法",
+        "answer": "Var	ev = ev ||window.event;<br>document.documentElement.ClientWidth || document.body.ClientWidth;<br>Var target = ev.srcElement||e.target"
+      },
+      {
+        "question": "Ajax请求的时候get和post方式的区别",
+        "answer": "一个在url后面，一个放在虚拟载体里面。有大小限制,安全问题。<br>应用不同:一个是论坛等只需要请求,一个是类似修改密码的"
+      },
+      {
+        "question": "Ajax请求时，如何解释json数据",
+        "answer": "使用eval parse 鉴于安全考虑，使用parse更靠谱"
+      },
+      {
+        "question": "事件委托是什么？",
+        "answer": "让利用事件冒泡的原理，让自己的所触发的事件，让他的父元素代替执行！"
+      },
+      {
+        "question": "如何阻止事件冒泡和默认事件",
+        "answer": "canceBubble return false "
+      },
+      {
+        "question": "添加、删除、替换、插入到某个节点的方法",
+        "answer": " Obj.appendChild()、Obj.innersetBefore()、obj.replaceChild()、obj.removeChild()"
+      },
+      {
+        "question": "解释json的原理，以及为什么不是真正的ajax",
+        "answer": "动态创建script标签，回调函数，Ajax是页面无刷新请求数据操作"
+      },
+      {
+        "question": "JavaScript的本地对象，内置对象和宿主对象",
+        "answer": " 本地对象array obj regexp 等可以new实例化，内置对象为gload Math邓不可以实例化的，宿主为浏览器的自带的doocument, window等"
+      },
+      {
+        "question": "document ioad 和 document ready的区别",
+        "answer": "Document .ioad是在结构和样式加载完才执行js.<br>Document r.eady原生中没有这个办法，<br>jquery中$().ready(function)"
+      },
+      {
+        "question": "==”和”====”的不同",
+        "answer": " 前者会自动转换类型,后者不会"
+      },
+      {
+        "question": "JavaScript的同源策略",
+        "answer": "一段脚本只能读取来自同一来源的窗口和文档的属性，这里的同一来源指的是主机名、协议和端口号的组合"
+      },
+      {
+        "question": "编写一个数组去重的方法",
+        "answer": "Function  oSort(arr){<br>Var result = {};<br>Var newArr = [];<br>For(var i = 0;i{If(!result[[arr[i]]){<br>newArr.push(arr[i])Result[arr[i]]=<br>}<br>}<br>return newArr<br>}<br>赋值代码"
+      },
+      {
+        "question": "JavaScript原型，原型链？有什么特点？",
+        "answer": "原型(prototype)：保存所有子对象共有成员的对象。<br>原型链：有各级对象的__proto__逐级向上引用形成的多记继承关系。<br>特点：<br>1.原型和原型链是JS实现继承的一种模型。<br>2.原型链的形成是真正是靠__proto__而非prototype"
+      },
+      {
+        "question": "Eval是做什么的？",
+        "answer": "它的功能是把对应的字符串解析成JS代码并运行；<br>应该避免使用eval，不安全，非常耗性能（2次，一次解析成JS语句，一次执行）。"
+      },
+      {
+        "question": "Null，undefined 的区别？",
+        "answer": "Null：这是一个对象，但是为空。因为是对象，索引typeof null返回’object’。<br>Undefined：Undefined是全局对象（window）的一个特殊性，其值是未定义的。"
+      },
+      {
+        "question": "写一个通用的事件监听器函数。",
+        "answer": "// event(事件)工具集，来源：<br>.com/markyun。<br>markyun.Event = {<br>//页面加载完成后<br>readyEvent : function(fn){<br>If (fn == null) {<br>Fn = document;<br>}<br>Var oldonload = window.onload;<br>If ( typeof window.onload != ‘function’){<br>Window.onload = fn;<br>} else {<br>Window.onload = function(){<br>Oldonload();<br>Fn();<br>};<br>}<br>},"
+      },
+      {
+        "question": "视能力分别使用 dom0 || dom2 || IE 方式 来绑定时间按",
+        "answer": "// 参数：操作的元素，事件名称，事件处理程序。<br>addEvent : function(element,type,handler){<br>If(element.addEnevtListener){<br>//事件类型、需要执行的函数、是否捕捉。<br>element.addEventListener(type,handler,false);<br>}else if (element.attachEvent){<br>element.attachEvent(‘on’ + type, function(){<br>Handler.call (element);<br>});<br>}else{<br>element[‘on’ + type] = handler;<br>}<br>},"
+      },
+      {
+        "question": "移出事件",
+        "answer": "removeEvent : function(element,type, handler){<br>if (element.removeEnentListener<br>}<br>{element.removeEnentListener(type,handler,false);<br>}else if(element.datachEvent){<br>element.datachEvent (‘on’+type, handler);<br>}else{<br>elemet[‘on’+type] = null;<br>}<br>}"
+      },
+      {
+        "question": "阻止事件（主要是事件冒泡，因为IE不支持事件捕获）",
+        "answer": "stopPropaggation:function(ev){<br>If(ev.stopPropaggation){ev.stopPropaggation();<br>} else {<br>ev.cancelBubble = true;<br>}<br>},"
+      },
+      {
+        "question": "取消事件默认行为",
+        "answer": "preventDefault: function(event){<br>If(event.preventDefault){<br>event.preventDefault();<br>}else {<br>event.returnValue = false;<br>}<br>},"
+      },
+      {
+        "question": "获取事件目标",
+        "answer": "getTarget:function(event){<br>return event.target || event.srcElement;<br>}"
+      },
+      {
+        "question": "获取event对象的引用，取到事件的所有信息，确保随时能使用event",
+        "answer": "getEvent:function(e){<br>var ev = e || window.event;<br>if(!ev){<br>var c= this.getEvent.caller;<br>while (c){<br>ev =c.arguments[0];<br>if(ev && event == ev.construtor){<br>break;<br>}<br>c = c.caller;<br>}<br>}return ev;<br>}<br>};"
+      },
+      {
+        "question": "Node.js 的适用场景？",
+        "answer": "高并发、聊天、实时消息推送"
+      },
+      {
+        "question": "介绍js的基础数据类型。",
+        "answer": "number，string,boolean,object,undefined"
+      },
+      {
+        "question": "Javascript如何实现继承？",
+        "answer": "通过原型和构造器"
+      },
+      {
+        "question": "[“1”,”2”,”3”].map(parselnt) 答案是多少？",
+        "answer": "[1,NaN,NaN]因为parseInt需要两个参数(val,radix(根数))但map传了3个(element,index,array)"
+      },
+      {
+        "question": "如何创建一个对象？（画出此对象的内存图）",
+        "answer": "function Person( name, age) {<br>this.name = name;<br>this.age = age;<br>this.sing = function() {<br>alert(this.name)<br>}}"
+      },
+      {
+        "question": "谈谈 this 对象的理解",
+        "answer": "This 是js 的一个关键字，随着函数使用场合不同， this 的值会发生变化。<br>但是有一个棕园子，那就是 this 指的是调用含税的那个对象。<br>This 一般情况下：<br>是取决对象 Global。作为方法调用，那么this就是值这个对象"
+      },
+      {
+        "question": "事件是？IE 与火狐的时间机制有什么区别？如何制止冒泡？",
+        "answer": "1.我们在网页中的某个操作（有的操作对应多个事件）。<br>例如：当我们点击一个按钮就会产生一个时间、是可以被JavaScript 侦测到的行为。<br>2.时间处理机制：<br>IE 是事件冒泡、火狐是：事件捕获；<br>3.ev.stopPropagation（）；"
+      },
+      {
+        "question": "什么是闭包（closure），为什么要用它",
+        "answer": "执行say667（）后，say667（）闭包内部变量会存在，而闭包内部函数的内部变量不会存在，使得Javascript 的辣鸡回收机制GC 不会回收,say667（）所占有的资源，隐为say667（）的内部函数的执行需要依赖say667（）中的变量，这是对闭包作用的非常直白描述。<br>function say667( ){<br>// local variable that ends up within closure。<br>var num = 666;<br>var sayAlert = function( ){ <br>alert(num);<br>}<br>num++;<br>return sayAlert;<br>}<br>var sayAlert = say667( );s<br>ayAlert( )<br>//执行结果应该弹出的667"
+      },
+      {
+        "question": "“use strict”；是什么意思？使用它的好处和坏处分别是什么？",
+        "answer": "除了正常运用模式，ECMAscript 5 添加了第二种运行模式：<br>'严格模式'（strict mode）。<br>顾名思义，这种模式使得 Javascript 在更严格的条件下运行。<br>好处：消除Javascript 语法的一些不合理、不严谨之处，减少一些怪异行为；<br>- 消除代码运行的一些不安全之处。保证代码运行安全；<br>- 提高编译器效率，增加运行速度；<br>- 为微辣新版本的 Javacript 做好铺垫。<br>坏处：<br>同样的代码，在'严格模式'中，可能会有不一样的运行结果，一些在'正常模式'下可以运行的语句，在'严格模式'下将不能运行"
+      },
+      {
+        "question": "如何判断一个对象是否属于某个类？",
+        "answer": "使用 instanceof （待完善）If（a instanceof Person）{<br>alert（‘yes’）；<br>}"
+      },
+      {
+        "question": "new 操作符具体干了什么呢？",
+        "answer": "1、创建一个空对象，并且this 变量引用该对象，同事还继承了该函数的原型。<br>2、属性和方法被加入到 this 引用的对象中。<br>3、新创建的对象由 this 所引用，并且最后隐式得返回 this 。<br>var obj = {};<br>obj._proto_ = Base.prototype;<br>Base,call(obj);"
+      },
+      {
+        "question": "Javascript 中，有一个函数，执行时对象查找时，永远不会去查找原型，这个函数是？",
+        "answer": "hasOwnProperty"
+      },
+      {
+        "question": "JSON的了解？",
+        "answer": "JSON（JavaScript Object Notation）是一种轻量级的数据交换格式。<br>它是基于JavaScript 的一个子集。数据格式简单，易于读写，占用带宽小{<br>‘age’：‘12’，<br>‘name’：‘back’<br>}"
+      },
+      {
+        "question": "js延迟加载的方式有哪些？",
+        "answer": "defar和async、动态创建DOM方式（用的最多）、按需异步载入js"
+      },
+      {
+        "question": "同步和异步的区别?",
+        "answer": "异步：向服务器端发送请求，到服务器端返回请求，这个过程需要等待<br>同步：向服务器端发送请求，到服务器端返回请求，这个过程无需等待"
+      },
+      {
+        "question": "如何解决跨域问题？",
+        "answer": "jsonp、iframe、window.name、window.postMessage、服务器上设置代理页面"
+      },
+      {
+        "question": "模块化怎么做？立即执行函数，不暴露私有成员",
+        "answer": "var module1 = (function () {<br>var _count = 0;<br>var m1 = function () {<br>//...<br>};var m2 = function () {<br>//...<br>};<br>return{<br>m1:m1,<br>m2:m2<br>};<br>})();"
+      },
+      {
+        "question": "AMD(Module/Asynchronous-Definition)、CMD（Common Module Definition）规定区别？",
+        "answer": "1.对于依赖的模块，AMD是提前执行，CMD是延迟执行。不过RequierJS从2.0开始，也改成可以延迟执行（根据写法不同，处理不同）。CMD推崇 as lazy as possible.<br>2.CMD推崇依赖就近，AMD推崇依赖前置3.AMD的API默认是一个当多个，CMD的API严格区分，推崇职责单一。"
+      },
+      {
+        "question": "异步加载的方式有哪些？",
+        "answer": "（1）defer，只支持IE<br>（2）Async：<br>（3）创建script，插入DOM中，记载完毕后callBackDocument.write和innerHTML的区别document.write只能重绘整个页面innerHTML可以重绘页面的一部分"
+      },
+      {
+        "question": ".call（）和.apply（）的区别？",
+        "answer": "例子中用add来替换sub，add.call(sub,3,1) == add(3,1)，所以运行结果为alert（4）；注意：js中的函数其实是对象，函数是对Function对象的应用。function add(a,b) {<br>alert(a+b);<br>}<br>function sub(a,b){<br>alert(a-b);<br>}<br>add.call(sub,3,1);"
+      },
+      {
+        "question": "Jqery与jQeryUI有啥区别？",
+        "answer": "*jQery是一个js库，主要提高的功能是选择器，属性修改和事件绑定等等。<br>jQeryUI则是在jQery的基础上，利用jQery的扩展性，设计的插件。提供了一些常用的界面元素，诸如对话框、拖动行为、改变大小行为等等。"
+      },
+      {
+        "question": "juQery的源码看过吗？能不能简单说一下它的实现原理？",
+        "answer": "看过，就是对DOM进行的封装。"
+      },
+      {
+        "question": "juQery中如何将数组转化为json字符串，然后再转化回来？",
+        "answer": "jQery中没有提供这个功能，所以你需要先编写两个jQery的扩展：<br>$.fn.stringfyArray = function(array){<br>return JSON.stringify(array)<br>}<br>$.fn.parseArray = function(array){<br>return JSON.parse(array)<br>}<br>然后调用：$(“”).stringifyArray(array)"
+      },
+      {
+        "question": "针对jQery的优化方法？",
+        "answer": "*基于Class 的选择性的性能相对于ID选择器开销很大，因为需要遍历所有DOM元素。<br>*频繁操作的DOM，先缓存起来再操作。用jQery的链式调用更好。<br>比如：var str = $('a').attr('href')；<br>*for(var i = size ;i<arr.length;i++){<br>}<br>For循环每一次循环都查找了数组（arr）的.length属性，在开始循环的时候设置一个变量来存储这个数字，可以让循环跑的更快：<br>For(var i = size ,length = arr.length;i<length;i++){<br>}"
+      },
+      {
+        "question": "Javascript中的作用域与变量声明提前？",
+        "answer": "作用域：表示变量或函数起作用的区域，指代了它们在什么样的上下文中执行，亦即上下文执行环境。<br>Javascript的作用域只有两种：全局作用域和本地作用域，本地作用域是按照函数来区分的。<br>变量声明提前：变量提到当前作用域的最前，赋值保留在原地。"
+      },
+      {
+        "question": "如何编写高性能的Javascript?",
+        "answer": "1.使用DocumentFragment优化多次append<br>2.通过模板元素clone,替代createElement<br>3.使用firstChild和nextSibing代替childNodes遍历dom元素<br>4.使用三目运算符替代条件分支<br>5.需要不断执行的时候，优先考虑使用setInterval......"
+      },
+      {
+        "question": "哪些操作会造成内存泄漏？",
+        "answer": "内存泄漏指任何对象在您不再拥有或需要它之后仍然存在。<br>垃圾回收器定期扫描对象，并计算引用了每个对象的其他对象的数量。如果一个对象的引用数量为0（没有其他对象引用过该对象），或对该对象的唯一引用是循环的，那么该对象的内存即可回收。<br>setTimeout 的第一个参数使用字符串而非函数的话，会引发内存泄漏。<br>闭包、控制台日志、循环（在两个对象彼此引用且彼此保留时，就会产生一个循环）。"
+      },
+      {
+        "question": "juQery一个对象可以同时绑定多个事件，这是如何实现的？",
+        "answer": "bind（）方法为被选元素添加一个或多个事件处理程序，并规定事件发生时运行的函数。<br>on()方法事件处理程序到当前选定的jQery对象中的元素。<br>delegate() 方法为指定的元素(属于被选元素的子元素)添加一个或多个事件处理程序，并规定当这些事件发生时运行的函数。<br>Live()方法为被选元素加一个或多个事件处理程序，并规定当这些事件发生时运行的函数。"
+      },
+      {
+        "question": "如何判断当前脚本运行在浏览器还是node环境中？(阿里)",
+        "answer": "通过判断Global对象是否为window，如果不为window，当前脚本没有运行在浏览器中"
+      },
+      {
+        "question": "对Node的优点和缺点提出了自己的看法？",
+        "answer": "*（优点）因为Node是基于事件驱动和无阻塞的，所以非常适合处理并发送请求，因此在构建Node上的代理服务器相比其他技术实现（如Ruby）的服务器表现要好得多。<br>此外，与Node代理服务器端交互的客户端室友JavaScript语言编写的，因此客户端和服务器端都用同一种语言编写，这是非常美妙的事情。<br>*（缺点）Node是一个相对新的开源项目，所以不太稳定，它总是一直在变，而且缺少足够多的第三方支持库。看起来就像是Ruby/Rails当年的样子。"
+      },
+      {
+        "question": "什么是Web worker？为什么我们需要他们？",
+        "answer": "Web worker帮助我们用异步执行JavaScript文件；<br>Web worker线程的限制是什么？<br>Web worker线程不能修改HTML元素，你可以自由使用JavaScript数据类型。<br>如何在JavaScript中创建一个worker线程？<br>Var worker = new Worker( ... . js);"
+      },
+      {
+        "question": "如何终止web worker？",
+        "answer": "W.terminate(); <br>//terminate(终止)；<br>为页面动态添加按钮<br>使用js代码微页面动态添加5个按钮，每个按钮上的文本“button1”、“button2”...“button5”。单击每个按钮时，分别弹出数字1、2...5.代码如下：<br>for (var i = 1;i < 6; i++){<br>var input = document.createElement(‘input’);<br>document.body.appendChild(input);<br>}"
+      },
+      {
+        "question": "总结可以实现页面跳转和刷新的方法",
+        "answer": "使用超级链接，代码如：<br>1、<a href = “url”></a><br>2、表单提交，代码如：<br><form action='url'></form><br>3、Js代码，代码如：<br>location.href='url';<br>location.assign(‘url’);<br>location.replace();<br>location.relad();<br>window.open(‘url’);history.go()"
+      },
+      {
+        "question": "body中的onload（函数）和jQuery中的$（document）.ready（）有什么区别",
+        "answer": "onload（）和document.ready（）的区别如下：<br>可以在页面中使用多个document.ready（），但只能使用一次onload（）；<br>document.ready（）函数在页面DOM元素加载完成以后就会被调用，而onload（）函数则要在所有的关联资源（包括图像、音频）加载完毕才会调用。"
+      },
+      {
+        "question": "jQuery中有哪几种类型的选择器",
+        "answer": "有3种类型的选择器，如下：<br>基本选择器：直接根据Id,css类名，元素名返回dom元素；<br>层次选择器：也叫做路径选择器，可以根据路径层次来选择相应的dom元素；<br>过滤选择器：在前面的基础上过滤相关的条件，得到匹配的dom元素。"
+      },
+      {
+        "question": "jQuery的美元符号$有什么作用？",
+        "answer": "美元符号$是‘jQuery’的别名，他是jQuery选择器，查看如下代码：<br>$(document).ready(function() {<br>} );<br>也可用jQuery来替代"
+      },
+      {
+        "question": "jQuery中的Delegate（）函数有什么用？",
+        "answer": "Delegate（）会在以下两个情况下使用到：<br>当需要给父元素其下的子元素添加事件时，代码如下：<br>HTML代码：$('ul').delegate('li','click',function(){<br>$(this).hide();<br>});当元素在当前页面中不可用时，可以使用delegate（）"
+      },
+      {
+        "question": "请写出至少5种常见的http状态码以及代表的意义",
+        "answer": "5种常见的http状态码以及代表的意义如下：<br>200（ok）:请求已成功，请求所希望的响应头或数据体将随此响应返回。<br>303（see other）:告知客户端使用另一个URL来获取资源。<br>400（bad request）：请求格式错误。<br>1）语义有误，当前请求无法被服务器理解。除非进行修改，否则客户端不应该重复提交这个请求；<br>2）请求参数有误。<br>404（not  found）：请求失败，请求所希望得到的资源未被在服务器上发现。<br>500（internal   server  error）：服务器遇到了一个未曾预料的状况，导致了它无法完成对请求的处理。"
+      },
+      {
+        "question": "AJAX应用和传统Web应用有什么不同？",
+        "answer": "在传统的Javascript编程中，如果想得到服务器端数据库或文件上的信息，或者发送客户端信息到服务，需要建立一个HTML form然后GET或者POST数据到服务器端。<br>用户需要点击'Submit'按钮来发送或者接受数据信息，然后等待服务器响应请求，页面重新加载。因为服务器每次都会返回一个新的页面，所以传统的web应用有可能很慢而且用户交互较差。<br>使用AJAX技术，就可以使javascript通过XMLHttpRequest对象直接与服务器进行交互。<br>通过HTTP Request，一个web页面可以发送一个请求到web服务器并且接受web服务器返回的信息（不用重新加载页面），展示给用户的还是同一个页面，但是只实现页面的局部刷新，从而提高体验度。"
+      },
+      {
+        "question": "AJAX都有哪些优点和缺点？",
+        "answer": "优点：<br>1、页面局部刷新，提高用户体验度；<br>2、使用异步方式与服务器通信，具有更加迅速的响应能力；<br>3、减轻服务器负担；<br>4、基于标准化的并被广泛支持的技术，不需要下载插件或者小程序。<br>缺点：<br>1、不支持浏览器back按钮；<br>2、安全问题；<br>3、对搜索引擎的支持比较弱。其它问题"
+      },
+      {
+        "question": "你有哪些性能优化的方法？",
+        "answer": "（看雅虎14条性能优化原则）<br>（1）减少http请求次数：CSS  Sprites 、JS、CSS源码压缩、图片大小控制合适；网页Gzip，CDN托管，data缓存，图片服务器。<br>（2） 前端模板 JS+数据，减少由于HTML标签导致的宽带浪费，前端用变量保存AJAX请求结果，每次操作本地变量，不用请求，减少请求次数<br>（3）用innerHTML 代替DOM 操作，减少DOM 操作次数，优化javascript 性能。<br>（4）当需要设置的样式很多设置 className 而不是直接操作style。<br>（5）少用全局变量、缓存DOM 节点查找的结果。减少IO读取操作。<br>（6）避免使用CSS Expression（css 表达式）又称Dynamic properties（动态属性）。<br>（7）图片预加载，将样式表放在顶部，将脚本放在底部，加上时间戳<br>（8）避免在页面主体重使用table table要等其中内容完全下载之后才会显示出来。显示比div+css 布局慢。"
+      },
+      {
+        "question": "二、 http状态码有哪些？分别代表是什么意思？",
+        "answer": "100-199 用于指定客户端应襄阳的某些动作。<br>200-299 用于代表请求成功。<br>300-399 用于已经移动文件并且常备包含在定位头信息中指定新的地址信息。<br>400-499 用于之处客户端的错误。<br>400  语意有误，当前请求无法被服务器理解<br>401 当前请求用户验证<br>403  服务器已经理解请求，但是拒绝执行它。<br>500-599 用于支持服务器错误。<br>503- 服务不可用"
+      },
+      {
+        "question": "三、 一个页面从输入 URL 到页面加赞显示完成，这个过程中都发生了什么？（流程说的越详细越好）",
+        "answer": "查找浏览器缓<br>DNS解析、查找该域名对应的IP地址、重定向（301），发出第二个GET请求进行HTTP协议会话<br>客户端发送报头（请求报头）、服务器回馈报头（响应报头）、html文档开始下载、文档树建立，根据标记请求所需指定MIME类型的文件、文件显示[浏览器这边的工作大致分为以下几步：<br>加载：根据请求的URL进行域名解析，向服务器发出请求，接收文件（HTML、JS、CSS、图像等）。<br>解析：对加载到的资源（HTML、JS、CSS等）进行语法解析，建议相应的内部数据结构(比如HTML的DOM树，JS的(对象)属性表，CSS的样式规则等等)]"
+      },
+      {
+        "question": "四、平时如何管理你的项目？",
+        "answer": "先期团队必须确定好全局样式（globe.css），编码模式（utf-8）等；<br>编写习惯必须一致（例如都是采用继承式的写法，单样式都写成一行）；<br>标注样式编写人，各模块都及时标注（标注关键样式调用的地方）；<br>页面进行标注（例如 页面 模块 开始和结束）；<br>CSS跟HTML分文件夹并行存放，命名都得统一（例如style.css）；<br>JS,分文件夹存放,命名以该JS功能为准的英文翻译。图片采用整合的images.png png8格式文件使用 尽量整合在一起使用方便将来的管理"
+      },
+      {
+        "question": "说说最近流行的一些东西吧？常去哪些网站？",
+        "answer": "Node.js、Mongodb、npm、MVVM、MEAN、three.js"
+      },
+      {
+        "question": "移动端（Android IOS）怎么做好用户体验？",
+        "answer": "清晰的视觉纵线、信息的分组、极致的减法、利用选择代替输入、标签及文字的排布方式、依靠明文确认密码、合理的键盘利用"
+      },
+      {
+        "question": "你遇到过比较难的技术问题是？你是如何解决的？<br>常使用的库有哪些？<br>常用的前端开发工具？<br>开发过什么应用或组件？<br>页面重构怎么操作？<br>列举IE与其他浏览器不一样的特性？<br>99%的网站都需要被重构是哪本书上写的？<br>什么叫优雅降级和渐进增强？<br>WEB应用从服务器主动推送Data到客户端有哪些方式？<br>除了前端以为还了解什么其它技术么？<br>你最最厉害的技能是什么？<br>你常用的开发工具是什么？为什么？",
+        "answer": ""
+      },
+      {
+        "question": "对前端界面工程师这个职位是怎么样理解的？它的前景会怎么样？",
+        "answer": "前端是最贴近用户的程序员，比后端、数据库、产品经理、运营、安全都近。实现界面交互,提升用户体验有了node.js，前端可以实现服务端的一些事情.前端是最贴近用户的程序员，前端的能力就是能让产品从90分进化到100分，甚至更好。参与项目，快速高质量完成实现效果图，精确到1px;与团队成员，UI设计，产品经理沟通；做好的页面结构，页面重构和用户体验；处理hack,兼容、写出优美的代码格式；针对服务器的优化、拥抱最新前端技术。"
+      },
+      {
+        "question": "如何设计突发大规模并发架构？<br>你在现在团队处于什么样的角色，起到什么明显的作用？<br>你认为怎样才是前端工程师(Full Stack developer)?<br>介绍一个你最得意的作品吧！<br>你的优点是什么？缺点是什么？如何管理前端？<br>最近在学什么？能谈谈你未来3,5年给自己的规划吗？",
+        "answer": ""
+      },
+      {
+        "question": "你还有什么问题？",
+        "answer": "回答提示：<br>企业的这个问题看上去可有可无，其实很关键，企业不喜欢说“没问题”的人，因为其很注重员工的个性和创新能力。企业不喜欢求职者问个人福利之类的问题，如果有人这样问：贵公司对新员工有没有什么培训项目，我可参加吗？或者贵公司的晋升机制是什么？企业将很欢迎，因为体现出你对学习的热情和公司的忠诚以及你的上进心。"
+      },
+      {
+        "question": "前端开发面试知识点大纲：",
+        "answer": " HTML&CSS:对Web标准的理解、浏览器内核差异、兼容性、hack<br>CSS基本功能：布局、盒子模型、选择器优先级及使用、HTML5、CSS3、移动端适应。<br>JavaScript：数据类型、面向对象、继承、闭包、插件、作用域、跨域、原型链、模块化、自定义事件、内存泄漏、事件机制、异步装载毁掉、模板引擎、Nodejs、JSON、ajax等。<br>其他：HTTP、安全、正则、优化、重构、响应式、移动端、团队协作、可维护、SEO、UED、架构、职业生涯"
+      },
+      {
+        "question": "作为一名前端工程师，无论工作年头长短都应该必须掌握的知识点：",
+        "answer": "1、DOM结构——两个节点之间可能存在哪些关系以及如何在节点之间任意移动。<br>2、DOM操作——如何添加、移出、移动、复制、创建和查找节点等。<br>3、事件——如何使用事件，以及IE和标准DOM事件模型之间存在的差别。<br>4、XMLHttpRequest——这是什么、怎样完整地执行一次GET请求、怎样检测错误。<br>5、严格模式与混杂模式——如何触发这两种模式，区分它们有何意义。<br>6、盒子模型——外边距、内边距和边框之间的关系，及IE8以下版本的浏览器中的盒子模型。<br>7、块级元素与行内元素——怎么用CSS控制它们、以及如何理解的使用它们。<br>8、浮动元素——怎么使用它们、它们有什么问题以及怎么解决这些问题。<br>9、HTML与XHTML——二者有什么区别，你觉得应该使用哪一个并说出理由。<br>10、JSON——作用、用途、设计结构。"
+      }
+    ]
+  }
+}
+
