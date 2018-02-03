@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background: #EAE9E9;
+		}
+		.showBox{
+			width: 100%;
+			overflow: hidden;
+			position: relative;
+		}
+		.page{
+			width: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			text-align: center;
+			line-height: 1;
+		}
+		.page:nth-child(1){
+			background: red;
+		}
+		
+		.page:nth-child(2){
+			background: orange;
+		}
+		
+		.page:nth-child(3){
+			background: yellow;
+		}
+		.page.cur{
+			z-index: 2;
+		}
+		.upPage{
+			top: 0;
+		}
+	</style>
+	<script src="js/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+		$(function(){	
+			function preventTouch() {
+			    event.preventDefault();
+			}
+			document.addEventListener('touchstart', preventTouch);
+			document.addEventListener('touchmove', preventTouch);
+			document.addEventListener('touchend', preventTouch);
+			var startx, starty;
+		    //获得角度
+		    function getAngle(angx, angy) {
+		        return Math.atan2(angy, angx) * 180 / Math.PI;
+		    };
+		 
+		    //根据起点终点返回方向 1向上 2向下 3向左 4向右 0未滑动
+		    function getDirection(startx, starty, endx, endy) {
+		        var angx = endx - startx;
+		        var angy = endy - starty;
+		        var result = 0;
+		 
+		        //如果滑动距离太短
+		        if (Math.abs(angx) < 2 && Math.abs(angy) < 2) {
+		            return result;
+		        }
+		 
+		        var angle = getAngle(angx, angy);
+		        if (angle >= -135 && angle <= -45) {
+		            result = 1;
+		        } else if (angle > 45 && angle < 135) {
+		            result = 2;
+		        } else if ((angle >= 135 && angle <= 180) || (angle >= -180 && angle < -135)) {
+		            result = 3;
+		        } else if (angle >= -45 && angle <= 45) {
+		            result = 4;
+		        }
+		 
+		        return result;
+		    }
+		    //手指接触屏幕
+		    document.addEventListener("touchstart", function(e) {
+		        startx = e.touches[0].pageX;
+		        starty = e.touches[0].pageY;
+		    }, false);
+		    //手指离开屏幕
+		    document.addEventListener("touchend", function(e) {
+		        var endx, endy;
+		        endx = e.changedTouches[0].pageX;
+		        endy = e.changedTouches[0].pageY;
+		        var direction = getDirection(startx, starty, endx, endy);
+		        switch (direction) {
+//		            case 0:
+//		                alert("未滑动！");
+//		                break;
+		            case 1:
+		                toDown();
+		                break;
+		            case 2:
+		                toUp();
+		                break;
+//		            case 3:
+//		                alert("向左！")
+//		                break;
+//		            case 4:
+//		                alert("向右！")
+//		                break;
+		            default:
+		        }
+		    }, false);
+		    
+		    var winHei = $(window).height();
+			$('.page,.showBox').height(winHei);
+			$('.upPage').css({'top':-winHei});
+			$('.nextPage').css({'top':winHei})
+		    var index = 0;
+		    var len = 3;
+		    function upDate(index){
+		    	
+		    	for(var i=0;i<index;i++){
+			    	$('.page').eq(i).removeClass('nextPage').addClass('upPage')
+			    }
+			    for(var n=index+1;n<len;n++){
+			    	$('.page').eq(n).removeClass('upPage').addClass('nextPage')
+			    }
+			    $('.upPage').css({'top':-winHei});
+				$('.nextPage').css({'top':winHei})
+			    
+		    }
+		    function toDown(){
+		    	if(index<len-1){
+		    		index++;
+		    		console.log()
+		    		$('.page').eq(index).addClass('cur').removeClass('upPage').removeClass('nextPage').siblings().removeClass('cur');
+			    	$('.page').eq(index).animate({
+			    		top:'0'
+			    	},function(){
+			    		upDate(index)
+			    	});
+			    	
+		    	}
+		    	
+		    	
+		    }
+		    
+		    function toUp(){
+		    	if(index>0){
+		    		index--;
+		    		$('.page').eq(index).addClass('cur').removeClass('upPage').removeClass('nextPage').siblings().removeClass('cur');
+			    	$('.page').eq(index).animate({
+			    		top:'0'
+			    	},function(){
+			    		upDate(index)
+			    	});
+		    	}
+		    	
+		    }
+			
+		})
+	</script>
+</head>
+<body>
+	<div class="showBox">
+		<div class="page">1</div>
+		<div class="page nextPage">2</div>
+		<div class="page nextPage">3</div>
+	</div>
+	
+</body>
+</html>
